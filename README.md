@@ -1,4 +1,4 @@
-#ptl9
+# ptl9
 
 Portfolio de Pierre Tampon-Lajarriette version 9 <br>
 utilise [GitHub](https://github.com), [Eleventy](https://github.com/11ty/eleventy) et [Netlify](https://app.netlify.com/)
@@ -19,24 +19,20 @@ cd ptl9
 
 ### 3. Installer les dépendances du projet
 
+#### 3.1 npm
 ```
 npm install -y
 ```
 
-### 4. Installer Eleventy
 
-```
-npm i @11ty/eleventy
-```
-
-### 5. Ligne de commande Eleventy
+### 4. Ligne de commande Eleventy
 
 |Commande|Effet|
 |--------|-----|
 |`npx eleventy`|initialisation|
 |`npx eleventy --serve`|initialisation + lancement serveur local|
 
-### 6. Exclure de git le site compilé
+### 5. Exclure de git le site compilé
 
 Dans le fichier _.gitignore_, ajouter
 
