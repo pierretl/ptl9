@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            {% if h1Display != 'none' %}
+                {{titre}} - PTL9
+            {% else %}
+                PTL9 - Demo
+            {% endif %}
+        </title>
+        <link rel="stylesheet" href="/assets/style.css" />
+    </head>
+    <body>
+    <nav>
+        <ul class="s_main">
+            <li>
+                <a href="/">Acceuil</a>
+            </li>
+            <li>
+                <a href="/a-propos/">À-propos</a>
+            </li>
+        </ul>
+    </nav>
+        <div class="s_main">
+            {% if h1Display != 'none' %}
+                <h1>{{titre}}</h1>
+            {% endif %}
+
+            {{content | safe}}
+        </div>
+    </body>
+</html>

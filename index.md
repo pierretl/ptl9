@@ -1,5 +1,7 @@
-# My homepage
+---
+layout: layout-standard.njk
+titre: PTL9 - demo
+h1Display: none
+---
 
-use somme **bold** text or _italic_ or inline `code`
-
-Test de changement pour netlify
+Acceuil
