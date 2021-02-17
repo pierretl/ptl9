@@ -32,4 +32,7 @@ module.exports = function (eleventyConfig) {
     // trigger a rebuild if sass changes
     eleventyConfig.addWatchTarget("_sass/");
 
+    // Copie le dossier "_js" dans "_site/js"
+    eleventyConfig.addPassthroughCopy({"_js": "js"})
+
 };
