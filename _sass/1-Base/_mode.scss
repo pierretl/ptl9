@@ -1,0 +1,19 @@
+:root {
+  --gamme1__fond: #{$gamme-f1__fond};
+  --gamme1__texte: #{$gamme-f1__texte};
+  --gamme1__accroche: #{$gamme-f1__accroche};
+  --gamme1__lien: #{$gamme-f1__lien};
+  --gamme1__lien-survol: #{$gamme-f1__lien-survol};
+  --gamme1__lien-visite: #{$gamme-f1__lien-visite};
+  --gamme1__lien-visite-survol: #{$gamme-f1__lien-visite-survol};
+}
+
+[data-mode="light"] {
+  --gamme1__fond: #{$gamme-c1__fond};
+  --gamme1__texte: #{$gamme-c1__texte};
+  --gamme1__accroche: #{$gamme-c1__accroche};
+  --gamme1__lien: #{$gamme-c1__lien};
+  --gamme1__lien-survol: #{$gamme-c1__lien-survol};
+  --gamme1__lien-visite: #{$gamme-c1__lien-visite};
+  --gamme1__lien-visite-survol: #{$gamme-c1__lien-visite-survol};
+}

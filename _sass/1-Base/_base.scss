@@ -1,0 +1,35 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--gamme1__texte);
+  background: var(--gamme1__fond);
+  max-width: 68%;
+  margin: 0 auto;
+
+}
+
+a:not([class]) {
+  color: var(--gamme1__lien);
+}
+a:not([class]):hover {
+  color: var(--gamme1__lien-survol);
+}
+/*
+a:not([class]):visited {
+  color: var(--gamme1__lien-visite);
+}
+a:not([class]):visited:hover {
+  color: var(--gamme1__lien-visite-survol);
+}
+*/
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+ nav li {
+   padding: 5px;
+ }

@@ -1,41 +1,5 @@
-@charset "utf-8";
-
-$color: green;
-
-
-*, ::before, ::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #332f35;
-  color: $color;
-  font-family: sans-serif;
-}
-
-a {
-  color: #e5e3e6;
-}
-
-.s_main {
-  width: 100%;
-  max-width: 639px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-nav {
-  background-color: #29252a;
-}
-
-nav ul {
-  display :flex;
-  list-style:none;
-  padding: 20px 0;
-}
-
-nav li {
-  padding: 0 5px;
-}
+@import '1-Base/_index';
+@import '2-Utilitaire/_index';
+@import '3-Structure/_index';
+@import '4-Element/_index';
+@import '5-Satellite/_index';

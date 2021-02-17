@@ -1,0 +1,37 @@
+$grey-vampire: #515152;
+$grey-davy: #575757;
+$grey-dove: #6D6D6D;
+$grey-quill: #d3d3d3;
+$grey-pale: #FDFDFE;
+
+$spruce:#00642E;
+$green-la-salle: #00873E;
+$aquamarine-medium: #54DD93;
+$turquoise-pale:#B7F7D2;
+
+$antique-bronze:#704E00;
+$corn-harvest: #9B6B00;
+$peach: #F4BB7E;
+$marzipan:#F8DC92;
+
+
+
+/*---------------------------------------------*/
+/* Gamme                                       */
+/*---------------------------------------------*/
+
+$gamme-f1__fond: $grey-vampire;
+$gamme-f1__texte: $grey-pale;
+$gamme-f1__accroche: $grey-quill;
+$gamme-f1__lien: $aquamarine-medium;
+$gamme-f1__lien-survol: $turquoise-pale;
+$gamme-f1__lien-visite: $peach;
+$gamme-f1__lien-visite-survol: $marzipan;
+
+$gamme-c1__fond: $grey-pale;
+$gamme-c1__texte: $grey-davy;
+$gamme-c1__accroche: $grey-dove;
+$gamme-c1__lien: $green-la-salle;
+$gamme-c1__lien-survol: $spruce;
+$gamme-c1__lien-visite: $corn-harvest;
+$gamme-c1__lien-visite-survol: $antique-bronze;
