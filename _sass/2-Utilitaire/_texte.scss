@@ -1,0 +1,27 @@
+.texte-1 {
+  font-size: $texte-xxl;
+  color: var(--gamme1__texte);
+  line-height: 0.9;
+}
+.texte-2 {
+  font-size: $texte-xl;
+  color: var(--gamme1__texte);
+}
+.texte-3 {
+  font-size: $texte-l;
+  color: var(--gamme1__accroche);
+  line-height: 2;
+}
+.texte-4 {
+  font-size: $texte-s;
+  text-transform: uppercase;
+  color: var(--gamme1__accroche);
+  font-weight: 400;
+}
+
+
+
+
+.text-center {
+  text-align: center;
+}

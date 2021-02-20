@@ -20,7 +20,7 @@ $marzipan:#F8DC92;
 /* Gamme                                       */
 /*---------------------------------------------*/
 
-$gamme-f1__fond: $grey-vampire;
+$gamme-f1__fond: #332f35;
 $gamme-f1__texte: $grey-pale;
 $gamme-f1__accroche: $grey-quill;
 $gamme-f1__lien: $aquamarine-medium;
@@ -35,3 +35,16 @@ $gamme-c1__lien: $green-la-salle;
 $gamme-c1__lien-survol: $spruce;
 $gamme-c1__lien-visite: $corn-harvest;
 $gamme-c1__lien-visite-survol: $antique-bronze;
+
+
+$gamme-c1__texte: #323232;
+
+/*
+$gamme-c1__fond: #fafafa;
+$gamme-c1__texte: #323232;
+$gamme-c1__accroche: #656565;
+$gamme-c1__lien: #00623C;
+$gamme-c1__lien-survol: #323232;
+$gamme-c1__lien-visite: $corn-harvest;
+$gamme-c1__lien-visite-survol: $antique-bronze;
+*/

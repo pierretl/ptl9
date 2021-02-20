@@ -1,0 +1,26 @@
+.ascii {
+  font-family: monospace;
+  font-size: 11px;
+  line-height: normal;
+  margin: 0 -35px 50px;
+}
+
+.ascii__lien {
+  text-decoration: none;
+}
+
+.ascii__lien:hover span,
+.ascii__lien:focus span { color: #fff}
+
+[data-mode="light"] .ascii {
+  margin: 0 0 50px;
+  padding: 20px 0;
+  background: $gamme-f1__fond;
+}
+
+.ascii__couleur-1 { color: #ed5565}
+.ascii__couleur-2 { color: #ffce54}
+.ascii__couleur-3 { color: #97c671}
+.ascii__couleur-4 { color: #ffffff}
+.ascii__couleur-5 { color: #a4e9e9}
+.ascii__couleur-6 { color: #4fc1e9}

@@ -1,20 +1,54 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: sans-serif;
+  background: var(--gamme1__fond);
+
   margin: 0;
   padding: 0;
-  color: var(--gamme1__texte);
-  background: var(--gamme1__fond);
-  max-width: 68%;
-  margin: 0 auto;
 
+  min-height: 100vh;
+
+  font-family: 'Raleway', sans-serif;
+  font-size: $texte-m;
+  font-weight: 300;
+  color: var(--gamme1__texte);
+}
+
+blockquote,
+figure,
+pre,
+ul,
+ol,
+p
+{
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-size: $texte-m;
+  font-weight: normal;
+  margin: 0;
 }
 
 a:not([class]) {
   color: var(--gamme1__lien);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--gamme1__lien);
+  transition: all 0.2s linear;
 }
 a:not([class]):hover {
   color: var(--gamme1__lien-survol);
 }
+
 /*
 a:not([class]):visited {
   color: var(--gamme1__lien-visite);
@@ -23,13 +57,3 @@ a:not([class]):visited:hover {
   color: var(--gamme1__lien-visite-survol);
 }
 */
-
-nav ul {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
- nav li {
-   padding: 5px;
- }

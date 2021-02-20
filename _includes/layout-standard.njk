@@ -7,33 +7,59 @@
             {% if h1Display != 'none' %}
                 {{titre}} - PTL9
             {% else %}
-                PTL9 - Demo
+                PTL9 - Démo
             {% endif %}
         </title>
         <link rel="stylesheet" href="/style.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
     </head>
-    <body>
-    <nav>
-        <ul>
-            <li>
-                <a href="/">Acceuil</a>
-            </li>
-            <li>
-                <a href="/a-propos/">À-propos</a>
-            </li>
-            <li>
-                <input type="checkbox" id="switch" class="js--switch">
-                <label for="switch">Mode Light</label>
-            </li>
-        </ul>
-    </nav>
-        <div class="s_main">
+    <body class="d-flex fd-c">
+        <header class="d-flex jc-sb ai-c fw-w p-header bordure-b">
+            <div class="mr-m">
+                <h1 class="texte-1">Pierre Tampon-Lajarriette</h1>
+                <span class="texte-3">Front-End Designer<span class="clignoter">_</span></span>
+            </div>
+            <nav>
+                <ul class="d-flex">
+                    <li class="mr-m">
+                        <a class="lien-header" href="/">Acceuil</a>
+                    </li>
+                    <li class="lien-header mr-m">
+                        <a class="lien-header" href="/contact/">Contact</a>
+                    </li>
+                    <li class="lien-header mr-m">
+                        <a class="lien-header" href="/reflexion/">Réflexion</a>
+                    </li>
+                    <li class="lien-header">
+                        <input type="checkbox" id="switch" class="js--switch">
+                        <label for="switch">Mode Light</label>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="s_page">
             {% if h1Display != 'none' %}
-                <h1>{{titre}}</h1>
+                <h1 class="texte-2 mb-s">{{titre}}</h1>
             {% endif %}
 
             {{content | safe}}
-        </div>
+        </main>
+        <footer class="d-flex jc-sb fw-w p-footer texte-4 bordure-h">
+            <div class="mr-m">
+                Pas de cookie - Pas de tracking
+            </div>
+            <nav class="">
+                <ul class="d-flex c_ml-s">
+                    <li>
+                        <a class="lien-footer" href="https://twitter.com/pierre_tl">Twitter</a>
+                    </li>
+                    <li>
+                        <a class="lien-footer" href="https://github.com/pierretl">GitHub</a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
     </body>
     <script type="text/javascript" src="../js/dark-light-mode.js"></script>
 </html>
