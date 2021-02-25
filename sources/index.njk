@@ -1,10 +1,16 @@
 ---
 layout: layout-standard.njk
 titre: PTL9 - demo
+titreMenu: "Réalisation"
 h1Display: none
+tags: "menuPrincipal"
 ---
 
-<pre class="ascii text-center"><a class="ascii__lien" href="http://www.pierre.tl/"><span class="ascii__couleur-1">`.`
+{% for work in collections.realisations %}
+    {{ work.data.titre }}<br>
+{% endfor %}
+
+<pre class="ascii texte-center"><a class="ascii__lien" href="http://www.pierre.tl/"><span class="ascii__couleur-1">`.`
 `.-:/+ooooo+/:-.`
 ``.-:/+ooooooooooooooooooo+/:--.``
 `.-://+ooooooooooooooooooooooooooooooooooo+/:.</span>

@@ -22,15 +22,25 @@
             </div>
             <nav>
                 <ul class="d-flex">
-                    <li class="mr-m">
-                        <a class="lien-header" href="/">Acceuil</a>
-                    </li>
-                    <li class="lien-header mr-m">
-                        <a class="lien-header" href="/contact/">Contact</a>
-                    </li>
-                    <li class="lien-header mr-m">
-                        <a class="lien-header" href="/reflexion/">Réflexion</a>
-                    </li>
+                    {% for menu in collections.menuPrincipal %}
+                        <li class="mr-m{% if page.url == menu.url %} texte-gras{% endif %}">
+                            {% if page.url == menu.url %}
+                                {% if menu.data.titreMenu %}
+                                    {{ menu.data.titreMenu }}
+                                {% else %}
+                                    {{ menu.data.titre }}
+                                {% endif %}
+                            {% else %}
+                                <a class="lien-header" href="{{ menu.url | url }}">
+                                    {% if menu.data.titreMenu %}
+                                        {{ menu.data.titreMenu }}
+                                    {% else %}
+                                        {{ menu.data.titre }}
+                                    {% endif %}
+                                </a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
                     <li class="lien-header">
                         <input type="checkbox" id="switch" class="js--switch">
                         <label for="switch">Mode Light</label>
@@ -53,6 +63,9 @@
                 <ul class="d-flex c_ml-s">
                     <li>
                         <a class="lien-footer" href="https://twitter.com/pierre_tl">Twitter</a>
+                    </li>
+                    <li>
+                        <a class="lien-footer" href="https://codepen.io/pierre_tl">CodePen</a>
                     </li>
                     <li>
                         <a class="lien-footer" href="https://github.com/pierretl">GitHub</a>

@@ -1,0 +1,9 @@
+---
+layout: layout-standard.njk
+titre: "Réflexion"
+tags: "menuPrincipal"
+---
+
+{% for blog in collections.reflexions %}
+    {{ blog.data.titre }}<br>
+{% endfor %}

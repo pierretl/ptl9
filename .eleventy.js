@@ -10,7 +10,7 @@ module.exports = function (eleventyConfig) {
 
         // Compile Sass
         let result = sass.renderSync({
-            file: "_sass/style.scss",
+            file: "sources/_sass/style.scss",
             sourceMap: false,
             outputStyle: "compressed",
         });
@@ -32,7 +32,18 @@ module.exports = function (eleventyConfig) {
     // trigger a rebuild if sass changes
     eleventyConfig.addWatchTarget("_sass/");
 
+
     // Copie le dossier "_js" dans "_site/js"
-    eleventyConfig.addPassthroughCopy({"_js": "js"})
+    eleventyConfig.addPassthroughCopy({"sources/_js": "js"});
+
+
+    return {
+        passthroughFileCopy: true,
+        dir: {
+            input: "sources",
+            output: "_site",
+            include: "../_includes"
+        }
+    }
 
 };
