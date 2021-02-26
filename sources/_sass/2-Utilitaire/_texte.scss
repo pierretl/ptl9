@@ -2,7 +2,12 @@
   font-size: $texte-xxl;
   color: var(--gamme1__texte);
   line-height: 0.9;
+  font-weight: normal;
+  text-decoration: none;
 }
+
+
+
 .texte-2 {
   font-size: $texte-xl;
   color: var(--gamme1__texte);
@@ -26,6 +31,21 @@
   text-align: center;
 }
 
-.texte-gras {
-  font-weight: 700;
+.texte-accroche {
+  color: var(--gamme1__accroche);
+}
+
+
+
+
+.md p {
+  margin-bottom: $espace-s;
+}
+.md h2 {
+  font-size: $texte-l;
+  color: var(--gamme1__accroche);
+  line-height: 2;
+}
+.md h2:not(:first-child){
+  margin-top: $espace-s;
 }

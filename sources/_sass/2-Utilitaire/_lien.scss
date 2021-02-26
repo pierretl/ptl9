@@ -1,16 +1,42 @@
-.lien-header {
-  color: var(--gamme1__texte);
-  text-decoration: none;
+a.texte-1:hover {
+  @include lien-menu--hover;
 }
 
 
 
 
 
-.lien-footer {
+
+.texte-menu {
   color: var(--gamme1__texte);
   text-decoration: none;
 }
-.lien-footer:hover {
-  color: var(--gamme1__accroche);
+.texte-menu:hover {
+  @include lien-menu--hover;
+}
+
+
+.texte-menu--actif {
+  position:relative;
+  color: var(--gamme1__texte);
+}
+.texte-menu--actif:after {
+  content: "";
+  position:absolute;
+  bottom: -10px;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background-color: var(--gamme1__accroche);
+}
+
+
+
+
+.liste-lien {
+  color: var(--gamme1__texte);
+  text-decoration: none;
+}
+.liste-lien:hover {
+  @include lien-menu--hover;
 }

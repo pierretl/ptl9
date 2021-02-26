@@ -4,10 +4,10 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>
-            {% if h1Display != 'none' %}
-                {{titre}} - PTL9
-            {% else %}
+            {% if accueil %}
                 PTL9 - Démo
+            {% else %}
+                {{titre}} - PTL9
             {% endif %}
         </title>
         <link rel="stylesheet" href="/style.css" />
@@ -17,13 +17,17 @@
     <body class="d-flex fd-c">
         <header class="d-flex jc-sb ai-c fw-w p-header bordure-b">
             <div class="mr-m">
-                <h1 class="texte-1">Pierre Tampon-Lajarriette</h1>
+                {% if accueil %}
+                    <h1 class="texte-1">Pierre Tampon-Lajarriette</h1>
+                {% else %}
+                    <a href="/" class="texte-1">Pierre Tampon-Lajarriette</a><br>
+                {% endif %}
                 <span class="texte-3">Front-End Designer<span class="clignoter">_</span></span>
             </div>
             <nav>
-                <ul class="d-flex">
+                <ul class="d-flex menu__conteneur">
                     {% for menu in collections.menuPrincipal %}
-                        <li class="mr-m{% if page.url == menu.url %} texte-gras{% endif %}">
+                        <li class="{% if page.url == menu.url %} texte-menu--actif{% endif %}">
                             {% if page.url == menu.url %}
                                 {% if menu.data.titreMenu %}
                                     {{ menu.data.titreMenu }}
@@ -31,7 +35,7 @@
                                     {{ menu.data.titre }}
                                 {% endif %}
                             {% else %}
-                                <a class="lien-header" href="{{ menu.url | url }}">
+                                <a class="texte-menu" href="{{ menu.url | url }}">
                                     {% if menu.data.titreMenu %}
                                         {{ menu.data.titreMenu }}
                                     {% else %}
@@ -41,18 +45,21 @@
                             {% endif %}
                         </li>
                     {% endfor %}
-                    <li class="lien-header">
-                        <input type="checkbox" id="switch" class="js--switch">
-                        <label for="switch">Mode Light</label>
+                    <li>
+                        <input type="checkbox" id="switch-theme" class="hide-checkbox js--switch">
+                        <label for="switch-theme" class="texte-menu">
+                            <span class="js--switch-clair">Thème clair</span>
+                            <span class="js--switch-sombre hide">Thème sombre</span>
+                        </label>
                     </li>
                 </ul>
             </nav>
         </header>
-        <main class="s_page">
-            {% if h1Display != 'none' %}
-                <h1 class="texte-2 mb-s">{{titre}}</h1>
+        <main class="s_page{% if md %} md{% endif %}">
+            {% if accueil %}
+            {% else %}
+                <h1 class="texte-2 mb-m">{{titre}}</h1>
             {% endif %}
-
             {{content | safe}}
         </main>
         <footer class="d-flex jc-sb fw-w p-footer texte-4 bordure-h">
@@ -62,17 +69,17 @@
             <nav class="">
                 <ul class="d-flex c_ml-s">
                     <li>
-                        <a class="lien-footer" href="https://twitter.com/pierre_tl">Twitter</a>
+                        <a class="texte-menu" href="https://twitter.com/pierre_tl">Twitter</a>
                     </li>
                     <li>
-                        <a class="lien-footer" href="https://codepen.io/pierre_tl">CodePen</a>
+                        <a class="texte-menu" href="https://codepen.io/pierre_tl">CodePen</a>
                     </li>
                     <li>
-                        <a class="lien-footer" href="https://github.com/pierretl">GitHub</a>
+                        <a class="texte-menu" href="https://github.com/pierretl">GitHub</a>
                     </li>
                 </ul>
             </nav>
         </footer>
     </body>
-    <script type="text/javascript" src="../js/dark-light-mode.js"></script>
+    <script type="text/javascript" src="/js/dark-light-mode.js"></script>
 </html>

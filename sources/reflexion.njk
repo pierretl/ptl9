@@ -5,6 +5,20 @@ titre: "Réflexion"
 tags: "menuPrincipal"
 ---
 
-{% for blog in collections.reflexions %}
-    {{ blog.data.titre }}<br>
-{% endfor %}
+<ul>
+    {% for blog in collections.reflexions | reverse %}
+        <li class="mb-m">
+
+            <a href="{{ blog.url | url }}" class="liste-lien">
+
+                {{ blog.data.titre }}
+
+                {% if blog.data.date %}
+                    <span class="texte-accroche texte-4">- {{ blog.data.date.toLocaleDateString() }}</span>
+                {% endif %}
+
+            </a>
+
+        </li>
+    {% endfor %}
+</ul>
