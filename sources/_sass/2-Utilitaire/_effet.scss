@@ -1,9 +1,9 @@
-.clignoter {
+.clignote {
   opacity: 1;
-  animation: clignoter 0.8s infinite;
+  animation: clignote 0.8s infinite;
 }
 
-@keyframes clignoter {
+@keyframes clignote {
   0% {
     opacity:1
   }
@@ -14,7 +14,7 @@
     opacity:1
   }
 }
-@-webkit-keyframes clignoter {
+@-webkit-keyframes clignote {
   0% {
     opacity:1
   }
@@ -25,7 +25,7 @@
     opacity:1
   }
 }
-@-moz-keyframes clignoter {
+@-moz-keyframes clignote {
   0% {
     opacity:1
   }

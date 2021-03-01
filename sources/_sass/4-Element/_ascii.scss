@@ -12,10 +12,9 @@
 .ascii__lien:hover span,
 .ascii__lien:focus span { color: #fff}
 
-[data-mode="light"] .ascii {
+.ascii {
   margin: 0 0 50px;
   padding: 20px 0;
-  background: $gamme-f1__fond;
 }
 
 .ascii__couleur-1 { color: #ed5565}

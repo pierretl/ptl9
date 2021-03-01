@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/style.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+        <title>
+            {% if accueil %}
+                {{ metadata.siteName }}
+            {% else %}
+                {{titre}} - {{ metadata.siteName }}
+            {% endif %}
+        </title>
+    </head>
+    <body class="d-flex fd-c">
+        <header class="d-flex jc-sb ai-c fw-w pt-m px-tranche mb-m__enfant bordure-b">
+            <div class="mr-m">
+                {% if accueil %}
+                    <h1 class="ts-xxl tg1-1 th-09 tw-4">{{ metadata.siteName }}</h1>
+                {% else %}
+                    <a href="/" class="ts-xxl tg1-1 th-09 tw-4 td-0">{{ metadata.siteName }}</a><br>
+                {% endif %}
+                <span class="ts-l tg1-2 th-2 tw-4">Styleguide<span class="clignote">_</span></span>
+            </div>
+            <nav class="d-flex ml-m__enfant">
+                <ul class="d-flex ml-m__enfant">
+                    {% for styleguide in collections.styleguidev9 %}
+                        <li class="{% if page.url == styleguide.url %} tg1-1 td-1{% endif %}">
+                            {% if page.url == styleguide.url %}
+                                {{ styleguide.data.titre }}
+                            {% else %}
+                                <a href="{{ styleguide.url | url }}" class="tg1-1 td-0">
+                                    {{ styleguide.data.titre }}
+                                </a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+                <hr class="vertical">
+                <input type="checkbox" id="switch-theme" class="hide-checkbox js--switch">
+                <label for="switch-theme" class="tg1-1 td-0 a">
+                    <span class="js--switch-clair">Thème clair</span>
+                    <span class="js--switch-sombre hide">Thème sombre</span>
+                </label>
+            </nav>
+        </header>
+        <main class="px-tranche py-s{% if markdown %} markdown var--styleguide{% endif %}">
+            {{content | safe}}
+        </main>
+        <script src="/js/dark-light-mode.js"></script>
+    </body>
+</html>

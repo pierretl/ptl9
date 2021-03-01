@@ -1,0 +1,64 @@
+// TOp
+.pt-m {
+  padding-top: $espace-m;
+}
+
+
+// Bas
+.mb-xl {
+  margin-bottom: $espace-xl;
+}
+.mb-l {
+  margin-bottom: $espace-l;
+}
+.mb-m {
+  margin-bottom: $espace-m;
+}
+.mb-s {
+  margin-bottom: $espace-s;
+}
+
+.mb-m__enfant > *  {
+  margin-bottom: $espace-m;
+}
+.mb-s__enfant > *  {
+   margin-bottom: $espace-s;
+ }
+
+
+
+
+
+// Droite
+.mr-m {
+  margin-right: $espace-m;
+}
+
+
+
+
+// Gauche
+.ml-m__enfant > *:not(:first-child) {
+  margin-left: $espace-m;
+}
+.ml-s__enfant > *:not(:first-child) {
+  margin-left: $espace-s;
+}
+
+
+
+
+// Haut et bas
+.py-s {
+  padding-top:$espace-s;
+  padding-bottom: $espace-s;
+}
+
+
+
+
+//Droite et Gauche
+.px-tranche {
+  padding-right: 45px;
+  padding-left: 45px;
+}

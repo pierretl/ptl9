@@ -7,6 +7,13 @@
   --gamme1__lien-survol: #{$gamme-f1__lien-survol};
   --gamme1__lien-visite: #{$gamme-f1__lien-visite};
   --gamme1__lien-visite-survol: #{$gamme-f1__lien-visite-survol};
+
+  --gamme1__texte1: #{$gamme-f1__texte1};
+  --gamme1__texte2: #{$gamme-f1__texte2};
+  --gamme1__texte3: #{$gamme-f1__texte3};
+  --gamme1__texte4: #{$gamme-f1__texte4};
+  --gamme1__texte5: #{$gamme-f1__texte5};
+
 }
 
 [data-mode="light"] {
@@ -18,4 +25,13 @@
   --gamme1__lien-survol: #{$gamme-c1__lien-survol};
   --gamme1__lien-visite: #{$gamme-c1__lien-visite};
   --gamme1__lien-visite-survol: #{$gamme-c1__lien-visite-survol};
+
+  --gamme1__texte1: #{$gamme-c1__texte1};
+  --gamme1__texte2: #{$gamme-c1__texte2};
+  --gamme1__texte3: #{$gamme-c1__texte3};
+  --gamme1__texte4: #{$gamme-c1__texte4};
+  --gamme1__texte5: #{$gamme-c1__texte5};
+
+
+
 }

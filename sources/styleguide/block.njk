@@ -1,0 +1,90 @@
+---
+layout: layout-styleguide.njk
+titre: "Block"
+tags: "styleguidev9"
+---
+{% import "macro/styleguide.njk" as macro %}
+
+
+
+
+{% set demo %}
+    <div class="d-flex">Flexbox</div>
+    <div class="d-flex jc-sb" style="border: 1px solid var(--gamme1__texte3);margin-bottom:10px">
+        <div>space-between</div>
+        <div>item</div>
+    </div>
+    <div class="d-flex ai-c" style="border: 1px solid var(--gamme1__texte3);margin-bottom:10px">
+        <div>align-items:<br> center</div>
+        <div>item</div>
+    </div>
+    <div class="d-flex fw-w" style="border: 1px solid var(--gamme1__texte3);margin-bottom:10px; width:100px">
+        <div>flex-wrap: wrap;</div>
+        <div>item</div>
+    </div>
+    <div class="d-flex fd-c" style="border: 1px solid var(--gamme1__texte3);margin-bottom:10px">
+        <div>flex-direction: column;</div>
+        <div>flex-direction: column;</div>
+    </div>
+{% endset %}
+{% set code %}
+<div class="d-flex">Flexbox</div>
+
+<div class="d-flex jc-sb">
+    <div>space-between</div>
+    <div>item</div>
+</div>
+
+<div class="d-flex ai-c">
+    <div>align-items:<br> center</div>
+    <div>item</div>
+</div>
+
+<div class="d-flex fw-w">
+    <div>flex-wrap: wrap;</div>
+    <div>item</div>
+</div>
+
+<div class="d-flex fd-c">
+    <div>flex-direction: column;</div>
+    <div>flex-direction: column;</div>
+</div>
+{% endset %}
+{{ macro.demo_code("Flexbox", demo, code) }}
+
+
+
+
+{% set demo %}
+    <div class="w-100" style="border:1px solid var(--gamme1__texte3)">largeur 100%</div>
+    <div class="w-50" style="border:1px solid var(--gamme1__texte3)">largeur 50%</div>
+{% endset %}
+{% set code %}
+<div class="w-100">largeur 100%</div>
+<div class="w-50">largeur 50%</div>
+{% endset %}
+{{ macro.demo_code("Largeur", demo, code) }}
+
+
+
+
+{% set demo %}
+    <div class="hide">Caché</div>
+{% endset %}
+{% set code %}
+<div class="hide">Caché</div>
+{% endset %}
+{{ macro.demo_code("Bloc caché", demo, code) }}
+
+
+
+
+{% set demo %}
+    <input type="checkbox" class="hide-checkbox" id="checkCache"/>
+    <label for="checkCache">Démo</label>
+{% endset %}
+{% set code %}
+<input type="checkbox" class="hide-checkbox" id="demo"/>
+<label for="demo">Démo</label>
+{% endset %}
+{{ macro.demo_code("Checkbox caché", demo, code) }}

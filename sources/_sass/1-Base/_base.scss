@@ -38,22 +38,21 @@ h1,h2,h3,h4,h5,h6 {
   margin: 0;
 }
 
-a:not([class]) {
-  color: var(--gamme1__lien);
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 1px solid var(--gamme1__lien);
-  transition: all 0.2s linear;
-}
-a:not([class]):hover {
-  color: var(--gamme1__lien-survol);
+code {
+  background-color: #000;
+  color: #fff;
 }
 
-/*
-a:not([class]):visited {
-  color: var(--gamme1__lien-visite);
+pre {
+  padding: $espace-s;
+  background-color: #000;
+  color: #fff;
 }
-a:not([class]):visited:hover {
-  color: var(--gamme1__lien-visite-survol);
+
+hr {
+  margin: 0;
 }
-*/
+
+strong {
+  font-weight: 700;
+}

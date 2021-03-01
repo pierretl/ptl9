@@ -1,0 +1,147 @@
+---
+layout: layout-styleguide.njk
+titre: "Texte"
+tags: "styleguidev9"
+---
+{% import "macro/styleguide.njk" as macro %}
+
+
+{% set demo %}
+    <p class="ts-xxl">Géant</p>
+    <p class="ts-xl">Tres grand</p>
+    <p class="ts-l">Grand</p>
+    <p>Normal</p>
+    <p class="ts-s">Petit</p>
+{% endset %}
+{% set code %}
+<p class="ts-xxl">Géant</p>
+<p class="ts-xl">Tres grand</p>
+<p class="ts-l">Grand</p>
+<p>Normal</p>
+<p class="ts-s">Petit</p>
+{% endset %}
+{{ macro.demo_code("Taille", demo, code) }}
+
+
+
+
+{% set demo %}
+    <p class="tg1-1">Une</p>
+    <p class="tg1-2">Deux</p>
+    <p class="tg1-3">Trois</p>
+    <p class="tg1-4">Quatre</p>
+{% endset %}
+{% set code %}
+<p class="tg1-1">Une</p>
+<p class="tg1-2">Deux</p>
+<p class="tg1-3">Trois</p>
+<p class="tg1-4">Quatre</p>
+{% endset %}
+{{ macro.demo_code("Couleur", demo, code) }}
+
+
+
+
+{% set demo %}
+    <div class="d-flex">
+        <p class="th-09 mr-m">
+            Zero neuf<br>
+            Zero neuf<br>
+            Zero neuf
+        </p>
+        <p class="mr-m">
+            Normal<br>
+            Normal<br>
+            Normal
+        </p>
+        <p class="th-2">
+            Deux<br>
+            Deux<br>
+            Deux
+        </p>
+    </div>
+{% endset %}
+{% set code %}
+<p class="th-09">Zero neuf</p>
+<p>Normal</p>
+<p class="th-2">Deux</p>
+{% endset %}
+{{ macro.demo_code("Hauteur de ligne", demo, code) }}
+
+
+
+
+{% set demo %}
+    <p class="tw-3">Normal</p>
+    <p>Normal</p>
+    <p class="tw-4">Quatre cents</p>
+{% endset %}
+{% set code %}
+<p class="tw-3">Normal</p>
+<p>Normal</p>
+<p class="tw-4">Quatre cents</p>
+{% endset %}
+{{ macro.demo_code("Graisse du texte", demo, code) }}
+
+
+
+
+{% set demo %}
+    <a href="#" class="tg1-1">Lien souligné (défaut)</a>
+    <br>
+    <a href="#" class="tg1-1 td-0">Lien non souligné</a>
+    <br>
+    <span class="tg1-1 td-1">Texte souligné (menu actif)</span>
+{% endset %}
+{% set code %}
+<a href="#" class="tg1-1">Lien souligné (défaut)</a>
+<a href="#" class="tg1-1 td-0">Lien non souligné</a>
+<span class="tg1-1 td-1">Texte souligné (menu actif)</span>
+{% endset %}
+{{ macro.demo_code("Text souligné", demo, code, code) }}
+
+
+
+
+{% set demo %}
+    <p>A gauche par défaut</p>
+    <p class="text-center">texte centré</p>
+{% endset %}
+{% set code %}
+<p>A gauche par défaut</p>
+<p class="text-center">texte centré</p>
+{% endset %}
+{{ macro.demo_code("Alignement", demo, code) }}
+
+
+
+
+{% set demo %}
+    <p class="ts-xxl tg1-1 th-09 tw-4">Nom du site</p>
+    <p class="ts-xl tg1-1 tw-4">Niveau 1</p>
+    <p class="ts-l tg1-2 th-2 tw-4">Niveau 2</p>
+    <p>Texte courant</p>
+    <p class="ts-s tg1-2 tw-4">Niveau 3</p>
+{% endset %}
+{% set code %}
+<p class="ts-xxl tg1-1 th-09 tw-4">Nom du site</p>
+<p class="ts-xl tg1-1 tw-4">Niveau 1</p>
+<p class="ts-l tg1-2 th-2 tw-4">Niveau 2</p>
+<p>Texte courant</p>
+<p class="ts-s tg1-2 tw-4">Niveau 3</p>
+{% endset %}
+{{ macro.demo_code("Titre", demo, code) }}
+
+
+
+
+{% set demo %}
+    <a href="#">Lien sans class CSS</a>
+    <br>
+    <a href="#" class="tg1-1 td-0">Lien de couleur une</a>
+{% endset %}
+{% set code %}
+<a href="#">Lien sans class CSS</a>
+<a href="#" class="tg1-1 td-0">Lien de couleur une</a>
+{% endset %}
+{{ macro.demo_code("lien", demo, code) }}

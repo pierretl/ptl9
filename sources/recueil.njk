@@ -1,0 +1,32 @@
+---
+layout: layout-standard.njk
+date: 2021-02-24
+titre: "Recueil"
+pasDeTitre: "true"
+tags: "menuPrincipal"
+---
+
+<ul>
+    {% for blog in collections.recueil | reverse %}
+        <li class="mb-l">
+
+            <a href="{{ blog.url | url }}" class="tg1-1 td-0 tw-4">
+
+                <span class="ts-l th-09">
+                    {{ blog.data.titre }}
+                </span>
+
+                <br>
+
+                <span class="tg1-2 th-2">
+                    {{ blog.date | readableDate }}
+                </span>
+
+            </a>
+
+        </li>
+    {% endfor %}
+    <li class="mb-l">
+        <a href="/styleguide/texte" class="tg1-1 td-0 tw-4 ts-l th-09">Styleguide portfolio 9</a>
+    </li>
+</ul>

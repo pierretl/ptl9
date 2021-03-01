@@ -1,51 +1,82 @@
-.texte-1 {
+// texte font size
+.ts-xxl {
   font-size: $texte-xxl;
-  color: var(--gamme1__texte);
+}
+.ts-xl {
+  font-size: $texte-xl;
+}
+.ts-l {
+  font-size: $texte-l;
+}
+.ts-s {
+  font-size: $texte-s;
+}
+
+
+
+
+// texte gamme 1
+.tg1-1 {
+  color: var(--gamme1__texte1);
+}
+.tg1-2 {
+  color: var(--gamme1__texte2);
+}
+.tg1-3 {
+  color: var(--gamme1__texte3);
+}
+.tg1-4 {
+  color: var(--gamme1__texte4);
+}
+
+
+
+
+// texte line-height
+.th-09 {
   line-height: 0.9;
-  font-weight: normal;
+}
+.th-2 {
+  line-height: 2;
+}
+
+
+
+
+// texte font-weight
+.tw-3 {
+  font-weight: 300; //texte courant
+}
+.tw-4 {
+  font-weight: 400; //normal
+}
+
+
+
+
+// texte decoration
+.td-0 {
   text-decoration: none;
 }
-
-
-
-.texte-2 {
-  font-size: $texte-xl;
-  color: var(--gamme1__texte);
+.td-1 {
+  position:relative;
 }
-.texte-3 {
-  font-size: $texte-l;
-  color: var(--gamme1__accroche);
-  line-height: 2;
+.td-1:after {
+  content: "";
+  position:absolute;
+  bottom: -10px;
+  right: 0;
+  left: 0;
+  height: 1px;
 }
-.texte-4 {
-  font-size: $texte-s;
-  text-transform: uppercase;
-  color: var(--gamme1__accroche);
-  font-weight: 400;
+.td-1.tg1-1:after {
+  background-color: var(--gamme1__texte1);;
 }
 
 
 
 
-.texte-center {
+// texte align
+.text-center {
   text-align: center;
-}
-
-.texte-accroche {
-  color: var(--gamme1__accroche);
-}
-
-
-
-
-.md p {
-  margin-bottom: $espace-s;
-}
-.md h2 {
-  font-size: $texte-l;
-  color: var(--gamme1__accroche);
-  line-height: 2;
-}
-.md h2:not(:first-child){
-  margin-top: $espace-s;
 }

@@ -1,42 +1,23 @@
-a.texte-1:hover {
-  @include lien-menu--hover;
-}
-
-
-
-
-
-
-.texte-menu {
-  color: var(--gamme1__texte);
+//Lien sans classe
+a:not([class]) {
+  color: var(--gamme1__texte3);
+  font-weight: 600;
   text-decoration: none;
+  border-bottom: 1px solid var(--gamme1__texte3);
+  transition: all 0.2s linear;
 }
-.texte-menu:hover {
-  @include lien-menu--hover;
-}
-
-
-.texte-menu--actif {
-  position:relative;
-  color: var(--gamme1__texte);
-}
-.texte-menu--actif:after {
-  content: "";
-  position:absolute;
-  bottom: -10px;
-  right: 0;
-  left: 0;
-  height: 1px;
-  background-color: var(--gamme1__accroche);
+a:not([class]):hover {
+  color: var(--gamme1__texte5);
+  border-bottom-color: var(--gamme1__texte5);
 }
 
 
 
 
-.liste-lien {
-  color: var(--gamme1__texte);
-  text-decoration: none;
-}
-.liste-lien:hover {
-  @include lien-menu--hover;
+// Hover des texte de gamme1 - couleur 1
+a.tg1-1:hover, // lien
+.a.tg1-1:hover // label, button...
+{
+  color: var(--gamme1__texte2);
+  cursor: pointer;
 }

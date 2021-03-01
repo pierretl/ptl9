@@ -1,0 +1,58 @@
+---
+layout: layout-styleguide.njk
+titre: "Déco"
+tags: "styleguidev9"
+---
+{% import "macro/styleguide.njk" as macro %}
+
+
+
+
+{% set demo %}
+    <div class="clignote">Clignote</div>
+{% endset %}
+{% set code %}
+<div class="clignote">Clignote</div>
+{% endset %}
+{{ macro.demo_code("Clinote", demo, code) }}
+
+
+
+
+{% set demo %}
+    <div class="bordure-h">contenu</div>
+{% endset %}
+{% set code %}
+<div class="bordure-h"></div>
+{% endset %}
+{{ macro.demo_code("Bordure haut", demo, code) }}
+
+
+
+
+{% set demo %}
+    <div class="bordure-b">contenu</div>
+{% endset %}
+{% set code %}
+<div class="bordure-b"></div>
+{% endset %}
+{{ macro.demo_code("Bordure bas", demo, code) }}
+
+
+
+
+{% set demo %}
+    <div class="d-flex">
+        contenu
+        <hr class="vertical">
+        contenu
+    </div>
+{% endset %}
+{% set code %}
+<div class="d-flex">
+    contenu
+    <hr class="vertical">
+    contenu
+</div>
+{% endset %}
+{{ macro.demo_code("Bordure vertical", demo, code) }}

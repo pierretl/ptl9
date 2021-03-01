@@ -1,0 +1,17 @@
+{% macro tata() %}
+    <div>tata</div>
+{% endmacro %}
+
+{% macro deuxCol(titre, gauche, droite) %}
+    {% if titre %}
+        <h2 class="mb-m tg1-4 ts-xl tw-4">{{ titre }}</h2>
+    {% endif %}
+    <div class="d-flex">
+        <div class="w-50">
+            {{ gauche | escape }}
+        </div>
+        <div class="w-50">
+            {{ droite }}
+        </div>
+    </div>
+{% endmacro %}

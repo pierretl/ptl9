@@ -5,29 +5,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>
             {% if accueil %}
-                PTL9 - Démo
+                {{ metadata.siteName }}
             {% else %}
-                {{titre}} - PTL9
+                {{titre}} - {{ metadata.siteName }}
             {% endif %}
         </title>
+        <meta name="description" content="{{ description or metadata.description }}">
         <link rel="stylesheet" href="/style.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+        <meta name="copyright" content="{{ metadata.siteName }}">
+        <meta name="author" content="{{ metadata.siteName }}">
+        <meta name="date" content="{{ date }}">
+        <meta name="robots" content="index,follow">
+        <meta property="og:title" content="{{titre}}">
+        <meta property="og:url" content="{{ page.url | url }}">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="{{ description or metadata.description }}">
+        <link rel="canonical" href={{ page.url | url }}>
     </head>
     <body class="d-flex fd-c">
-        <header class="d-flex jc-sb ai-c fw-w p-header bordure-b">
+        <header class="d-flex jc-sb ai-c fw-w pt-m px-tranche mb-m__enfant bordure-b">
             <div class="mr-m">
                 {% if accueil %}
-                    <h1 class="texte-1">Pierre Tampon-Lajarriette</h1>
+                    <h1 class="ts-xxl tg1-1 th-09 tw-4">{{ metadata.siteName }}</h1>
                 {% else %}
-                    <a href="/" class="texte-1">Pierre Tampon-Lajarriette</a><br>
+                    <a href="/" class="ts-xxl tg1-1 th-09 tw-4 td-0">{{ metadata.siteName }}</a><br>
                 {% endif %}
-                <span class="texte-3">Front-End Designer<span class="clignoter">_</span></span>
+                <span class="ts-l tg1-2 th-2 tw-4">Front-End Designer<span class="clignote">_</span></span>
             </div>
-            <nav>
-                <ul class="d-flex menu__conteneur">
+            <nav class="d-flex ml-m__enfant">
+                <ul class="d-flex ml-m__enfant">
                     {% for menu in collections.menuPrincipal %}
-                        <li class="{% if page.url == menu.url %} texte-menu--actif{% endif %}">
+                        <li class="{% if page.url == menu.url %} tg1-1 td-1{% endif %}">
                             {% if page.url == menu.url %}
                                 {% if menu.data.titreMenu %}
                                     {{ menu.data.titreMenu }}
@@ -35,7 +45,7 @@
                                     {{ menu.data.titre }}
                                 {% endif %}
                             {% else %}
-                                <a class="texte-menu" href="{{ menu.url | url }}">
+                                <a class="tg1-1 td-0" href="{{ menu.url | url }}">
                                     {% if menu.data.titreMenu %}
                                         {{ menu.data.titreMenu }}
                                     {% else %}
@@ -45,41 +55,40 @@
                             {% endif %}
                         </li>
                     {% endfor %}
-                    <li>
-                        <input type="checkbox" id="switch-theme" class="hide-checkbox js--switch">
-                        <label for="switch-theme" class="texte-menu">
-                            <span class="js--switch-clair">Thème clair</span>
-                            <span class="js--switch-sombre hide">Thème sombre</span>
-                        </label>
-                    </li>
                 </ul>
+                <hr class="vertical">
+                <input type="checkbox" id="switch-theme" class="hide-checkbox js--switch">
+                <label for="switch-theme" class="tg1-1 td-0 a">
+                    <span class="js--switch-clair">Thème clair</span>
+                    <span class="js--switch-sombre hide">Thème sombre</span>
+                </label>
             </nav>
         </header>
-        <main class="s_page{% if md %} md{% endif %}">
-            {% if accueil %}
+        <main class="s_page{% if markdown %} markdown{% endif %}">
+            {% if accueil or pasDeTitre %}
             {% else %}
-                <h1 class="texte-2 mb-m">{{titre}}</h1>
+                <h1 class="ts-xl tg1-1 tw-4 mb-m">{{titre}}</h1>
             {% endif %}
             {{content | safe}}
         </main>
-        <footer class="d-flex jc-sb fw-w p-footer texte-4 bordure-h">
+        <footer class="d-flex jc-sb fw-w pt-m px-tranche mb-s mb-s__enfant ts-s tg1-2 tw-4 bordure-h">
             <div class="mr-m">
                 Pas de cookie - Pas de tracking
             </div>
             <nav class="">
-                <ul class="d-flex c_ml-s">
+                <ul class="d-flex ml-s__enfant">
                     <li>
-                        <a class="texte-menu" href="https://twitter.com/pierre_tl">Twitter</a>
+                        <a class="tg1-1 td-0" href="https://twitter.com/pierre_tl">Twitter</a>
                     </li>
                     <li>
-                        <a class="texte-menu" href="https://codepen.io/pierre_tl">CodePen</a>
+                        <a class="tg1-1 td-0" href="https://codepen.io/pierre_tl">CodePen</a>
                     </li>
                     <li>
-                        <a class="texte-menu" href="https://github.com/pierretl">GitHub</a>
+                        <a class="tg1-1 td-0" href="https://github.com/pierretl">GitHub</a>
                     </li>
                 </ul>
             </nav>
         </footer>
+        <script src="/js/dark-light-mode.js"></script>
     </body>
-    <script type="text/javascript" src="/js/dark-light-mode.js"></script>
 </html>

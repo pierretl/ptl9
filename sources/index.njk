@@ -7,11 +7,13 @@ accueil: "true"
 tags: "menuPrincipal"
 ---
 
-{% for work in collections.realisations %}
-    {{ work.data.titre }}<br>
-{% endfor %}
+<div class="hide">
+    {% for work in collections.realisations %}
+        {{ work.data.titre }}<br>
+    {% endfor %}
+</div>
 
-<pre class="ascii texte-center"><a class="ascii__lien" href="http://www.pierre.tl/"><span class="ascii__couleur-1">`.`
+<pre class="ascii text-center"><a class="ascii__lien" href="http://www.pierre.tl/"><span class="ascii__couleur-1">`.`
 `.-:/+ooooo+/:-.`
 ``.-:/+ooooooooooooooooooo+/:--.``
 `.-://+ooooooooooooooooooooooooooooooooooo+/:.</span>

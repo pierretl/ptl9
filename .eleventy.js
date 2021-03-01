@@ -3,7 +3,18 @@ const sass = require("sass");
 const postcss = require("postcss");
 const autoprefixer = require("autoprefixer");
 
+const { DateTime } = require('luxon');
+
 module.exports = function (eleventyConfig) {
+
+    eleventyConfig.setDataDeepMerge(true);
+
+    // Convertis les dates en format lisible
+    eleventyConfig.addFilter('readableDate', (dateObj) => {
+        return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(
+            'dd MM yyyy'
+        );
+    });
 
     // compile sass and optimize it https://www.d-hagemeier.com/en/articles/sass-compile-11ty/
     eleventyConfig.on("beforeBuild", () => {
@@ -41,8 +52,9 @@ module.exports = function (eleventyConfig) {
         passthroughFileCopy: true,
         dir: {
             input: "sources",
+            data: '_data',
             output: "_site",
-            include: "../_includes"
+            include: "_includes",
         }
     }
 
