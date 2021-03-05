@@ -1,6 +1,11 @@
 .hide {
   display: none;
 }
+@media screen and (min-width: rem-calc(490)) {
+  .hide-for-small {
+    display: none;
+  }
+}
 
 .hide-checkbox {
   position: absolute;

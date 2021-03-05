@@ -19,9 +19,10 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 
 ## A faire
 1. design
-    1. amélioré en small (réduire taille texte et revoir alignement)
-    2. revoir la liste des recueil
-    3. faire la mosaïque des réalisations sur la page d'accueil
+    1. amélioré en small le hr vertical du menu
+    2. couleur de fond des ``<code> <pre>``
+    3. revoir la liste des recueil
+    4. faire la mosaïque des réalisations sur la page d'accueil
 2. page tag
 3. mettre en place le script machine à écrire et le lien vers l'écris
 4. Recueil 
@@ -33,6 +34,7 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 * Passage du switch de thème en icone
 * Découpage des layouts en include
 * Ajouts des icons & favicons (génération via [Favicon Generator](https://realfavicongenerator.net))
+* Amélioration de l'affichage en mobile
 
 
 ## 01 mars

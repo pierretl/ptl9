@@ -2,6 +2,11 @@
 .ts-xxl {
   font-size: $texte-xxl;
 }
+@include breakpoint(smallOnly){
+  .ts-xxl {
+    font-size: rem-calc(35);
+  }
+}
 .ts-xl {
   font-size: $texte-xl;
 }
@@ -64,13 +69,18 @@
 .td-1:after {
   content: "";
   position:absolute;
-  bottom: -10px;
+  bottom: 0;
   right: 0;
   left: 0;
   height: 1px;
 }
 .td-1.tg1-1:after {
   background-color: var(--gamme1__texte1);;
+}
+@include breakpoint(large) {
+  .td-1:after {
+    bottom: -10px;
+  }
 }
 
 

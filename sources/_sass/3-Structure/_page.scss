@@ -2,8 +2,14 @@
   flex-grow: 1;
 
   margin: $espace-m auto;
-  padding: $espace-m 45px;
+  padding: $espace-m $espace-tranche--small;
 
   width: 100%;
   max-width: 960px;
+}
+
+@include breakpoint(large) {
+  .s_page {
+    padding: $espace-m $espace-tranche--large;
+  }
 }

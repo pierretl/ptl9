@@ -1,0 +1,22 @@
+@mixin breakpoint($name) {
+
+  $maxSmall: rem-calc(680);
+
+  @if $name == 'smallOnly' {
+
+    @media screen and (max-width: $maxSmall) {
+      @content
+    }
+
+  }
+
+  @if $name == 'large' {
+
+    @media screen and (min-width: $maxSmall) {
+      @content
+    }
+
+  }
+
+
+}

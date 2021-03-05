@@ -33,16 +33,27 @@
 .mr-m {
   margin-right: $espace-m;
 }
+.mr-m__enfant > *:not(:last-child) {
+  margin-right: $espace-m;
+}
+@include breakpoint(smallOnly) {
+  .d-flex.mr-m__enfant {
+    width: 100%;
+  }
+  .mr-m__enfant > *:not(:last-child) {
+    margin-right: $espace-s;
+    margin-bottom: $espace-s;
+  }
+}
 
 
 
 
 // Gauche
-.ml-m__enfant > *:not(:first-child) {
-  margin-left: $espace-m;
-}
-.ml-s__enfant > *:not(:first-child) {
-  margin-left: $espace-s;
+@include breakpoint(large) {
+  .ml-s__enfant > *:not(:first-child) {
+    margin-left: $espace-s;
+  }
 }
 
 
@@ -59,6 +70,13 @@
 
 //Droite et Gauche
 .px-tranche {
-  padding-right: 45px;
-  padding-left: 45px;
+  padding-right: $espace-tranche--small;
+  padding-left: $espace-tranche--small;
+  width: 100%;
+}
+@include breakpoint(large) {
+  .px-tranche {
+    padding-right: $espace-tranche--large;
+    padding-left: $espace-tranche--large;
+  }
 }

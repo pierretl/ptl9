@@ -22,13 +22,13 @@ markdown: "true"
 
 ## Enfant d'un conteneur
 
-### Espace à gauche
+### Espace à droite ou à gauche
 
 S'applique aux enfants direct, quelle que soit la balise, mais **pas au premier enfant**
 
 <br>
 
-`` ml-m__enfant ``
+`` mr-m__enfant ``
 
 `` ml-s__enfant ``
 

@@ -9,6 +9,17 @@ tags: "styleguidev9"
 
 
 {% set demo %}
+    <a class="d-block" href="#">lien en mode block</a>
+{% endset %}
+{% set code %}
+<a class="d-block" href="#">lien en mode block</a>
+{% endset %}
+{{ macro.demo_code("Block", demo, code) }}
+
+
+
+
+{% set demo %}
     <div class="d-flex">Flexbox</div>
     <div class="d-flex jc-sb" style="border: 1px solid var(--gamme1__texte3);margin-bottom:10px">
         <div>space-between</div>

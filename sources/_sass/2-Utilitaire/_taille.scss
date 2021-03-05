@@ -2,6 +2,23 @@
   width: 100%;
 }
 
+
+
+
+
 .w-50 {
-  width: 50%;
+  width: 100%;
+}
+.w-50 + .w-50 {
+  margin-top: $espace-m;
+}
+
+@include breakpoint(large) {
+  .w-50 {
+    width: calc(50% - #{$espace-m / 2});
+  }
+  .w-50 + .w-50 {
+    margin-top: 0;
+    margin-left: $espace-m;
+  }
 }
