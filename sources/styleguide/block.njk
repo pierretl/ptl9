@@ -88,3 +88,14 @@ tags: "styleguidev9"
 <label for="demo">Démo</label>
 {% endset %}
 {{ macro.demo_code("Checkbox caché", demo, code) }}
+
+
+
+
+{% set demo %}
+    <div class="sr-only">Texte pour les screen reader uniquement</div>
+{% endset %}
+{% set code %}
+<div class="sr-only">Texte pour les screen reader uniquement</div>
+{% endset %}
+{{ macro.demo_code("Screen reader only", demo, code) }}

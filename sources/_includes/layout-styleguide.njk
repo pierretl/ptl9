@@ -38,17 +38,13 @@
                         </li>
                     {% endfor %}
                 </ul>
-                <hr class="vertical">
-                <input type="checkbox" id="switch-theme" class="hide-checkbox js--switch">
-                <label for="switch-theme" class="tg1-1 td-0 a">
-                    <span class="js--switch-clair">Thème clair</span>
-                    <span class="js--switch-sombre hide">Thème sombre</span>
-                </label>
+                {% include "include/switch-mode.html" %}
             </nav>
         </header>
         <main class="px-tranche py-s{% if markdown %} markdown var--styleguide{% endif %}">
             {{content | safe}}
         </main>
         <script src="/js/dark-light-mode.js"></script>
+        {% include "include/svg.html" %}
     </body>
 </html>

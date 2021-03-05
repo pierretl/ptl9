@@ -56,12 +56,7 @@
                         </li>
                     {% endfor %}
                 </ul>
-                <hr class="vertical">
-                <input type="checkbox" id="switch-theme" class="hide-checkbox js--switch">
-                <label for="switch-theme" class="tg1-1 td-0 a">
-                    <span class="js--switch-clair">Thème clair</span>
-                    <span class="js--switch-sombre hide">Thème sombre</span>
-                </label>
+                {% include "include/switch-mode.html" %}
             </nav>
         </header>
         <main class="s_page{% if markdown %} markdown{% endif %}">
@@ -90,5 +85,6 @@
             </nav>
         </footer>
         <script src="/js/dark-light-mode.js"></script>
+        {% include "include/svg.html" %}
     </body>
 </html>
