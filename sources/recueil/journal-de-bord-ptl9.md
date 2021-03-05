@@ -21,18 +21,15 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 1. design
     1. amélioré en small (réduire taille texte et revoir alignement)
     2. revoir la liste des recueil
-    3. commencer a rédigé le styleguide
-    4. faire la mosaïque des réalisations sur la page d'accueil
-3. page tag
-4. mettre en place le script machine à écrire et le lien vers l'écris
-5. Recueil 
+    3. faire la mosaïque des réalisations sur la page d'accueil
+2. page tag
+3. mettre en place le script machine à écrire et le lien vers l'écris
+4. Recueil 
    1. date de création vs date de mise à jour
    2. ordre de la liste des recueils selon date de mise à jour ?
-7. Styleguide
-   1. structure, element
 
 
-## 5 mars
+## 05 mars
 * Passage du switch de thème en icone
 * Découpage des layouts en include
 * Ajouts des icons & favicons (génération via [Favicon Generator](https://realfavicongenerator.net))
