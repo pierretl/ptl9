@@ -1,0 +1,36 @@
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>
+    {% if accueil %}
+        {{ metadata.siteName }}
+    {% else %}
+        {{titre}} - {{ metadata.siteName }}
+    {% endif %}
+</title>
+
+<meta name="description" content="{{ description or metadata.description }}">
+
+<link rel="stylesheet" href="/style.css" />
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+
+<link rel="apple-touch-icon" sizes="180x180" href="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}favicon-16x16.png">
+<link rel="manifest" href="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}site.webmanifest">
+<link rel="mask-icon" href="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}safari-pinned-tab.svg" color="#332f35">
+
+<meta name="copyright" content="{{ metadata.siteName }}">
+<meta name="author" content="{{ metadata.siteName }}">
+<meta name="date" content="{{ date }}">
+<meta name="robots" content="index,follow">
+
+<meta property="og:title" content="{{titre}}">
+<meta property="og:url" content="{{ metadata.siteUrl }}{{ page.url | url }}">
+<meta property="og:image" content="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}og-image.png">
+<meta property="og:description" content="{{ description or metadata.description }}">
+
+<link rel="canonical" href={{ metadata.siteUrl }}{{ page.url | url }}>

@@ -23,10 +23,6 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
     2. revoir la liste des recueil
     3. commencer a rédigé le styleguide
     4. faire la mosaïque des réalisations sur la page d'accueil
-2. head layout
-    1. complété ``<meta property="og:image" content="">``
-    2. ajouté les icons et favicon
-    3. vérifier le canonical en prod
 3. page tag
 4. mettre en place le script machine à écrire et le lien vers l'écris
 5. Recueil 
@@ -34,6 +30,12 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
    2. ordre de la liste des recueils selon date de mise à jour ?
 7. Styleguide
    1. structure, element
+
+
+## 5 mars
+* Passage du switch de thème en icone
+* Découpage des layouts en include
+* Ajouts des icons & favicons (génération via [Favicon Generator](https://realfavicongenerator.net))
 
 
 ## 01 mars

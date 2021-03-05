@@ -1,27 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/style.css" />
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
-        <title>
-            {% if accueil %}
-                {{ metadata.siteName }}
-            {% else %}
-                {{titre}} - {{ metadata.siteName }}
-            {% endif %}
-        </title>
+        {% include "include/head.njk" %}
     </head>
     <body class="d-flex fd-c">
         <header class="d-flex jc-sb ai-c fw-w pt-m px-tranche mb-m__enfant bordure-b">
             <div class="mr-m">
-                {% if accueil %}
-                    <h1 class="ts-xxl tg1-1 th-09 tw-4">{{ metadata.siteName }}</h1>
-                {% else %}
-                    <a href="/" class="ts-xxl tg1-1 th-09 tw-4 td-0">{{ metadata.siteName }}</a><br>
-                {% endif %}
+                {% include "include/titre-page.njk" %}
                 <span class="ts-l tg1-2 th-2 tw-4">Styleguide<span class="clignote">_</span></span>
             </div>
             <nav class="d-flex ml-m__enfant">

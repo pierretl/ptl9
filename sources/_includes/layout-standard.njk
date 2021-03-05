@@ -1,37 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>
-            {% if accueil %}
-                {{ metadata.siteName }}
-            {% else %}
-                {{titre}} - {{ metadata.siteName }}
-            {% endif %}
-        </title>
-        <meta name="description" content="{{ description or metadata.description }}">
-        <link rel="stylesheet" href="/style.css" />
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
-        <meta name="copyright" content="{{ metadata.siteName }}">
-        <meta name="author" content="{{ metadata.siteName }}">
-        <meta name="date" content="{{ date }}">
-        <meta name="robots" content="index,follow">
-        <meta property="og:title" content="{{titre}}">
-        <meta property="og:url" content="{{ page.url | url }}">
-        <meta property="og:image" content="">
-        <meta property="og:description" content="{{ description or metadata.description }}">
-        <link rel="canonical" href={{ page.url | url }}>
+        {% include "include/head.njk" %}
     </head>
     <body class="d-flex fd-c">
         <header class="d-flex jc-sb ai-c fw-w pt-m px-tranche mb-m__enfant bordure-b">
             <div class="mr-m">
-                {% if accueil %}
-                    <h1 class="ts-xxl tg1-1 th-09 tw-4">{{ metadata.siteName }}</h1>
-                {% else %}
-                    <a href="/" class="ts-xxl tg1-1 th-09 tw-4 td-0">{{ metadata.siteName }}</a><br>
-                {% endif %}
+                {% include "include/titre-page.njk" %}
                 <span class="ts-l tg1-2 th-2 tw-4">Front-End Designer<span class="clignote">_</span></span>
             </div>
             <nav class="d-flex ml-m__enfant">
@@ -66,24 +41,7 @@
             {% endif %}
             {{content | safe}}
         </main>
-        <footer class="d-flex jc-sb fw-w pt-m px-tranche mb-s mb-s__enfant ts-s tg1-2 tw-4 bordure-h">
-            <div class="mr-m">
-                Pas de cookie - Pas de tracking
-            </div>
-            <nav class="">
-                <ul class="d-flex ml-s__enfant">
-                    <li>
-                        <a class="tg1-1 td-0" href="https://twitter.com/pierre_tl">Twitter</a>
-                    </li>
-                    <li>
-                        <a class="tg1-1 td-0" href="https://codepen.io/pierre_tl">CodePen</a>
-                    </li>
-                    <li>
-                        <a class="tg1-1 td-0" href="https://github.com/pierretl">GitHub</a>
-                    </li>
-                </ul>
-            </nav>
-        </footer>
+        {% include "include/footer.html" %}
         <script src="/js/dark-light-mode.js"></script>
         {% include "include/svg.html" %}
     </body>

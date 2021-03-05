@@ -48,6 +48,10 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({"sources/_js": "js"});
 
 
+    // Copie le dossier "images" dans "_site/images"
+    eleventyConfig.addPassthroughCopy({"sources/images": "images"});
+
+
     return {
         passthroughFileCopy: true,
         dir: {
