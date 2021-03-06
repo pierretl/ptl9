@@ -37,9 +37,6 @@
   margin-right: $espace-m;
 }
 @include breakpoint(smallOnly) {
-  .d-flex.mr-m__enfant {
-    width: 100%;
-  }
   .mr-m__enfant > *:not(:last-child) {
     margin-right: $espace-s;
     margin-bottom: $espace-s;
@@ -53,10 +50,8 @@
 .pl-s {
   padding-left:$espace-s;
 }
-@include breakpoint(large) {
-  .ml-s__enfant > *:not(:first-child) {
-    margin-left: $espace-s;
-  }
+.ml-s__enfant > *:not(:first-child) {
+  margin-left: $espace-s;
 }
 
 

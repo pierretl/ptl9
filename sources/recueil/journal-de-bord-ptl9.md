@@ -33,6 +33,7 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 ## 06 mars
 * Refonte des couleurs de l'ascii art
 * Ajout page 404
+* Correction des menus en small 
 
 ## 05 mars
 * Passage du switch de thème en icone
