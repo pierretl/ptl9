@@ -42,20 +42,12 @@ tags: "styleguidev9"
 
 
 {% set demo %}
-    <div class="d-flex">
-        contenu
-        <hr class="vertical">
-        contenu
-    </div>
+    <div class="bordure-l">contenu</div>
 {% endset %}
 {% set code %}
-<div class="d-flex">
-    contenu
-    <hr class="vertical">
-    contenu
-</div>
+    <div class="bordure-l"></div>
 {% endset %}
-{{ macro.demo_code("Bordure vertical", demo, code) }}
+{{ macro.demo_code("Bordure gauche", demo, code) }}
 
 
 

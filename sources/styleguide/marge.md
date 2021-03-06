@@ -13,7 +13,7 @@ markdown: "true"
 | 120px |  |  | `mb-xl` |  |  |  |
 | 60px |  |  | `mb-l` |  |  |  |
 | 30px | `pt-m` | `mr-m` | `mb-m` |  |  |  |
-| 15px |  |  | `mb-s` |  | `py-s` |  |
+| 15px |  |  | `mb-s` | `pl-s` | `py-s` |  |
 |  |  |  |  |  |  |  |
 | 45px |  |  |  |  |  | `px-tranche` |
 

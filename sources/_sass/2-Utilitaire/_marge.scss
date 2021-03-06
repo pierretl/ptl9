@@ -50,6 +50,9 @@
 
 
 // Gauche
+.pl-s {
+  padding-left:$espace-s;
+}
 @include breakpoint(large) {
   .ml-s__enfant > *:not(:first-child) {
     margin-left: $espace-s;
