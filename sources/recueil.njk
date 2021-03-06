@@ -13,7 +13,12 @@ tags: "menuPrincipal"
             <a href="{{ blog.url | url }}" class="tg1-1 td-0 tw-4">
 
                 <span class="ts-l th-09">
-                    {{ blog.data.titre }}
+                    {%  if blog.data.homeStyleguide %}
+                        Styleguide portfolio 9
+                    {% else %}
+                        {{ blog.data.titre }}
+                    {% endif %}
+
                 </span>
 
                 <br>
@@ -26,7 +31,4 @@ tags: "menuPrincipal"
 
         </li>
     {% endfor %}
-    <li class="mb-l">
-        <a href="/styleguide/texte" class="tg1-1 td-0 tw-4 ts-l th-09">Styleguide portfolio 9</a>
-    </li>
 </ul>

@@ -3,6 +3,7 @@ layout: layout-standard.njk
 titre: "Journal de bord"
 tags: "recueil"
 markdown: "true"
+date: Last Modified
 ---
 
 ## Avant propos
@@ -19,16 +20,12 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 
 ## A faire
 1. design
-   1. amélioré en small le hr vertical du menu
-   2. couleur de fond des ``<code> <pre>``
-   3. revoir la liste des recueil
-   4. faire la mosaïque des réalisations sur la page d'accueil
-   5. page 404
+   1. faire la mosaïque des réalisations sur la page d'accueil
+   2. revoir le switch de thème et son emplacement
 2. page tag
 3. mettre en place le script machine à écrire et le lien vers l'écris
-4. Recueil 
-   1. date de création vs date de mise à jour
-   2. ordre de la liste des recueils selon date de mise à jour ?
+
+
 
 ## 06 mars
 * Refonte des couleurs de l'ascii art
