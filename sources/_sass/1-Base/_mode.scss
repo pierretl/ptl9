@@ -14,6 +14,13 @@
   --gamme1__texte4: #{$gamme-f1__texte4};
   --gamme1__texte5: #{$gamme-f1__texte5};
 
+  --ascii1: #{$gamme-f-ascii1};
+  --ascii2: #{$gamme-f-ascii2};
+  --ascii3: #{$gamme-f-ascii3};
+  --ascii4: #{$gamme-f-ascii4};
+  --ascii5: #{$gamme-f-ascii5};
+  --ascii6: #{$gamme-f-ascii6};
+
 }
 
 [data-mode="light"] {
@@ -31,5 +38,12 @@
   --gamme1__texte3: #{$gamme-c1__texte3};
   --gamme1__texte4: #{$gamme-c1__texte4};
   --gamme1__texte5: #{$gamme-c1__texte5};
+
+  --ascii1: #{$gamme-c-ascii1};
+  --ascii2: #{$gamme-c-ascii2};
+  --ascii3: #{$gamme-c-ascii3};
+  --ascii4: #{$gamme-c-ascii4};
+  --ascii5: #{$gamme-c-ascii5};
+  --ascii6: #{$gamme-c-ascii6};
 
 }

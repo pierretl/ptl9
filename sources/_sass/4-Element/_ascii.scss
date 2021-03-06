@@ -2,7 +2,8 @@
   font-family: monospace;
   font-size: 11px;
   line-height: normal;
-  margin: 0 -35px 50px;
+  margin: 0 0 50px;
+  padding: 20px 0;
 }
 
 .ascii__lien {
@@ -10,16 +11,13 @@
 }
 
 .ascii__lien:hover span,
-.ascii__lien:focus span { color: #fff}
-
-.ascii {
-  margin: 0 0 50px;
-  padding: 20px 0;
+.ascii__lien:focus span {
+  color: var(--gamme1__texte1);
 }
 
-.ascii__couleur-1 { color: #ed5565}
-.ascii__couleur-2 { color: #ffce54}
-.ascii__couleur-3 { color: #97c671}
-.ascii__couleur-4 { color: #ffffff}
-.ascii__couleur-5 { color: #a4e9e9}
-.ascii__couleur-6 { color: #4fc1e9}
+.ascii__couleur-1 { color: var(--ascii1)}
+.ascii__couleur-2 { color: var(--ascii2)}
+.ascii__couleur-3 { color: var(--ascii3)}
+.ascii__couleur-4 { color: var(--ascii4)}
+.ascii__couleur-5 { color: var(--ascii5)}
+.ascii__couleur-6 { color: var(--ascii6)}

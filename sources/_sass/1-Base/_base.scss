@@ -43,7 +43,7 @@ code {
   color: #fff;
 }
 
-pre {
+pre:not([class]) {
   padding: $espace-s;
   background-color: #000;
   color: #fff;

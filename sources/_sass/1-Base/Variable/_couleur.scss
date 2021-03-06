@@ -1,4 +1,4 @@
-$grey-vampire: #515152;
+$grey-dune: #332f35;
 $grey-davy: #575757;
 $grey-dove: #6D6D6D;
 $grey-quill: #d3d3d3;
@@ -20,7 +20,7 @@ $marzipan:#F8DC92;
 /* Gamme                                       */
 /*---------------------------------------------*/
 
-$gamme-f1__fond: #332f35;
+$gamme-f1__fond: $grey-dune;
 $gamme-f1__texte: $grey-pale;
 $gamme-f1__accroche: $grey-quill;
 $gamme-f1__lien: $aquamarine-medium;
@@ -35,19 +35,6 @@ $gamme-c1__lien: $green-la-salle;
 $gamme-c1__lien-survol: $spruce;
 $gamme-c1__lien-visite: $corn-harvest;
 $gamme-c1__lien-visite-survol: $antique-bronze;
-
-
-$gamme-c1__texte: #323232;
-
-/*
-$gamme-c1__fond: #fafafa;
-$gamme-c1__texte: #323232;
-$gamme-c1__accroche: #656565;
-$gamme-c1__lien: #00623C;
-$gamme-c1__lien-survol: #323232;
-$gamme-c1__lien-visite: $corn-harvest;
-$gamme-c1__lien-visite-survol: $antique-bronze;
-*/
 
 /*---------------------------------------------*/
 /* Gamme par utilisation                       */
@@ -64,3 +51,17 @@ $gamme-c1__texte2:$grey-dove;
 $gamme-c1__texte3:$green-la-salle;
 $gamme-c1__texte4:$corn-harvest;
 $gamme-c1__texte5:$spruce;
+
+$gamme-f-ascii1:#ed5565;
+$gamme-f-ascii2:#ffce54;
+$gamme-f-ascii3:#97c671;
+$gamme-f-ascii4:#ffffff;
+$gamme-f-ascii5:#a4e9e9;
+$gamme-f-ascii6:#4fc1e9;
+
+$gamme-c-ascii1:#636363;
+$gamme-c-ascii2:#5A5A5A;
+$gamme-c-ascii3:#5E5E5E;
+$gamme-c-ascii4:#070707;
+$gamme-c-ascii5:#686868;
+$gamme-c-ascii6:#676767;
