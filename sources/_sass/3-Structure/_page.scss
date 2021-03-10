@@ -13,3 +13,10 @@
     padding: $espace-m $espace-tranche--large;
   }
 }
+
+
+.s_page.var--mosaique {
+  max-width: tailleMosaic(9);
+  padding-right: 0;
+  padding-left: 0;
+}

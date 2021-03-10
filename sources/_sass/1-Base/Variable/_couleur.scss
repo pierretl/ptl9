@@ -1,67 +1,68 @@
+/*--------------------------------------------------------------------*/
+/* Couleur design                                                     */
+/*--------------------------------------------------------------------*/
 $grey-dune: #332f35;
 $grey-davy: #575757;
 $grey-dove: #6D6D6D;
 $grey-quill: #d3d3d3;
 $grey-pale: #FDFDFE;
 
-$spruce:#00642E;
 $green-la-salle: #00873E;
 $aquamarine-medium: #54DD93;
-$turquoise-pale:#B7F7D2;
 
-$antique-bronze:#704E00;
 $corn-harvest: #9B6B00;
 $peach: #F4BB7E;
-$marzipan:#F8DC92;
 
 
 
-/*---------------------------------------------*/
-/* Gamme                                       */
-/*---------------------------------------------*/
 
-$gamme-f1__fond: $grey-dune;
-$gamme-f1__texte: $grey-pale;
-$gamme-f1__accroche: $grey-quill;
-$gamme-f1__lien: $aquamarine-medium;
-$gamme-f1__lien-survol: $turquoise-pale;
-$gamme-f1__lien-visite: $peach;
-$gamme-f1__lien-visite-survol: $marzipan;
-
-$gamme-c1__fond: $grey-pale;
-$gamme-c1__texte: $grey-davy;
-$gamme-c1__accroche: $grey-dove;
-$gamme-c1__lien: $green-la-salle;
-$gamme-c1__lien-survol: $spruce;
-$gamme-c1__lien-visite: $corn-harvest;
-$gamme-c1__lien-visite-survol: $antique-bronze;
-
-/*---------------------------------------------*/
-/* Gamme par utilisation                       */
-/*---------------------------------------------*/
-
-$gamme-f1__texte1:$grey-pale;
-$gamme-f1__texte2:$grey-quill;
-$gamme-f1__texte3:$aquamarine-medium;
-$gamme-f1__texte4:$peach;
-$gamme-f1__texte5:$turquoise-pale;
-
-$gamme-c1__texte1:$grey-davy;
-$gamme-c1__texte2:$grey-dove;
-$gamme-c1__texte3:$green-la-salle;
-$gamme-c1__texte4:$corn-harvest;
-$gamme-c1__texte5:$spruce;
-
+/*--------------------------------------------------------------------*/
+/* Couleur ASCII                                                      */
+/*--------------------------------------------------------------------*/
 $gamme-f-ascii1:#ed5565;
 $gamme-f-ascii2:#ffce54;
 $gamme-f-ascii3:#97c671;
 $gamme-f-ascii4:#ffffff;
 $gamme-f-ascii5:#a4e9e9;
 $gamme-f-ascii6:#4fc1e9;
-
+/*---------------------------------------------*/
 $gamme-c-ascii1:#636363;
 $gamme-c-ascii2:#5A5A5A;
 $gamme-c-ascii3:#5E5E5E;
 $gamme-c-ascii4:#070707;
 $gamme-c-ascii5:#686868;
 $gamme-c-ascii6:#676767;
+
+
+
+
+/*--------------------------------------------------------------------*/
+/* Gamme par utilisation                                              */
+/*--------------------------------------------------------------------*/
+$gamme-f1__fond: $grey-dune;
+/*---------------------------------------------*/
+$gamme-c1__fond: $grey-pale;
+
+
+$gamme-f1__bordure: $grey-quill;
+/*---------------------------------------------*/
+$gamme-c1__bordure: $grey-dove;
+
+
+$gamme-f1__texte1: $grey-pale;
+$gamme-f1__texte2: $grey-quill;
+$gamme-f1__texte3: $aquamarine-medium;
+$gamme-f1__texte4: $peach;
+/*---------------------------------------------*/
+$gamme-c1__texte1: $grey-davy;
+$gamme-c1__texte2: $grey-dove;
+$gamme-c1__texte3: $green-la-salle;
+$gamme-c1__texte4: $corn-harvest;
+
+
+$gamme-f2__texte1: $grey-dune;
+$gamme-f2__fond: $aquamarine-medium;
+/*---------------------------------------------*/
+$gamme-c2__texte1: $grey-pale;
+$gamme-c2__fond: $green-la-salle;
+

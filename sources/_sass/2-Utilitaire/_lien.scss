@@ -1,4 +1,6 @@
-//Lien sans classe
+/*--------------------------------------------------------------------*/
+/* Lien sans class                                                    */
+/*--------------------------------------------------------------------*/
 a:not([class]) {
   color: var(--gamme1__texte3);
   font-weight: 600;
@@ -7,14 +9,16 @@ a:not([class]) {
   transition: all 0.2s linear;
 }
 a:not([class]):hover {
-  color: var(--gamme1__texte5);
-  border-bottom-color: var(--gamme1__texte5);
+  color: var(--gamme1__texte1);
+  border-bottom-color: var(--gamme1__texte1);
 }
 
 
 
 
-// Hover des texte de gamme1 - couleur 1
+/*--------------------------------------------------------------------*/
+/* Hover des texte de gamme1 - couleur 1                              */
+/*--------------------------------------------------------------------*/
 a.tg1-1:hover, // lien
 .a.tg1-1:hover // label, button...
 {

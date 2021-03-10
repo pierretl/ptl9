@@ -1,18 +1,16 @@
+/*--------------------------------------------------------------------*/
+/* Foncé -> défaut                                                    */
+/*--------------------------------------------------------------------*/
 :root {
   --gamme1__fond: #{$gamme-f1__fond};
-  --gamme1__bordure: #{$gamme-c1__accroche};
-  --gamme1__texte: #{$gamme-f1__texte};
-  --gamme1__accroche: #{$gamme-f1__accroche};
-  --gamme1__lien: #{$gamme-f1__lien};
-  --gamme1__lien-survol: #{$gamme-f1__lien-survol};
-  --gamme1__lien-visite: #{$gamme-f1__lien-visite};
-  --gamme1__lien-visite-survol: #{$gamme-f1__lien-visite-survol};
-
+  --gamme1__bordure: #{$gamme-c1__bordure};
   --gamme1__texte1: #{$gamme-f1__texte1};
   --gamme1__texte2: #{$gamme-f1__texte2};
   --gamme1__texte3: #{$gamme-f1__texte3};
   --gamme1__texte4: #{$gamme-f1__texte4};
-  --gamme1__texte5: #{$gamme-f1__texte5};
+
+  --gamme2__texte1: #{$gamme-f2__texte1};
+  --gamme2__fond: #{$gamme-f2__fond};
 
   --ascii1: #{$gamme-f-ascii1};
   --ascii2: #{$gamme-f-ascii2};
@@ -20,24 +18,22 @@
   --ascii4: #{$gamme-f-ascii4};
   --ascii5: #{$gamme-f-ascii5};
   --ascii6: #{$gamme-f-ascii6};
-
 }
 
+
+/*--------------------------------------------------------------------*/
+/* Clair                                                              */
+/*--------------------------------------------------------------------*/
 [data-mode="light"] {
   --gamme1__fond: #{$gamme-c1__fond};
-  --gamme1__bordure: #{$gamme-f1__accroche};
-  --gamme1__texte: #{$gamme-c1__texte};
-  --gamme1__accroche: #{$gamme-c1__accroche};
-  --gamme1__lien: #{$gamme-c1__lien};
-  --gamme1__lien-survol: #{$gamme-c1__lien-survol};
-  --gamme1__lien-visite: #{$gamme-c1__lien-visite};
-  --gamme1__lien-visite-survol: #{$gamme-c1__lien-visite-survol};
-
+  --gamme1__bordure: #{$gamme-f1__bordure};
   --gamme1__texte1: #{$gamme-c1__texte1};
   --gamme1__texte2: #{$gamme-c1__texte2};
   --gamme1__texte3: #{$gamme-c1__texte3};
   --gamme1__texte4: #{$gamme-c1__texte4};
-  --gamme1__texte5: #{$gamme-c1__texte5};
+
+  --gamme2__texte1: #{$gamme-c2__texte1};
+  --gamme2__fond: #{$gamme-c2__fond};
 
   --ascii1: #{$gamme-c-ascii1};
   --ascii2: #{$gamme-c-ascii2};
@@ -45,5 +41,4 @@
   --ascii4: #{$gamme-c-ascii4};
   --ascii5: #{$gamme-c-ascii5};
   --ascii6: #{$gamme-c-ascii6};
-
 }

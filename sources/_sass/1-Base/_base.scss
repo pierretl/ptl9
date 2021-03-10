@@ -13,7 +13,7 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: $texte-m;
   font-weight: 300;
-  color: var(--gamme1__texte);
+  color: var(--gamme1__texte1);
 }
 
 blockquote,
@@ -26,7 +26,12 @@ p
   margin: 0;
 }
 
-ul {
+main ul {
+  @include liste;
+}
+
+ul,
+ul.reset {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -56,4 +61,13 @@ hr {
 
 strong {
   font-weight: 700;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  color: var(--gamme2__texte1);
+  background: var(--gamme2__fond);
 }

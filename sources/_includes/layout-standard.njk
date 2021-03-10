@@ -34,7 +34,7 @@
                 {% include "include/switch-mode.html" %}
             </nav>
         </header>
-        <main class="s_page{% if markdown %} markdown{% endif %}">
+        <main class="s_page{% if markdown %} markdown{% endif %}{% if accueil %} var--mosaique{% endif %}">
             {% if accueil or pasDeTitre %}
             {% else %}
                 <h1 class="ts-xl tg1-1 tw-4 mb-m">{{titre}}</h1>

@@ -1,0 +1,11 @@
+@function tailleMosaic($nombreColonne) {
+
+  //nombre de goutiere
+  $nombreGouttiere: $nombreColonne - 1;
+
+  //largeur total de la mosaic en fonction du nombre de colonne
+  $tailleMosaic: ($nombreColonne * $mosaicTailleColonne) + ( $nombreGouttiere * $mosaicTailleGouttiereUnitaire );
+
+
+  @return $tailleMosaic;
+}

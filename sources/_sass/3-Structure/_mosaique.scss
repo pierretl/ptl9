@@ -1,0 +1,149 @@
+
+/*--------------------------------------------------------------------*/
+/* Grille                                                             */
+/*--------------------------------------------------------------------*/
+.s_mosaique {
+  /* pour ie11, surcharger par la suite - début */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* pour ie11, surcharger par la suite - fin */
+
+  justify-content: center; // centre le mosaique
+}
+
+
+
+
+/*--------------------------------------------------------------------*/
+/* Élément                                                            */
+/*--------------------------------------------------------------------*/
+.s_mosaique__item {
+  background-color: var(--gamme1__bordure);
+}
+@include hack-ie11(".s_mosaique__item"){
+  width: $mosaicTailleColonne - $mosaicTailleGouttiereUnitaire;
+  height: $mosaicTailleColonne - $mosaicTailleGouttiereUnitaire;
+  margin: 5px;
+}
+
+
+
+
+/*--------------------------------------------------------------------*/
+/* Lien                                                               */
+/*--------------------------------------------------------------------*/
+.s_mosaique__lien {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+}
+
+.s_mosaique__lien:hover {
+  background-color: var(--gamme1__texte3);
+}
+
+
+
+
+/*--------------------------------------------------------------------*/
+/* Image                                                              */
+/*--------------------------------------------------------------------*/
+.s_mosaique__image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(1) translate3d(-50%, -50%, 0);
+  transform-origin: 0 0 0;
+  transition: opacity 1s, transform 1s;
+}
+
+.s_mosaique__lien:hover .s_mosaique__image {
+  transform: scale(1.1) translate3d(-50%, -50%, 0);
+  opacity: 0.3;
+  filter: grayscale(100%);
+  transition: all 1s;
+}
+
+
+[data-mode="light"] .s_mosaique__lien:hover .s_mosaique__image {
+  filter: grayscale(100%) invert(100%);
+}
+
+
+
+
+/*--------------------------------------------------------------------*/
+/* Taille                                                             */
+/*--------------------------------------------------------------------*/
+.s_mosaique__un-x-un {
+  //normal
+}
+.s_mosaique__deux-x-un {
+  grid-column-end: span 2;
+  grid-row-end: span 1;
+}
+.s_mosaique__deux-x-deux {
+  grid-column-end: span 2;
+  grid-row-end: span 2;
+}
+.s_mosaique__trois-x-un {
+  grid-column-end: span 3;
+  grid-row-end: span 1;
+}
+.s_mosaique__trois-x-deux {
+  grid-column-end: span 3;
+  grid-row-end: span 2;
+}
+.s_mosaique__deux-x-trois {
+  grid-column-end: span 2;
+  grid-row-end: span 3;
+}
+.s_mosaique__ligne {
+  /*pour ie11*/
+  width: 100% !important;
+}
+
+
+
+
+/*--------------------------------------------------------------------*/
+/* Position                                                           */
+/*--------------------------------------------------------------------*/
+@supports (grid-template-columns: repeat(auto-fill,$mosaicTailleColonne)) {
+
+  .s_mosaique {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, $mosaicTailleColonne);
+    grid-gap: $mosaicTailleGouttiereUnitaire;
+    grid-auto-rows: minmax($mosaicTailleColonne, auto);
+    grid-auto-flow: dense;
+
+    //reset ie11
+    flex-wrap:nowrap;
+  }
+
+  .s_mosaique__item {
+    display: inherit;
+  }
+
+}
+
+
+
+
+/*--------------------------------------------------------------------*/
+/* Position IE                                                           */
+/*--------------------------------------------------------------------*/
+@include hack-ie11(".s_mosaique__item") {
+  width: $mosaicTailleColonne;
+  height: $mosaicTailleColonne;
+  margin: 1px;
+}
+
+@include hack-ie11(".s_mosaique__lien") {
+  width: $mosaicTailleColonne;
+  height: $mosaicTailleColonne;
+  display:flex;
+  overflow: hidden;
+}

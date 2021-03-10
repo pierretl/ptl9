@@ -7,97 +7,57 @@ accueil: "true"
 tags: "menuPrincipal"
 ---
 
-<div class="hide">
+<ul class="reset s_mosaique">
     {% for work in collections.realisations %}
-        {{ work.data.titre }}<br>
+
+        {% if work.data.mosaiqueTaille == "3-2" %}
+            {% set classTailleMosaique ="s_mosaique__trois-x-deux" %}
+        {% else %}
+            {% set classTailleMosaique ="s_mosaique__deux-x-deux" %}
+        {% endif %}
+
+        <li class="s_mosaique__item {{ classTailleMosaique }}">
+            <a class="s_mosaique__lien" href="{{ work.url | url }}">
+                <img class="s_mosaique__image" src="{{ metadata.siteUrl }}/images/mosaique/{{ work.data.mosaique}}" alt="{{ work.data.titre }}" title="{{ work.data.titre }}">
+            </a>
+        </li>
     {% endfor %}
-</div>
 
-{% include "include/logo-ascii.html" %}
 
-<p style="text-align: justify">
-Bonjour,
-Paakuinôgwzian,
-Goeie môre,
-Mirëmëngjes,
-Guten Morgen,
-Good morning,
-Sabah el kheir,
-O zi à,
-Egun on,
-Tifawin,
-Maayong buntag,
-Dobro jutro,
-Demat,
-Dobro utro,
-Bon dia,
-Jo san,
-ní zao,
-Barza asubwihi,
-Annyông haseyo,
-Bonghjornu,
-Dobro jutro,
-God morgen,
-yaa-man,
-Ób’ówie,
-Buenos días,
-Bonan matenon,
-Tere hommikust,
-Hyvää huomenta,
-Bore da,
-Mauri,
-Kaliméra,
-Barka da safe,
-Boker tov,
-Subh prabhat,
-Namaste,
-Jó reggelt,
-Selamat pagi,
-Ullakut,
-Góðan daginn,
-Buongiorno,
-Ohayō gozaimasu,
-Bouônjour,
-Mwaramutse,
-Arun Sour sdei,
-Gutemane,
-Gazdakiavá,
-Sabaidi,
-Buorre iđit,
-Labas rytas,
-Gudde Moeien,
-Dobro utro,
-Manao ahoana,
-Goedemorgen,
-Namaste,
-Boujouo,
-God morgen,
-Bon matine,
-Bonjorn,
-Sobh Bekheir,
-Bojour,
-Dzień dobry,
-Bom dia,
-Bun di,
-Bună dimineaţa,
-Bonardias,
-Dobro jutro,
-Dobré ráno,
-Dobro jutro,
-God morgon,
-Habari ya asubuhi,
-Maidjan,
-Vanakkam,
-Magandang umaga,
-Dobré ráno,
-Sawatdi khrap,
-bKra-gshis bde legs,
-Günaydın,
-Dobryi ranok,
-Bun morna,
-Chào,
-Bondjoû,
-Molo,
-Ẹ ku arọ,
-Umhlala gahle
-</p>
+    <li class="s_mosaique__item s_mosaique__un-x-un">
+        1-1
+    </li>
+    <li class="s_mosaique__item s_mosaique__un-x-un">
+        1-1
+    </li>
+    <li class="s_mosaique__item s_mosaique__un-x-un">
+        1-1
+    </li>
+    <li class="s_mosaique__item s_mosaique__deux-x-un">
+        2-1
+    </li>
+    <li class="s_mosaique__item s_mosaique__trois-un">
+        3-1
+    </li>
+    <li class="s_mosaique__item s_mosaique__deux-x-deux">
+        2-2
+    </li>
+    <li class="s_mosaique__item s_mosaique__deux-x-deux">
+        2-2
+    </li>
+    <li class="s_mosaique__item s_mosaique__trois-x-deux">
+        3-2
+    </li>
+    <li class="s_mosaique__item s_mosaique__deux-x-trois">
+        2-3
+    </li>
+    <li class="s_mosaique__item s_mosaique__deux-x-deux">
+        2-2
+    </li>
+    <li class="s_mosaique__item s_mosaique__deux-x-trois">
+        2-3
+    </li>
+
+
+
+</ul>

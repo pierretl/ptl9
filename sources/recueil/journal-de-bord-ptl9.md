@@ -20,12 +20,25 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 
 ## A faire
 1. design
-   1. faire la mosaïque des réalisations sur la page d'accueil
+   1. faire la mosaïque des réalisations sur la page d'accueil - En cours
    2. revoir le switch de thème et son emplacement
 2. page tag
 3. mettre en place le script machine à écrire et le lien vers l'écris
+4. page contact
+5. pagination recueil
+6. faire une macro pour les image + figcaption + imùage responsive ? + alt + title + alt
+7. macro lien ?
+   1. design lien externe
+8. Réalisation 
+   1. afficher les tag + line vers la page
 
-
+## 10 mars
+* Réorganisation des couleurs
+* Ajout des styles pour le focus des liens/label
+* Ajout de la mosaïque des realisation (en cours)
+* Ajustement des listes non ordonnée
+* Ajout d'élément dans la liste des choses à faire
+* Ajout de 3 réalisations pour la mosaïque (rédaction et dynamisation en cours)
 
 ## 06 mars
 * Refonte des couleurs de l'ascii art

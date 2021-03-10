@@ -1,0 +1,15 @@
+/*
+CSS HACK IE 11
+
+@include(".test"){
+    color:red;
+}
+*/
+
+@mixin hack-ie11($selecteur) {
+
+  _:-ms-fullscreen, :root #{$selecteur} {
+    @content
+  }
+
+}

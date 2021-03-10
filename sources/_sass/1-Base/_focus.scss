@@ -1,0 +1,11 @@
+/*--------------------------------------------------------------------*/
+/* Focus                                                              */
+/*--------------------------------------------------------------------*/
+a:not([class]):focus:not(:hover),
+a.tg1-1:focus:not(:hover),
+input:focus + .a.tg1-1,
+.s_mosaique__lien:focus:not(:hover)
+{
+  outline: .2rem dashed var(--gamme1__texte3);
+  outline-offset: .2rem;
+}
