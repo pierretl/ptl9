@@ -21,16 +21,16 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 ## A faire
 1. design
    1. faire la mosaïque des réalisations sur la page d'accueil - En cours
-   2. revoir le switch de thème et son emplacement
-2. page tag
-3. mettre en place le script machine à écrire et le lien vers l'écris
-4. page contact
-5. pagination recueil
-6. faire une macro pour les image + figcaption + imùage responsive ? + alt + title + alt
-7. macro lien ?
-   1. design lien externe
-8. Réalisation 
-   1. afficher les tag + line vers la page
+2. mettre en place le script machine à écrire
+3. pagination recueil
+4. faire une macro pour les image + figcaption + imùage responsive ? + alt + title + alt
+5. macro lien ?
+   
+## 17 mars
+* Article "intitulé de poste" + lien caché dans le header
+* Ajout d'un [mailto crypté](https://www.nicolas-hoffmann.net/utilitaires/crypteur.php) pour le contact au lieu d'une page avec un formulaire.
+* Ajoute "↗" apres les liens ne provenant pas [pierre.tl](http://www.pierre.tl/), [ptl9.netlify.app](https://ptl9.netlify.app/) ou étant local. <br>
+C'est pas idéal mais ca fonctionne pour les pages écrite en markdown
 
 ## 10 mars
 * Réorganisation des couleurs
@@ -67,7 +67,7 @@ Dans mes sources d'inspiration je suis tombée sur un site qui afficher un texte
 
 ## 22 février
 Durant ma recherche d'inspiration je suis tombé sur une site qui avait animé un texte façon machine à écrire.
-Super effet pour introduire mon [intitulé de poste si controverser](article). Création d'un [script Javascript Vanilla pour reproduire l'effet](https://codepen.io/pierre_tl/pen/oNYeXJd)
+Super effet pour introduire mon [intitulé de poste si controverser](/recueil/intitule-poste/). Création d'un [script Javascript Vanilla pour reproduire l'effet](https://codepen.io/pierre_tl/pen/oNYeXJd)
 
 
 ## 20 février
@@ -75,7 +75,7 @@ Ajout du design de base
 
 
 ## 17 février
-Mise en place de la méthode [BUSES](articles) et d'un switch de thème sombre/clair
+Mise en place de la méthode [BUSES](/recueil/methode-buses/) et d'un switch de thème sombre/clair
 
 
 ## 14 février

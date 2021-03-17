@@ -7,7 +7,7 @@
         <header class="d-flex jc-sb ai-c fw-w pt-m px-tranche mb-m__enfant bordure-b">
             <div class="mr-m">
                 {% include "include/titre-page.njk" %}
-                <span class="ts-l tg1-2 th-09 tw-4">Front-End Designer<span class="clignote">_</span></span>
+                <a href="{{ metadata.siteUrl }}recueil/intitule-poste/" class="ts-l tg1-2 th-09 tw-4 lien-planque">Front-End Designer<span class="clignote">_</span></a>
             </div>
             <nav class="d-flex mr-m__enfant">
                 <ul class="d-flex mr-m__enfant">
@@ -30,6 +30,11 @@
                             {% endif %}
                         </li>
                     {% endfor %}
+                    <li>
+                        <a class="tg1-1 td-0" href="mailto:&#99;on&#116;&#97;%63&#116;&#64;%70i&#101;%72%72e%2e&#116;%6c">
+                            Contact
+                        </a>
+                    </li>
                 </ul>
                 {% include "include/switch-mode.html" %}
             </nav>

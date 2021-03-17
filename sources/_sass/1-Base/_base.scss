@@ -1,3 +1,8 @@
+::selection {
+  color: var(--gamme2__texte1);
+  background: var(--gamme2__fond);
+}
+
 *, ::before, ::after {
   box-sizing: border-box;
 }
@@ -67,7 +72,14 @@ img {
   max-width: 100%;
 }
 
-::selection {
-  color: var(--gamme2__texte1);
-  background: var(--gamme2__fond);
+main a:after {
+  content:"↗";
+  color: var(--gamme1__texte4);
+}
+
+main a[href^="https://ptl9.netlify.app/"]:after,
+main a[href^="http://www.pierre.tl/"]:after,
+main a[href^="/"]:after
+{
+  content: "";
 }
