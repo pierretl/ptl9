@@ -18,9 +18,6 @@
 /*--------------------------------------------------------------------*/
 /* Élément                                                            */
 /*--------------------------------------------------------------------*/
-.s_mosaique__item {
-  background-color: var(--gamme1__bordure);
-}
 @include hack-ie11(".s_mosaique__item"){
   width: $mosaicTailleColonne - $mosaicTailleGouttiereUnitaire;
   height: $mosaicTailleColonne - $mosaicTailleGouttiereUnitaire;
@@ -35,12 +32,18 @@
 /*--------------------------------------------------------------------*/
 .s_mosaique__lien {
   position: relative;
-  overflow: hidden;
   display: grid;
+  overflow: hidden;
+  text-decoration: none;
+  background-color: var(--gamme3__fond);
+  color: var(--gamme3__texte1);
+  transition: background-color .5s, color .5s;
 }
 
 .s_mosaique__lien:hover {
-  background-color: var(--gamme1__texte3);
+  background-color: var(--gamme2__fond);
+  color: var(--gamme2__texte1);
+  transition: background-color .5s, color .5s;
 }
 
 
@@ -51,25 +54,34 @@
 /*--------------------------------------------------------------------*/
 .s_mosaique__image {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: scale(1) translate3d(-50%, -50%, 0);
-  transform-origin: 0 0 0;
-  transition: opacity 1s, transform 1s;
+  transition: opacity .5s;
+  opacity: 1;
 }
 
 .s_mosaique__lien:hover .s_mosaique__image {
-  transform: scale(1.1) translate3d(-50%, -50%, 0);
-  opacity: 0.3;
-  filter: grayscale(100%);
-  transition: all 1s;
+  opacity: 0;
+  transition: opacity .5s;
 }
 
 
-[data-mode="light"] .s_mosaique__lien:hover .s_mosaique__image {
-  filter: grayscale(100%) invert(100%);
-}
 
+
+/*--------------------------------------------------------------------*/
+/* Image                                                              */
+/*--------------------------------------------------------------------*/
+.s_mosaique__texte {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  font-size: $texte-xxl;
+  line-height: .5;
+  word-break: break-all;
+  text-align: center;
+  letter-spacing: 1rem;
+  text-transform: lowercase;
+}
 
 
 
@@ -98,10 +110,6 @@
 .s_mosaique__deux-x-trois {
   grid-column-end: span 2;
   grid-row-end: span 3;
-}
-.s_mosaique__ligne {
-  /*pour ie11*/
-  width: 100% !important;
 }
 
 

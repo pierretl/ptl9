@@ -19,12 +19,18 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 
 
 ## A faire
-1. design
-   1. faire la mosaïque des réalisations sur la page d'accueil - En cours
-2. mettre en place le script machine à écrire
-3. pagination recueil
-4. faire une macro pour les image + figcaption + imùage responsive ? + alt + title + alt
-5. macro lien ?
+1. lien d'évitement
+2. pagination recueil
+3. faire une macro pour les image + figcaption + image responsive ? + alt + title + alt
+4. macro lien ?
+5. rédiger les réalisations ajoutées à la mosaïque
+
+## 20 mars
+* Ajout des pages de réalisation pour la mosaïque, contenu rédiger
+* Simplification de l'organisation des couleurs
+* Mise en forme des éléments de mosaïques s'il n'y a pas d'image
+* Dynamisation de la taille d'un élément de mosaïque
+* Mise en place du script machine à écrire
    
 ## 17 mars
 * Article "intitulé de poste" + lien caché dans le header

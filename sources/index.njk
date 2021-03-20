@@ -8,56 +8,36 @@ tags: "menuPrincipal"
 ---
 
 <ul class="reset s_mosaique">
-    {% for work in collections.realisations %}
+    {% for work in collections.realisations | reverse %}
 
-        {% if work.data.mosaiqueTaille == "3-2" %}
+        {% if work.data.mosaiqueTaille == "1-1" %}
+            {% set classTailleMosaique ="s_mosaique__un-x-un" %}
+        {% elseif work.data.mosaiqueTaille == "2-1" %}
+            {% set classTailleMosaique ="s_mosaique__deux-x-un" %}
+        {% elseif work.data.mosaiqueTaille == "2-2" %}
+            {% set classTailleMosaique ="s_mosaique__deux-x-deux" %}
+        {% elseif work.data.mosaiqueTaille == "3-1" %}
+            {% set classTailleMosaique ="s_mosaique__trois-x-un" %}
+        {% elseif work.data.mosaiqueTaille == "3-2" %}
             {% set classTailleMosaique ="s_mosaique__trois-x-deux" %}
+        {% elseif work.data.mosaiqueTaille == "3-3" %}
+            {% set classTailleMosaique ="s_mosaique__trois-x-trois" %}
         {% else %}
             {% set classTailleMosaique ="s_mosaique__deux-x-deux" %}
         {% endif %}
 
         <li class="s_mosaique__item {{ classTailleMosaique }}">
             <a class="s_mosaique__lien" href="{{ work.url | url }}">
-                <img class="s_mosaique__image" src="{{ metadata.siteUrl }}/images/mosaique/{{ work.data.mosaique}}" alt="{{ work.data.titre }}" title="{{ work.data.titre }}">
+                <span class="s_mosaique__texte" title="{{ work.data.titre }}" data-titre="{{ work.data.titre }}">
+                    <span aria-hidden="true">{{ work.data.titre }}</span>
+                    {{ work.data.titre }}
+                    <span aria-hidden="true">{{ work.data.titre }}</span>
+                </span>
+                {% if work.data.mosaique %}
+                    <img class="s_mosaique__image" src="{{ metadata.siteUrl }}/images/mosaique/{{ work.data.mosaique }}" alt="" title="{{ work.data.titre }}">
+                {% endif %}
             </a>
         </li>
     {% endfor %}
-
-
-    <li class="s_mosaique__item s_mosaique__un-x-un">
-        1-1
-    </li>
-    <li class="s_mosaique__item s_mosaique__un-x-un">
-        1-1
-    </li>
-    <li class="s_mosaique__item s_mosaique__un-x-un">
-        1-1
-    </li>
-    <li class="s_mosaique__item s_mosaique__deux-x-un">
-        2-1
-    </li>
-    <li class="s_mosaique__item s_mosaique__trois-un">
-        3-1
-    </li>
-    <li class="s_mosaique__item s_mosaique__deux-x-deux">
-        2-2
-    </li>
-    <li class="s_mosaique__item s_mosaique__deux-x-deux">
-        2-2
-    </li>
-    <li class="s_mosaique__item s_mosaique__trois-x-deux">
-        3-2
-    </li>
-    <li class="s_mosaique__item s_mosaique__deux-x-trois">
-        2-3
-    </li>
-    <li class="s_mosaique__item s_mosaique__deux-x-deux">
-        2-2
-    </li>
-    <li class="s_mosaique__item s_mosaique__deux-x-trois">
-        2-3
-    </li>
-
-
 
 </ul>
