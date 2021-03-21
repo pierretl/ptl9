@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
     <head>
-        {% include "include/head.njk" %}
+        {% include "../include/head.njk" %}
     </head>
     <body class="d-flex fd-c">
+        {% include "../include/evitement.html" %}
         <header class="d-flex jc-sb ai-c fw-w pt-m px-tranche mb-m__enfant bordure-b">
             <div class="mr-m">
-                {% include "include/titre-page.njk" %}
+                {% include "../include/titre-page.njk" %}
                 <a href="{{ metadata.siteUrl }}/recueil/intitule-poste/" class="ts-l tg1-2 th-09 tw-4 lien-planque">
-                    <span aria-hidden="true" class="js--ecris"></span><span aria-hidden="true" class="clignote">_</span>
-                    <span class="sr-only">Front-End Designer</span>
+                    {% if accueil %}
+                        <span aria-hidden="true" class="js--ecris"></span><span aria-hidden="true" class="clignote">_</span>
+                        <span class="sr-only">Front-End Designer</span>
+                        <script src="/js/machine-a-ecrire.js"></script>
+                    {% else %}
+                        Front-End Designer
+                    {% endif %}
                 </a>
             </div>
             <nav class="d-flex mr-m__enfant">
@@ -39,19 +45,18 @@
                         </a>
                     </li>
                 </ul>
-                {% include "include/switch-mode.html" %}
+                {% include "../include/switch-mode.html" %}
             </nav>
         </header>
-        <main class="s_page{% if markdown %} markdown{% endif %}{% if accueil %} var--mosaique{% endif %}">
+        <main id="contenu" tabindex="-1" role="main" class="s_page{% if markdown %} markdown{% endif %}{% if accueil %} var--mosaique{% endif %}">
             {% if accueil or pasDeTitre %}
             {% else %}
                 <h1 class="ts-xl tg1-1 tw-4 mb-m">{{titre}}</h1>
             {% endif %}
             {{content | safe}}
         </main>
-        {% include "include/footer.html" %}
+        {% include "../include/footer.html" %}
         <script src="/js/dark-light-mode.js"></script>
-        <script src="/js/machine-a-ecrire.js"></script>
-        {% include "include/svg.html" %}
+        {% include "../include/svg.html" %}
     </body>
 </html>

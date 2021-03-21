@@ -1,5 +1,5 @@
 ---
-layout: layout-styleguide.njk
+layout: layout/styleguide.njk
 titre: "Texte"
 tags: ['styleguidev9', 'recueil']
 homeStyleguide: "true"
@@ -141,9 +141,11 @@ date: 2021-03-06
     <a href="#">Lien sans class CSS</a>
     <br>
     <a href="#" class="tg1-1 td-0">Lien de couleur une</a>
+    <a href="#contenu" class="lien-evitement">Aller au contenu</a>
 {% endset %}
 {% set code %}
 <a href="#">Lien sans class CSS</a>
 <a href="#" class="tg1-1 td-0">Lien de couleur une</a>
+<a href="#contenu" class="lien-evitement">Aller au contenu</a>
 {% endset %}
 {{ macro.demo_code("lien", demo, code) }}

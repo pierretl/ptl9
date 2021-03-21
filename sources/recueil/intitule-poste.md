@@ -1,5 +1,5 @@
 ---
-layout: layout-standard.njk
+layout: layout/standard.njk
 markdown: "true"
 titre: "Intitulé de poste"
 tags: "recueil"

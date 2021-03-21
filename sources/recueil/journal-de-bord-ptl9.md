@@ -1,5 +1,5 @@
 ---
-layout: layout-standard.njk
+layout: layout/standard.njk
 titre: "Journal de bord"
 tags: "recueil"
 markdown: "true"
@@ -19,11 +19,12 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 
 
 ## A faire
-1. lien d'évitement
-2. pagination recueil
-3. faire une macro pour les image + figcaption + image responsive ? + alt + title + alt
-4. macro lien ?
-5. rédiger les réalisations ajoutées à la mosaïque
+0. rédiger/illustrer les réalisations ajoutées à la mosaïque
+
+## 21 mars
+* Script machine à écrire sur la page d'accueil uniquement
+* Mise en place lien d'évitement
+* Repasse rédactionnel sur la réalisation t-shirt Metalfest
 
 ## 20 mars
 * Ajout des pages de réalisation pour la mosaïque, contenu rédiger

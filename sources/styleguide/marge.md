@@ -1,5 +1,5 @@
 ---
-layout: layout-styleguide.njk
+layout: layout/styleguide.njk
 titre: "Marge"
 tags: "styleguidev9"
 markdown: "true"

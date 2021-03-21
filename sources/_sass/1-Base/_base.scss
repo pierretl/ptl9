@@ -72,14 +72,13 @@ img {
   max-width: 100%;
 }
 
-main a:after {
-  content:"↗";
-  color: var(--gamme1__texte4);
+figure {
+  display: inline-block;
 }
 
-main a[href^="https://ptl9.netlify.app/"]:after,
-main a[href^="http://www.pierre.tl/"]:after,
-main a[href^="/"]:after
-{
-  content: "";
+figcaption {
+  margin-top:$espace-xs;
+  font-style: italic;
+  text-align: center;
+  color: var(--gamme1__texte2);
 }

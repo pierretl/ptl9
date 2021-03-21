@@ -1,14 +1,35 @@
 /*--------------------------------------------------------------------*/
+/* Lien externe dans main                                             */
+// Pas idéal, mais fonctionne pour les liens sur la page rédigé en markdown
+/*--------------------------------------------------------------------*/
+main a:after {
+  content:"↗";
+  color: var(--gamme1__texte4);
+}
+
+main a[href^="https://ptl9.netlify.app/"]:after,
+main a[href^="http://www.pierre.tl/"]:after,
+main a[href^="/"]:after,
+main a[href^="#"]:after
+{
+  content: "";
+}
+
+
+
+/*--------------------------------------------------------------------*/
 /* Lien sans class                                                    */
 /*--------------------------------------------------------------------*/
-a:not([class]) {
+a:not([class]),
+.lien-evitement {
   color: var(--gamme1__texte3);
   font-weight: 600;
   text-decoration: none;
   border-bottom: 1px solid var(--gamme1__texte3);
   transition: all 0.2s linear;
 }
-a:not([class]):hover {
+a:not([class]):hover,
+.lien-evitement {
   color: var(--gamme1__texte1);
   border-bottom-color: var(--gamme1__texte1);
 }
@@ -34,4 +55,24 @@ a.tg1-1:hover, // lien
 /*--------------------------------------------------------------------*/
 .lien-planque {
   text-decoration: none;
+}
+
+
+
+
+/*--------------------------------------------------------------------*/
+/* Lien évitement                                                       */
+/*--------------------------------------------------------------------*/
+.lien-evitement {
+  position: absolute;
+  left: -99999rem;
+  background-color: var(--gamme1__fond);
+  padding: 10px;
+  border: .2rem dashed var(--gamme1__texte3);
+  outline: none;
+}
+
+.lien-evitement:focus {
+  position: absolute;
+  left: 0;
 }

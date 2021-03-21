@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
     <head>
-        {% include "include/head.njk" %}
+        {% include "../include/head.njk" %}
     </head>
     <body class="d-flex fd-c">
+        {% include "../include/evitement.html" %}
         <header class="d-flex jc-sb ai-c fw-w pt-m px-tranche mb-m__enfant bordure-b">
             <div class="mr-m">
-                {% include "include/titre-page.njk" %}
+                {% include "../include/titre-page.njk" %}
                 <span class="ts-l tg1-2 th-09 tw-4">Styleguide<span class="clignote">_</span></span>
             </div>
             <nav class="d-flex mr-m__enfant">
@@ -23,13 +24,13 @@
                         </li>
                     {% endfor %}
                 </ul>
-                {% include "include/switch-mode.html" %}
+                {% include "../include/switch-mode.html" %}
             </nav>
         </header>
-        <main class="px-tranche py-s{% if markdown %} markdown var--styleguide{% endif %}">
+        <main id="contenu" tabindex="-1" role="main" class="px-tranche py-s{% if markdown %} markdown var--styleguide{% endif %}">
             {{content | safe}}
         </main>
         <script src="/js/dark-light-mode.js"></script>
-        {% include "include/svg.html" %}
+        {% include "../include/svg.html" %}
     </body>
 </html>

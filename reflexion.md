@@ -1,5 +1,5 @@
 ---
-layout: layout-standard.njk
+layout: layout/standard.njk
 titre: Réflexion
 ---
 

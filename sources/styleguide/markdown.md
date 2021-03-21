@@ -1,5 +1,5 @@
 ---
-layout: layout-styleguide.njk
+layout: layout/styleguide.njk
 titre: "Markdown"
 tags: "styleguidev9"
 markdown: "true"
