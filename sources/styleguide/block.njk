@@ -76,14 +76,51 @@ tags: "styleguidev9"
 
 
 {% set demo %}
-    <div class="w-100" style="border:1px solid var(--gamme1__texte3)">largeur 100%</div>
-    <div class="w-50" style="border:1px solid var(--gamme1__texte3)">largeur 50%</div>
+<div><div class="w-100" style="border:1px solid var(--gamme1__texte3)">largeur 100%</div></div>
+<div><div class="w-70" style="border:1px solid var(--gamme1__texte3)">largeur 70%</div></div>
+<div><div class="w-50" style="border:1px solid var(--gamme1__texte3)">largeur 50%</div></div>
+<div><div class="w-30" style="border:1px solid var(--gamme1__texte3)">largeur 30%</div></div>
 {% endset %}
 {% set code %}
 <div class="w-100">largeur 100%</div>
+
+<div class="w-50">largeur 70%</div>
+
 <div class="w-50">largeur 50%</div>
+
+<div class="w-50">largeur 30%</div>
 {% endset %}
 {{ macro.demo_code("Largeur", demo, code) }}
+
+
+
+
+{% set intro %}
+    <strong>Medium down :</strong> Les colonnes font 100% et sont espacé de <a href="../marge/">$espace-m</a>
+    <br>
+    <strong>large :</strong> La deuxième colonne est de la taille indiqué moins la taille de la gouttière <a href="../marge/">$espace-m</a>
+{% endset %}
+{% set demo %}
+    <div class="d-flex mb-l">
+        <div class="w-50" style="border:1px solid var(--gamme1__texte3)">Colonne 1</div>
+        <div class="w-50" style="border:1px solid var(--gamme1__texte3)">Colonne 2</div>
+    </div>
+    <div class="d-flex">
+        <div class="w-70" style="border:1px solid var(--gamme1__texte3)">Colonne 1</div>
+        <div class="w-30" style="border:1px solid var(--gamme1__texte3)">Colonne 2</div>
+    </div>
+{% endset %}
+{% set code %}
+<div class="d-flex mb-l">
+    <div class="w-50">Colonne 1</div>
+    <div class="w-50">Colonne 2</div>
+</div>
+<div class="d-flex">
+    <div class="w-70">Colonnen 1</div>
+    <div class="w-30">Colonne 2</div>
+</div>
+{% endset %}
+{{ macro.demo_code("Grille", demo, code, intro) }}
 
 
 

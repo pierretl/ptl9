@@ -82,3 +82,45 @@ figcaption {
   text-align: center;
   color: var(--gamme1__texte2);
 }
+
+blockquote {
+  position: relative;
+  padding-left: $espace-s;
+  border-left: 1px solid var(--gamme1__texte4);
+  color: var(--gamme1__texte2);
+}
+blockquote p {
+  position: relative;
+}
+
+blockquote:before,
+blockquote p:after {
+  position: absolute;
+  color: var(--gamme1__texte4);
+  font-size: rem-calc(40);
+  text-shadow: -3px 0 var(--gamme1__fond), 0 3px var(--gamme1__fond), 3px 0 var(--gamme1__fond), 0 -3px var(--gamme1__fond);
+}
+
+blockquote:before {
+  content: "«";
+  transform: translate3d(-50%, -50%, 0);
+  top: .2rem;
+  left: 0;
+}
+
+//prévois un espace minimum pour faire apparaitre le »
+blockquote p {
+  padding-right: rem-calc(40/2);
+}
+
+blockquote p:after {
+  content: " »";
+  bottom: -0.7rem;
+  margin-left: 3px;
+}
+
+cite {
+  display: inline-block;
+  margin-top: $espace-s;
+  color: var(--gamme1__texte4);
+}

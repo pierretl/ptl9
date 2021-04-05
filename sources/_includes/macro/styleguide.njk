@@ -1,5 +1,13 @@
-{% macro demo_code(titre, demo, code) %}
+{% macro demo_code(titre, demo, code, intro) %}
+
     <h2 class="mb-m tg1-4 ts-xl tw-4">{{ titre }}</h2>
+
+    {% if intro %}
+        <p class="mb-m">
+            {{ intro | safe }}
+        </p>
+    {% endif %}
+
     <div class="d-flex mb-xl">
         <div class="w-50">
             {{ demo | safe }}
@@ -8,6 +16,7 @@
             <pre><code>{{ code | trim }}</code></pre>
         </div>
     </div>
+
 {% endmacro %}
 
 

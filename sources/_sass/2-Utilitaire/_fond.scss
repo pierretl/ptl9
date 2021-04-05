@@ -1,0 +1,8 @@
+img.fond-clair {
+  background-color: var(--fond-clair);
+  padding: $espace-m;
+}
+
+[data-mode="light"] img.fond-clair {
+  padding: 0;
+}

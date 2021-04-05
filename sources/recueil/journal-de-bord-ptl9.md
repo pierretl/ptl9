@@ -21,6 +21,13 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 ## A faire
 0. rédiger/illustrer les réalisations ajoutées à la mosaïque
 
+## 05 avril
+* Design citation
+* Couleur de fond clair pour les images sombre dans le thème sombre
+* Ajout de 2 tailles pour faire des mises en pages en large
+* Ajout intro facultatif au macro du styleguide
+* Rédaction et mise en forme : Cuyz, Kirby, Norder's Meat
+
 ## 21 mars
 * Script machine à écrire sur la page d'accueil uniquement
 * Mise en place lien d'évitement

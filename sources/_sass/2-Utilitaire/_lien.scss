@@ -10,6 +10,7 @@ main a:after {
 main a[href^="https://ptl9.netlify.app/"]:after,
 main a[href^="http://www.pierre.tl/"]:after,
 main a[href^="/"]:after,
+main a[href^="../"]:after,
 main a[href^="#"]:after
 {
   content: "";

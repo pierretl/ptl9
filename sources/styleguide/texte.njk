@@ -149,3 +149,20 @@ date: 2021-03-06
 <a href="#contenu" class="lien-evitement">Aller au contenu</a>
 {% endset %}
 {{ macro.demo_code("lien", demo, code) }}
+
+
+
+
+{% set demo %}
+    <blockquote>
+        <p>Accusamus commodi cumque ea excepturi expedita facilis, quisquam sed soluta voluptas voluptatum!</p>
+        <cite>Lorem ipsum</cite>
+    </blockquote>
+{% endset %}
+{% set code %}
+<blockquote>
+    <p>Accusamus commodi cumque ea excepturi expedita facilis ...</p>
+    <cite>Lorem ipsum</cite>
+</blockquote>
+{% endset %}
+{{ macro.demo_code("Citation", demo, code) }}

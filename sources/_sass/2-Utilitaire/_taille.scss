@@ -1,24 +1,30 @@
-.w-100 {
+.w-100,
+.w-70,
+.w-50,
+.w-30
+{
   width: 100%;
 }
 
-
-
-
-
-.w-50 {
-  width: 100%;
-}
-.w-50 + .w-50 {
+[class^="w-"] + [class^="w-"] {
   margin-top: $espace-m;
 }
 
 @include breakpoint(large) {
+
+  .w-70 {
+    width: calc(70% - #{$espace-m / 2});
+  }
   .w-50 {
     width: calc(50% - #{$espace-m / 2});
   }
-  .w-50 + .w-50 {
+  .w-30 {
+    width: calc(30% - #{$espace-m / 2});
+  }
+
+  [class^="w-"] + [class^="w-"] {
     margin-top: 0;
     margin-left: $espace-m;
   }
+
 }
