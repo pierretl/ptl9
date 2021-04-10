@@ -23,7 +23,7 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 
 ## 10 avil
 * Repasse rédactionnel sur Metalfest et Kirby 
-* Rédaction et mise en forme pour Radiophonix, Aux délices d'Ahmed et Formz
+* Rédaction et mise en forme pour Radiophonix, Aux délices d'Ahmed, Formz et Faire part mariage
 * Rédaction et mise en forme en cours pour Pixel Art
 
 ## 05 avril

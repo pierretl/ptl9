@@ -14,7 +14,7 @@ markdown: "true"
 | 60px |  |  | `mb-l` |  |  |  |
 | 30px | `pt-m` | `mr-m` | `mb-m` |  |  |  |
 | 15px |  |  | `mb-s` | `pl-s` | `py-s` |  |
-|  |  |  |  |  |  |  |
+| 7px |  |  | `mb-xs` |  |  |  |
 | 45px |  |  |  |  |  | `px-tranche` |
 
 
