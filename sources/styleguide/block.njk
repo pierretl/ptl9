@@ -79,16 +79,19 @@ tags: "styleguidev9"
 <div><div class="w-100" style="border:1px solid var(--gamme1__texte3)">largeur 100%</div></div>
 <div><div class="w-70" style="border:1px solid var(--gamme1__texte3)">largeur 70%</div></div>
 <div><div class="w-50" style="border:1px solid var(--gamme1__texte3)">largeur 50%</div></div>
+<div><div class="w-33" style="border:1px solid var(--gamme1__texte3)">largeur 33.333%</div></div>
 <div><div class="w-30" style="border:1px solid var(--gamme1__texte3)">largeur 30%</div></div>
 {% endset %}
 {% set code %}
 <div class="w-100">largeur 100%</div>
 
-<div class="w-50">largeur 70%</div>
+<div class="w-70">largeur 70%</div>
 
 <div class="w-50">largeur 50%</div>
 
-<div class="w-50">largeur 30%</div>
+<div class="w-33">largeur 33.333%</div>
+
+<div class="w-30">largeur 30%</div>
 {% endset %}
 {{ macro.demo_code("Largeur", demo, code) }}
 
@@ -102,22 +105,43 @@ tags: "styleguidev9"
 {% endset %}
 {% set demo %}
     <div class="d-flex mb-l">
-        <div class="w-50" style="border:1px solid var(--gamme1__texte3)">Colonne 1</div>
-        <div class="w-50" style="border:1px solid var(--gamme1__texte3)">Colonne 2</div>
+        <div class="w-" style="box-shadow:0 0 0 1px var(--gamme1__texte3)">Colonne 1</div>
+        <div class="w-" style="box-shadow:0 0 0 1px var(--gamme1__texte3)">Colonne 2</div>
+    </div>
+    <div class="d-flex mb-l">
+        <div class="w-50" style="box-shadow:0 0 0 1px var(--gamme1__texte3)">Colonne 1</div>
+        <div class="w-50" style="box-shadow:0 0 0 1px var(--gamme1__texte3)">Colonne 2</div>
+    </div>
+    <div class="d-flex mb-l">
+        <div class="w-70" style="box-shadow:0 0 0 1px var(--gamme1__texte3)">Colonne 1</div>
+        <div class="w-30" style="box-shadow:0 0 0 1px var(--gamme1__texte3)">Colonne 2</div>
     </div>
     <div class="d-flex">
-        <div class="w-70" style="border:1px solid var(--gamme1__texte3)">Colonne 1</div>
-        <div class="w-30" style="border:1px solid var(--gamme1__texte3)">Colonne 2</div>
+        <div class="w-33" style="box-shadow:0 0 0 1px var(--gamme1__texte3)">Colonne 1</div>
+        <div class="w-33" style="box-shadow:0 0 0 1px var(--gamme1__texte3)">Colonne 2</div>
+        <div class="w-33" style="box-shadow:0 0 0 1px var(--gamme1__texte3)">Colonne 3</div>
     </div>
 {% endset %}
 {% set code %}
 <div class="d-flex mb-l">
+    <div class="w-">Largeur du contenu</div>
+    <div class="w-">Largeur du contenu</div>
+</div>
+
+<div class="d-flex mb-l">
     <div class="w-50">Colonne 1</div>
     <div class="w-50">Colonne 2</div>
 </div>
+
 <div class="d-flex">
-    <div class="w-70">Colonnen 1</div>
+    <div class="w-70">Colonne 1</div>
     <div class="w-30">Colonne 2</div>
+</div>
+
+<div class="d-flex">
+    <div class="w-33">Colonne 1</div>
+    <div class="w-33">Colonne 2</div>
+    <div class="w-33">Colonne 3</div>
 </div>
 {% endset %}
 {{ macro.demo_code("Grille", demo, code, intro) }}

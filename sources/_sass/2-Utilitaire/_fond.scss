@@ -1,8 +1,6 @@
-img.fond-clair {
-  background-color: var(--fond-clair);
+html:not([data-mode="light"]) img.fond-clair {
+  display: inline-block;
+  background-color: $grey-pale;
+  color: $grey-dune;
   padding: $espace-m;
-}
-
-[data-mode="light"] img.fond-clair {
-  padding: 0;
 }

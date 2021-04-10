@@ -1,6 +1,7 @@
 .w-100,
 .w-70,
 .w-50,
+.w-33,
 .w-30
 {
   width: 100%;
@@ -17,6 +18,9 @@
   }
   .w-50 {
     width: calc(50% - #{$espace-m / 2});
+  }
+  .w-33 {
+    width: calc(33.333% - #{$espace-m * 2 / 3});
   }
   .w-30 {
     width: calc(30% - #{$espace-m / 2});
