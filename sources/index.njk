@@ -10,31 +10,24 @@ tags: "menuPrincipal"
 <ul class="reset s_mosaique">
     {% for work in collections.realisations | reverse %}
 
-        {% if work.data.mosaiqueTaille == "1-1" %}
-            {% set classTailleMosaique ="s_mosaique__un-x-un" %}
-        {% elseif work.data.mosaiqueTaille == "2-1" %}
-            {% set classTailleMosaique ="s_mosaique__deux-x-un" %}
+        {% if work.data.mosaiqueTaille == "2-1" %}
+            {% set classTailleMosaique =" s_mosaique__2-1" %}
         {% elseif work.data.mosaiqueTaille == "2-2" %}
-            {% set classTailleMosaique ="s_mosaique__deux-x-deux" %}
-        {% elseif work.data.mosaiqueTaille == "3-1" %}
-            {% set classTailleMosaique ="s_mosaique__trois-x-un" %}
-        {% elseif work.data.mosaiqueTaille == "3-2" %}
-            {% set classTailleMosaique ="s_mosaique__trois-x-deux" %}
-        {% elseif work.data.mosaiqueTaille == "3-3" %}
-            {% set classTailleMosaique ="s_mosaique__trois-x-trois" %}
+            {% set classTailleMosaique =" s_mosaique__2-2" %}
         {% else %}
-            {% set classTailleMosaique ="s_mosaique__deux-x-deux" %}
+            {% set classTailleMosaique ="" %}
         {% endif %}
 
-        <li class="s_mosaique__item {{ classTailleMosaique }}">
+        <li class="s_mosaique__item{{ classTailleMosaique }}">
             <a class="s_mosaique__lien" href="{{ work.url | url }}">
-                <span class="s_mosaique__texte" title="{{ work.data.titre }}" data-titre="{{ work.data.titre }}">
-                    <span aria-hidden="true">{{ work.data.titre }}</span>
-                    {{ work.data.titre }}
-                    <span aria-hidden="true">{{ work.data.titre }}</span>
-                </span>
                 {% if work.data.mosaique %}
                     <img class="s_mosaique__image" src="{{ metadata.siteUrl }}/images/mosaique/{{ work.data.mosaique }}" alt="" title="{{ work.data.titre }}">
+                {% else %}
+                    <span class="s_mosaique__texte" title="{{ work.data.titre }}" data-titre="{{ work.data.titre }}">
+                        <span aria-hidden="true">{{ work.data.titre }}</span>
+                        {{ work.data.titre }}
+                        <span aria-hidden="true">{{ work.data.titre }}</span>
+                    </span>
                 {% endif %}
             </a>
         </li>

@@ -21,6 +21,12 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 ## A faire
 1. rédiger/illustrer les réalisations ajoutées à la mosaïque
 
+## 11 avril
+Changement de la mosaïque :
+* Améliore l'affichage en mobile
+* Diminution du code
+* Changement d'aspect au survol
+
 ## 10 avil
 * Repasse rédactionnel sur Metalfest et Kirby 
 * Rédaction et mise en forme pour Radiophonix, Aux délices d'Ahmed, Formz et Faire part mariage

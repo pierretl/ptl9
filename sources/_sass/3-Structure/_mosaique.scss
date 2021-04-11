@@ -16,18 +16,6 @@
 
 
 /*--------------------------------------------------------------------*/
-/* Élément                                                            */
-/*--------------------------------------------------------------------*/
-@include hack-ie11(".s_mosaique__item"){
-  width: $mosaicTailleColonne - $mosaicTailleGouttiereUnitaire;
-  height: $mosaicTailleColonne - $mosaicTailleGouttiereUnitaire;
-  margin: 5px;
-}
-
-
-
-
-/*--------------------------------------------------------------------*/
 /* Lien                                                               */
 /*--------------------------------------------------------------------*/
 .s_mosaique__lien {
@@ -37,37 +25,22 @@
   text-decoration: none;
   background-color: var(--gamme3__fond);
   color: var(--gamme3__texte1);
-  transition: background-color .5s, color .5s;
+  box-shadow: 0 0 0 3px var(--gamme1__fond),
+              0 0 0 6px var(--gamme1__fond);
+  transition: box-shadow .5s;
 }
 
 .s_mosaique__lien:hover {
-  background-color: var(--gamme2__fond);
-  color: var(--gamme2__texte1);
-  transition: background-color .5s, color .5s;
+  box-shadow: 0 0 0 3px var(--gamme1__fond),
+              0 0 0 6px var(--gamme1__texte3);
+  transition: box-shadow .5s;
 }
 
 
 
 
 /*--------------------------------------------------------------------*/
-/* Image                                                              */
-/*--------------------------------------------------------------------*/
-.s_mosaique__image {
-  position: absolute;
-  transition: opacity .5s;
-  opacity: 1;
-}
-
-.s_mosaique__lien:hover .s_mosaique__image {
-  opacity: 0;
-  transition: opacity .5s;
-}
-
-
-
-
-/*--------------------------------------------------------------------*/
-/* Image                                                              */
+/* Texte                                                              */
 /*--------------------------------------------------------------------*/
 .s_mosaique__texte {
   width: 100%;
@@ -75,8 +48,8 @@
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
-  font-size: $texte-xxl;
-  line-height: .5;
+  font-size: $texte-xl;
+  line-height: .9;
   word-break: break-all;
   text-align: center;
   letter-spacing: 1rem;
@@ -87,33 +60,15 @@
 
 /*--------------------------------------------------------------------*/
 /* Taille                                                             */
+/* Taille                                                             */
 /*--------------------------------------------------------------------*/
-.s_mosaique__un-x-un {
-  //normal
-}
-.s_mosaique__deux-x-un {
+.s_mosaique__2-1 {
   grid-column-end: span 2;
   grid-row-end: span 1;
 }
-.s_mosaique__deux-x-deux {
+.s_mosaique__2-2 {
   grid-column-end: span 2;
   grid-row-end: span 2;
-}
-.s_mosaique__trois-x-un {
-  grid-column-end: span 3;
-  grid-row-end: span 1;
-}
-.s_mosaique__trois-x-deux {
-  grid-column-end: span 3;
-  grid-row-end: span 2;
-}
-.s_mosaique__deux-x-trois {
-  grid-column-end: span 2;
-  grid-row-end: span 3;
-}
-.s_mosaique__trois-x-trois {
-  grid-column-end: span 3;
-  grid-row-end: span 3;
 }
 
 
@@ -148,14 +103,24 @@
 /* Position IE                                                           */
 /*--------------------------------------------------------------------*/
 @include hack-ie11(".s_mosaique__item") {
-  width: $mosaicTailleColonne;
-  height: $mosaicTailleColonne;
-  margin: 1px;
+  width: $mosaicTailleColonne - $mosaicTailleGouttiereUnitaire;
+  height: $mosaicTailleColonne - $mosaicTailleGouttiereUnitaire;
+  margin: $mosaicTailleGouttiereUnitaire / 2;
 }
 
 @include hack-ie11(".s_mosaique__lien") {
-  width: $mosaicTailleColonne;
-  height: $mosaicTailleColonne;
+  width: $mosaicTailleColonne - $mosaicTailleGouttiereUnitaire;
+  height: $mosaicTailleColonne - $mosaicTailleGouttiereUnitaire;
   display:flex;
   overflow: hidden;
+}
+
+
+
+/*--------------------------------------------------------------------*/
+/* Élément                                                            */
+/*--------------------------------------------------------------------*/
+@include hack-ie11(".s_mosaique__item"){
+
+
 }
