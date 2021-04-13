@@ -21,6 +21,9 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 ## A faire
 1. rédiger/illustrer les réalisations ajoutées à la mosaïque
 
+## 13 avril
+* Test image responsive
+
 ## 11 avril
 Changement de la mosaïque :
 * Améliore l'affichage en mobile
