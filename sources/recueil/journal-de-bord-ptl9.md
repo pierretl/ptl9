@@ -19,7 +19,11 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 
 
 ## A faire
+0. faire les mosaique en svg ou prévoir la version 2x pour les écrans Retina ou HD
 1. rédiger/illustrer les réalisations ajoutées à la mosaïque
+
+# 15 avril
+* Optimisation des images de la mosaïque
 
 ## 13 avril
 * Test image responsive
