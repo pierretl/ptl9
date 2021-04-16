@@ -22,14 +22,14 @@ tags: "menuPrincipal"
             <a class="s_mosaique__lien" href="{{ work.url | url }}">
                 {% if work.data.mosaique %}
                     {% if work.data.mosaique2x %}
-                        <img class="s_mosaique__image"
+                        <img class="s_mosaique__image{{ work.data.mosaiqueClassCss }}"
                              src="{{ metadata.siteUrl }}/images/mosaique/{{ work.data.mosaique }}"
                              srcset=" {{ metadata.siteUrl }}/images/mosaique/{{ work.data.mosaique }} 1x,
                                       {{ metadata.siteUrl }}/images/mosaique/{{ work.data.mosaique2x }} 2x"
                              alt=""
                              title="{{ work.data.titre }}">
                     {% else %}
-                        <img class="s_mosaique__image" src="{{ metadata.siteUrl }}/images/mosaique/{{ work.data.mosaique }}" alt="" title="{{ work.data.titre }}">
+                        <img class="s_mosaique__image{{ work.data.mosaiqueClassCss }}" src="{{ metadata.siteUrl }}/images/mosaique/{{ work.data.mosaique }}" alt="" title="{{ work.data.titre }}">
                     {% endif %}
                 {% else %}
                     <span class="s_mosaique__texte" title="{{ work.data.titre }}" data-titre="{{ work.data.titre }}">

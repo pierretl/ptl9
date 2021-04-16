@@ -79,3 +79,17 @@ tags: "styleguidev9"
 <img src="" alt="" loading="lazy" class="fond-clair"/>
 {% endset %}
 {{ macro.demo_code("Fond", demo, code, intro) }}
+
+
+
+
+{% set intro %}
+    Empêche que l'image soit flout
+{% endset %}
+{% set demo %}
+    <img src="{{ metadata.siteUrl }}/images/pixel-art/favicon/favicon_team-fun.gif" alt="favicon en pixel art" loading="lazy" class="pa"/>
+{% endset %}
+{% set code %}
+    <img src="" alt="" loading="lazy" class="pa"/>
+{% endset %}
+{{ macro.demo_code("Pixel Art", demo, code, intro) }}

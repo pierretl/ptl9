@@ -1,0 +1,17 @@
+// ajoute un fond blanc (dark mode) autour des images
+html:not([data-mode="light"]) img.fond-clair {
+  display: inline-block;
+  background-color: $grey-pale;
+  color: $grey-dune;
+  padding: $espace-m;
+}
+
+// pour que les images en pixel art ne soit pas flou
+.pa {
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  image-rendering: pixelated;
+  -ms-interpolation-mode: nearest-neighbor;
+}
