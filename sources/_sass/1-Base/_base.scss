@@ -36,9 +36,10 @@ main ul {
 }
 
 ul,
-ul.reset {
-  margin: 0;
-  padding: 0;
+.reset-ul {
+  margin-left: 0;
+  margin-bottom: 0;
+  padding-left: 0;
   list-style: none;
 }
 

@@ -180,3 +180,28 @@ tags: "styleguidev9"
 <div class="sr-only">Texte pour les screen reader uniquement</div>
 {% endset %}
 {{ macro.demo_code("Screen reader only", demo, code) }}
+
+
+
+
+{% set demo %}
+    <ul class="reset-ul scroll-x mb-xs">
+        <li>11111111111111111111111111111111111111111111111111111111</li>
+        <li>$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</li>
+        <li>##############################################</li>
+    </ul>
+    <p class="tg1-4 mb-s">
+        <em>legende si nécessaire</em>
+    </p>
+{% endset %}
+{% set code %}
+<ul class="reset-ul scroll-x mb-xs">
+    <li>un</li>
+    <li>deux</li>
+    <li>trois</li>
+</ul>
+<p class="tg1-4 mb-s">
+    <em>Légende si nécessaire</em>
+</p>
+{% endset %}
+{{ macro.demo_code("Scroll-x", demo, code) }}

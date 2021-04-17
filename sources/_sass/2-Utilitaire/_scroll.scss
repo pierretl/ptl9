@@ -1,0 +1,23 @@
+$espacement-scroll-x: $espace-m;
+
+.scroll-x {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  border: 1px solid var(--gamme1__texte4);
+  padding: $espacement-scroll-x;
+}
+
+.scroll-x > * {
+  margin-right: $espacement-scroll-x;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.scroll-x.var--max-45 > * {
+  max-width: 90%;
+
+  @include breakpoint(large) {
+    max-width: 45%;
+  }
+}

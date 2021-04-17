@@ -166,3 +166,33 @@ date: 2021-03-06
 </blockquote>
 {% endset %}
 {{ macro.demo_code("Citation", demo, code) }}
+
+
+
+
+{% set demo %}
+    <ul class="mb-s">
+        <li>un</li>
+        <li>deux</li>
+        <li>trois</li>
+    </ul>
+    <ul class="reset-ul">
+        <li>un</li>
+        <li>deux</li>
+        <li>trois</li>
+    </ul>
+{% endset %}
+{% set code %}
+<ul>
+    <li>un</li>
+    <li>deux</li>
+    <li>trois</li>
+</ul>
+
+<ul class="reset-ul">
+    <li>un</li>
+    <li>deux</li>
+    <li>trois</li>
+</ul>
+{% endset %}
+{{ macro.demo_code("Liste non ordonné", demo, code) }}

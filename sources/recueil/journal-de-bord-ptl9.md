@@ -22,12 +22,20 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 0. faire les mosaique en svg ou prévoir la version 2x pour les écrans Retina ou HD
 1. rédiger/illustrer les réalisations ajoutées à la mosaïque
 
-# 16 avril
+
+
+
+
+
+## 17 avril
+* Rédaction en cours : ~~historique portfolio~~ site perso 
+
+## 16 avril
 * Amélioration du rendu des images en pixel art
 * Ajout des vignettes de concours
 * Ajout projet wet
 
-# 15 avril
+## 15 avril
 * Optimisation des images de la mosaïque
 
 ## 13 avril
