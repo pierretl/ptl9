@@ -31,18 +31,6 @@ p
   margin: 0;
 }
 
-main ul {
-  @include liste;
-}
-
-ul,
-.reset-ul {
-  margin-left: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-}
-
 h1,h2,h3,h4,h5,h6 {
   font-size: $texte-m;
   font-weight: normal;
@@ -124,4 +112,5 @@ cite {
   display: inline-block;
   margin-top: $espace-s;
   color: var(--gamme1__texte4);
+  font-weight: 500;
 }

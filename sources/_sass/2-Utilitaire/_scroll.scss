@@ -4,7 +4,7 @@ $espacement-scroll-x: $espace-m;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  border: 1px solid var(--gamme1__texte4);
+  border: 1px dashed var(--gamme1__texte4);
   padding: $espacement-scroll-x;
 }
 
@@ -14,10 +14,9 @@ $espacement-scroll-x: $espace-m;
   flex-shrink: 0;
 }
 
-.scroll-x.var--max-45 > * {
+.scroll-x.var--90 > * {
   max-width: 90%;
-
-  @include breakpoint(large) {
-    max-width: 45%;
-  }
+}
+.scroll-x.var--90 > *:last-child {
+  margin-right: ($espacement-scroll-x * 2);
 }

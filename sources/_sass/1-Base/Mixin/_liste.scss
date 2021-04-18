@@ -1,4 +1,8 @@
 @mixin liste() {
-  list-style: circle;
+  list-style: disc;
   margin-left: 1rem;
+
+  & li::marker {
+    color: var(--gamme1__texte4);
+  }
 }

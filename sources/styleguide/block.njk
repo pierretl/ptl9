@@ -9,10 +9,10 @@ tags: "styleguidev9"
 
 
 {% set demo %}
-    <a class="d-block" href="#">lien en mode block</a>
+    <span class="d-block" href="#">span en mode block</span>
 {% endset %}
 {% set code %}
-<a class="d-block" href="#">lien en mode block</a>
+<span class="d-block" href="#">span en mode block</span>
 {% endset %}
 {{ macro.demo_code("Block", demo, code) }}
 
@@ -185,23 +185,35 @@ tags: "styleguidev9"
 
 
 {% set demo %}
-    <ul class="reset-ul scroll-x mb-xs">
+    <ul class="ul-reset scroll-x mb-xs">
         <li>11111111111111111111111111111111111111111111111111111111</li>
         <li>$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</li>
         <li>##############################################</li>
     </ul>
-    <p class="tg1-4 mb-s">
+    <p class="tg1-4 tw-5 mb-s">
         <em>legende si nécessaire</em>
     </p>
+    <br><br>
+    <ul class="ul-reset scroll-x var--90 mb-xs">
+        <li>11111111111111111111111111111111111111111111111111111111</li>
+        <li>$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</li>
+        <li>##############################################</li>
+    </ul>
 {% endset %}
 {% set code %}
-<ul class="reset-ul scroll-x mb-xs">
+<ul class="ul-reset scroll-x mb-xs">
     <li>un</li>
     <li>deux</li>
     <li>trois</li>
 </ul>
-<p class="tg1-4 mb-s">
+<p class="tg1-4 tw-5 mb-s">
     <em>Légende si nécessaire</em>
 </p>
+
+    <ul class="ul-reset scroll-x var--90 mb-xs">
+        <li>un</li>
+        <li>deux</li>
+        <li>trois</li>
+    </ul>
 {% endset %}
 {{ macro.demo_code("Scroll-x", demo, code) }}

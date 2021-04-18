@@ -57,6 +57,9 @@
         </main>
         {% include "../include/footer.html" %}
         <script src="/js/dark-light-mode.js"></script>
+        {% if scriptJs %}
+            <script src="/js/{{ scriptJs }}"></script>
+        {% endif %}
         {% include "../include/svg.html" %}
     </body>
 </html>

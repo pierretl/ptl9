@@ -12,14 +12,21 @@ date: 2021-03-06
     <p class="ts-xxl">Géant</p>
     <p class="ts-xl">Tres grand</p>
     <p class="ts-l">Grand</p>
+    <p><strong>strong</strong></p>
     <p>Normal</p>
     <p class="ts-s">Petit</p>
 {% endset %}
 {% set code %}
 <p class="ts-xxl">Géant</p>
+
 <p class="ts-xl">Tres grand</p>
+
 <p class="ts-l">Grand</p>
+
+<p><strong>strong</strong></p>
+
 <p>Normal</p>
+
 <p class="ts-s">Petit</p>
 {% endset %}
 {{ macro.demo_code("Taille", demo, code) }}
@@ -28,15 +35,30 @@ date: 2021-03-06
 
 
 {% set demo %}
-    <p class="tg1-1">Une</p>
-    <p class="tg1-2">Deux</p>
-    <p class="tg1-3">Trois</p>
-    <p class="tg1-4">Quatre</p>
+    <div class="d-flex mb-s">
+        <div class="w- tg1-1">Une</div>
+        <div class="w-">texte courant</div>
+    </div>
+    <div class="d-flex mb-s">
+        <div class="w- tg1-2">Deux</div>
+        <div class="w-">texte secondaire, légende image, date</div>
+    </div>
+    <div class="d-flex mb-s">
+        <div class="w- tg1-3">Trois</div>
+        <div class="w-">élément interactif, lien</div>
+    </div>
+    <div class="d-flex mb-s">
+        <div class="w- tg1-4">Quatre</div>
+        <div class="w-">citation, bloc scroll horizontal, puce des liste non ordonnée</div>
+    </div>
 {% endset %}
 {% set code %}
 <p class="tg1-1">Une</p>
+
 <p class="tg1-2">Deux</p>
+
 <p class="tg1-3">Trois</p>
+
 <p class="tg1-4">Quatre</p>
 {% endset %}
 {{ macro.demo_code("Couleur", demo, code) }}
@@ -65,7 +87,9 @@ date: 2021-03-06
 {% endset %}
 {% set code %}
 <p class="th-09">Zero neuf</p>
+
 <p>Normal</p>
+
 <p class="th-2">Deux</p>
 {% endset %}
 {{ macro.demo_code("Hauteur de ligne", demo, code) }}
@@ -75,13 +99,25 @@ date: 2021-03-06
 
 {% set demo %}
     <p class="tw-3">Normal</p>
-    <p>Normal</p>
+    <br>
+    <p>Défaut</p>
+    <br>
     <p class="tw-4">Quatre cents</p>
+    <br>
+    <p class="tw-5">Cinq cents : pour les textes de couleur quatre, légende/citation</p>
+    <br>
+    <p><strong>Strong</strong></p>
 {% endset %}
 {% set code %}
 <p class="tw-3">Normal</p>
-<p>Normal</p>
+
+<p>Défaut</p>
+
 <p class="tw-4">Quatre cents</p>
+
+<p class="tw-5">Cinq cents</p>
+
+<p><strong>Strong</strong></p>
 {% endset %}
 {{ macro.demo_code("Graisse du texte", demo, code) }}
 
@@ -90,17 +126,19 @@ date: 2021-03-06
 
 {% set demo %}
     <a href="#" class="tg1-1">Lien souligné (défaut)</a>
-    <br>
+    <br><br>
     <a href="#" class="tg1-1 td-0">Lien non souligné</a>
-    <br>
+    <br><br>
     <span class="tg1-1 td-1">Texte souligné (menu actif)</span>
 {% endset %}
 {% set code %}
 <a href="#" class="tg1-1">Lien souligné (défaut)</a>
+
 <a href="#" class="tg1-1 td-0">Lien non souligné</a>
+
 <span class="tg1-1 td-1">Texte souligné (menu actif)</span>
 {% endset %}
-{{ macro.demo_code("Text souligné", demo, code, code) }}
+{{ macro.demo_code("Text souligné", demo, code) }}
 
 
 
@@ -111,6 +149,7 @@ date: 2021-03-06
 {% endset %}
 {% set code %}
 <p>A gauche par défaut</p>
+
 <p class="text-center">texte centré</p>
 {% endset %}
 {{ macro.demo_code("Alignement", demo, code) }}
@@ -122,33 +161,54 @@ date: 2021-03-06
     <p class="ts-xxl tg1-1 th-09 tw-4">Nom du site</p>
     <p class="ts-xl tg1-1 tw-4">Niveau 1</p>
     <p class="ts-l tg1-2 th-2 tw-4">Niveau 2</p>
+    <p><strong>Niveau 3</strong></p>
     <p>Texte courant</p>
-    <p class="ts-s tg1-2 tw-4">Niveau 3</p>
+    <p class="ts-s tg1-2 tw-4">Niveau 4</p>
 {% endset %}
 {% set code %}
 <p class="ts-xxl tg1-1 th-09 tw-4">Nom du site</p>
+
 <p class="ts-xl tg1-1 tw-4">Niveau 1</p>
+
 <p class="ts-l tg1-2 th-2 tw-4">Niveau 2</p>
+
+<p><strong>Niveau 3</strong></p>
+
 <p>Texte courant</p>
-<p class="ts-s tg1-2 tw-4">Niveau 3</p>
+
+<p class="ts-s tg1-2 tw-4">Niveau 4</p>
 {% endset %}
 {{ macro.demo_code("Titre", demo, code) }}
 
 
 
-
+{% set intro %}
+    La lien d'évitement est affiché au focus en absolute en haut à gauche
+{% endset %}
 {% set demo %}
-    <a href="#">Lien sans class CSS</a>
-    <br>
-    <a href="#" class="tg1-1 td-0">Lien de couleur une</a>
-    <a href="#contenu" class="lien-evitement">Aller au contenu</a>
+    <style>
+        .affiche-evitement {
+            position: static;
+        }
+    </style>
+    <a href="#">Lien primaire</a>
+    <br><br>
+    <a class="lien-niveau2" href="#">Lien secondaire</a>
+    <br><br>
+    <a href="#" class="tg1-1 td-0">Lien de couleur "une"</a>
+    <br><br><br>
+    <a href="#contenu" class="lien-evitement affiche-evitement">Lien évitement</a>
 {% endset %}
 {% set code %}
-<a href="#">Lien sans class CSS</a>
-<a href="#" class="tg1-1 td-0">Lien de couleur une</a>
-<a href="#contenu" class="lien-evitement">Aller au contenu</a>
+<a href="#">Lien primaire</a>
+
+<a class="lien-niveau2" href="#">Lien desondaire</a>
+
+<a href="#" class="tg1-1 td-0">Lien de couleur "une"</a>
+
+<a href="#contenu" class="lien-evitement">Lien évitement</a>
 {% endset %}
-{{ macro.demo_code("lien", demo, code) }}
+{{ macro.demo_code("lien", demo, code, intro) }}
 
 
 
@@ -172,25 +232,36 @@ date: 2021-03-06
 
 {% set demo %}
     <ul class="mb-s">
-        <li>un</li>
+        <li>Contenu</li>
         <li>deux</li>
         <li>trois</li>
     </ul>
-    <ul class="reset-ul">
-        <li>un</li>
+    <ul class="ul-sommaire mb-s">
+        <li>Sommaire</li>
+        <li>deux</li>
+        <li>trois</li>
+    </ul>
+    <ul class="ul-reset">
+        <li>Reset</li>
         <li>deux</li>
         <li>trois</li>
     </ul>
 {% endset %}
 {% set code %}
 <ul>
-    <li>un</li>
+    <li>Contenu</li>
     <li>deux</li>
     <li>trois</li>
 </ul>
 
-<ul class="reset-ul">
-    <li>un</li>
+<ul class="ul-sommaire">
+    <li>Sommaire</li>
+    <li>deux</li>
+    <li>trois</li>
+</ul>
+
+<ul class="ul-reset">
+    <li>Reset</li>
     <li>deux</li>
     <li>trois</li>
 </ul>

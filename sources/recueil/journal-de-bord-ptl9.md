@@ -25,10 +25,19 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 
 
 
+## 18 avril
+* Changement de style de base des listes non ordonnée
+* Modification graisse style de base
+* Ajout style de lien secondaire
+* Ajout style liste sommaire  
+* Script pour scroll horizontalement avec un molette normal
+* Suite de la rédaction : site perso
+* Repasse styleguide
 
 
 ## 17 avril
 * Rédaction en cours : ~~historique portfolio~~ site perso 
+* Ajout d'un composant qui scroll horizontalement
 
 ## 16 avril
 * Amélioration du rendu des images en pixel art

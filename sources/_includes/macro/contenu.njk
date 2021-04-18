@@ -1,0 +1,13 @@
+{% macro version_ptl(ancre, titre, col1, col2) %}
+
+    <h2 id="{{ ancre }}" class="ts-l mb-m">{{ titre }}</h2>
+    <div class="d-flex mb-xl">
+        <div class="w-30">
+            {{ col1 | safe }}
+        </div>
+        <div class="w-70">
+            {{ col2 | safe }}
+        </div>
+    </div>
+
+{% endmacro %}
