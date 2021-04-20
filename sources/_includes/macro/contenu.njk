@@ -1,7 +1,6 @@
-{% macro version_ptl(ancre, titre, col1, col2) %}
-
+{% macro version_ptl(ancre, titre, col1, col2, col3) %}
     <h2 id="{{ ancre }}" class="ts-l mb-m">{{ titre }}</h2>
-    <div class="d-flex mb-xl">
+    <div class="d-flex {% if col3 %}mb-m{% else %}mb-xl{% endif %}">
         <div class="w-30">
             {{ col1 | safe }}
         </div>
@@ -9,5 +8,25 @@
             {{ col2 | safe }}
         </div>
     </div>
-
+    {% if col3 %}
+        <div class="d-flex mb-xl">
+            {{ col3 | safe }}
+        </div>
+    {% endif %}
 {% endmacro %}
+
+
+
+
+{% macro figure(cheminImage, alt, description, class) %}
+    <a class="figure" href="{{ metadata.siteUrl }}{{ cheminImage }}">
+        <figure role="figure" aria-label="{{ description | safe }}"{% if class %}class="{{ class | safe }}"{% endif %}>
+            <img src="{{ metadata.siteUrl }}{{ cheminImage }}" alt="{{ alt | safe }}" loading="lazy" />
+            <figcaption>
+                {{ description | safe }}
+            </figcaption>
+        </figure>
+    </a>
+{% endmacro %}
+
+

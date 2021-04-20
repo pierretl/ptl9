@@ -4,16 +4,16 @@ titre: "Site perso"
 tags: "realisations"
 date: 2020-05-03
 scriptJs: "horizontal-scroll.js"
+mosaique: "site-perso.svg"
 ---
+{% import "macro/contenu.njk" as macro %}
 
-<p class="ts-xl tg1-4 mb-l">
-    (En cours de rédaction / mise en forme)
-</p>
+
 
 
 
 <p class="mb-l">
-    Au milieu de ma formation supérieure, j’ai commencé à créer un site personnel pour rassembler mes créations et projets.
+    Au milieu de ma formation supérieure,<br> j’ai commencé à créer un site personnel pour rassembler mes créations et projets.
     <br>
     Cette version est la 9ème
 </p>
@@ -27,24 +27,13 @@ scriptJs: "horizontal-scroll.js"
 </h2>
 <ul class="ul-sommaire mb-l">
     <li class="mb-xs">
-        <a class="lien-niveau2" href="#logo">Logo</a>
+        <a class="lien-niveau2" href="#logo">Évolution du logotype</a>
     </li>
     <li class="mb-xs">
-        <a class="lien-niveau2" href="#design">Design</a>
+        <a class="lien-niveau2" href="#design">Page d'accueil par année</a>
     </li>
     <li class="mb-xs">
-        <a class="lien-niveau2 d-inline-block mb-xs" href="#version1">Version</a>
-        <ul class="ul-sommaire mb-m">
-            <li class="mb-xs"><a class="lien-niveau2" href="#version1">V1 — 2007</a></li>
-            <li class="mb-xs"><a class="lien-niveau2" href="#version2">V2 — 2008</a></li>
-            <li class="mb-xs"><a class="lien-niveau2" href="#version3">V3 — 2009</a></li>
-            <li class="mb-xs"><a class="lien-niveau2" href="#version4">V4 — 2010</a></li>
-            <li class="mb-xs"><a class="lien-niveau2" href="#version5">V5 — 2012</a></li>
-            <li class="mb-xs"><a class="lien-niveau2" href="#version6">V6 — 2013</a></li>
-            <li class="mb-xs"><a class="lien-niveau2" href="#version7">V7 — 2015</a></li>
-            <li class="mb-xs"><a class="lien-niveau2" href="#version8">V8 — 2020</a></li>
-            <li class="mb-xs"><a class="lien-niveau2" href="#version9">V9 — 2021</a></li>
-        </ul>
+        <a class="lien-niveau2 d-inline-block mb-xs" href="#version1">Détails de chaque version</a>
     </li>
 </ul>
 
@@ -238,12 +227,22 @@ scriptJs: "horizontal-scroll.js"
 
 
 
-{% import "macro/contenu.njk" as macro %}
+
 
 
 
 {% set col1 %}
-    <img src="{{ metadata.siteUrl }}/images/site-perso/accueil/ptl1.png" alt="" loading="lazy" />
+    {{ macro.figure(
+        "/images/site-perso/accueil/ptl1.png",
+        "Capture page d'accueil dela version 1",
+        "Site 'one-page'",
+        "mb-m"
+    ) }}
+    {{ macro.figure(
+        "/images/site-perso/capture/ptl1_info-bulle.png",
+        "Capture du survol",
+        "Informations au survol des cadres"
+    ) }}
 {% endset %}
 {% set col2 %}
     <p class="mb-xs"><strong>Fonctionnalité</strong></p>
@@ -271,7 +270,11 @@ scriptJs: "horizontal-scroll.js"
 
 
 {% set col1 %}
-    <img src="{{ metadata.siteUrl }}/images/site-perso/accueil/ptl2.png" alt="" loading="lazy" />
+    {{ macro.figure(
+        "/images/site-perso/accueil/ptl2.png",
+        "Capture page d'accueil de la version 2",
+        "Site 'one-page'"
+    ) }}
 {% endset %}
 {% set col2 %}
     <p class="mb-xs"><strong>Fonctionnalité</strong></p>
@@ -290,7 +293,17 @@ scriptJs: "horizontal-scroll.js"
 
 
 {% set col1 %}
-    <img src="{{ metadata.siteUrl }}/images/site-perso/accueil/ptl3.png" alt="" loading="lazy" />
+    {{ macro.figure(
+        "/images/site-perso/accueil/ptl3.png",
+        "Capture page d'accueil de la version 3",
+        "Site 'one-page'",
+        "mb-m"
+    ) }}
+    {{ macro.figure(
+        "/images/site-perso/capture/ptl3_rapide-image.png",
+        "",
+        "Menu rapide Image"
+    ) }}
 {% endset %}
 {% set col2 %}
     <p class="mb-xs"><strong>Fonctionnalité</strong></p>
@@ -309,7 +322,23 @@ scriptJs: "horizontal-scroll.js"
         <li>Chaque catégorie est associée à une couleur, qui était repris sur l’ensemble de la page</li>
     </ul>
 {% endset %}
-{{ macro.version_ptl("version3", "Version 3 — 26 avril 2009", col1, col2) }}
+{% set col3 %}
+    <div class="w-30">
+        {{ macro.figure(
+            "/images/site-perso/capture/ptl3_rapide-lien.png",
+            "",
+            "Menu rapide Lien"
+        ) }}
+    </div>
+    <div class="w-33">
+        {{ macro.figure(
+            "/images/site-perso/capture/ptl3_site.png",
+            "",
+            "Rubrique 'site' déployer"
+        ) }}
+    </div>
+{% endset %}
+{{ macro.version_ptl("version3", "Version 3 — 26 avril 2009", col1, col2, col3) }}
 
 
 
@@ -317,7 +346,17 @@ scriptJs: "horizontal-scroll.js"
 
 
 {% set col1 %}
-    <img src="{{ metadata.siteUrl }}/images/site-perso/accueil/ptl4.png" alt="" loading="lazy" />
+    {{ macro.figure(
+        "/images/site-perso/accueil/ptl4.png",
+        "Capture page d'accueil de la version 4",
+        "Rubrique Site Web",
+        "mb-m"
+    ) }}
+    {{ macro.figure(
+        "/images/site-perso/capture/ptl4_rapide-image.png",
+        "",
+        "Menu rapide Image"
+    ) }}
 {% endset %}
 {% set col2 %}
     <p class="mb-xs"><strong>Fonctionnalité</strong></p>
@@ -336,7 +375,23 @@ scriptJs: "horizontal-scroll.js"
         <li>L'interface change de couleur dominante en fonction de la couleur correspondant à la catégorie</li>
     </ul>
 {% endset %}
-{{ macro.version_ptl("version4", "Version 4 — 26 décembre 2010", col1, col2) }}
+{% set col3 %}
+    <div class="w-30">
+        {{ macro.figure(
+            "/images/site-perso/capture/ptl4_rapide-image-zoom.png",
+            "",
+            "Galerie Fancybox"
+        ) }}
+    </div>
+    <div class="w-33">
+        {{ macro.figure(
+            "/images/site-perso/capture/ptl4_rapide-lien.png",
+            "",
+            "Menu rapide Lien"
+        ) }}
+    </div>
+{% endset %}
+{{ macro.version_ptl("version4", "Version 4 — 26 décembre 2010", col1, col2, col3) }}
 
 
 
@@ -344,7 +399,12 @@ scriptJs: "horizontal-scroll.js"
 
 
 {% set col1 %}
-    <img src="{{ metadata.siteUrl }}/images/site-perso/accueil/ptl5.png" alt="" loading="lazy" />
+    {{ macro.figure(
+        "/images/site-perso/accueil/ptl5.png",
+        "Capture page d'accueil de la version 5",
+        "Page d'accueil",
+        "mb-m"
+    ) }}
 {% endset %}
 {% set col2 %}
     <p class="mb-xs"><strong>Fonctionnalité</strong></p>
@@ -362,7 +422,23 @@ scriptJs: "horizontal-scroll.js"
         <li>«Menu rapide» réduit a leur visuel</li>
     </ul>
 {% endset %}
-{{ macro.version_ptl("version5", "Version 5 — 26 décembre 2012", col1, col2) }}
+{% set col3 %}
+    <div class="w-30">
+        {{ macro.figure(
+            "/images/site-perso/capture/ptl5_rapide-image.png",
+            "",
+            "Menu rapide Image"
+        ) }}
+    </div>
+    <div class="w-30">
+        {{ macro.figure(
+            "/images/site-perso/capture/ptl5_rapide-lien.png",
+            "",
+            "Menu rapide Lien"
+        ) }}
+    </div>
+{% endset %}
+{{ macro.version_ptl("version5", "Version 5 — 26 décembre 2012", col1, col2, col3) }}
 
 
 
@@ -370,7 +446,17 @@ scriptJs: "horizontal-scroll.js"
 
 
 {% set col1 %}
-    <img src="{{ metadata.siteUrl }}/images/site-perso/accueil/ptl6.png" alt="" loading="lazy" />
+    {{ macro.figure(
+        "/images/site-perso/accueil/ptl6.png",
+        "Capture page d'accueil de la version 6",
+        "Page d'accueil",
+        "mb-m"
+    ) }}
+    {{ macro.figure(
+        "/images/site-perso/capture/ptl6-Autopromo-FTV-Jeunesse.png",
+        "",
+        "Rubrique animation"
+    ) }}
 {% endset %}
 {% set col2 %}
     <p class="mb-xs"><strong>Fonctionnalité</strong></p>
@@ -393,7 +479,30 @@ scriptJs: "horizontal-scroll.js"
         <li>«Menu rapide» caché, s'affiche au survol de l’accroche «&nbsp;Site en perpétuelle évolution&nbsp;»</li>
     </ul>
 {% endset %}
-{{ macro.version_ptl("version6", "Version 6 — 28 avril 2013", col1, col2) }}
+{% set col3 %}
+    <div class="w-30">
+        {{ macro.figure(
+            "/images/site-perso/capture/ptl6-contact.png",
+            "",
+            "Formulaire de contact"
+        ) }}
+    </div>
+    <div class="w-33">
+        {{ macro.figure(
+            "/images/site-perso/capture/ptl6-graphisme-acces-rapide.png",
+            "",
+            "Menu rapide Graphisme"
+        ) }}
+    </div>
+    <div class="w-33">
+        {{ macro.figure(
+            "/images/site-perso/capture/ptl6-site-web.png",
+            "",
+            "Rubrique Site Web"
+        ) }}
+    </div>
+{% endset %}
+{{ macro.version_ptl("version6", "Version 6 — 28 avril 2013", col1, col2, col3) }}
 
 
 
@@ -401,7 +510,11 @@ scriptJs: "horizontal-scroll.js"
 
 
 {% set col1 %}
-    <img src="{{ metadata.siteUrl }}/images/site-perso/accueil/ptl7.png" alt="" loading="lazy" />
+    {{ macro.figure(
+        "/images/site-perso/capture/ptl7-home-mobile.png",
+        "",
+        "Page d'accueil mobile"
+    ) }}
 {% endset %}
 {% set col2 %}
     <p class="mb-xs"><strong>Fonctionnalité</strong></p>
@@ -419,7 +532,7 @@ scriptJs: "horizontal-scroll.js"
         <li>Site responsive</li>
     </ul>
     <p class="mb-xs"><strong>Design</strong></p>
-    <ul>
+    <ul class="mb-m">
         <li>Thème clair</li>
         <li>Création d’une palette de couleur harmonieuse</li>
         <li>«Menu rapide» caché, s'affiche au survol de l’accroche «&nbsp;Site en perpétuelle évolution&nbsp;»</li>
@@ -432,6 +545,22 @@ scriptJs: "horizontal-scroll.js"
             </ul>
         </li>
     </ul>
+    <div class="d-flex">
+        <div class="w-50">
+            {{ macro.figure(
+                "/images/site-perso/accueil/ptl7.png",
+                "Capture page d'accueil de la version 7",
+                "Page d'accueil"
+            ) }}
+        </div>
+        <div class="w-50">
+            {{ macro.figure(
+                "/images/site-perso/capture/ptl7-dossier.png",
+                "",
+                "Rubrique dossier"
+            ) }}
+        </div>
+    </div>
 {% endset %}
 {{ macro.version_ptl("version7", "Version 7 — 2 août 2015", col1, col2) }}
 
@@ -441,7 +570,11 @@ scriptJs: "horizontal-scroll.js"
 
 
 {% set col1 %}
-    <img src="{{ metadata.siteUrl }}/images/site-perso/accueil/ptl8_2021-04-17.png" alt="" loading="lazy" />
+    {{ macro.figure(
+        "/images/site-perso/accueil/ptl8_2021-04-17.png",
+        "",
+        "Page d'accueil"
+    ) }}
 {% endset %}
 {% set col2 %}
     <p class="mb-xs"><strong>Fonctionnalité</strong></p>
@@ -459,7 +592,7 @@ scriptJs: "horizontal-scroll.js"
     <ul>
         <li>Logo svg responsive</li>
         <li>Thème sombre pour mettre en valeur le contenu</li>
-        <li>Palette de couleur harmonieuse et accessible</li>
+        <li>Palette de couleur harmonieuse et accessiblle</li>
         <li>Mosaïque style grid Mansory</li>
     </ul>
 {% endset %}
@@ -471,7 +604,11 @@ scriptJs: "horizontal-scroll.js"
 
 
 {% set col1 %}
-    <img src="{{ metadata.siteUrl }}/images/site-perso/accueil/ptl9_2021-04-17.png" alt="" loading="lazy" />
+    {{ macro.figure(
+        "/images/site-perso/accueil/ptl9_2021-04-17.png",
+        "",
+        "Page d'accueil"
+    ) }}
 {% endset %}
 {% set col2 %}
     <p class="mb-xs"><strong>Fonctionnalité</strong></p>

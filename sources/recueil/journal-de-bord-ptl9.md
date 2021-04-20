@@ -23,7 +23,8 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 1. rédiger/illustrer les réalisations ajoutées à la mosaïque
 
 
-
+## 20 avril
+* Rédaction suite et fin : site perso
 
 ## 18 avril
 * Changement de style de base des listes non ordonnée
