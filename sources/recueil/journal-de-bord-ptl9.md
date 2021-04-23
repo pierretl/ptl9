@@ -19,9 +19,15 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 
 
 ## A faire
-0. faire les mosaique en svg ou prévoir la version 2x pour les écrans Retina ou HD
-1. rédiger/illustrer les réalisations ajoutées à la mosaïque
 
+0. Ajouter les iamge en webp, mosaique et article
+1. rédiger/illustrer les réalisations ajoutées à la mosaïque
+2. Améliorer l'affichage des pages en markown, [site statique](/recueil/site-statique/) 
+
+## 21 avril
+* 1er commit via [Gitpod](gitpod.io)
+* Coloration des listes ordonnée
+* Ajout de "créer un site statique" au recueil (wip)
 
 ## 20 avril
 * Rédaction suite et fin : site perso

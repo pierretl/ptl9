@@ -49,10 +49,19 @@
             </nav>
         </header>
         <main id="contenu" tabindex="-1" role="main" class="s_page{% if markdown %} markdown{% endif %}{% if accueil %} var--mosaique{% endif %}{% if classCssMain %} {{ classCssMain }}{% endif %}">
+            
+            
+            {% if wip %}
+                <p class="ts-xl tg1-4 mb-l">
+                    (En cours de rédaction / mise en forme)
+                </p>
+            {% endif %}
+            
             {% if accueil or pasDeTitre %}
             {% else %}
                 <h1 class="ts-xl tg1-1 tw-4 mb-m">{{titre}}</h1>
             {% endif %}
+
             {{content | safe}}
         </main>
         {% include "../include/footer.html" %}

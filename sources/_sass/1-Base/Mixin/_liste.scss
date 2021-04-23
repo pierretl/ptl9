@@ -6,3 +6,10 @@
     color: var(--gamme1__texte4);
   }
 }
+
+@mixin liste-ol() {
+  & li::marker {
+    color: var(--gamme1__texte4);
+    font-weight: 500;
+  }
+}

@@ -1,6 +1,10 @@
 /* markdown */
 
-.markdown p {
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown pre
+{
   margin-bottom: $espace-s;
 }
 
@@ -12,10 +16,28 @@
   font-size: $texte-l;
   color: var(--gamme1__texte1);
   line-height: 2;
+  margin-bottom: $espace-s;
 }
 .markdown h2:not(:first-child){
-  margin-top: $espace-s;
+  margin-top: $espace-l;
 }
+
+
+.markdown h3 {
+  font-size: $texte-xm;
+  color: var(--gamme1__texte1);
+  font-weight: 700;
+  margin-top: $espace-m;
+  margin-bottom: $espace-s;
+}
+
+.markdown h2 + h3 {
+  margin-top: 0;
+}
+
+
+
+
 .markdown.var--styleguide h2{
   color: var(--gamme1__texte4);
   font-size: $texte-xl;
@@ -38,6 +60,7 @@
 .markdown table {
   border:1px solid var(--gamme1__bordure);
   border-collapse: collapse;
+  margin-bottom: $espace-m;
 }
 .markdown table th,
 .markdown table td {
@@ -49,4 +72,8 @@
 
 .markdown ul {
   @include liste;
+}
+
+.markdown ol {
+  @include liste-ol;
 }
