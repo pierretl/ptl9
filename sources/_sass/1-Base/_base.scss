@@ -40,14 +40,16 @@ h1,h2,h3,h4,h5,h6 {
 code {
   padding: 3px 5px;
   border-radius: 6px;;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--gamme4__fond);
+  color: var(--gamme4__texte1);
+  font-family: Verdana;
+  font-size: $texte-s;
 }
 
 pre:not([class]) {
   padding: $espace-s;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--gamme4__fond);
+  color: var(--gamme4__texte1);
   overflow: auto;
 }
 
