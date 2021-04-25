@@ -20,12 +20,12 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 
 ## A faire
 
-* Ajouter les iamge en webp, mosaique et article
+* Ajouter les images en webp, mosaïque et article
 * rédiger/illustrer les réalisations ajoutées à la mosaïque
 * Coloration syntaxique des exemples de code 
 * Compression image
-* réduction image a partir d'image retina
-* convertion webP et avif
+* réduction des images à partir d'image retina
+* conversion en format "webP" et "avif"
 * tag
 * sitemap.xml
 * Flux RSS
@@ -33,7 +33,6 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
     * faq
     * page description
 * fil Ariane
-* debug mosaique
 * debug liste a puce sommaire
 
 
@@ -41,7 +40,8 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 * Ajuste des styles pour les balise `<code>` `<pre>`
 * passage de la citation en html dans le markdown pour respecter la charte
 * Rédaction suite et fin : site statique
-* Changement du style pour les figcaptions dans un lien
+* Changement du style pour les `<figcaptions>` dans un lien
+* Correctif espacement liste
 
 
 ## 21 avril

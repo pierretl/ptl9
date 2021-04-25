@@ -3,7 +3,7 @@
   list-style: disc;
   margin-left: 1rem;
 
-  & li:not(:first-child) {
+  &:not(.ul-reset) li:not(:first-child) {
     margin-top:$espace-xxs;
   }
 
@@ -22,7 +22,7 @@
   list-style: decimal;
   margin-left: 1rem;
 
-  & li:not(:first-child) {
+  &:not(.ul-reset) li:not(:first-child) {
     margin-top:$espace-xxs;
   }
 
