@@ -33,7 +33,6 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
     * faq
     * page description
 * fil Ariane
-* debug liste a puce sommaire
 
 
 ## 25 avril
@@ -42,6 +41,7 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 * Rédaction suite et fin : site statique
 * Changement du style pour les `<figcaptions>` dans un lien
 * Correctif espacement liste
+* Correctif style liste sommaire
 
 
 ## 21 avril
