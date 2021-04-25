@@ -93,3 +93,19 @@ a.tg1-1:hover, // lien
 .lien-niveau2:hover {
   text-decoration-color: var(--gamme1__texte1);
 }
+
+
+
+
+/*--------------------------------------------------------------------*/
+/* figcaption                                                         */
+/*--------------------------------------------------------------------*/
+a figcaption {
+  color: var(--gamme1__texte1);
+  text-decoration: underline;
+  text-decoration-color: var(--gamme1__texte3);
+  transition: text-decoration-color 0.2s linear;
+}
+a:hover figcaption {
+  text-decoration-color: var(--gamme1__texte1);
+}

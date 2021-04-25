@@ -22,7 +22,6 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 
 * Ajouter les iamge en webp, mosaique et article
 * rédiger/illustrer les réalisations ajoutées à la mosaïque
-* Améliorer l'affichage des pages en markown, [site statique](/recueil/site-statique/)
 * Coloration syntaxique des exemples de code 
 * Compression image
 * réduction image a partir d'image retina
@@ -34,12 +33,15 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
     * faq
     * page description
 * fil Ariane
+* debug mosaique
+* debug liste a puce sommaire
 
 
 ## 25 avril
 * Ajuste des styles pour les balise `<code>` `<pre>`
 * passage de la citation en html dans le markdown pour respecter la charte
 * Rédaction suite et fin : site statique
+* Changement du style pour les figcaptions dans un lien
 
 
 ## 21 avril
