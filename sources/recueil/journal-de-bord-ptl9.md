@@ -27,7 +27,6 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 * réduction des images à partir d'image retina
 * conversion en format "webP" et "avif"
 * tag
-* sitemap.xml
 * Flux RSS
 * SEO opti :
     * faq
@@ -42,6 +41,7 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 * Correctif espacement liste
 * Correctif style liste sommaire
 * Ajout fil Ariane
+* Ajout du sitemap.xml
 
 
 ## 21 avril
