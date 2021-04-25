@@ -67,13 +67,3 @@
   padding: 7px;
   border:1px solid var(--gamme1__bordure);
 }
-
-
-
-.markdown ul {
-  @include liste;
-}
-
-.markdown ol {
-  @include liste-ol;
-}

@@ -3,15 +3,45 @@ layout: layout/standard.njk
 markdown: "true"
 titre: "Créer un site statique avec déploiement continu"
 tags: "recueil"
-date: 2021-02-14
-wip: "true"
+date: Last Modified
 ---
 
-A chaque push sur Github, le site sera déployer sur la platefrome Netlify
+À chaque *push*, le site sera compilé et mis en ligne
 
- 
 
-## GitHub
+## Sommaire
+
+<ul class="ul-sommaire mb-l">
+  <li>
+    <a class="lien-niveau2" href="#git">Git : Gestion de versions décentralisé</a>
+  </li>
+  <li>
+    <span class="mb-xs">IDE : Environnement de développement</span>
+    <ul>
+      <li>
+        <a class="lien-niveau2" href="#phpStorm">PhpStorm</a>
+      </li>
+      <li>
+        <a class="lien-niveau2" href="{{ metadata.siteUrl }}/recueil/gitpod/">Gitpod</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class="lien-niveau2" href="#eleventy">Eleventy : Générateur de site statique</a>
+  </li>
+  <li>
+    <a class="lien-niveau2" href="#netlify">Netlify : Plateforme de déploiement</a>
+  </li>
+</ul>
+
+
+
+
+
+
+## <a name="git"></a> Git
+
+Exemple pour [GitHub](https://github.com)
 
 Dans le menu **Repositories**, cliquez sur le bouton  **New**
 
@@ -22,16 +52,19 @@ Dans le menu **Repositories**, cliquez sur le bouton  **New**
 |add .gitignore | Node | |
 |Choose a license  | GNU General Public License v3.0 | Open source et qui doit le rester |
 
-Copier le lien pour cloné le dépot
 
 
-## IDE : PhpStorm
+
+
+
+
+## <a name="phpStorm"></a> PhpStorm (IDE)
 
 ### Mettre en place l'environement
 
 * Menu **Git**
 * **clone**
-* url : coller le lien
+* url : coller le lien du dépot
 * Directory : Ajouter un dossier du nom du projet avec un antislash `\mon-projet`
 * Dans le terminal :
     * `npm install -y` pour installer npm
@@ -44,7 +77,16 @@ Copier le lien pour cloné le dépot
 * Find Twig, it's identical template engine but for PHP and add custom extension. click green plus and type *.nunj. Now all *.nunj files are parsed as Twig so in the end - support Nunjucks.
 
 
-## Eleventy
+
+
+
+
+## <a name="eleventy"></a> Eleventy
+
+[Eleventy](https://github.com/11ty/eleventy) est un générateur de site statique, <br>
+il fonctionne nativement avec de nombreux moteur de template, comme [Nunjucks](https://mozilla.github.io/nunjucks/templating.html)
+
+
 
 ### Exclure de Git le site compilé
 
@@ -141,7 +183,9 @@ module.exports = function (eleventyConfig) {
 
 
 
-## Netlify
+## <a name="netlify"></a> Netlify
+
+[Netlify](https://app.netlify.com/) est une plateforme de déploiement et de collaboration basé sur Git (GitHub, GitLab, Bitbucket)
 
 * Dans le menu **Sites**, cliquez sur le bouton  **New site from git**
 * Continuous Deployment : **GitHub**
@@ -149,21 +193,11 @@ module.exports = function (eleventyConfig) {
 * Choisir le dépot
 * **Deploy site**
 
+<br>
+
 Renommmer l'url :
 
 * Deploy settings
 * Change site name
 * mon-projet
 * save
-
-
-
-
-
-## Liens utiles
-
-* [GitHub](https://github.com) : hébergement et gestion git
-* [Eleventy](https://github.com/11ty/eleventy) : générateur de site statique
-* [Netlify](https://app.netlify.com/) : intégration continue, service de déploiement auto (GitHub, GitLab, Bitbucket)
-* [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) : tamplating JavaScript
-* [Gitpod](../gitpod/) : IDE online

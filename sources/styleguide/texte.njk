@@ -232,38 +232,49 @@ date: 2021-03-06
 
 {% set demo %}
     <ul class="mb-s">
-        <li>Contenu</li>
+        <li>un : Contenu</li>
         <li>deux</li>
         <li>trois</li>
     </ul>
     <ul class="ul-sommaire mb-s">
-        <li>Sommaire</li>
+        <li>un : Sommaire</li>
         <li>deux</li>
         <li>trois</li>
     </ul>
-    <ul class="ul-reset">
-        <li>Reset</li>
+    <ul class="ul-reset mb-s">
+        <li>un : Reset ul</li>
         <li>deux</li>
         <li>trois</li>
     </ul>
+    <ol>
+        <li>un</li>
+        <li>deux</li>
+        <li>trois</li>
+    </ol>
 {% endset %}
 {% set code %}
 <ul>
-    <li>Contenu</li>
+    <li>un : Contenu</li>
     <li>deux</li>
     <li>trois</li>
 </ul>
 
 <ul class="ul-sommaire">
-    <li>Sommaire</li>
+    <li>un : Sommaire</li>
     <li>deux</li>
     <li>trois</li>
 </ul>
 
 <ul class="ul-reset">
-    <li>Reset</li>
+    <li>un : Reset ul</li>
     <li>deux</li>
     <li>trois</li>
 </ul>
+
+<ol>
+    <li>un</li>
+    <li>deux</li>
+    <li>trois</li>
+</ol>
 {% endset %}
-{{ macro.demo_code("Liste non ordonné", demo, code) }}
+{{ macro.demo_code("Liste", demo, code) }}
