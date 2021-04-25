@@ -32,7 +32,6 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 * SEO opti :
     * faq
     * page description
-* fil Ariane
 
 
 ## 25 avril
@@ -42,6 +41,7 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 * Changement du style pour les `<figcaptions>` dans un lien
 * Correctif espacement liste
 * Correctif style liste sommaire
+* Ajout fil Ariane
 
 
 ## 21 avril

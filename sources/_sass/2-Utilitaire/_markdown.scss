@@ -1,9 +1,9 @@
 /* markdown */
 
-.markdown p,
-.markdown ul,
-.markdown ol,
-.markdown pre
+.markdown p:not([class]),
+.markdown ul:not([class]),
+.markdown ol:not([class]),
+.markdown pre:not([class])
 {
   margin-bottom: $espace-s;
 }

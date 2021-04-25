@@ -49,7 +49,8 @@
             </nav>
         </header>
         <main id="contenu" tabindex="-1" role="main" class="s_page{% if markdown %} markdown{% endif %}{% if accueil %} var--mosaique{% endif %}{% if classCssMain %} {{ classCssMain }}{% endif %}">
-            
+
+            {% include "../include/fil-ariane.njk" %}
             
             {% if wip %}
                 <p class="ts-xl tg1-4 mb-l">
