@@ -5,6 +5,28 @@ const autoprefixer = require("autoprefixer");
 
 const { DateTime } = require('luxon');
 
+const path = require("path");
+const Image = require("@11ty/eleventy-img");
+const fg = require('fast-glob');
+
+async function generateImages() {
+    const dossierImages = fg.stream("sources/images/**/*.{jpg,jpeg,png}");
+    for await (const entry of dossierImages) {
+
+        let dossier = entry.substr(0,entry.lastIndexOf('/'));
+
+        let stats = await Image(entry, {
+            formats: ['avif', 'webp'],
+            outputDir: dossier+'/auto',
+            filenameFormat: function (id, src, width, format, options) {
+                const extension = path.extname(src);
+                const name = path.basename(src, extension);
+                return `${name}.${format}`;
+            },
+        })
+    }
+}
+
 module.exports = function (eleventyConfig) {
 
     eleventyConfig.setDataDeepMerge(true);
@@ -16,7 +38,6 @@ module.exports = function (eleventyConfig) {
         );
     });
 
-    // compile sass and optimize it https://www.d-hagemeier.com/en/articles/sass-compile-11ty/
     eleventyConfig.on("beforeBuild", () => {
 
         // Compile Sass
@@ -37,6 +58,10 @@ module.exports = function (eleventyConfig) {
                     console.log("CSS optimized");
                 });
             });
+
+        //génère les images en webp et avif
+        generateImages();
+        console.log('images généré');
     });
 
 

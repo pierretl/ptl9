@@ -1,0 +1,107 @@
+---
+layout: layout/standard.njk
+titre: "Conversion d'image automatique avec Eleventy"
+tags: "recueil"
+---
+
+<p class="mb-l">
+    Utilise le plugin <a href="https://www.11ty.dev/docs/plugins/image/" rel="external">Image d'Eleventy</a>
+    <code>npm install @11ty/eleventy-img</code>
+</p>
+
+
+
+
+
+
+<p class="ts-l tg1-1 th-2 tw-4">Convertis une image</p>
+
+<p class="mb-s">
+    Pour nommer l'image générée comme sa source j'utilise la function <code>filenameFormat</code> avec
+    <a href="https://www.npmjs.com/package/path" rel="external">path</a>
+</p>
+<p class="mb-s">
+    Dans <code>eleventy.js</code>
+</p>
+
+<div class="mb-l">
+    <pre><code>const path = require("path");
+const Image = require("@11ty/eleventy-img");
+
+(async () => {
+    let url = "sources/images/kirby/logo_kirby_super_star_ultra.png";
+    let stats = await Image(url, {
+        formats: ['avif', 'webp'],
+        outputDir: './sources/images/_generated',
+        filenameFormat: function (id, src, width, format, options) {
+            const extension = path.extname(src);
+            const name = path.basename(src, extension);
+            return `${name}.${format}`;
+        },
+    })
+    //console.log( stats );
+})();
+
+module.exports = function (eleventyConfig) {
+    ...
+};</code></pre>
+</div>
+
+
+<p class="ts-l tg1-1 th-2 tw-4">Convertis un dossier d'images</p>
+
+<p class="mb-m">
+    Dans le fichier <code>.gitignore</code>, ajouté <code>sources/images/**/auto/</code>
+</p>
+
+<p class="mb-s">
+    Installer <a href="https://www.npmjs.com/package/fast-glob" rel="external">fast-glob</a>
+    <code>npm install fast-glob</code>
+</p>
+<p class="mb-s">
+    Dans <code>eleventy.js</code>
+</p>
+
+<div class="mb-l">
+    <pre><code>const path = require("path");
+const Image = require("@11ty/eleventy-img");
+const fg = require('fast-glob');
+
+async function generateImages() {
+    const dossierImages = fg.stream("sources/images/**/*.{jpg,jpeg,png}");
+    for await (const entry of dossierImages) {
+
+        let dossier = entry.substr(0,entry.lastIndexOf('/'));
+
+        let stats = await Image(entry, {
+            formats: ['avif', 'webp'],
+            outputDir: dossier+'/auto',
+            filenameFormat: function (id, src, width, format, options) {
+                const extension = path.extname(src);
+                const name = path.basename(src, extension);
+                return `${name}.${format}`;
+            },
+        })
+    }
+}
+
+module.exports = function (eleventyConfig) {
+    eleventyConfig.on("beforeBuild", () => {
+
+        //génère les images en webp et avif
+        generateImages();
+        console.log('images généré');
+
+    });
+};</code></pre>
+</div>
+
+<p class="ts-l tg1-1 th-2 tw-4">Exemple</p>
+
+<div class="mb-s">
+<pre>&lt;img src=&quot;{{ metadata.siteUrl }}/images/mosaique/aux-delices-ahmed.jpg&quot; alt=&quot;normal&quot;&gt;
+&lt;img src=&quot;{{ metadata.siteUrl }}/images/mosaique/auto/aux-delices-ahmed.webp&quot; alt=&quot;webp auto&quot;&gt;</code></pre>
+</div>
+
+<img src="{{ metadata.siteUrl }}/images/mosaique/aux-delices-ahmed.jpg" alt="normal">
+<img src="{{ metadata.siteUrl }}/images/mosaique/auto/aux-delices-ahmed.webp" alt="webp auto">

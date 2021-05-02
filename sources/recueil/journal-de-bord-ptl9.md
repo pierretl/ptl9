@@ -31,6 +31,9 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 * SEO opti :
     * faq
     * page description
+  
+## 02 mai
+* [Conversion automatique](../conversion-image/) en format "webP" et "avif" pour les images en .png .jpg et .jpeg
 
 
 ## 25 avril

@@ -120,6 +120,8 @@ fichier-exclu.md
 
 ### Compiler du SASS
 
+Merci [Dennis Hagemeier](https://www.d-hagemeier.com/en/sass-compile-11ty/) et [Cassey Lottman](https://github.com/clottman/cassey-on-eleventy/pull/9/files)
+
 Installer les dépendances
 
 |Commande|nom|
