@@ -3,7 +3,7 @@ layout: layout/standard.njk
 markdown: "true"
 titre: "Créer un site statique avec déploiement continu"
 tags: "recueil"
-date: Last Modified
+date: 2021-04-21
 ---
 
 À chaque *push*, le site sera compilé et mis en ligne

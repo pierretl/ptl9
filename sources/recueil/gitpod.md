@@ -3,6 +3,7 @@ layout: layout/standard.njk
 markdown: "true"
 titre: "Gitpod"
 tags: "recueil"
+date: 2021-04-21
 ---
 
 [gitpod.io](gitpod.io) un éditeur de code dans le cloud ou un IDE Online<br><br>

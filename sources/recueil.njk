@@ -8,9 +8,12 @@ tags: "menuPrincipal"
 
 <ul class="ul-reset">
     {% for blog in collections.recueil | reverse %}
-        <li class="mb-l">
 
-            <a href="{{ blog.url | url }}" class="tg1-1 td-0 tw-4">
+        {% if blog.data.brouillon %}
+        {% else %}
+            <li class="mb-l">
+
+                <a href="{{ blog.url | url }}" class="tg1-1 td-0 tw-4">
 
                 <span class="ts-l th-09">
                     {%  if blog.data.homeStyleguide %}
@@ -21,14 +24,16 @@ tags: "menuPrincipal"
 
                 </span>
 
-                <br>
+                    <br>
 
-                <span class="tg1-2 th-2">
+                    <span class="tg1-2 th-2">
                     {{ blog.date | readableDate }}
                 </span>
 
-            </a>
+                </a>
 
-        </li>
+            </li>
+        {% endif %}
+
     {% endfor %}
 </ul>
