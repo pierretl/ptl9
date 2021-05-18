@@ -105,6 +105,3 @@ dist
 
 # eleventy
 _site/
-
-# image généré
-sources/images/**/auto/

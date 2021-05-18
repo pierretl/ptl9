@@ -58,11 +58,13 @@ module.exports = function (eleventyConfig) {
                     console.log("CSS optimized");
                 });
             });
-
-        //génère les images en webp et avif
-        generateImages();
-        console.log('images généré');
     });
+
+    //génère les images en webp et avif
+    //ca relance le watch pour chaque image et ca crash le localhost
+    //a lancer juste pour générer les images, mais a laisser désactiver
+    //generateImages();
+    //console.log('images généré');
 
 
     // trigger a rebuild if sass changes
