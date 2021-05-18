@@ -32,6 +32,10 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
     * faq
     * page description
   
+## 19 mai
+* Rédaction article
+* Ajout de média
+  
 ## 02 mai
 * [Conversion automatique](../conversion-image/) en format "webP" et "avif" pour les images en .png .jpg et .jpeg
 * Correction focus theme switch
