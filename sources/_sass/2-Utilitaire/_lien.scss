@@ -5,6 +5,7 @@
 main a:after {
   content:"↗";
   color: var(--gamme1__texte4);
+  font-family: system-ui,-apple-system,sans-serif;
 }
 
 main a[href^="http://localhost:8080/"]:after,

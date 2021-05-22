@@ -31,7 +31,11 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 * SEO opti :
     * faq
     * page description
-  
+      
+## 22 mai
+* [Correction affichage du caractères spécial](../caracteres-speciaux-safari-mobile/) "↗" sur Safari mobile
+* Ajout macro "code" et "titre h2"
+
 ## 19 mai
 * Rédaction article
 * Ajout de média

@@ -30,3 +30,15 @@
 {% endmacro %}
 
 
+
+
+{% macro code(code, class) %}
+<pre{% if class %} class="{{ class | safe }}"{% endif %}><code>{{ code | trim }}</code></pre>
+{% endmacro %}
+
+
+ {% macro h2(texte) %}
+     <h2 class="ts-l tg1-1 th-2 tw-4{% if class %} {{ class | safe }}{% endif %}">
+         {{ texte | safe }}
+     </h2>
+ {% endmacro %}

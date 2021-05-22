@@ -1,0 +1,53 @@
+---
+layout: layout/standard.njk
+titre: "Caractères spéciaux sur Safari mobile"
+tags: "recueil"
+date: Last Modified
+---
+{% import "macro/contenu.njk" as macro %}
+
+
+{{ macro.h2("Code") }}
+
+{% set code %}
+<ul class="ul-reset">
+    <li>↗ default</li>
+    <li class="raleway">↗ raleway</li>
+    <li class="sans-serif">↗ sans-serif</li>
+    <li class="system">↗ system-ui,-apple-system,sans-serif</li>
+</ul>
+{% endset %}
+{{ macro.code(code, "mb-l") }}
+
+
+
+
+
+{{ macro.h2("Rendu de votre navigateur") }}
+
+<style>
+.sans-serif {
+    font-family:sans-serif;
+}
+.raleway {
+    font-family: "Raleway";
+}
+.system {
+    font-family: system-ui,-apple-system,sans-serif;
+}
+</style>
+
+<ul class="ul-reset mb-l">
+    <li>↗ default</li>
+    <li class="raleway">↗ raleway</li>
+    <li class="sans-serif">↗ sans-serif</li>
+    <li class="system">↗ system-ui,-apple-system,sans-serif</li>
+</ul>
+
+
+
+
+
+{{ macro.h2("Rendu sur Safari mobile") }}
+
+<img loading="lazy" src="{{ metadata.siteUrl }}/images/recueil/caractere-special-safari-mobile.jpg" alt="Rendu sur Safari mobile">
