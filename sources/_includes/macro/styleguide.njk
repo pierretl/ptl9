@@ -1,3 +1,13 @@
+{% macro h2(texte) %}
+    <h2 class="mb-m tg1-4 ts-xl tw-4">
+        {{ texte | safe }}
+    </h2>
+{% endmacro %}
+
+
+
+
+
 {% macro demo_code(titre, demo, code, intro) %}
 
     <h2 class="mb-m tg1-4 ts-xl tw-4">{{ titre }}</h2>
@@ -22,9 +32,31 @@
 
 
 
+
 {% macro code(titre, code) %}
     <h2 class="mb-m tg1-4 ts-xl tw-4">{{ titre }}</h2>
+
     <div class="mb-xl">
         <pre><code>{{ code | trim }}</code></pre>
     </div>
+{% endmacro %}
+
+
+
+
+
+{% macro table_demo_code(demo, macro) %}
+    <tr>
+        <td>
+            {{ demo | safe }}
+        </td>
+        <td>
+            <code>{{ demo | trim }}</code>
+        </td>
+        <td>
+            {% if macro %}
+                <code>{{ macro | safe }}</code>
+            {% endif %}
+        </td>
+    </tr>
 {% endmacro %}

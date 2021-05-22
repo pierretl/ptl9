@@ -2,6 +2,18 @@
 <html lang="fr-FR">
     <head>
         {% include "../include/head.njk" %}
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+            th {
+                text-align: left;
+            }
+            th,td {
+                border: 1px solid var(--gamme1__texte2);
+                padding: 5px;
+            }
+        </style>
     </head>
     <body class="d-flex fd-c">
         {% include "../include/evitement.html" %}
