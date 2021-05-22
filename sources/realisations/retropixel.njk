@@ -5,6 +5,7 @@ tags: "realisations"
 date: 2014-02-13
 wip: "true"
 ---
+{% import "macro/contenu.njk" as macro %}
 
 <p class="mb-l">
     <a rel="noreferrer noopener" href="https://www.retropixel.fr" target="_blank">Retropixel</a> est une grande communauté francophone entièrement dédiée au Pixel-Art. Je les ai rejoint en 2009 par curiosité et je suis rapidement devenus modérateur puis administrateur des sites en leur réalisant des fonctionnalités :
@@ -12,34 +13,19 @@ wip: "true"
 
 
 
-
-<h2 class="ts-l mb-s">
-    Sommaire
-</h2>
-<ul class="ul-sommaire mb-l">
-    <li class="mb-xs">
-        <a class="lien-niveau2" href="#refonte">Refonte graphique</a>
-    </li>
-    <li class="mb-xs">
-        <a class="lien-niveau2" href="#logo">Logo</a>
-    </li>
-</ul>
+{{ macro.sommaire(["Refonte graphique", "Logo"]) }}
 
 
 
 
-<h2 id="refonte" class="mb-s ts-l">
-    Refonte graphique <span class="ts-s tg1-2">— 13 février 2014</span>
-</h2>
+{{ macro.h2("Refonte graphique", "ancre", "13 février 2014") }}
 <p class="mb-xl">
     Proposition de refonte du design dans sa globalité (design et intégration de maquette en HTML/CSS)
 </p>
 
 
 
-<h2 id="logo" class="mb-s ts-l">
-    Logo <span class="ts-s tg1-2">— 19 août 2010</span>
-</h2>
+{{ macro.h2("Logo", "ancre", "19 août 2010") }}
 <p>Modernisation du logo du forum <a href="https://www.retropixel.fr/">RetroPixel</a> en s’appuyant sur :</p>
 <ul class="mb-m">
     <li>le logo d’origine : <img loading="lazy" class="wp-image-928" style="width: 150px;" src="http://www.pierre.tl/wp-content/uploads/2010/08/rp2ov6.png" alt="" width="318" height="46"></li>

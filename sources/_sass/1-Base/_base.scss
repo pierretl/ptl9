@@ -45,6 +45,9 @@ code {
   font-family: Verdana;
   font-size: $texte-s;
 }
+pre code {
+  padding: 0;
+}
 
 pre:not([class]) {
   padding: $espace-s;

@@ -9,6 +9,7 @@ mosaique2x: "pixel-art_2x.png"
 mosaiqueClassCss: " pa"
 wip: "true"
 ---
+{% import "macro/contenu.njk" as macro %}
 
 <!--https://www.retropixel.fr/forum/viewtopic.php?f=7&t=2640-->
 
@@ -22,35 +23,13 @@ wip: "true"
 
 
 
-
-
-<h2 class="ts-l mb-s">
-    Sommaire
-</h2>
-<ul class="ul-sommaire mb-l">
-    <li class="mb-xs">
-        <a class="lien-niveau2" href="#favicon">Favicon</a>
-    </li>
-    <li class="mb-xs">
-        <a class="lien-niveau2" href="#vignette-concours">Vignette Concours</a>
-    </li>
-    <li class="mb-xs">
-        <a class="lien-niveau2" href="#faire-part">Faire part de mon mariage</a>
-    </li>
-    <li class="mb-xs">
-        <a class="lien-niveau2" href="#vrac">Pixel en Vrac</a>
-    </li>
-</ul>
+{{ macro.sommaire(["Favicon", "Vignette Concours", "Faire part de mon mariage", "Pixel en Vrac"]) }}
 
 
 
 
 
-
-
-<h2 id="favicon" class="mb-s ts-l">
-    Favicon
-</h2>
+{{ macro.h2("Favicon", "ancre") }}
 <p class="mb-s">
     C'est une icône informatique symbolisant un site web. Les navigateurs web peuvent utiliser la favicon dans la barre d'adresse, les signets, les onglets ou encore les autres raccourcis
 </p>
@@ -142,9 +121,8 @@ wip: "true"
 
 
 
-<h2 id="vignette-concours" class="mb-s ts-l">
-    Vignette Concours
-</h2>
+
+{{ macro.h2("Vignette Concours", "ancre") }}
 <p class="mb-s">
     Vignette d’illustration pour les concours sur <a href="https://www.retropixel.fr/pixel/page-galerie-concours.php" rel="external" target="_blank">retropixel.fr</a>
 </p>
@@ -203,11 +181,7 @@ wip: "true"
 
 
 
-<h2 id="faire-part" class="ts-l mb-s">
-    Faire part de mon mariage
-    <span class="ts-s tg1-2">24 mars 2013</span>
-</h2>
-
+{{ macro.h2("Faire part de mon mariage", "ancre") }}
 <div class="d-flex ai-c mb-xl">
     <div class="w-70">
         <img src="{{ metadata.siteUrl }}/images/pixel-art/faire-part_mariage.png" alt="Touts un tas de personnage de films et dessin animés en train de s'installaient dans des fauteuils rouge" loading="lazy" />
@@ -218,10 +192,8 @@ wip: "true"
 
 
 
-<h2 id="vrac" class="ts-l mb-s">
-    Pixel en Vrac
-</h2>
 
+{{ macro.h2("Pixel en Vrac", "ancre") }}
 <div class="d-flex ai-c mb-s">
     <ul>
         <li><a href="{{ metadata.siteUrl }}/images/pixel-art/vrac/abandon.gif" target="_blank">abandon</a></li>

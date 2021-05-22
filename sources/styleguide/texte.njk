@@ -158,36 +158,43 @@ date: 2021-03-06
 
 
 {{ macro.h2("Titre") }}
-<table class="mb-xl">
-    <thead>
-    <tr>
-        <th>Rendus</th>
-        <th>HTML</th>
-        <th>Macro Nunjucks</th>
-    </tr>
-    </thead>
-    <tbody>
-        {% set demoTitre %}<p class="ts-xxl tg1-1 th-09 tw-4">Nom du site</p>{% endset %}
-        {{ macro.table_demo_code(demoTitre) }}
+<div class="scroll-x-auto mb-xl">
+    <table>
+        <thead>
+        <tr>
+            <th>Rendus</th>
+            <th>HTML</th>
+            <th>Macro Nunjucks</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% set demoTitre %}<p class="ts-xxl tg1-1 th-09 tw-4">Nom du site</p>{% endset %}
+            {{ macro.table_demo_code(demoTitre) }}
 
-        {% set demoTitre %}<p class="ts-xl tg1-1 tw-4">Niveau 1</p>{% endset %}
-        {{ macro.table_demo_code(demoTitre) }}
+            {% set demoTitre %}<p class="ts-xl tg1-1 tw-4">Niveau 1</p>{% endset %}
+            {{ macro.table_demo_code(demoTitre) }}
 
-        {% set demoTitre %}<p class="ts-l tg1-2 th-2 tw-4">Niveau 2</p>{% endset %}
-        {% set macroTitre %}&#x7B;&#x7B; macro.h2("Niveau 2") &#125;&#125;{% endset %}
-        {{ macro.table_demo_code(demoTitre, macroTitre) }}
+            {% set demoTitre %}
+    <p class="ts-l tg1-2 th-2 tw-4">Niveau 2</p>
+    <p class="ts-l tg1-2 th-2 tw-4" id="niveau2">Niveau 2</p>
+            {% endset %}
+            {% set macroTitre %}
+    &#x7B;&#x7B; macro.h2("Niveau 2") &#125;&#125;
+    &#x7B;&#x7B; macro.h2("Niveau 2", "ancre") &#125;&#125;
+            {% endset %}
+            {{ macro.table_demo_code(demoTitre, macroTitre) }}
 
-        {% set demoTitre %}<p><strong>Niveau 3</strong></p>{% endset %}
-        {{ macro.table_demo_code(demoTitre) }}
+            {% set demoTitre %}<p><strong>Niveau 3</strong></p>{% endset %}
+            {{ macro.table_demo_code(demoTitre) }}
 
-        {% set demoTitre %}<p>Texte courant</p>{% endset %}
-        {{ macro.table_demo_code(demoTitre) }}
+            {% set demoTitre %}<p>Texte courant</p>{% endset %}
+            {{ macro.table_demo_code(demoTitre) }}
 
-        {% set demoTitre %}<p class="ts-s tg1-2 tw-4">Niveau 4</p>{% endset %}
-        {{ macro.table_demo_code(demoTitre) }}
-    </tbody>
-</table>
-
+            {% set demoTitre %}<p class="ts-s tg1-2 tw-4">Niveau 4</p>{% endset %}
+            {{ macro.table_demo_code(demoTitre) }}
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -240,51 +247,71 @@ date: 2021-03-06
 
 
 
-{% set demo %}
-    <ul class="mb-s">
-        <li>un : Contenu</li>
-        <li>deux</li>
-        <li>trois</li>
-    </ul>
-    <ul class="ul-sommaire mb-s">
-        <li>un : Sommaire</li>
-        <li>deux</li>
-        <li>trois</li>
-    </ul>
-    <ul class="ul-reset mb-s">
-        <li>un : Reset ul</li>
-        <li>deux</li>
-        <li>trois</li>
-    </ul>
-    <ol>
-        <li>un</li>
-        <li>deux</li>
-        <li>trois</li>
-    </ol>
-{% endset %}
-{% set code %}
-<ul>
-    <li>un : Contenu</li>
-    <li>deux</li>
-    <li>trois</li>
-</ul>
 
-<ul class="ul-sommaire">
-    <li>un : Sommaire</li>
-    <li>deux</li>
-    <li>trois</li>
-</ul>
+{{ macro.h2("Liste") }}
+<div class="scroll-x-auto mb-xl">
+    <table>
+        <thead>
+        <tr>
+            <th>Type</th>
+            <th>Rendus</th>
+            <th>HTML</th>
+            <th>Macro Nunjucks</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% set demoListe %}
+            <ul>
+                <li>un</li>
+                <li>deux</li>
+                <li>trois</li>
+            </ul>
+        {% endset %}
+        {{ macro.table_demo_code(demoListe, "", "Contenu") }}
 
-<ul class="ul-reset">
-    <li>un : Reset ul</li>
-    <li>deux</li>
-    <li>trois</li>
-</ul>
 
-<ol>
-    <li>un</li>
-    <li>deux</li>
-    <li>trois</li>
-</ol>
-{% endset %}
-{{ macro.demo_code("Liste", demo, code) }}
+        {% set demoTitre %}
+            <ul class="ul-sommaire">
+                <li class="mb-xs">
+                    <a href="#" class="lien-niveau2">
+                        un
+                    </a>
+                </li>
+                <li class="mb-xs">
+                    <a href="#" class="lien-niveau2">
+                        deux
+                    </a>
+                </li>
+                <li class="mb-xs">
+                    <a href="#" class="lien-niveau2">
+                        trois
+                    </a>
+                </li>
+            </ul>
+        {% endset %}
+        {% set macroTitre %}
+            &#x7B;&#x7B; macro.sommaire(["un : Sommaire", "deux", "trois"]) &#125;&#125;
+        {% endset %}
+        {{ macro.table_demo_code(demoTitre, macroTitre, "Sommaire") }}
+
+        {% set demoListe %}
+            <ul class="ul-reset">
+                <li>un</li>
+                <li>deux</li>
+                <li>trois</li>
+            </ul>
+        {% endset %}
+        {{ macro.table_demo_code(demoListe, "", "Reinitialisé") }}
+
+        {% set demoListe %}
+            <ol>
+                <li>un</li>
+                <li>deux</li>
+                <li>trois</li>
+            </ol>
+        {% endset %}
+        {{ macro.table_demo_code(demoListe, "", "Numéroté") }}
+        </tbody>
+    </table>
+</div>
+

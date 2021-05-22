@@ -7,34 +7,14 @@ mosaique: "mtc.jpg"
 mosaique2x: "mtc_2x.jpg"
 mosaiqueTaille: "2-1"
 ---
+{% import "macro/contenu.njk" as macro %}
 
-<h2 class="ts-l mb-s">
-    Sommaire
-</h2>
-<ul class="ul-sommaire mb-l">
-    <li class="mb-xs">
-        <a class="lien-niveau2" href="#selva">Thème Selva</a>
-    </li>
-    <li class="mb-xs">
-        <a class="lien-niveau2" href="#t-shirt">T-shirt</a>
-    </li>
-    <li class="mb-xs">
-        <a class="lien-niveau2" href="#ajustement">Ajustement du thème</a>
-    </li>
-    <li class="mb-xs">
-        <a class="lien-niveau2" href="#favicon">Favicon</a>
-    </li>
-    <li class="mb-xs">
-        <a class="lien-niveau2" href="#refonte">Refonte du design</a>
-    </li>
-</ul>
+
+{{ macro.sommaire(["Thème Selva", "T-shirt", "Ajustement du thème", "Favicon", "Refonte du design"]) }}
 
 
 
-
-<h2 id="selva" class="mb-s ts-l">
-    Thème Selva <span class="ts-s tg1-2">— 12 octobre 2013</span>
-</h2>
+{{ macro.h2("Thème Selva", "ancre", "12 octobre 2013") }}
 <div class="d-flex ai-c mb-xl">
     <div class="w-50">
         <figure role="figure" aria-label="Thème Selva">
@@ -61,9 +41,7 @@ mosaiqueTaille: "2-1"
 
 
 
-<h2 id="t-shirt" class="mb-s ts-l">
-    T-shirt <span class="ts-s tg1-2">— 1 octobre 2010</span>
-</h2>
+{{ macro.h2("T-shirt", "ancre", "1 octobre 2010") }}
 <figure role="figure" aria-label="T-shirt MTC" class="mb-m">
     <img src="{{ metadata.siteUrl }}/images/mtc/t-shirt-mtc-test.png" alt="T-shirt MTC" loading="lazy">
     <figcaption>
@@ -91,10 +69,7 @@ mosaiqueTaille: "2-1"
 
 
 
-
-<h2 id="ajustement" class="mb-s ts-l">
-    Ajustement du thème <span class="ts-s tg1-2">— 16 septembre 2010</span>
-</h2>
+{{ macro.h2("Ajustement du thème", "ancre", "16 septembre 2010") }}
 <div class="d-flex ai-c mb-l">
     <div class="w-50">
         <img src="{{ metadata.siteUrl }}/images/mtc/mtc-dfview.png" alt="Page accueil" loading="lazy">
@@ -150,10 +125,7 @@ mosaiqueTaille: "2-1"
 
 
 
-
-<h2 id="favicon" class="mb-s ts-l">
-    Favicon <span class="ts-s tg1-2">— 25 octobre 2009</span>
-</h2>
+{{ macro.h2("Favicon", "ancre", "25 octobre 2009") }}
 <figure role="figure" aria-label="Favicon" class="mb-xl">
     <img src="{{ metadata.siteUrl }}/images/mtc/mtc-favicon.png" alt="Favicon" loading="lazy">
     <figcaption>
@@ -164,9 +136,7 @@ mosaiqueTaille: "2-1"
 
 
 
-<h2 id="refonte" class="mb-s ts-l">
-    Refonte du design <span class="ts-s tg1-2">— 25 octobre 2009</span>
-</h2>
+{{ macro.h2("Refonte du design", "ancre", "25 octobre 2009") }}
 <div class="d-flex ai-c mb-l">
     <div class="w-50">
         <figure role="figure" aria-label="Avant">

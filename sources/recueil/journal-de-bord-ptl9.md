@@ -34,7 +34,7 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
       
 ## 22 mai
 * [Correction affichage du caractères spécial](../caracteres-speciaux-safari-mobile/) "↗" sur Safari mobile
-* Ajout macro "code" et "titre h2"
+* Ajout macro "code", "titre h2" et "sommaire"
 
 ## 19 mai
 * Rédaction article

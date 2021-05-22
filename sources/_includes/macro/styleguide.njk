@@ -45,17 +45,22 @@
 
 
 
-{% macro table_demo_code(demo, macro) %}
+{% macro table_demo_code(demo, macro, type) %}
     <tr>
+        {% if type %}
+            <td>
+                {{ type | safe }}
+            </td>
+        {% endif %}
         <td>
             {{ demo | safe }}
         </td>
         <td>
-            <code>{{ demo | trim }}</code>
+            <pre><code>{{ demo | trim }}</code></pre>
         </td>
         <td>
             {% if macro %}
-                <code>{{ macro | safe }}</code>
+                <pre><code>{{ macro | safe | trim }}</code></pre>
             {% endif %}
         </td>
     </tr>
