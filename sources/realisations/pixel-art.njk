@@ -7,7 +7,6 @@ classCssMain: "pa"
 mosaique: "pixel-art.png"
 mosaique2x: "pixel-art_2x.png"
 mosaiqueClassCss: " pa"
-wip: "true"
 ---
 {% import "macro/contenu.njk" as macro %}
 
@@ -198,6 +197,7 @@ wip: "true"
 {% set url %}{{ metadata.siteUrl }}/images/pixel-art/vrac/{% endset %}
 {{ macro.galerie(
     url,
+    "pixel-art",
     [
         "abandon.gif",
         "abbey_URT.gif",
