@@ -97,22 +97,6 @@
 }
 
 
-/*--------------------------------------------------------------------*/
-/* Galerie d'image                                                    */
-/*--------------------------------------------------------------------*/
-.s_mosaique__lien.var--galerie {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  width: 150px;
-  height: 150px;
-}
-.s_mosaique__lien.var--galerie img{
-  max-width: inherit;
-}
-
-
 
 
 /*--------------------------------------------------------------------*/

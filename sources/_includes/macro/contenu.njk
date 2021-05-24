@@ -73,10 +73,25 @@
      <ul class="ul-reset s_mosaique">
          {% for item in liste %}
              <li class="s_mosaique__item">
-                 <a href="{{ siteUrl }}{{ item }}" class="s_mosaique__lien var--galerie">
+                 <a href="#image-{{ loop.index }}" class="s_mosaique__lien var--galerie" id="lien-{{ loop.index }}">
                      <img src="{{ siteUrl }}{{ item }}" alt="{{ item }}" class="s_mosaique__image pa">
                  </a>
              </li>
          {% endfor %}
      </ul>
+     {% for item in liste %}
+         <div id="image-{{ loop.index }}" class="s_galerie">
+             <a class="s_galerie__fermer" href="#">X</a>
+             <div class="s_galerie__figure">
+                 <img class="s_galerie__image" src="{{ siteUrl }}{{ item }}" alt="{{ item }}">
+                 {% if loop.first %}{% else %}
+                     <a class="galerie__btn--prev" href="#image-{{ loop.index - 1 }}">Précédent</a>
+                 {% endif %}
+                 {% if loop.last %}{% else %}
+                     <a class="galerie__btn--next" href="#image-{{ loop.index + 1 }}">Suivant</a>
+                 {% endif %}
+                 <a class="galerie__btn--close" href="#lien-{{ loop.index }}">Fermer</a>
+             </div>
+         </div>
+     {% endfor %}
  {% endmacro %}

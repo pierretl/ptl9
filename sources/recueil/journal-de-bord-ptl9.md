@@ -34,7 +34,7 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
   
 ## 24 mai
 * Mise a jour des lien
-* Structure de galerie d'image pour [les pixels en vrac](/realisations/pixel-art/#pixel-en-vrac)
+* Galerie d’image en full HTML/CSS style lightbox, voir [pixels en vrac](/realisations/pixel-art/#pixel-en-vrac)
       
 ## 22 mai
 * [Correction affichage du caractères spécial](../caracteres-speciaux-safari-mobile/) "↗" sur Safari mobile

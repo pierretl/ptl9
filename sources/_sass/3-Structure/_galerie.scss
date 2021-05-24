@@ -1,0 +1,107 @@
+/*--------------------------------------------------------------------*/
+/* Grille d'affichage                                                 */
+/*--------------------------------------------------------------------*/
+
+.s_mosaique__lien.var--galerie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+}
+.s_mosaique__lien.var--galerie img{
+  max-width: inherit;
+}
+
+
+/*--------------------------------------------------------------------*/
+/* Conteneur de la preview                                            */
+/*--------------------------------------------------------------------*/
+.s_galerie {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.s_galerie:target {
+  display: block;
+}
+
+
+/*--------------------------------------------------------------------*/
+/* overlay                                                            */
+/*--------------------------------------------------------------------*/
+.s_galerie__fermer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+/*--------------------------------------------------------------------*/
+/* Conteneur image et bouton                                          */
+/*--------------------------------------------------------------------*/
+$taille-bouton: 36px;
+
+.s_galerie__figure {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  display: block;
+  min-height: ($taille-bouton * 3);/*pour que le boutons suivant ne se superpose pas a la croix de fermeture si l'image est petite*/
+}
+
+/*--------------------------------------------------------------------*/
+/* Image                                                              */
+/*--------------------------------------------------------------------*/
+
+.s_galerie__image {
+  max-height: calc(100vh - 20px);
+  max-width: calc(100vw - 20px);
+  padding: $taille-bouton $taille-bouton 0;
+}
+
+
+/*--------------------------------------------------------------------*/
+/* Boutons                                                            */
+/*--------------------------------------------------------------------*/
+.galerie__btn--prev,
+.galerie__btn--next,
+.galerie__btn--close {
+  position: absolute;
+  display: block;
+  width: $taille-bouton;
+  height: $taille-bouton;
+  background-image: url(./images/galerie-btn.png);
+  background-repeat: no-repeat;
+  text-indent: -9000px;
+}
+
+.galerie__btn--prev {
+  top: 50%;
+  left: 0;
+  background-position: 0 0;
+  transform: translate3d(0, -50%, 0);
+}
+
+.galerie__btn--next {
+  top: 50%;
+  right: 0;
+  background-position: -$taille-bouton 0;
+  transform: translate3d(0, -50%, 0);
+}
+
+.galerie__btn--close {
+  top: 0;
+  right: 0;
+  background-position: 0 (-($taille-bouton*2));
+}
