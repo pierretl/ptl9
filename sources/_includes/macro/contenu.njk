@@ -63,3 +63,20 @@
          {% endfor %}
      </ul>
  {% endmacro %}
+
+
+
+
+
+
+ {% macro galerie(siteUrl, liste) %}
+     <ul class="ul-reset s_mosaique">
+         {% for item in liste %}
+             <li class="s_mosaique__item">
+                 <a href="{{ siteUrl }}{{ item }}" class="s_mosaique__lien var--galerie">
+                     <img src="{{ siteUrl }}{{ item }}" alt="{{ item }}" class="s_mosaique__image pa">
+                 </a>
+             </li>
+         {% endfor %}
+     </ul>
+ {% endmacro %}
