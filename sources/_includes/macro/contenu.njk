@@ -106,11 +106,11 @@
 
 
 
- {% macro galerie(siteUrl, option, liste) %}
+ {% macro galerie(siteUrl, option, liste, classCssConteneur) %}
      {% if option == "pixel-art" %}
          {% set classCSSimage %} pa{% endset %}
      {% endif %}
-     <ul class="ul-reset s_mosaique">
+     <ul class="ul-reset s_mosaique{% if classCssConteneur %}{{ classCssConteneur | safe }}{% endif %}">
          {% for item in liste %}
              <li class="s_mosaique__item">
                  <a href="#image-{{ loop.index }}" class="s_mosaique__lien var--galerie" id="lien-{{ loop.index }}">

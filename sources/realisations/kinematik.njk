@@ -1,0 +1,68 @@
+---
+layout: layout/standard.njk
+titre: "Kinematik"
+tags: "realisations"
+date: 2014-01-24
+mosaiqueTaille: "2-1"
+mosaique: "kinematik.jpg"
+mosaique2x: "kinematik_2x.jpg"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<p class="mb-m">
+    <a href="http://kinematik.fr" target="_blank" rel="external">Kinematik</a>, c’est une équipe de deux personnes spécialiser dans la réalisation de vidéo de mariage
+</p>
+<div class="d-flex ai-c mb-l">
+    <div class="w-70">
+        <blockquote>
+            <p>
+                Nous avons besoin d’un site vitrine en une seule page qui nous présente ainsi que nos formules. <br>
+                La page d’accueil doit contenir le visuel fournis. <br>
+                Le logo et la charte du site doit également partir de ce visuel
+            </p>
+            <cite>Kinematik.fr</cite>
+        </blockquote>
+    </div>
+    <div class="w-30">
+        <img src="{{ metadata.siteUrl }}/images/kinematik/visuel-client.jpg" alt="Visuel client" loading="lazy">
+    </div>
+</div>
+
+
+
+{{ macro.sommaire(["Site web", "Logo", "Favicon"]) }}
+
+
+
+
+
+{{ macro.h2("Site web", "ancre", "30 mars 2014") }}
+{% set url %}{{ metadata.siteUrl }}/images/kinematik/{% endset %}
+{{ macro.galerie(
+    url,
+    "pixel-art",
+    [
+        "accueil.png",
+        "clip.png",
+        "reportage.png",
+        "film.png",
+        "tarifs.png"
+    ],
+    " mb-xl") }}
+
+
+
+
+
+{{ macro.h2("Logo", "ancre", "19 mars 2014") }}
+<img src="{{ metadata.siteUrl }}/images/kinematik/logo.png" alt="Logo Kinematik" loading="lazy" class="mb-xl">
+
+
+
+
+
+
+
+
+{{ macro.h2("Favicon", "ancre", "24 janvier 2014") }}
+<img src="{{ metadata.siteUrl }}/images/kinematik/favicon.png" alt="Favicon Kinematik" loading="lazy">
