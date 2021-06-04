@@ -32,6 +32,9 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
     * faq
     * page description
   
+## 04 juin
+* Rédaction [Poweo, page de maintenance](/realisations/poweo/)
+  
 ## 24 mai
 * Mise a jour des lien
 * Galerie d’image en full HTML/CSS style lightbox, voir [pixels en vrac](/realisations/pixel-art/#pixel-en-vrac)

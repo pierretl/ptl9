@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Poweo - Notre site est actuellement en maintenance / Onze website is in onderhoud</title>
+    <link rel="shortcut icon" href="{{ metadata.siteUrl }}/images/poweo/favicon.png" type="image/png">
+    <style type="text/css">
+        *{ margin: 0; padding: 0;}
+
+        body {
+            overflow: hidden;
+            background: #231f20;
+
+            text-align: center;
+            font-family: Helvetica,Arial,sans-serif;
+        }
+
+        h1{
+            padding: 50px 0 150px;
+            margin-bottom: 60px;
+            color: #ffda00;
+            text-transform: uppercase;
+            font-size: 250%;
+
+            position: relative;
+
+            background: #3b4b5a;
+            background: -moz-linear-gradient(top, #1c2d3f 0%, #475562 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1c2d3f), color-stop(100%,#475562));
+            background: -webkit-linear-gradient(top, #1c2d3f 0%,#475562 100%);
+            background: -o-linear-gradient(top, #1c2d3f 0%,#475562 100%);
+            background: -ms-linear-gradient(top, #1c2d3f 0%,#475562 100%);
+            background: linear-gradient(to bottom, #1c2d3f 0%,#475562 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c2d3f', endColorstr='#475562',GradientType=0 );
+        }
+
+        h2{
+            color: #f2f2f2;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        h2 strong{
+            color: #ffda00;
+        }
+
+        .soleil{
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+
+            width: 214px;
+            height: 115px;
+            margin-left:-107px;
+
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANYAAABzCAMAAADT7AxBAAAAUVBMVEUAAAD85Cz85Cz85Cz85Cz84yz85Cz84yz85Cz85Cz85C385Cz85Cz85Cz85Cz85Cz84yz84yz75Cz75S375i384yz84Sv93ir84iz84Cv83yvokfp+AAAAEnRSTlMAI8LkTe881G8U+q+PB36gYPZ6VtykAAAEG0lEQVR42uzYyW6kMBCA4fKO8b68/7NOZ8RMK50oMqbaii2+AwdO9UuFhA2jkMAS5bAYwvIHD2sx+a+dwEpcPmywEpIPFlZyZ83kzprJnTWTO2smd9ZM7qyZ3FkzubNmcmfNRK95lwH0yFrr5gmIWPKeEIhJWUX4DTaVRdCAxcGvEPIHttjnIHNescvmJbtCvt7ltOSbDYZSqpR6PE3wURINFxBrTHTQy+dLXY5wb5So39gZDZvsbOMpP9DuLp36u0gMaq8/E9Ryfb5qv/oXxveuLif9I6mNMJH0zZTc0C7iVT0lGe56JiIwrosbUc9TnpyeZ3cwqEtvqnZKRp6cxgAM6dKe1Sso75gFrws/6hmGUoXXRSyrGGh0CFUdXRq+cpuoWKhsrMLtCvCFVBVT0C1VyF0CXvlScSnZUIXdBZ9pU9GlraEKt0u9vGf1HYxuqMLsig0LiL2IWrRV9Z8HbMMCokgR/ov4VU/aBysBnggt72SfO9FQhYaz8l7mX8M2sMqXt2PyWIu0UtWzKy5VVYo4uqRhymp4MWvV0TXKVoZhBEaJZZyqNIzB9zISdTACEWWsP9XaWXKrMBQE0JbQgBAaUIpM+1/oq3pxVT5i4oZcRHIW4HZfJBnbFHSQ9FNvBucrT91NDmer7QJDwLmUbVeIOFXS7RojzpTbRazCedTSeH9nGep2nQp8+vun4OmnYRjaQYv1WseotR/s1A6acY7SjvCzcSokfEhBuTEems9kcAZ3pFN2uCOYcqCZxhniutMUzbd/8a17Vchz6z6vxeFbqe4t5hOAay+WdngojcO6i4E097ruYEdQVNk3K0gru+IVWNWuOzjIUnvS5wSe8isvQlZeeSN2CXqlLQqSEj/SacROIa60DEmVb2VO3bhDgqD4yqo4IPGvbyAnWDY1HwzwbECBnMqGRhyk2MENof8a9MczTf9VGAYy0uG4QmbMkOLYxB6z8wlCMrvse2zgSUGIfqbUvxGDG7VQcfrHOROVEyHDPFMMfipSOVKbK/dKc1QQcbsrOMQRP+fJZSHCd5vhSA5QQrDURu53OBVIUG/9RqiJpDcNCeaN8K4gYSaihGpVJsqnfiP0kJCZqAIRwRJZAyQUptYIGb5brcjUMkC3MAtGyt5+9fmcm2ZqOciYpWol3+7zga+1KMgYpWrNbUu51Xp/zAbIqEwYcJPM+FUNADC0LQv+80TSkK6oZYZ2z5QBLG1T6l/LMLUePk4xAr5tsb/8apW2ZQDGtmX+5XvLt01pu7ROfC2xkzCL1YIp+qtYcaNfCGKfW0SWfXiGeyIpMrUMZMQdtYJtG5h3U5haGTI8kTXgRul2z2BAyEwtsTt4staNcneAMjK1PES4flmGiRL6dpz71XIvjAoJmonSUuudIPTLk9Q+/geoeYvWZe9/xwAAAABJRU5ErkJggg==");
+        }
+
+        #city{
+            display: block;
+            width: 200%;
+            height: 103px;
+            background-color: transparent;
+            background-repeat: repeat-x;
+            background-image: url("data:image/png;base64,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");
+
+            position: absolute;
+            bottom: 0;
+
+            -webkit-animation: movebg 20s linear infinite;
+            -moz-animation: movebg 20s linear infinite;
+            -ms-animation: movebg 20s linear infinite;
+            -o-animation: movebg 20s linear infinite;
+            animation: movebg 20s linear infinite;
+        }
+        @-webkit-keyframes movebg {
+            0% {margin-left: 0px;}
+            100% {margin-left: -100%;}
+        }
+        @-moz-keyframes movebg {
+            0% {margin-left: 0px;}
+            100% {margin-left: -100%;}
+        }
+        @-o-keyframes movebg {
+            0% {margin-left: 0px;}
+            100% {margin-left: -100%;}
+        }
+        @keyframes movebg {
+            0% {margin-left: 0px;}
+            100% {margin-left: -100%;}
+        }
+        .txt_fr{
+            -webkit-animation: blinkfr 10s linear infinite;
+            -moz-animation: blinkfr 10s linear infinite;
+            -ms-animation: blinkfr 10s linear infinite;
+            -o-animation: blinkfr 10s linear infinite;
+            animation: blinkfr 10s linear infinite;
+        }
+        .txt_nl{
+            -webkit-animation: blinknl 10s linear infinite;
+            -moz-animation: blinknl 10s linear infinite;
+            -ms-animation: blinknl 10s linear infinite;
+            -o-animation: blinknl 10s linear infinite;
+            animation: blinknl 10s linear infinite;
+        }
+        .text{position: relative;}
+        .txt_nl{
+            position: absolute;
+            top:0;
+            width: 100%;
+        }
+        #konami{position: absolute;z-index: 100;top:30px; margin-left: -256px}
+        @-webkit-keyframes blinkfr {
+            0% {opacity: 0;}
+            20% {opacity: 0;}
+            30% {opacity: 1;}
+            75% {opacity: 1;}
+            85% {opacity: 0;}
+            100% {opacity: 0;}
+        }
+        @-moz-keyframes blinkfr {
+            0% {opacity: 0;}
+            20% {opacity: 0;}
+            30% {opacity: 1;}
+            75% {opacity: 1;}
+            85% {opacity: 0;}
+            100% {opacity: 0;}
+        }
+        @-o-keyframes blinkfr {
+            0% {opacity: 0;}
+            20% {opacity: 0;}
+            30% {opacity: 1;}
+            75% {opacity: 1;}
+            85% {opacity: 0;}
+            100% {opacity: 0;}
+        }
+        @keyframes blinkfr {
+            0% {opacity: 0;}
+            20% {opacity: 0;}
+            30% {opacity: 1;}
+            75% {opacity: 1;}
+            85% {opacity: 0;}
+            100% {opacity: 0;}
+        }
+
+        @-webkit-keyframes blinknl {
+            0% {opacity: 1;}
+            20% {opacity: 1;}
+            30% {opacity: 0;}
+            75% {opacity: 0;}
+            85% {opacity: 1;}
+            100% {opacity: 1;}
+        }
+        @-moz-keyframes blinknl {
+            0% {opacity: 1;}
+            20% {opacity: 1;}
+            30% {opacity: 0;}
+            75% {opacity: 0;}
+            85% {opacity: 1;}
+            100% {opacity: 1;}
+        }
+        @-o-keyframes blinknl {
+            0% {opacity: 1;}
+            20% {opacity: 1;}
+            30% {opacity: 0;}
+            75% {opacity: 0;}
+            85% {opacity: 1;}
+            100% {opacity: 1;}
+        }
+        @keyframes blinknl {
+            0% {opacity: 1;}
+            20% {opacity: 1;}
+            30% {opacity: 0;}
+            75% {opacity: 0;}
+            85% {opacity: 1;}
+            100% {opacity: 1;}
+        }
+        @media only screen and (max-width: 350px) {
+            h1{	padding: 20px 0 130px;}
+            h2{font-size: 110%;}
+            .txt_fr,.txt_nl{width: 90%; margin-right: 5%; margin-left: 5%;}
+        }
+    </style>
+    <!--[if lte IE 9]>
+    <style type="text/css">
+        .text{position: static;}
+        .txt_nl{
+            position: static;
+            top:auto;
+            width: auto;
+        }
+        .txt_fr{
+            margin-bottom:60px;
+        }
+    </style>
+    <![endif]-->
+</head>
+<body id="home">
+<img id="konami" style="display:none" src="{{ metadata.siteUrl }}/images/poweo/konami.jpg" alt=""/>
+<h1>
+    <img alt="POWEO by Direct Energie" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAABtCAMAAABqZg+QAAAAeFBMVEUAAAD/////////////////////////////////////////////////////////3gD/////3gD/4QD/3wD/3QD/3wD/3wD/4AD/4AD/4QD/3gD/4QD/3gD/////5QD/4QD/5AD/2wD/2AD/1gD/3AD/3gD/1AD/5wBX8pL/AAAAHXRSTlMAgEC/EO+fYDAgz99wr1Cnj3vvEEC/32Awj1Agz8j0LzsAAAcdSURBVHja7NZJCgMxDERR3cC4PLXioK3uf8NANoGQwb1rrHpHEHxRQkRERERERER0TXNo6/6ElnKVkA7t/gbpJsGU0f0j6JRAMvy7VCSI2v0nZImgqP/VAvQx77YA23/NA7ZmyNYGbJXKxqqZ8RKvLqLXUWDn7Lq5H9yZ23ajMAxF5RvmfknSpG3i6Ty0//+L0wyYg2VgnKw1L91vwUKgIx3XrL78epDDzzxaDb8epqMfyBXGSOcnHie6jVpv3TB0W645b5lD20wZVyqR0zp5K4SQBQXIMFrK8Jbwp5a1EG2elj6d0+81undf6Wt3WAsY1mUQxnmUpIgi8+uVKHC1dK7UqMU4ZyRyqu9olG3VnEETQyI9FlN5WZPhSguOw0rI6n4pjVvSayZTFiwLmvh7OSNP5b4x873CfdN4zZQDxoYqN26Bqekhris1vhPj9RZHXSjCOkYZKJFXG8tjcdqHjYtzkaW7g2FZ0sddAErTA7zFOrxSxLGLws7EaV2EIoAiuBJjJ1sa6Z1bTkiBRCspavZ0nj6dQ6xDooN4nDaTPftWigbjz5ZdpZSaX3UxSRmcccfQSI2C9bSkamm9y3LIHKdXlMz7fn3geOaBbxSSTdbEBninoIlmuYVqayahoJGBM/yEwBkas2IkHoBap8c1RbBn1887Y6ANXnnkDWsYYZNDmKDPMhx40l4ohLZwxhiKtA1/AuZDLrcny3xoks1x+wg50ybdB+NIS3oUs3xREwxEEzlJwN8ZnIE7axRYM7PZ6K4+2pEsJcKLu9AmVx57oiVlZMp20THtMOFBHRXdmbyBts+iKtxX8hTVnCCP+y+gfAInVtuBKH0kQhetNMCgg+g5W3Ya3sh925vMR+vFfVFl2ZygZgMB6SmNC6utezpYz6UABSEEdGJ1SHS09223rZ8QOxoOMUoANSfokWpG+TdKYYidke6NF1ogV/TvuRCSAK5hyr0zNHlvNNgtpFtHBgYCEOcJIU60x2FfiLgnaULgrfPJGf7UDWfsCFHMQhBP/7wQtMtLGHyLhahpiUkXohi9MTlj2lOqyRn5nhACNpCrzkuie0IIEAtR0QKLN8FutqBBldPeUBbziI9rjU+KE4UMKaItiH+j/P+JOMdCuHrjHJHHOumVk3Q/OsOr1AfyGaTgtPGJusATExi+Qq60xzkMZnvEiGVHxwxVMOv0WA/PDxbjFGz8DZ91Lqpro3nrnxTinfb4ShDCCT3+HnUwRbAhmJwZB3Up59Eo7U6JtvNPSil8vmwjffGkEG+0w4kFd6EQHpMJIUo3UrMTtbGwAqY5GIEGHWVTVIVK6AxDUEzPltAd8waSazvTDm8seIiFANGL1L7BtZSyrhxrIUbAMmEK/ozK6nvpwkBJfKspK6XsfXpNiRy/GCfa5sBiL/tC8IZkLsZyU+NYpJkzgi/TShnMD/5IcCQlc/4M6WiTyyfj+i8hBAVkOzpgBBomjN1PIdnmDGDDFDpe3Wn7/4Is8kCxEEJUztPkxBAOwNDsI8wyYfReiion0G+ugfQ2/2HPznobhaEwDH/HNjaLFwhkaTpcMDPq//+JY06WMoWWUCmVgvJcUQ5G4pV90+zqW5OFqRCAJxlpm2EsdYMMpKY65bjKJ3YVUvn5K8R/MyxS/2Xzh6MaPXicDDEjsy5+XyK1x5iJARWulJbSfPEKoz6dlR5LhXGJ2Z3DNpgM8bCO3ci2xkdVNxJWFgK7buTjLzyHbTf2urYQ+27Cdj/IELoJAWsLgV03ZROqJqoCj8de1xfi2H3DC9YXAuH3Yrt6jSHqzeIQDdYYAs3SDhXWGQLVsg4BEziEwYMLfxb4VWNCefqfyaMLSzuMGbKP3wEI3+8wLkJkkBoAii43BACCotOlpSgFjJOkMjr/Bb6y8B5A6uH5aX7Y9FMttQBIgXoZ7mN/W4eAWdIKKqxoU8A5vqGpTDTQQrRElHi0mogUdGG8yxVRewohCg4h+6VEkJoD8RqKa0tBSYZW8B1SuJPD7m3WpsI8KQDSoFyZRF1upIngEADI4fzTL48V+kRMSPRkHgdEvO489BKFRY9D4K7ql7kO2wPm8QYoBJC7RFzLQNM5RJZb3hG2r8XeQxS8BSRped0Rqh8qp9EvFUJddoTHHTXbrzLs9sCNISjXQJaUeA9RnkJEpGZDqLwchIgc9yBZ0EyI+6fYVTVuwt+tWr4Y3LgcjfiNOB8NwUcjGx8NihHz4dHouxYGAJ1C4AccwuZtLBxxM2mFcMUwhBW20DiFQJp4tPERoaBzL3QyCJGLqA8B3xK/SGR8JhIDn1hhCsshBC+/u6baDmP8ejnWWICklKQAUHa9oQUADUUAjEEpIw/YOMl4wjIZOZgUgPEgGRkepgQIJ50BSMHJKMOPeG2aKjo2Bzw9PT09/WsPDkgAAAAABP1/3Y5ABQAAAAAAAEYCOSMARMvlE8YAAAAASUVORK5CYII="/>
+    <span class="soleil"></span>
+    <span id="city"></span>
+</h1>
+<div class="text">
+    <h2 class="txt_fr">Notre site est en maintenance<br />~<br /><em>Dans quelques heures, une nouvelle <strong>énergie positive</strong> se lèvera sur la Belgique</em></h2>
+    <h2 class="txt_nl">Onze website is in onderhoud<br />~<br /><em>Binnen enkele uren, een nieuwe <strong>positieve energie</strong> ziet het licht in België</em></h2>
+</div>
+
+</body>
+
+
+<script type="text/javascript" src="{{ metadata.siteUrl }}/js/konami.js"></script>
+<script>
+    var easter_egg = new Konami(function() {
+        var konamiImg = document.getElementById("konami");
+        konamiImg.style.display="inline";
+    });
+</script>
+
+</html>
