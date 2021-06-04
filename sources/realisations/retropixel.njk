@@ -7,33 +7,128 @@ wip: "true"
 ---
 {% import "macro/contenu.njk" as macro %}
 
+<p class="mb-m">
+    <a rel="noreferrer noopener" href="https://www.retropixel.fr" target="_blank">Retropixel</a> est une grande communauté francophone entièrement dédiée au Pixel-Art.
+</p>
+<p class="mb-m">
+    Je les ai rejoint en 2009 par curiosité et je suis rapidement devenus modérateur puis administrateur <br>
+    J'ai réalisé de multiples fonctionnalités et visuels
+</p>
 <p class="mb-l">
-    <a rel="noreferrer noopener" href="https://www.retropixel.fr" target="_blank">Retropixel</a> est une grande communauté francophone entièrement dédiée au Pixel-Art. Je les ai rejoint en 2009 par curiosité et je suis rapidement devenus modérateur puis administrateur des sites en leur réalisant des fonctionnalités :
+    Le site a fermé ses portes en 2021
 </p>
 
 
 
-{{ macro.sommaire(["Refonte graphique", "Logo"]) }}
+{{ macro.sommaire(["Refonte graphique", "Logo", "Zoom automatique", "Vignette Concours"]) }}
+
+
 
 
 
 
 {{ macro.h2("Refonte graphique", "ancre", "13 février 2014") }}
-<p class="mb-xl">
-    Proposition de refonte du design dans sa globalité (design et intégration de maquette en HTML/CSS)
+<p class="mb-m">
+    Refonte du design dans sa globalité (design et intégration de maquette en HTML/CSS)
 </p>
+{{ macro.figure(
+    "/images/retropixel/refonte-graphique/design-accueil.png",
+    "Capture page accueil",
+    "Page d’accueil",
+    "mb-m"
+) }}
+
+{{ macro.figure(
+    "/images/retropixel/refonte-graphique/design-galerie.png",
+    "Capture page galerie",
+    "Galerie intéractive avec un pixel selectionné",
+    "mb-xl"
+) }}
+
+
+
+
+
+
 
 
 
 {{ macro.h2("Logo", "ancre", "19 août 2010") }}
-<p>Modernisation du logo du forum <a href="https://www.retropixel.fr/">RetroPixel</a> en s’appuyant sur :</p>
-<ul class="mb-m">
-    <li>le logo d’origine : <img loading="lazy" class="wp-image-928" style="width: 150px;" src="http://www.pierre.tl/wp-content/uploads/2010/08/rp2ov6.png" alt="" width="318" height="46"></li>
-    <li>la proposition de RosenCrantz : <img loading="lazy" class="wp-image-929" style="width: 150px;" src="http://www.pierre.tl/wp-content/uploads/2010/08/logoorangebleuav5.png" alt="" width="257" height="38"></li>
-</ul>
-<figure class="wp-block-image size-large"><img loading="lazy" src="http://www.pierre.tl/wp-content/uploads/2015/08/logo_retro_pixel-170px.gif" alt="" class="wp-image-303" width="171" height="50"></figure>
-<figure class="wp-block-image size-large"><img loading="lazy" src="http://www.pierre.tl/wp-content/uploads/2015/08/logo_retro_pixel.gif" alt="" class="wp-image-304" width="369" height="65"></figure>
-<br class="mb-xl">
+<p class="mb-m">Modernisation du logo du forum <a href="https://www.retropixel.fr/" target="_blank" rel="external">RetroPixel</a> en s’appuyant sur :</p>
+<div class="d-flex mb-m">
+    <div class="w-33">
+        {{ macro.figure(
+            "/images/retropixel/logo/logo-origine.png",
+            "logo retropixel d'origine",
+            "Le logo d’origine"
+        ) }}
+    </div>
+    <div class="w-33">
+        {{ macro.figure(
+            "/images/retropixel/logo/logo-RosenCrantz.png",
+            "logo retropixel par RosenCrantz",
+            "La proposition de RosenCrantz"
+        ) }}
+    </div>
+    <div class="w-33">
+        {{ macro.figure(
+            "/images/retropixel/logo/logo_retropixel_pixel-art.gif",
+            "nouveau logo retropixel en échelle pixel art",
+            "La version final qui est un mélange des deux"
+        ) }}
+    </div>
+</div>
+
+<p>Taille réel du nouveau logo :</p>
+<img src="{{ metadata.siteUrl }}/images/retropixel/logo/logo_retropixel.gif" alt="Logo taille réel" class="mb-m">
+
+
+
+
+
+
+
+
+
+{{ macro.h2("Zoom automatique", "ancre", "3 juillet 2014") }}
+<p class="mb-m">
+    Développement et intégration d’une nouvelle fonctionnalité en JavaScript :
+</p>
+<div class="d-flex mb-xl">
+    <div class="w-70">
+        <p class="mb-s">Au survol des images posté dans le forum des boutons apparait pour agrandir l’image tout en conservant la netteté des pixels</p>
+        <p>Des barres de défilement apparaissent si l'image devient plus grande que son conteneur</p>
+    </div>
+    <div class="w-30">
+        <img src="{{ metadata.siteUrl }}/images/retropixel/fonctionnalite/zoom-pixel.png" alt="outils de zoom">
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+{{ macro.h2("Vignette Concours", "ancre", "2011 à 2013") }}
+<p class="mb-m">
+    Vignette d’illustration pour les <a href="https://www.retropixel.fr/pixel/page-galerie-concours.php" rel="external" target="_blank">concours</a>
+</p>
+{% include "contenu/vignette-concours-retropixel.njk" %}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <div class="d-flex ai-c mb-s">

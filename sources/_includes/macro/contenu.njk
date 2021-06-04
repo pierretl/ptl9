@@ -68,6 +68,43 @@
 
 
 
+ {% macro sommaireNiveauMultiple(liste) %}
+     <h2 class="ts-l mb-s">
+         Sommaire v2
+     </h2>
+     <ul class="ul-sommaire mb-l">
+         {% for ligne in liste %}
+             <li class="mb-xs">
+
+                 {% set rowloop = loop %}
+                 {% for item in ligne %}
+
+
+                     {% if loop.index == 1 %}
+                         {% if loop.length == loop.index %}
+                             <a class="lien-niveau2" href="#{{ item | slug }}">{{ item }}</a>
+                         {% else %}
+                             {{ item }}
+                         {% endif %}
+                     {% else %}
+                         <ul>
+                             <li>
+                                 <a class="lien-niveau2" href="#{{ item | slug }}">{{ item }}</a>
+                             </li>
+                         </ul>
+                     {% endif %}
+
+
+                 {% endfor %}
+
+
+
+             </li>
+         {% endfor %}
+     </ul>
+ {% endmacro %}
+
+
 
  {% macro galerie(siteUrl, option, liste) %}
      {% if option == "pixel-art" %}

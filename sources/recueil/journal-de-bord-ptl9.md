@@ -34,6 +34,8 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
   
 ## 04 juin
 * Rédaction [Poweo, page de maintenance](/realisations/poweo/)
+* Suite de la rédaction de [Retropixel](/realisations/retropixel/) (en cours)
+* Rédaction [Mangatheque](/realisations/mangatheque/)
   
 ## 24 mai
 * Mise a jour des lien

@@ -1,0 +1,275 @@
+---
+layout: layout/standard.njk
+titre: "Mangathèque"
+tags: "realisations"
+date: 2013-12-17
+scriptJs: "horizontal-scroll.js"
+mosaique: "mangatheque.jpg"
+mosaique2x: "mangatheque_2x.jpg"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<p class="mb-l">
+    Ma collection de Manga grandissant sans cesse. <br>
+    Il me venait difficile de suivre à quel tome de quelle série j'en étais. <br>
+    Mon system de liste dans un carnet était à bout de souffle <br>
+    J'ai donc entrepris de faire un mini-site &laquo;<a href="http://pierre.tl.free.fr/site/mangatheque/">Mangathèque</a>&raquo; à la place
+</p>
+
+
+
+
+<h2 class="ts-l mb-s">
+    Sommaire
+</h2>
+<ul class="ul-sommaire mb-l">
+    <li class="mb-xs">
+        <a class="lien-niveau2" href="#design">Design</a>
+    </li>
+    <li class="mb-xs">
+        <span class="mb-xs">Fonctionnalité par version :</span>
+        <ul>
+            <li>
+                <a class="lien-niveau2" href="#version-1">2008 : style Apple</a>
+            </li>
+            <li>
+                <a class="lien-niveau2" href="#version-2">2009, janvier : Version 2</a>
+            </li>
+            <li>
+                <a class="lien-niveau2" href="#version-3">2009, juillet : Version 3</a>
+            </li>
+            <li>
+                <a class="lien-niveau2" href="#version-4">2011 : Version 4</a>
+            </li>
+            <li>
+                <a class="lien-niveau2" href="#version-5">2013 : Version 5</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+
+{{ macro.h2("Design", "ancre") }}
+<ul class="ul-reset scroll-x js--scroll-x mb-xs">
+    <li>
+        {{ macro.figure(
+            "/images/mangatheque/liste-v1.jpg",
+            "",
+            "2008"
+        ) }}
+    </li>
+    <li>
+        {{ macro.figure(
+            "/images/mangatheque/liste-v2.jpg",
+            "",
+            "janvier 2009"
+        ) }}
+    </li>
+    <li>
+        {{ macro.figure(
+            "/images/mangatheque/liste-v3.jpg",
+            "",
+            " juillet 2009"
+        ) }}
+    </li>
+    <li>
+        {{ macro.figure(
+            "/images/mangatheque/liste-v4.jpg",
+            "",
+            "2011"
+        ) }}
+    </li>
+    <li>
+        {{ macro.figure(
+            "/images/mangatheque/liste-v5.jpg",
+            "",
+            "2013"
+        ) }}
+    </li>
+</ul>
+<p class="tg1-4 tw-5 mb-l">
+    <em>Listage des mangas</em>
+</p>
+
+
+
+
+<ul class="ul-reset scroll-x js--scroll-x mb-xs">
+    <li>
+        {{ macro.figure(
+            "/images/mangatheque/option-v1.jpg",
+            "",
+            "2008"
+        ) }}
+    </li>
+    <li>
+        {{ macro.figure(
+            "/images/mangatheque/option-v2.jpg",
+            "",
+            "janvier 2009"
+        ) }}
+    </li>
+    <li>
+        {{ macro.figure(
+            "/images/mangatheque/option-v3.jpg",
+            "",
+            " juillet 2009"
+        ) }}
+    </li>
+    <li>
+        {{ macro.figure(
+            "/images/mangatheque/option-v4.jpg",
+            "",
+            "2011"
+        ) }}
+    </li>
+    <li>
+        {{ macro.figure(
+            "/images/mangatheque/option-v5.jpg",
+            "",
+            "2013"
+        ) }}
+    </li>
+</ul>
+<p class="tg1-4 tw-5 mb-xl">
+    <em>Options de d'affichage</em>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+{{ macro.h2("Version 1", "ancre") }}
+<div class="d-flex mb-xl">
+    <div class="w-50">
+        <img src="{{ metadata.siteUrl }}/images/mangatheque/mangatheque-v1.png" alt="" loading="lazy" />
+    </div>
+    <div class="w-50">
+        <ul>
+            <li>Design inspiré de iOs de l’Iphone à cette période</li>
+            <li>Ajout d’un backoffice pour gérer la liste</li>
+            <li>Choix d’affichage : séries en cours, terminées ou les deux par ordre alphabétique</li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{{ macro.h2("Version 2", "ancre") }}
+<div class="d-flex mb-xl">
+    <div class="w-50">
+        <img src="{{ metadata.siteUrl }}/images/mangatheque/mangatheque-v2.png" alt="" loading="lazy" />
+    </div>
+    <div class="w-50">
+        <ul>
+            <li>Design plus chaleureux rappelant un château japonnais</li>
+            <li>Ajout d’un favicon pour les navigateur web : <img src="{{ metadata.siteUrl }}/images/mangatheque/favicon-v2.png" alt="" loading="lazy" />
+            <li>Ajout du choix d’affichage séries abandonnées et du classement par préférence (notation sur 6)</li>
+            <li>Une seconde version ajoutera un abécédaire au debut de chaque lettre en guise d’intercalaire et un lien vers la page otions</li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{{ macro.h2("Version 3", "ancre") }}
+<div class="d-flex mb-xl">
+    <div class="w-50">
+        <img src="{{ metadata.siteUrl }}/images/mangatheque/mangatheque-v3.png" alt="" loading="lazy" />
+    </div>
+    <div class="w-50">
+        <ul>
+            <li>Réorganisation de l’affichage</li>
+            <li>Ajout de plus de statistiques</li>
+            <li>Optimisation des fonctions</li>
+            <li>Correction des beugs</li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{{ macro.h2("Version 4", "ancre") }}
+<div class="d-flex mb-xl">
+    <div class="w-50">
+        <img src="{{ metadata.siteUrl }}/images/mangatheque/mangatheque-v4.png" alt="" loading="lazy" />
+    </div>
+    <div class="w-50">
+        <ul>
+            <li>Nouveau design</li>
+            <li>Agrandissement des zones cliquables de l’abécédaire</li>
+            <li>Réduction des informations visibles par défaut</li>
+            <li>La notation passe à une note sur 10, avec de nouveaux smiley pour les représenter</li>
+            <li>
+                Ajout d’une icon iPhone personnalisé<br>
+                <img src="{{ metadata.siteUrl }}/images/mangatheque/v4-icon-iphone.png" alt="" loading="lazy" />
+            </li>
+            <li>Ajout d’un system accordéon qui affiche des informations supplémentaires (auteur, éditeur, résumé et avis si renseigné.) Selon le type d’affichage en cours. L’index étant toujours la liste des mangas en cours les seules informations supplémentaires sont l’auteur et l’éditeur pour ne pas alourdir la page. Sur celle qui affiche tous les mangas, toutes les informations suplémentaires apparaissent.</li>
+            <li>Fusion de la page Option et Identification</li>
+            <li>Refonte totale des fonctions, simplification et optimisation pour un rendu plus rapide.</li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{{ macro.h2("Version 5", "ancre") }}
+<div class="d-flex">
+    <div class="w-50">
+        <img src="{{ metadata.siteUrl }}/images/mangatheque/mangatheque-v5.png" alt="" loading="lazy" />
+    </div>
+    <div class="w-50">
+        <ul>
+            <li>Barre de menu toujours visible</li>
+            <li>Suppression de l’abécédaire en guise d’intercalaire</li>
+            <li>Image adapter au écran classique et Retina/HD</li>
+            <li>
+                Ajout des icons mobile (iphone, windows phone, android ) personnalisé <br>
+                <img src="{{ metadata.siteUrl }}/images/mangatheque/v5-icon-iphone.png" alt="" loading="lazy" />
+            </li>
+            <li>Favicon : <img src="{{ metadata.siteUrl }}/images/mangatheque/favicon-v5.png" alt="" loading="lazy" /></li>
+            <li>Suppression de l’accordéon d’information supplémentaire qui était peu utile et qui alourdissez le site</li>
+            <li>Fusion de la page Option/Identification et de la liste</li>
+            <li>Utilisation de la librairie Minifield, bien plus légère que jQuery</li>
+        </ul>
+    </div>
+</div>
