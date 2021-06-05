@@ -32,6 +32,11 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
     * faq
     * page description
   
+## 05 juin
+* Retropixel : mise en forme du reste à faire + repasse logo
+* Pixel-art : ajout des concours Retropixel + mise en forme du vrac/reste à faire
+* Mise à jour mosaique pour Retropixel et Pixelart
+  
 ## 04 juin
 * Rédaction [Poweo, page de maintenance](/realisations/poweo/)
 * Suite de la rédaction de [Retropixel](/realisations/retropixel/) (en cours)

@@ -4,6 +4,9 @@ titre: "Retropixel"
 tags: "realisations"
 date: 2014-02-13
 wip: "true"
+mosaique: "retropixel.png"
+mosaique2x: "retropixel_2x.png"
+mosaiqueTaille: "2-1"
 ---
 {% import "macro/contenu.njk" as macro %}
 
@@ -20,7 +23,7 @@ wip: "true"
 
 
 
-{{ macro.sommaire(["Refonte graphique", "Logo", "Zoom automatique", "Vignette Concours"]) }}
+{{ macro.sommaire(["Refonte graphique", "Logo", "Zoom automatique", "Vignette Concours", "Rédaction à faire"]) }}
 
 
 
@@ -54,33 +57,42 @@ wip: "true"
 
 
 {{ macro.h2("Logo", "ancre", "19 août 2010") }}
-<p class="mb-m">Modernisation du logo du forum <a href="https://www.retropixel.fr/" target="_blank" rel="external">RetroPixel</a> en s’appuyant sur :</p>
+<p class="mb-s">Modernisation du logo du forum <a href="https://www.retropixel.fr/" target="_blank" rel="external">RetroPixel</a></p>
 <div class="d-flex mb-m">
-    <div class="w-33">
+    <div class="w-50">
         {{ macro.figure(
             "/images/retropixel/logo/logo-origine.png",
             "logo retropixel d'origine",
             "Le logo d’origine"
         ) }}
     </div>
-    <div class="w-33">
+    <div class="w-50">
         {{ macro.figure(
             "/images/retropixel/logo/logo-RosenCrantz.png",
             "logo retropixel par RosenCrantz",
             "La proposition de RosenCrantz"
         ) }}
     </div>
-    <div class="w-33">
+</div>
+
+<p class="mb-s">La version final qui est un mélange des deux logotypes précédent :</p>
+<div class="d-flex mb-xl">
+    <div class="w-50">
         {{ macro.figure(
             "/images/retropixel/logo/logo_retropixel_pixel-art.gif",
-            "nouveau logo retropixel en échelle pixel art",
-            "La version final qui est un mélange des deux"
+            "Logo en pixel-art",
+            "Logo en échelle &laquo;pixel-art&raquo;"
+        ) }}
+    </div>
+    <div class="w-50">
+        {{ macro.figure(
+            "/images/retropixel/logo/logo_retropixel.gif",
+            "Logo final",
+            "Logo taille réel"
         ) }}
     </div>
 </div>
 
-<p>Taille réel du nouveau logo :</p>
-<img src="{{ metadata.siteUrl }}/images/retropixel/logo/logo_retropixel.gif" alt="Logo taille réel" class="mb-m">
 
 
 
@@ -130,47 +142,42 @@ wip: "true"
 
 
 
-
-<div class="d-flex ai-c mb-s">
-    <ul>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/21dec_RP.gif" target="_blank">21dec_RP</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/25pxegal2m.png" target="_blank">25pxegal2m</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/courbe.gif" target="_blank">courbe</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/deformation_pixel.gif" target="_blank">deformation_pixel</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/erreur_ligne-sale.png" target="_blank">erreur_ligne-sale</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/erreur_proportion.png" target="_blank">erreur_proportion</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/facebook-avatar.jpg" target="_blank">facebook-avatar</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/facebook-banniere-patchwork.jpg" target="_blank">facebook-banniere-patchwork</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/facebook-capture-ecran.jpg" target="_blank">facebook-capture-ecran</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/favicon_retro_pixel.png" target="_blank">favicon_retro_pixel</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/free_play.gif" target="_blank">free_play</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/icones-et_menu_v2.png" target="_blank">icones-et_menu_v2</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/icones_retro_pixel.png" target="_blank">icones_retro_pixel</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/image-reglage-niveau_demo.png" target="_blank">image-reglage-niveau_demo</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/index_retro_pixel.png" target="_blank">index_retro_pixel</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/index_retro_pixel_survol.png" target="_blank">index_retro_pixel_survol</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/line_MLP.png" target="_blank">line_MLP</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/logo_retro_pixel-170px.gif" target="_blank">logo_retro_pixel-170px</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/logo_retro_pixel.gif" target="_blank">logo_retro_pixel</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/mlp-rp.png" target="_blank">mlp-rp</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/moderation.jpg" target="_blank">moderation</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/panneau_annonce-forum_v1.png" target="_blank">panneau_annonce-forum_v1</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/panneau_annonce-forum_v2.png" target="_blank">panneau_annonce-forum_v2</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/panneau_annonce-forum_v3.png" target="_blank">panneau_annonce-forum_v3</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/pas_d_avatar.gif" target="_blank">pas_d_avatar</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/picto-pix-jeu.gif" target="_blank">picto-pix-jeu</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/picto-tuto.gif" target="_blank">picto-tuto</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/regenerer.gif" target="_blank">regenerer</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/schema.gif" target="_blank">schema</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/test-couleur-fond.png" target="_blank">test-couleur-fond</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/test2-couleur-fond.png" target="_blank">test2-couleur-fond</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/tutoriel_cube_parfait_tuto.png" target="_blank">tutoriel_cube_parfait_tuto</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/tutoriel_motif_texture_herbe_tuto.png" target="_blank">tutoriel_motif_texture_herbe_tuto</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/tutoriel_neon.gif" target="_blank">tutoriel_neon</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/vignette-concours-43.png" target="_blank">vignette-concours-43</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/vignette-concours_bi_animal.png" target="_blank">vignette-concours_bi_animal</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/vignette-concours_fete_musique.png" target="_blank">vignette-concours_fete_musique</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/vignette-concours_space_shooter.png" target="_blank">vignette-concours_space_shooter</a></li>
-        <li><a href="{{ metadata.siteUrl }}/images/retropixel/vignette-concours_special-1.png" target="_blank">vignette-concours_special-1</a></li>
-    </ul>
-</div>
+{{ macro.h2("Rédaction à faire", "ancre") }}
+{% set url %}{{ metadata.siteUrl }}/images/retropixel/{% endset %}
+{{ macro.galerie(
+    url,
+    "pixel-art",
+    [
+        "21dec_RP.gif",
+        "25pxegal2m.png",
+        "courbe.gif",
+        "deformation_pixel.gif",
+        "erreur_ligne-sale.png",
+        "erreur_proportion.png",
+        "facebook-avatar.jpg",
+        "facebook-banniere-patchwork.jpg",
+        "facebook-capture-ecran.jpg",
+        "favicon_retro_pixel.png",
+        "free_play.gif",
+        "icones-et_menu_v2.png",
+        "icones_retro_pixel.png",
+        "image-reglage-niveau_demo.png",
+        "index_retro_pixel.png",
+        "index_retro_pixel_survol.png",
+        "line_MLP.png",
+        "mlp-rp.png",
+        "moderation.jpg",
+        "panneau_annonce-forum_v1.png",
+        "panneau_annonce-forum_v2.png",
+        "panneau_annonce-forum_v3.png",
+        "pas_d_avatar.gif",
+        "picto-pix-jeu.gif",
+        "picto-tuto.gif",
+        "regenerer.gif",
+        "schema.gif",
+        "test-couleur-fond.png",
+        "test2-couleur-fond.png",
+        "tutoriel_cube_parfait_tuto.png",
+        "tutoriel_motif_texture_herbe_tuto.png",
+        "tutoriel_neon.gif"
+    ]) }}

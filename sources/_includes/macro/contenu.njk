@@ -42,9 +42,35 @@
  {% macro h2(texte, ancre, info) %}
      <h2 class="ts-l tg1-1 th-2 tw-4{% if class %} {{ class | safe }}{% endif %}"{% if ancre %} id="{{ texte | slug  }}"{% endif %}>
          {{ texte | safe }}
-         {% if info %} <span class="ts-s tg1-2">— {{ info | safe }}</span>
+         {% if info %}
+             <span class="ts-s tg1-2">— {{ info | safe }}</span>
          {% endif %}
      </h2>
+ {% endmacro %}
+
+
+
+
+ {% macro h3(texte, info) %}
+     <h3 class="mb-s">
+         <strong>
+             {{ texte | safe }}
+             {% if info %}
+                 <span class="ts-s tg1-2">— {{ info | safe }}</span>
+             {% endif %}
+         </strong>
+     </h3>
+ {% endmacro %}
+
+
+
+
+ {% macro h4(texte) %}
+     <h4 class="mb-s">
+         <strong>
+             {{ texte | safe }}
+         </strong>
+     </h4>
  {% endmacro %}
 
 
@@ -134,4 +160,48 @@
              </div>
          </div>
      {% endfor %}
+ {% endmacro %}
+
+
+
+ {% macro concoursRp(titre, info, image, alt, contrainte, recompense, espacementFin) %}
+     <h3 class="mb-s">
+         <strong>
+             {{ titre | safe }}
+             {% if info %}
+                 <span class="ts-s tg1-2">— {{ info | safe }}</span>
+             {% endif %}
+         </strong>
+     </h3>
+     <img src="{{ metadata.siteUrl }}{{ image }}" alt="{{ alt }}" loading="lazy" class="pa mb-s" />
+     <div class="d-flex {% if espacementFin %}{{ espacementFin }}{% else %}mb-l{% endif %}">
+         <div class="w-70">
+             <h4 class="mb-s tw-4">Contraintes</h4>
+             {{ contrainte | safe }}
+         </div>
+         <div class="w-30">
+             <h4 class="mb-s tw-4">Récompense</h4>
+             {% if recompense == "or" %}
+                 <div class="d-flex ai-c">
+                     <span>Médaille d'or</span>&nbsp;
+                     <img src="{{ metadata.siteUrl }}/images/pixel-art/medaille/or.png" alt="Or" loading="lazy" class="pa" />
+                 </div>
+             {% endif %}
+             {% if recompense == "argent" %}
+                 <div class="d-flex ai-c">
+                     <span>Médaille d'argent</span>&nbsp;
+                     <img src="{{ metadata.siteUrl }}/images/pixel-art/medaille/argent.png" alt="Argent" loading="lazy" class="pa" />
+                 </div>
+             {% endif %}
+             {% if recompense == "bronze" %}
+                 <div class="d-flex ai-c">
+                     <span>Médaille de bronze</span>&nbsp;
+                     <img src="{{ metadata.siteUrl }}/images/pixel-art/medaille/bronze.png" alt="Bronze" loading="lazy" class="pa" />
+                 </div>
+             {% endif %}
+             {% if recompense == "non" %}
+                 Pas pour cette fois !
+             {% endif %}
+         </div>
+     </div>
  {% endmacro %}

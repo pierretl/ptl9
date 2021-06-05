@@ -7,6 +7,7 @@ classCssMain: "pa"
 mosaique: "pixel-art.png"
 mosaique2x: "pixel-art_2x.png"
 mosaiqueClassCss: " pa"
+mosaiqueTaille: "2-1"
 ---
 {% import "macro/contenu.njk" as macro %}
 
@@ -22,7 +23,7 @@ mosaiqueClassCss: " pa"
 
 
 
-{{ macro.sommaire(["Favicon", "Vignette Concours", "Faire part de mon mariage", "Pixel en Vrac"]) }}
+{{ macro.sommaire(["Favicon", "Vignette Concours", "Concours Retropixel", "Faire part de mon mariage", "Pixel en Vrac"]) }}
 
 
 
@@ -121,11 +122,23 @@ mosaiqueClassCss: " pa"
 
 
 
+
 {{ macro.h2("Vignette Concours", "ancre") }}
-<p class="mb-s">
-    Vignette d’illustration pour les concours sur <a href="{{ metadata.siteUrl }}/realisations/retropixel/">retropixel.fr</a>
-</p>
 {% include "contenu/vignette-concours-retropixel.njk" %}
+
+
+
+
+
+
+{{ macro.h2("Concours Retropixel", "ancre") }}
+<p class="mb-m">Régulière <a href="http://www.retropixel.fr/pixel/" target="_blank" rel="external">retropixel.fr</a> organise un concours pixel art.<br>
+    Voici mes participation, les contraintes lié au concours et mes récompense lorsque j’en est obtenu.</p>
+{% include "contenu/concours-retropixel.njk" %}
+
+
+
+
 
 
 
@@ -150,7 +163,6 @@ mosaiqueClassCss: " pa"
     url,
     "pixel-art",
     [
-        "abandon.gif",
         "abbey_URT.gif",
         "abbey_URT_WIP.gif",
         "aliens.gif",
@@ -161,17 +173,10 @@ mosaiqueClassCss: " pa"
         "avatar_coq.gif",
         "avatar_dead_leaves.gif",
         "avatar_lapin.gif",
-        "avatar_noel.gif",
         "badge-manga.gif",
         "banniere_TL_production-ancienne-version.gif",
-        "bi_animals_crocureuil.gif",
         "bombe_HTP.gif",
-        "chamallow-rp.gif",
-        "dragon_ball_zero.gif",
         "drekinn.gif",
-        "envolee_pixellisee.gif",
-        "favicon-malec.png",
-        "favicon-tpf.png",
         "fjorir-fleet-1.png",
         "fjorir-fleet-2.png",
         "fjorir-fleet-3.png",
@@ -180,21 +185,16 @@ mosaiqueClassCss: " pa"
         "fjorir-fleet-6.png",
         "fjorir.png",
         "fjorir_spritesheet.png",
-        "foret-donnees.gif",
         "galet.gif",
         "horde_fast_food.gif",
-        "insolite_bagarre.gif",
-        "insolite_source-chaude.gif",
         "kame_house.gif",
         "katana.gif",
-        "kit-de_survie.gif",
         "kreaturs.png",
         "kreatur_wanted.png",
         "lanterne_id89.png",
         "lanterne_id89_v2.png",
         "map_bunker-wip.gif",
         "metalleux.gif",
-        "mock-up_infiltration.gif",
         "moi-en-isometrie.gif",
         "mon_salon.png",
         "parking_F2D.gif",
@@ -210,25 +210,17 @@ mosaiqueClassCss: " pa"
         "professeur_retor-2.png",
         "professeur_retor-3.png",
         "professeur_retor-sprite.png",
-        "retropixel_steampunk-wip.gif",
-        "retropixel_steampunk.gif",
-        "robots-factory-anime.gif",
-        "RP_building.png",
         "singe.gif",
         "smiley_divers.gif",
         "smiley_good.gif",
         "smiley_google.gif",
         "spaceships_army.gif",
         "space_invaders_iso.gif",
-        "space_shooter-mockup-wip.gif",
-        "space_shooter-mockup.gif",
         "space_transporter-wip.gif",
         "space_transporter.gif",
         "sprite-menu-retropixel.gif",
         "temple_japonais.gif",
-        "tondeuse-a_gazon-a_pedale.gif",
         "vera_roxy.png",
-        "voyage_pixelo-temporel.gif",
         "wip_fjorir_fleet-2.png",
         "wip_homme-lezard.png",
         "zodiac-chinois.gif",
