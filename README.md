@@ -1,7 +1,8 @@
 # ptl9
 
-Portfolio de Pierre Tampon-Lajarriette version 9 <br>
-utilise [GitHub](https://github.com), [Eleventy](https://github.com/11ty/eleventy) et [Netlify](https://app.netlify.com/)
+Site personnel de Pierre Tampon-Lajarriette, version 9 : [https://ptl9.netlify.app/](https://ptl9.netlify.app/)
+
+Utilise [GitHub](https://github.com), [Eleventy](https://github.com/11ty/eleventy) et [Netlify](https://app.netlify.com/)
 
 ## Installation
 
@@ -19,7 +20,6 @@ cd ptl9
 
 ### 3. Installer les dépendances du projet
 
-#### 3.1 npm
 ```
 npm install -y
 ```
