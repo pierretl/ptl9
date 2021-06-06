@@ -53,6 +53,17 @@ tags: "styleguidev9"
 
 
 {% set demo %}
+    <div class="bordure">contenu</div>
+{% endset %}
+{% set code %}
+    <div class="bordure"></div>
+{% endset %}
+{{ macro.demo_code("Bordure", demo, code) }}
+
+
+
+
+{% set demo %}
     <svg width="18px" height="18px" class="fill-mode">
         <use xlink:href="#darkMode"></use>
     </svg>

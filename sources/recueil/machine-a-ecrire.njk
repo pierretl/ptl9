@@ -1,0 +1,60 @@
+---
+layout: layout/standard.njk
+titre: "Effet de machine à écrire"
+tags: "recueil"
+date: 2021-06-06
+---
+{% import "macro/contenu.njk" as macro %}
+
+
+
+{{ macro.h2("Inspiration") }}
+<p class="mb-l">
+    Lorsque que j'ai parcourus le net en recherche d'inspiration pour la nouvel version de mon site, je suis tomber sur un site avec un
+    <a href="https://demo.deliciousthemes.com/stag/homepage-hero-text/" target="_blank" rel="external">effet machine à écrire sur un texte</a>. <br>
+</p>
+
+
+
+{{ macro.h2("Utilisation") }}
+<div class="d-flex ai-c mb-l">
+    <div class="w-70">
+        <img src="{{ metadata.siteUrl }}/images/recueil/header-ptl9.png" alt="header ptal9" loading="lazy">
+    </div>
+    <div class="w-30">
+        <p>
+            À ce moment là encore j'hésite sur l'<a href="{{ metadata.siteUrl }}/recueil/intitule-poste/">intitulé de mon poste</a> et je me suis dit que c'était une bonne façon de montrer cette indécision
+        </p>
+    </div>
+</div>
+
+
+
+{{ macro.h2("Création") }}
+<div class="mb-l">
+    <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="js,result" data-user="pierre_tl" data-slug-hash="oNYeXJd" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Machine à écrire">
+  J'ai donc développé un petit <a href="https://codepen.io/pierre_tl/pen/oNYeXJd" target="_blank" rel="external">script en JavaScript</a> pour reproduire l'effet
+    </p>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
+
+
+
+
+{{ macro.h2("Démo") }}
+<p class="mb-m">
+    Pour simplifier le header et parce-que mon site n'est pas un simple portfolio sur mon métier, j'ai décidé de le supprimer.
+    <br>
+    Voici le rendu de ce moment la :
+</p>
+
+<div class="bordure" style="padding:20px">
+    <p class="ts-xxl tg1-1 th-09 tw-4 mb-s">Pierre Tampon-Lajarriette</p>
+    <p class="ts-l tg1-2 th-09 tw-4">
+        <span aria-hidden="true" class="js--ecris"></span><span aria-hidden="true" class="clignote">_</span>
+        <span class="sr-only">Front-End Designer</span>
+        <script src="/js/machine-a-ecrire.js"></script>
+    </p>
+</div>
+
