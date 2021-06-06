@@ -45,18 +45,8 @@ a:not([class]):hover,
 a.tg1-1:hover, // lien
 .a.tg1-1:hover // label, button...
 {
-  color: var(--gamme1__texte2);
+  color: var(--gamme1__texte3);
   cursor: pointer;
-}
-
-
-
-
-/*--------------------------------------------------------------------*/
-/* Lien planqué                                                       */
-/*--------------------------------------------------------------------*/
-.lien-planque {
-  text-decoration: none;
 }
 
 

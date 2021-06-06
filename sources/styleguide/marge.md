@@ -33,17 +33,6 @@ S'applique aux enfants direct, quelle que soit la balise, mais **pas au premier 
 `` ml-s__enfant ``
 
 
-### Espace en dessous
-
-S'applique aux enfants direct, quelle que soit la balise
-
-<br>
-
-`` mb-m__enfant ``
-
-`` mb-s__enfant ``
-
-
 
 
 ## Conteneur

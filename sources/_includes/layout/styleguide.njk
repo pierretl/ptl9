@@ -21,13 +21,44 @@
     </head>
     <body class="d-flex fd-c">
         {% include "../include/evitement.html" %}
-        <header class="d-flex jc-sb ai-c fw-w pt-m px-tranche mb-m__enfant bordure-b">
-            <div class="mr-m">
+        <header class="d-flex jc-sb ai-c fw-w pt-m px-tranche bordure-b">
+            <div class="mr-m mb-m">
                 {% include "../include/titre-page.njk" %}
-                <span class="ts-l tg1-2 th-09 tw-4">Styleguide<span class="clignote">_</span></span>
             </div>
-            <nav class="d-flex mr-m__enfant">
-                <ul class="d-flex mr-m__enfant">
+            <nav class="d-flex mr-m__enfant mb-s">
+                <ul class="d-flex mr-m__enfant mb-s__enfant">
+                    {% for menu in collections.menuPrincipal %}
+                        <li class="{% if page.url == menu.url %} tg1-1 td-1 tw-7{% endif %}">
+                            {% if page.url == menu.url %}
+                                {% if menu.data.titreMenu %}
+                                    {{ menu.data.titreMenu }}
+                                {% else %}
+                                    {{ menu.data.titre }}
+                                {% endif %}
+                            {% else %}
+                                <a class="tg1-1 td-0 tw-7" href="{{ menu.url | url }}">
+                                    {% if menu.data.titreMenu %}
+                                        {{ menu.data.titreMenu }}
+                                    {% else %}
+                                        {{ menu.data.titre }}
+                                    {% endif %}
+                                </a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                    <li class="tg1-1 td-1 tw-7">
+                        Styleguide
+                    </li>
+                    <li>
+                        <a class="tg1-1 td-0 tw-7" href="mailto:&#99;on&#116;&#97;%63&#116;&#64;%70i&#101;%72%72e%2e&#116;%6c">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+                {% include "../include/switch-mode.html" %}
+            </nav>
+            <nav class="w-100">
+                <ul class="d-flex mr-m__enfant mb-s__enfant mb-s">
                     {% for styleguide in collections.styleguidev9 %}
                         <li class="{% if page.url == styleguide.url %} tg1-1 td-1{% endif %}">
                             {% if page.url == styleguide.url %}
@@ -40,7 +71,6 @@
                         </li>
                     {% endfor %}
                 </ul>
-                {% include "../include/switch-mode.html" %}
             </nav>
         </header>
         <main id="contenu" tabindex="-1" role="main" class="px-tranche py-s{% if markdown %} markdown var--styleguide{% endif %}">

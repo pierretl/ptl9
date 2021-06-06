@@ -32,6 +32,14 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
     * faq
     * page description
   
+## 06 juin
+* Suppression de l'intitulé de poste dans le header
+* Changement de taille, couleur et d'espacement dans le header
+* Repasse sur le menu principal et le sous-menu du styleguide
+* Repasse [Intitulé de poste](/recueil/intitule-poste/)
+* Écris [Machine à écrire](/recueil/machine-a-ecrire/)
+* Mise à jour du [styleguide](/styleguide/texte/)
+  
 ## 05 juin
 * Retropixel : mise en forme du reste à faire + repasse logo
 * Pixel-art : ajout des concours Retropixel + mise en forme du vrac/reste à faire

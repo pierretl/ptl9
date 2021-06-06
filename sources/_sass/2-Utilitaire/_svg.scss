@@ -1,3 +1,7 @@
 .fill--mode {
   fill: var(--gamme1__texte1);
 }
+
+.fill--mode:hover {
+  fill: var(--gamme1__texte3);
+}

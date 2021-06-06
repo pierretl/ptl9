@@ -58,6 +58,9 @@
 .tw-5 {
   font-weight: 500; //citation et légende de couleur quatre
 }
+.tw-7 {
+  font-weight: 700; //strong : menu
+}
 
 
 
@@ -75,14 +78,14 @@
   bottom: 0;
   right: 0;
   left: 0;
-  height: 1px;
+  height: 2px;
 }
 .td-1.tg1-1:after {
-  background-color: var(--gamme1__texte1);;
+  background-color: var(--gamme1__texte2);
 }
 @include breakpoint(large) {
   .td-1:after {
-    bottom: -10px;
+    bottom: -5px;
   }
 }
 

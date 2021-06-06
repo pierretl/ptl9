@@ -5,23 +5,14 @@
     </head>
     <body class="d-flex fd-c">
         {% include "../include/evitement.html" %}
-        <header class="d-flex jc-sb ai-c fw-w pt-m px-tranche mb-m__enfant bordure-b">
-            <div class="mr-m">
+        <header class="d-flex jc-sb ai-c fw-w pt-m px-tranche bordure-b">
+            <div class="mr-m mb-m">
                 {% include "../include/titre-page.njk" %}
-                <a href="{{ metadata.siteUrl }}/recueil/intitule-poste/" class="ts-l tg1-2 th-09 tw-4 lien-planque">
-                    {% if accueil %}
-                        <span aria-hidden="true" class="js--ecris"></span><span aria-hidden="true" class="clignote">_</span>
-                        <span class="sr-only">Front-End Designer</span>
-                        <script src="/js/machine-a-ecrire.js"></script>
-                    {% else %}
-                        Front-End Designer
-                    {% endif %}
-                </a>
             </div>
-            <nav class="d-flex mr-m__enfant">
-                <ul class="d-flex mr-m__enfant">
+            <nav class="d-flex mr-m__enfant mb-s">
+                <ul class="d-flex mr-m__enfant mb-s__enfant">
                     {% for menu in collections.menuPrincipal %}
-                        <li class="{% if page.url == menu.url %} tg1-1 td-1{% endif %}">
+                        <li class="{% if page.url == menu.url %} tg1-1 td-1 tw-7{% endif %}">
                             {% if page.url == menu.url %}
                                 {% if menu.data.titreMenu %}
                                     {{ menu.data.titreMenu }}
@@ -29,7 +20,7 @@
                                     {{ menu.data.titre }}
                                 {% endif %}
                             {% else %}
-                                <a class="tg1-1 td-0" href="{{ menu.url | url }}">
+                                <a class="tg1-1 td-0 tw-7" href="{{ menu.url | url }}">
                                     {% if menu.data.titreMenu %}
                                         {{ menu.data.titreMenu }}
                                     {% else %}
@@ -40,7 +31,7 @@
                         </li>
                     {% endfor %}
                     <li>
-                        <a class="tg1-1 td-0" href="mailto:&#99;on&#116;&#97;%63&#116;&#64;%70i&#101;%72%72e%2e&#116;%6c">
+                        <a class="tg1-1 td-0 tw-7" href="mailto:&#99;on&#116;&#97;%63&#116;&#64;%70i&#101;%72%72e%2e&#116;%6c">
                             Contact
                         </a>
                     </li>
