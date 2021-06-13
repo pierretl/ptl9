@@ -23,7 +23,11 @@
 
 <meta name="copyright" content="{{ metadata.siteName }}">
 <meta name="author" content="{{ metadata.siteName }}">
-<meta name="date" content="{{ date }}">
+
+{% if date %}
+    <meta name="date" content="{{ date }}">
+{% endif %}
+
 <meta name="robots" content="index,follow">
 
 <meta property="og:title" content="{{titre}}">
