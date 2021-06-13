@@ -76,7 +76,9 @@
         <main id="contenu" tabindex="-1" role="main" class="px-tranche py-s{% if markdown %} markdown var--styleguide{% endif %}">
             {{content | safe}}
         </main>
-        <script src="/js/dark-light-mode.js"></script>
+        <script>
+            {% include "include/dark-light-mode.js" %}
+        </script>
         {% include "../include/svg.html" %}
     </body>
 </html>

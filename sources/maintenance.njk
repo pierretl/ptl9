@@ -78,7 +78,9 @@
             <h1>Site en maintenance</h1>
             {% include "include/switch-mode.html" %}
         </div>
-        <script src="/js/dark-light-mode.js"></script>
+        <script>
+            {% include "include/dark-light-mode.js" %}
+        </script>
         {% include "include/svg.html" %}
     </body>
 </html>
