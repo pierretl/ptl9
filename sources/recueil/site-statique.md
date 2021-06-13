@@ -4,6 +4,7 @@ markdown: "true"
 titre: "Créer un site statique avec déploiement continu"
 tags: "recueil"
 date: 2021-04-21
+description: "Tutoriel de base pour la création de sites statiques avec Eleventy et Netlify"
 ---
 
 À chaque *push*, le site sera compilé et mis en ligne

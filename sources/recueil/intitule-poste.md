@@ -4,6 +4,7 @@ markdown: "true"
 titre: "Intitulé de poste"
 tags: "recueil"
 date: 2021-06-06
+description: "Quand les intitulés de poste ne veulent plus rien dire"
 ---
 
 Intégrateur Web, Frond-End Développer, Front-End Designer, pourquoi autant d'intitulé ?

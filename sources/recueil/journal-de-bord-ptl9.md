@@ -4,6 +4,7 @@ titre: "Journal de bord"
 tags: "recueil"
 markdown: "true"
 date: Last Modified
+description: "Détails sur l'évolution de la nouvelle version de mon site personnel"
 ---
 
 ## Avant propos
@@ -31,6 +32,9 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 * SEO opti :
     * faq
     * page description
+  
+## 13 juin
+* Ajout de la balise ``<desciption>`` pour chaque page
   
 ## 06 juin
 * Suppression de l'intitulé de poste dans le header

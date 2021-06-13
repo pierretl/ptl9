@@ -4,6 +4,7 @@ markdown: "true"
 titre: "Gitpod"
 tags: "recueil"
 date: 2021-04-21
+description: "Backend du mon site perso avec un éditeur de code en ligne"
 ---
 
 [gitpod.io](gitpod.io) un éditeur de code dans le cloud ou un IDE Online<br><br>

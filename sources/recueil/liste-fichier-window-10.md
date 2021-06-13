@@ -4,6 +4,7 @@ titre: "Obtenir la liste des fichiers d’un dossier sur Windows 10"
 tags: "recueil"
 markdown: "true"
 date: 2021-05-18
+description: "Astuce pour lister les fichiers d'une arborescence sur Windows 10"
 ---
 
 * Dans l'explorateur de fichier
