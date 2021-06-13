@@ -38,6 +38,7 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 * On affiche la balise ``<meta name="date"`` seulement pour les réalisations et articles
 * Ajout [page de maintenance](../../maintenance/)
 * Passage du script de changement de thème sombre/clair en &laquo;in line&raquo;
+* Utilisation du logo en ascii pour la page de maintenance
   
 ## 06 juin
 * Suppression de l'intitulé de poste dans le header

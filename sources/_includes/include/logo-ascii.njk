@@ -1,0 +1,5 @@
+{% if logoAsciiSansLien == 'true' %}
+    <pre class="ascii text-center">{% include "contenu/logo-ascii.html" %}</pre>
+{% else %}
+    <pre class="ascii text-center"><a class="ascii__lien" href="{{ metadata.siteUrl }}">{% include "contenu/logo-ascii.html" %}</a></pre>
+{% endif %}

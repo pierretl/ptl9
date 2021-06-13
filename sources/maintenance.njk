@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,11 +17,23 @@
                 --fond: #332F35;
                 --texte: #FDFDFE;
                 --hover: #54DD93;
+                --ascii1: #ed5565;
+                --ascii2: #ffce54;
+                --ascii3: #97c671;
+                --ascii4: #ffffff;
+                --ascii5: #a4e9e9;
+                --ascii6: #4fc1e9;
             }
             [data-mode="light"] {
                 --fond: #FDFDFE;
                 --texte: #575757;
                 --hover: #00873E;
+                --ascii1: #636363;
+                --ascii2: #5A5A5A;
+                --ascii3: #5E5E5E;
+                --ascii4: #070707;
+                --ascii5: #686868;
+                --ascii6: #676767;
             }
             html {
             }
@@ -70,11 +82,23 @@
                 outline: .2rem dashed var(--hover);
                 outline-offset: .2rem;
             }
+            .ascii {
+                font-family: monospace;
+                font-size: 11px;
+                line-height: normal;
+            }
+            .ascii__couleur-1 { color: var(--ascii1)}
+            .ascii__couleur-2 { color: var(--ascii2)}
+            .ascii__couleur-3 { color: var(--ascii3)}
+            .ascii__couleur-4 { color: var(--ascii4)}
+            .ascii__couleur-5 { color: var(--ascii5)}
+            .ascii__couleur-6 { color: var(--ascii6)}
         </style>
     </head>
     <body>
         <div class="center">
-            <img src="{{ metadata.siteUrl }}/images/site-perso/logo/logo-v8.png" height="98px" alt="" loading="lazy" />
+            {% set logoAsciiSansLien %}true{% endset %}
+            {% include "include/logo-ascii.njk" %}
             <h1>Site en maintenance</h1>
             {% include "include/switch-mode.html" %}
         </div>
