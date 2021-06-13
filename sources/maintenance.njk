@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Maintenance - {{ metadata.siteName }}</title>
+        <meta name="description" content="Site en maintenance">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}favicon-16x16.png">
+        <link rel="manifest" href="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}site.webmanifest">
+        <link rel="mask-icon" href="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}safari-pinned-tab.svg" color="#332f35">
+        <meta name="copyright" content="{{ metadata.siteName }}">
+        <meta name="author" content="{{ metadata.siteName }}">
+        <style>
+            :root {
+                --fond: #332F35;
+                --texte: #FDFDFE;
+                --hover: #54DD93;
+            }
+            [data-mode="light"] {
+                --fond: #FDFDFE;
+                --texte: #575757;
+                --hover: #00873E;
+            }
+            html {
+            }
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+                background: var(--fond);
+                color: var(--texte);
+                font-family: sans-serif;
+            }
+            .center {
+                text-align: center;
+            }
+            .hide {
+                display: none;
+            }
+            .fill--mode {
+                fill: var(--texte);
+            }
+
+            .fill--mode:hover {
+                fill: var(--hover);
+            }
+            .hide-checkbox {
+                position: absolute;
+                top: -9999rem;
+                left: -9999rem
+            }
+            .sr-only {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                overflow: hidden;
+                clip: rect(0,0,0,0);
+                white-space: nowrap;
+                border: 0;
+            }
+            label:hover {
+                cursor: pointer;
+            }
+            input:focus + label svg {
+                outline: .2rem dashed var(--hover);
+                outline-offset: .2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="center">
+            <img src="{{ metadata.siteUrl }}/images/site-perso/logo/logo-v8.png" height="98px" alt="" loading="lazy" />
+            <h1>Site en maintenance</h1>
+            {% include "include/switch-mode.html" %}
+        </div>
+        <script src="/js/dark-light-mode.js"></script>
+        {% include "include/svg.html" %}
+    </body>
+</html>
