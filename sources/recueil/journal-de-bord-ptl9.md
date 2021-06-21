@@ -33,6 +33,8 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
     * faq
     * page description
   
+## [Liaison de mon nom de domaine à Netlify](/recueil/lier-netlify-ovh/)
+  
 ## 13 juin
 * Ajout de la balise ``<desciption>`` pour chaque page
 * On affiche la balise ``<meta name="date"`` seulement pour les réalisations et articles
