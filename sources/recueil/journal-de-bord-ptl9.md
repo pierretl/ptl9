@@ -34,7 +34,10 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
     * page description
   
 ## [Liaison de mon nom de domaine à Netlify](/recueil/lier-netlify-ovh/)
-  
+
+## 24 juillet 
+* Passage de la police en local pour améliorer les performances du site
+
 ## 13 juin
 * Ajout de la balise ``<desciption>`` pour chaque page
 * On affiche la balise ``<meta name="date"`` seulement pour les réalisations et articles

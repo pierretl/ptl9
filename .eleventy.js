@@ -79,6 +79,10 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({"sources/images": "images"});
 
 
+    // Copie le dossier "fonts" dans "_site/fonts"
+    eleventyConfig.addPassthroughCopy({"sources/fonts": "fonts"});
+
+
     return {
         passthroughFileCopy: true,
         dir: {
