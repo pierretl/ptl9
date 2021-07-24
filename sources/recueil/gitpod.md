@@ -7,7 +7,7 @@ date: 2021-04-21
 description: "Backend du mon site perso avec un éditeur de code en ligne"
 ---
 
-[gitpod.io](gitpod.io) un éditeur de code dans le cloud ou un IDE Online<br><br>
+[gitpod.io](https://www.gitpod.io/) un éditeur de code dans le cloud ou un IDE Online<br><br>
 
 <blockquote>
     <p>
@@ -24,7 +24,7 @@ description: "Backend du mon site perso avec un éditeur de code en ligne"
 Pour lancer ce site, il suffit de
 
 1. Etre connecté à Gitpod via GitHub
-2. Préfixer de `gitpod.io/#` un répertoire GitHub, exemple : [gitpod.io/#https://github.com/pierretl/ptl9](gitpod.io/#https://github.com/pierretl/ptl9)
+2. Préfixer de `gitpod.io/#` un répertoire GitHub, exemple : [gitpod.io/#https://github.com/pierretl/ptl9](https://www.gitpod.io/#https://github.com/pierretl/ptl9)
 3. Attendre un peu et c'est bon !
 
 <br><br>

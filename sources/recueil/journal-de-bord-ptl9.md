@@ -21,13 +21,12 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 
 ## A faire
 
-* Ajouter les images en webp, mosaïque et article
-* rédiger/illustrer les réalisations ajoutées à la mosaïque
+* Ajouter les images en webp article
 * Coloration syntaxique des exemples de code 
 * Compression image
-* réduction des images à partir d'image retina
-* conversion en format "webP" et "avif"
-* tag
+* Réduction des images à partir d'image retina
+* Conversion en format "webP" et "avif"
+* Tag
 * Flux RSS
 * SEO opti :
     * faq
@@ -37,6 +36,7 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 
 ## 24 juillet 
 * Passage de la police en local pour améliorer les performances du site
+* Correction lien en 404 sur [gitpod](../gitpod/)
 
 ## 13 juin
 * Ajout de la balise ``<desciption>`` pour chaque page
