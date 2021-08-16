@@ -8,6 +8,8 @@ mosaiqueImageExtension: ".jpg"
 mosaiqueTaille: "2-1"
 description: "Enseigne pour chariot ambulant retro-éclairé pour ESAT Atelier 133"
 ---
+{% import "macro/contenu.njk" as macro %}
+
 
 <div class="d-flex ai-c mb-xl">
     <div class="w-50">
@@ -33,9 +35,7 @@ description: "Enseigne pour chariot ambulant retro-éclairé pour ESAT Atelier 1
 
 
 
-<h2 class="mb-s ts-l">
-    Propositions <span class="ts-s tg1-2">— 09/12/2017</span>
-</h2>
+{{ macro.h2("Propositions", "", "09/12/2017") }}
 <div class="d-flex ai-c mb-xl">
     <div class="w-50">
         <img src="{{ metadata.siteUrl }}/images/delices-ahmed/aux-delices-d-ahmed_p1.png" alt="Première proposition" loading="lazy" />
@@ -48,9 +48,7 @@ description: "Enseigne pour chariot ambulant retro-éclairé pour ESAT Atelier 1
 
 
 
-<h2 class="mb-s ts-l">
-    Mise en situation
-</h2>
+{{ macro.h2("Mise en situation") }}
 <div class="d-flex ai-c mb-xl">
     <div class="w-50">
         <figure role="figure" aria-label="Photo envoyé par le client">

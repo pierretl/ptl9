@@ -8,10 +8,11 @@ mosaiqueImageExtension: ".jpg"
 mosaiqueTaille: "2-1"
 description: "Webdesign et intégration du site"
 ---
+{% import "macro/contenu.njk" as macro %}
 
-<h2 class="mb-s ts-l">
-    Favicon
-</h2>
+
+{{ macro.h2("Favicon") }}
+
 <img class="fond-clair mb-xl" src="{{ metadata.siteUrl }}/images/pixel-art/favicon/favicon_wet.png" alt="Logo du jeu" loading="lazy" />
 
 
@@ -20,9 +21,7 @@ description: "Webdesign et intégration du site"
 
 
 
-<h2 class="mb-s ts-l">
-    Description
-</h2>
+{{ macro.h2("Description") }}
 
 <p class="mb-s">
     Le site et son design originel se voulant minimaliste en ne proposant que le strict nécessaire pour commencer, j’ai conservé le concept d’onglet en 3 étape en le modernisant un peu
@@ -40,9 +39,7 @@ description: "Webdesign et intégration du site"
 
 
 
-<h2 class="mb-s ts-l">
-    Webdesign <span class="ts-s tg1-2">— Capture d'écran le 21 juillet 2011</span>
-</h2>
+{{ macro.h2("Webdesign", "", "Capture d'écran le 21 juillet 2011") }}
 
 <figure class="mb-l" role="figure" aria-label="Page d'accueil">
     <img src="{{ metadata.siteUrl }}/images/wet/accueil.png" alt="page d'accueil" loading="lazy" />

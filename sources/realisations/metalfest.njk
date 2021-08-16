@@ -8,10 +8,10 @@ mosaiqueImageExtension: ".svg"
 mosaiqueTaille: "2-1"
 description: "Un T-shirt humoristique qui imite celui d'un festival de Metal"
 ---
+{% import "macro/contenu.njk" as macro %}
 
-<h2 class="mb-s ts-l">
-    Critique
-</h2>
+
+{{ macro.h2("Critique") }}
 <div class="d-flex ai-c mb-xl">
     <div class="w-50">
         <figure role="figure" aria-label="T-shirt 'Metal Fest' sur qwertee">
@@ -32,9 +32,7 @@ description: "Un T-shirt humoristique qui imite celui d'un festival de Metal"
 </div>
 
 
-<h2 class="mb-s ts-l">
-    Inspiration
-</h2>
+{{ macro.h2("Inspiration") }}
 <div class="d-flex mb-xl">
     <div class="w-50">
         <figure role="figure" aria-label="Logo du Hellfest, festival français de Metal">
@@ -55,9 +53,7 @@ description: "Un T-shirt humoristique qui imite celui d'un festival de Metal"
 </div>
 
 
-<h2 class="mb-s ts-l">
-    Re-design
-</h2>
+{{ macro.h2("Re-design") }}
 <div class="d-flex mb-xl">
     <div class="w-50">
         <figure role="figure" aria-label="Détournement du logo du Hellfest suivi d'une illustration qui reprend différents thèmes de la culture Metal">
@@ -78,9 +74,7 @@ description: "Un T-shirt humoristique qui imite celui d'un festival de Metal"
 </div>
 
 
-<h2 class="mb-s ts-l">
-    Mise en situation
-</h2>
+{{ macro.h2("Mise en situation") }}
 <div class="d-flex mb-s">
     <div class="w-50">
         <img src="{{ metadata.siteUrl }}/images/metalfest/t-shirt-metalfest-face-resultat.png" alt="t-shirt de face" loading="lazy">

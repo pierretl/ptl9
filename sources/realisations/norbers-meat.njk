@@ -7,6 +7,8 @@ mosaiqueImage: "norbers-meat"
 mosaiqueImageExtension: ".svg"
 description: "Ajustement du logo de l'équipe e-sport Norber's Meat et déclinaison du logo pour réaliser les icônes du groupe des logiciels de communication Whats App et Discord"
 ---
+{% import "macro/contenu.njk" as macro %}
+
 
 <p class="mb-l">
     C'est une équipe d'<a href="https://fr.wikipedia.org/wiki/Esport" target="_blank" rel="external">e-sport</a> de la communauté Reborn Spartan. <br>
@@ -16,15 +18,11 @@ description: "Ajustement du logo de l'équipe e-sport Norber's Meat et déclinai
 
 <div class="d-flex mb-xl">
     <div class="w-50">
-        <h2 class="mb-s ts-l">
-            Logo
-        </h2>
+        {{ macro.h2("Logo") }}
         <img src="{{ metadata.siteUrl }}/images/norbers-meat/logo__norbers-meat.png" alt="Logo Norber’s Meat" loading="lazy" />
     </div>
     <div class="w-50">
-        <h2 class="mb-s ts-l">
-            Icône de groupe
-        </h2>
+        {{ macro.h2("Icône de groupe") }}
         <figure role="figure" aria-label="Déclinaison du logo pour les icônes de groupe d'applications de communication">
             <img src="{{ metadata.siteUrl }}/images/norbers-meat/avatar__norbers-meat.png" alt="Avatar Norber’s Meat" loading="lazy" />
             <figcaption>

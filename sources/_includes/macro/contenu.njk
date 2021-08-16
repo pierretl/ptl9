@@ -1,5 +1,8 @@
-{% macro version_ptl(ancre, titre, col1, col2, col3) %}
-    <h2 id="{{ ancre }}" class="ts-l mb-m">{{ titre }}</h2>
+{% macro version_ptl(ancre, titre, titreInfo, col1, col2, col3) %}
+    <h2 id="{{ ancre | slug }}" class="ts-l tg1-4 th-2 tw-4">
+        {{ titre }}
+        <span class="ts-s tg1-2">— {{ titreInfo | safe }}</span>
+    </h2>
     <div class="d-flex {% if col3 %}mb-m{% else %}mb-xl{% endif %}">
         <div class="w-30">
             {{ col1 | safe }}
@@ -40,7 +43,7 @@
 
 
  {% macro h2(texte, ancre, info) %}
-     <h2 class="ts-l tg1-1 th-2 tw-4{% if class %} {{ class | safe }}{% endif %}"{% if ancre %} id="{{ texte | slug  }}"{% endif %}>
+     <h2 class="ts-l tg1-4 th-2 tw-4{% if class %} {{ class | safe }}{% endif %}"{% if ancre %} id="{{ texte | slug  }}"{% endif %}>
          {{ texte | safe }}
          {% if info %}
              <span class="ts-s tg1-2">— {{ info | safe }}</span>
@@ -52,13 +55,11 @@
 
 
  {% macro h3(texte, info) %}
-     <h3 class="mb-s">
-         <strong>
-             {{ texte | safe }}
-             {% if info %}
-                 <span class="ts-s tg1-2">— {{ info | safe }}</span>
-             {% endif %}
-         </strong>
+     <h3 class="ts-l mb-s">
+         {{ texte | safe }}
+         {% if info %}
+             <span class="ts-s tg1-2">— {{ info | safe }}</span>
+         {% endif %}
      </h3>
  {% endmacro %}
 

@@ -9,10 +9,12 @@ date: 2021-03-06
 
 
 {% set demo %}
-    <p class="ts-xl">Tres grand</p>
-    <p class="ts-l">Grand</p>
-    <p><strong>strong</strong></p>
-    <p>Normal</p>
+    <p class="ts-xl mb-s">Tres grand</p>
+
+    <p class="ts-l mb-s">Grand</p>
+
+    <p class="mb-s">Normal, <strong>Strong</strong></p>
+
     <p class="ts-s">Petit</p>
 {% endset %}
 {% set code %}
@@ -20,9 +22,7 @@ date: 2021-03-06
 
 <p class="ts-l">Grand</p>
 
-<p><strong>strong</strong></p>
-
-<p>Normal</p>
+<p>Normal, <strong>Strong</strong></p>
 
 <p class="ts-s">Petit</p>
 {% endset %}
@@ -32,22 +32,22 @@ date: 2021-03-06
 
 
 {% set demo %}
-    <div class="d-flex mb-s">
-        <div class="w- tg1-1">Une</div>
-        <div class="w-">texte courant</div>
-    </div>
-    <div class="d-flex mb-s">
-        <div class="w- tg1-2">Deux</div>
-        <div class="w-">texte secondaire, légende image, date</div>
-    </div>
-    <div class="d-flex mb-s">
-        <div class="w- tg1-3">Trois</div>
-        <div class="w-">élément interactif, lien</div>
-    </div>
-    <div class="d-flex mb-s">
-        <div class="w- tg1-4">Quatre</div>
-        <div class="w-">citation, bloc scroll horizontal, puce des liste non ordonnée</div>
-    </div>
+    <p class="mb-s">
+        <span class="tg1-1">Une :</span>
+        Texte courant
+    </p>
+    <p class="mb-s">
+        <span class="tg1-2">Deux :</span>
+        Texte secondaire, légende image, date, bloc scroll horizontal
+    </p>
+    <p class="mb-s">
+        <span class="tg1-3">Trois :</span>
+        Lien
+    </p>
+    <p>
+        <span class="tg1-4">Quatre :</span>
+        Titre de niveau 2, Citation, puce des liste non ordonnée
+    </p>
 {% endset %}
 {% set code %}
 <p class="tg1-1">Une</p>
@@ -95,29 +95,28 @@ date: 2021-03-06
 
 
 {% set demo %}
-    <p class="tw-3">Normal</p>
-    <br>
-    <p>Défaut</p>
-    <br>
-    <p class="tw-4">Quatre cents</p>
-    <br>
-    <p class="tw-5">Cinq cents : pour les textes de couleur quatre, légende/citation</p>
-    <br>
-    <p><strong>Strong</strong></p>
+    <p class="mb-s">Défaut, <span class="tw-3">Normal</span> (300)</p>
+    <p class="tw-4 mb-s">Quatre-cents (400)</p>
+    <p class="mb-s"><span class="tw-7">Sept-cents</span>, <strong>strong</strong> (700)</p>
+    <hr class="mb-s">
+    <p class="tg1-4 mb-s">Couleur quatre : défaut (500)</p>
+    <p class="tg1-4"><span class="tw-7">Couleur quatre : Sept-cents</span>, <strong>strong</strong> (700)</p>
 {% endset %}
 {% set code %}
-<p class="tw-3">Normal</p>
 
-<p>Défaut</p>
+<p>Défaut, <span class="tw-3">Normal</span></p>
 
 <p class="tw-4">Quatre cents</p>
 
-<p class="tw-5">Cinq cents</p>
+<p><span class="tw-7">Sept-cents</span>, <strong>strong</strong></p>
 
-<p><strong>Strong</strong></p>
-<p class="tw-7">Strong</p>
+
+<p class="tg1-4">Couleur quatre : défaut (500)</p>
+
+<p class="tg1-4"><span class="tw-7">Couleur quatre : Sept-cents</span>, <strong>strong</strong></p>
+
 {% endset %}
-{{ macro.demo_code("Graisse du texte", demo, code) }}
+{{ macro.demo_code("Graisse du texte", demo, code, intro) }}
 
 
 
@@ -173,17 +172,23 @@ date: 2021-03-06
             {{ macro.table_demo_code(demoTitre) }}
 
             {% set demoTitre %}
-    <p class="ts-l tg1-2 th-2 tw-4">Niveau 2</p>
-    <p class="ts-l tg1-2 th-2 tw-4" id="niveau2">Niveau 2 avec ancre</p>
+<p class="ts-l tg1-4 th-2 tw-4">Niveau 2</p>
             {% endset %}
             {% set macroTitre %}
-    &#x7B;&#x7B; macro.h2("Niveau 2") &#125;&#125;
-    &#x7B;&#x7B; macro.h2("Niveau 2", "ancre") &#125;&#125;
+&#x7B;&#x7B; macro.h2("Niveau 2") &#125;&#125;
+&#x7B;&#x7B; macro.h2("Niveau 2", "ancre", "16/08/2021") &#125;&#125;
+&#x7B;&#x7B; macro.h2("Niveau 2", "", "16/08/2021") &#125;&#125;
             {% endset %}
             {{ macro.table_demo_code(demoTitre, macroTitre) }}
 
-            {% set demoTitre %}<p><strong>Niveau 3</strong></p>{% endset %}
-            {{ macro.table_demo_code(demoTitre) }}
+            {% set demoTitre %}
+<p class="ts-l mb-s">Niveau 3</p>
+            {% endset %}
+            {% set macroTitre %}
+&#x7B;&#x7B; macro.h3("Niveau 3") &#125;&#125;
+&#x7B;&#x7B; macro.h3("Niveau 3", "16/08/2021") &#125;&#125;
+            {% endset %}
+            {{ macro.table_demo_code(demoTitre, macroTitre) }}
 
             {% set demoTitre %}<p>Texte courant</p>{% endset %}
             {{ macro.table_demo_code(demoTitre) }}

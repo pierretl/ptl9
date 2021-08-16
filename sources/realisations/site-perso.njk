@@ -24,59 +24,18 @@ description: "Évolution de mon site personnel de 2007 à nos jours"
 
 
 
-<h2 class="ts-l mb-s">
-    Sommaire
-</h2>
-<ul class="ul-sommaire mb-l">
-    <li class="mb-xs">
-        <a class="lien-niveau2" href="#logo">Évolution du logotype</a>
-    </li>
-    <li class="mb-xs">
-        <a class="lien-niveau2" href="#design">Page d'accueil par année</a>
-    </li>
-    <li class="mb-xs">
-        <span class="mb-xs">Détails de chaque version :</span>
-        <ul>
-            <li>
-                <a class="lien-niveau2" href="#version1">2007 : One-page statique</a>
-            </li>
-            <li>
-                <a class="lien-niveau2" href="#version2">2008 : Trois affichages</a>
-            </li>
-            <li>
-                <a class="lien-niveau2" href="#version3">2009 : Backend php maison</a>
-            </li>
-            <li>
-                <a class="lien-niveau2" href="#version4">2010 : Lien rapide automatique</a>
-            </li>
-            <li>
-                <a class="lien-niveau2" href="#version5">2012 : SEO</a>
-            </li>
-            <li>
-                <a class="lien-niveau2" href="#version6">2013 : Hébergeur mutualisé</a>
-            </li>
-            <li>
-                <a class="lien-niveau2" href="#version7">2015 : Wordpress, thème maison</a>
-            </li>
-            <li>
-                <a class="lien-niveau2" href="#version8">2020 : Un seul plugin</a>
-            </li>
-            <li>
-                <a class="lien-niveau2" href="#version9">2021 : Générateur site statique</a>
-            </li>
-        </ul>
-    </li>
-</ul>
+
+
+{{ macro.sommaire(["Évolution du logotype", "Page d'accueil par année", "2007 : One-page statique", "2008 : Trois affichages", "2009 : Backend php maison", "2010 : Lien rapide automatique", "2012 : SEO", "2013 : Hébergeur mutualisé", "2015 : Wordpress, thème maison", "2020 : Un seul plugin", "2021 : Générateur site statique"]) }}
 
 
 
 
 
 
-<h2 id="logo" class="mb-s ts-l">
-    Logo
-</h2>
 
+
+{{ macro.h2("Évolution du logotype", "ancre") }}
 
 <ul class="ul-reset scroll-x js--scroll-x mb-xs">
    <li>
@@ -128,7 +87,7 @@ description: "Évolution de mon site personnel de 2007 à nos jours"
         </figure>
     </li>
 </ul>
-<p class="tg1-4 tw-5 mb-s">
+<p class="tg1-2 mb-s">
     <em>Version du logo par année</em>
 </p>
 
@@ -169,9 +128,8 @@ description: "Évolution de mon site personnel de 2007 à nos jours"
 
 
 
-<h2 id="design" class="ts-l mb-s">
-    Design
-</h2>
+{{ macro.h2("Page d'accueil par année", "ancre") }}
+
 <ul class="ul-reset scroll-x var--90 js--scroll-x mb-xs">
     <li>
         <figure class="mb-m" role="figure" aria-label="2007">
@@ -246,7 +204,7 @@ description: "Évolution de mon site personnel de 2007 à nos jours"
         </figure>
     </li>
 </ul>
-<p class="tg1-4 tw-5 mb-xl">
+<p class="tg1-2 mb-xl">
     <em>Page d'accueil par année</em>
 </p>
 
@@ -293,7 +251,7 @@ description: "Évolution de mon site personnel de 2007 à nos jours"
         <li>L'illustration de chantier clignote</li>
     </ul>
 {% endset %}
-{{ macro.version_ptl("version1", "Version 1 — 26 septembre 2007", col1, col2) }}
+{{ macro.version_ptl("2007 : One-page statique", "Version 1", "26 septembre 2007", col1, col2) }}
 
 
 
@@ -316,7 +274,7 @@ description: "Évolution de mon site personnel de 2007 à nos jours"
         <li>Page «lien», liste des projets sous forme de lien sans aucune information</li>
     </ul>
 {% endset %}
-{{ macro.version_ptl("version2", "Version 2 — 26 août 2008", col1, col2) }}
+{{ macro.version_ptl("2008 : Trois affichages", "Version 2", "26 août 2008", col1, col2) }}
 
 
 
@@ -369,7 +327,7 @@ description: "Évolution de mon site personnel de 2007 à nos jours"
         ) }}
     </div>
 {% endset %}
-{{ macro.version_ptl("version3", "Version 3 — 26 avril 2009", col1, col2, col3) }}
+{{ macro.version_ptl("2009 : Backend php maison", "Version 3", "26 avril 2009", col1, col2, col3) }}
 
 
 
@@ -422,7 +380,7 @@ description: "Évolution de mon site personnel de 2007 à nos jours"
         ) }}
     </div>
 {% endset %}
-{{ macro.version_ptl("version4", "Version 4 — 26 décembre 2010", col1, col2, col3) }}
+{{ macro.version_ptl("2010 : Lien rapide automatique", "Version 4", "26 décembre 2010", col1, col2, col3) }}
 
 
 
@@ -469,7 +427,7 @@ description: "Évolution de mon site personnel de 2007 à nos jours"
         ) }}
     </div>
 {% endset %}
-{{ macro.version_ptl("version5", "Version 5 — 26 décembre 2012", col1, col2, col3) }}
+{{ macro.version_ptl("2012 : SEO", "Version 5", "26 décembre 2012", col1, col2, col3) }}
 
 
 
@@ -533,7 +491,7 @@ description: "Évolution de mon site personnel de 2007 à nos jours"
         ) }}
     </div>
 {% endset %}
-{{ macro.version_ptl("version6", "Version 6 — 28 avril 2013", col1, col2, col3) }}
+{{ macro.version_ptl("2013 : Hébergeur mutualisé", "Version 6", "28 avril 2013", col1, col2, col3) }}
 
 
 
@@ -593,7 +551,7 @@ description: "Évolution de mon site personnel de 2007 à nos jours"
         </div>
     </div>
 {% endset %}
-{{ macro.version_ptl("version7", "Version 7 — 2 août 2015", col1, col2) }}
+{{ macro.version_ptl("2015 : Wordpress, thème maison", "Version 7", "2 août 2015", col1, col2) }}
 
 
 
@@ -627,7 +585,7 @@ description: "Évolution de mon site personnel de 2007 à nos jours"
         <li>Mosaïque style grid Mansory</li>
     </ul>
 {% endset %}
-{{ macro.version_ptl("version8", "Version 8 — 7 mai 2020", col1, col2) }}
+{{ macro.version_ptl("2020 : Un seul plugin", "Version 8", "7 mai 2020", col1, col2) }}
 
 
 
@@ -658,4 +616,4 @@ description: "Évolution de mon site personnel de 2007 à nos jours"
         <li>Desing minimalist</li>
     </ul>
 {% endset %}
-{{ macro.version_ptl("version9", "Version 9 — en cours", col1, col2) }}
+{{ macro.version_ptl("2021 : Générateur site statique", "Version 9", "21 juin 2021", col1, col2) }}

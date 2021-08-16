@@ -36,7 +36,8 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 * Recherche
 
 ## 15 Aout
-* Repasse graphique sur les titres
+* Repasse graphique sur les titres, la graisse des textes et les couleurs des composants
+* Correction coquille sur la page 404
 
 
 ## 24 juillet 

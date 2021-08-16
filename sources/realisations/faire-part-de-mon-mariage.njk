@@ -9,16 +9,18 @@ mosaiqueTaille: "2-2"
 mosaiqueClassCss: " pa"
 description: "Première de couverture pour mon faire-part de mariage, réalisé en pixel art"
 ---
+{% import "macro/contenu.njk" as macro %}
 
-<h2 class="ts-l mb-s">
-    Illustration
-</h2>
+
+
+{{ macro.h2("Illustration") }}
+
 <img class="pa mb-l" src="{{ metadata.siteUrl }}/images/pixel-art/faire-part_mariage.png" alt="Touts un tas de personnage de films et dessin animés en train de s'installaient dans des fauteuils rouge" loading="lazy" />
 
 
 
 
-<h2 class="ts-l mb-s">
-    Imprimer
-</h2>
+
+{{ macro.h2("Imprimer") }}
+
 <img src="{{ metadata.siteUrl }}/images/faire-part/imprimer.jpg" alt="Faire part imprimer" loading="lazy" />

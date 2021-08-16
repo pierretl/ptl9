@@ -17,7 +17,6 @@ body {
 
   font-family: 'Raleway', sans-serif;
   font-size: $texte-m;
-  font-weight: 300;
   color: var(--gamme1__texte1);
 }
 
@@ -76,7 +75,7 @@ figcaption {
   margin-top:$espace-xs;
   font-style: italic;
   text-align: center;
-  color: var(--gamme1__texte4);
+  color: var(--gamme1__texte2);
   font-weight: 500;
 }
 
@@ -84,7 +83,7 @@ blockquote {
   position: relative;
   padding-left: $espace-s;
   border-left: 1px solid var(--gamme1__texte4);
-  color: var(--gamme1__texte2);
+  color: var(--gamme1__texte1);
 }
 blockquote p {
   position: relative;

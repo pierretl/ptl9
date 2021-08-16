@@ -7,14 +7,14 @@ mosaiqueImage: "team-cuyz"
 mosaiqueImageExtension: ".svg"
 description: "Réalisations de logo et icônes pour la Team de développer CuyZ"
 ---
+{% import "macro/contenu.njk" as macro %}
+
 
 <p class="mb-l">
     C'est une <a href="https://cuyz.io/" rel="external">équipe de développer</a>, <a href="https://github.com/CuyZ" rel="external">dépot sur GitHub</a>
 </p>
 
-<h2 class="mb-s ts-l">
-    Logo de la Team
-</h2>
+{{ macro.h2("Logo de la Team") }}
 <div class="d-flex ai-c mb-xl">
     <div class="w-50">
         <blockquote class="mb-s">
@@ -31,17 +31,15 @@ description: "Réalisations de logo et icônes pour la Team de développer CuyZ"
 </div>
 
 
-<h2 class="mb-s ts-l">
-    Projet Notiz
-</h2>
+{{ macro.h2("Projet Notiz") }}
 <p class="mb-l">
     <a href="https://github.com/CuyZ/NotiZ" rel="external">NotiZ</a> est une extension du système de gestion de contenu <a href="https://typo3.org/" rel="external">TYPO3</a>
 </p>
 
 
-<h3 class="mb-s">
-    <strong>Logo</strong>
-</h3>
+
+{{ macro.h3("Logo") }}
+
 <div class="d-flex mb-xl">
     <div class="w-70">
         <blockquote class="mb-s">
@@ -59,9 +57,8 @@ description: "Réalisations de logo et icônes pour la Team de développer CuyZ"
 
 
 
-<h3 class="mb-s">
-    <strong>Icônes pour le backend du CMS</strong>
-</h3>
+
+{{ macro.h3("Icônes pour le backend du CMS") }}
 
 <div class="d-flex mb-l">
     <div class="w-70">

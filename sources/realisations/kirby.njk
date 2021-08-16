@@ -7,13 +7,12 @@ mosaiqueImage: "kirby"
 mosaiqueImageExtension: ".svg"
 description: "T-shirt avec un le visage de Kirby en très gros plan"
 ---
+{% import "macro/contenu.njk" as macro %}
 
 
 <div class="d-flex mb-xl">
     <div class="w-50">
-        <h2 class="mb-s ts-l">
-            Référence
-        </h2>
+        {{ macro.h2("Référence") }}
         <p>Kirby est un personnage de jeu vidéo, créé par Masahiro Sakurai pour la firme Nintendo</p>
         <figure role="figure" aria-label="Logo du jeu vidéo 'Kirby Super Star Ultra'">
             <img src="{{ metadata.siteUrl }}/images/kirby/logo_kirby_super_star_ultra.png" alt="Kirby" loading="lazy" />
@@ -24,9 +23,7 @@ description: "T-shirt avec un le visage de Kirby en très gros plan"
 
     </div>
     <div class="w-50">
-        <h2 class="mb-s ts-l">
-            Mise en situation
-        </h2>
+        {{ macro.h2("Mise en situation") }}
         <figure role="figure" aria-label="Les yeux, la bouche et les pommettes caractérisant Kirby">
             <img src="{{ metadata.siteUrl }}/images/kirby/t-shirt-kirby-resultat.png" alt="T-shirt rose kirby" loading="lazy" />
             <figcaption>

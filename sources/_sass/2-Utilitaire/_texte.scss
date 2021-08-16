@@ -41,14 +41,15 @@
 
 
 // texte font-weight
+.tg1-2,
+.tg1-4 {
+  font-weight: 500; //Améliore la lisibilité du texte de couleur deux et quatre
+}
 .tw-3 {
   font-weight: 300; //texte courant
 }
 .tw-4 {
   font-weight: 400; //normal
-}
-.tw-5 {
-  font-weight: 500; //citation et légende de couleur quatre
 }
 .tw-7 {
   font-weight: 700; //strong : menu

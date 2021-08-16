@@ -8,6 +8,7 @@ mosaiqueImageExtension: ".jpg"
 mosaiqueTaille: "2-1"
 description: "Réalisation de la charte graphique, du logo, d'une bâche publicitaire, de carte de visite et intégration du site web pour Radiophonix"
 ---
+{% import "macro/contenu.njk" as macro %}
 
 
 <p class="mb-m">
@@ -29,9 +30,7 @@ description: "Réalisation de la charte graphique, du logo, d'une bâche publici
 </p>
 
 
-<h2 class="mb-s ts-l">
-    Logo <span class="ts-s tg1-2">— 10/12/2016</span>
-</h2>
+{{ macro.h2("Logo", "", "10/12/2016") }}
 <div class="d-flex ai-c mb-xl">
     <div class="w-50">
         <figure role="figure" aria-label="Logo en deux couleurs pour faciliter sa lecture">
@@ -51,9 +50,7 @@ description: "Réalisation de la charte graphique, du logo, d'une bâche publici
 
 
 
-<h2 class="mb-s ts-l">
-    Carte de visite <span class="ts-s tg1-2">— 16/04/2019</span>
-</h2>
+{{ macro.h2("Carte de visite", "", "16/04/2019") }}
 <div class="d-flex ai-c mb-xl">
     <div class="w-70">
         <div class="d-flex mb-m">
@@ -104,9 +101,7 @@ description: "Réalisation de la charte graphique, du logo, d'une bâche publici
 
 
 
-<h2 class="mb-s ts-l">
-    Bâche publicitaire <span class="ts-s tg1-2">— 04/06/2019</span>
-</h2>
+{{ macro.h2("Bâche publicitaire", "", "04/06/2019") }}
 <div class="d-flex ai-c mb-xl">
     <div class="w-50">
         <img src="{{ metadata.siteUrl }}/images/radiophonix/bache-727x291.png" alt="Logo et slogan superposé à une photo de radio rétro" loading="lazy" />
@@ -122,10 +117,7 @@ description: "Réalisation de la charte graphique, du logo, d'une bâche publici
 
 
 
-<h2 class="mb-s ts-l">
-    Webdesign <span class="ts-s tg1-2">— Capture d'écran le 08/05/2020</span>
-</h2>
-
+{{ macro.h2("Webdesign", "", "Capture d'écran le 08/05/2020") }}
 <figure class="mb-l" role="figure" aria-label="Page d'accueil avec le lecteur audio non utilisé">
     <img src="{{ metadata.siteUrl }}/images/radiophonix/Screenshot_2020-05-08-Radiophonix-BETA.png" alt="" loading="lazy" />
     <figcaption>
