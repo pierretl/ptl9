@@ -31,13 +31,21 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 * SEO opti :
     * faq
     * page description
-  
-## [Liaison de mon nom de domaine à Netlify](/recueil/lier-netlify-ovh/)
+* Formulaire de contact
+* XTheque avec google doc
+* Recherche
+
+## 15 Aout
+* Repasse graphique sur les titres
+
 
 ## 24 juillet 
 * Passage de la police en local pour améliorer les performances du site
 * Correction lien en 404 sur [gitpod](../gitpod/)
 * Ajout des images de l'accueil en webp et avif quand elles ne sont pas vectoriel
+
+## 21 juin
+* [Liaison de mon nom de domaine à Netlify](/recueil/lier-netlify-ovh/)
 
 ## 13 juin
 * Ajout de la balise ``<desciption>`` pour chaque page

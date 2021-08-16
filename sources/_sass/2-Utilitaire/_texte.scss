@@ -1,12 +1,4 @@
 // texte font size
-.ts-xxl {
-  font-size: $texte-xxl;
-}
-@include breakpoint(smallOnly){
-  .ts-xxl {
-    font-size: rem-calc(35);
-  }
-}
 .ts-xl {
   font-size: $texte-xl;
 }

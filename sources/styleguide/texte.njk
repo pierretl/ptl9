@@ -9,7 +9,6 @@ date: 2021-03-06
 
 
 {% set demo %}
-    <p class="ts-xxl">Géant</p>
     <p class="ts-xl">Tres grand</p>
     <p class="ts-l">Grand</p>
     <p><strong>strong</strong></p>
@@ -17,8 +16,6 @@ date: 2021-03-06
     <p class="ts-s">Petit</p>
 {% endset %}
 {% set code %}
-<p class="ts-xxl">Géant</p>
-
 <p class="ts-xl">Tres grand</p>
 
 <p class="ts-l">Grand</p>
@@ -169,7 +166,7 @@ date: 2021-03-06
         </tr>
         </thead>
         <tbody>
-            {% set demoTitre %}<p class="ts-xxl tg1-1 th-09 tw-4">Nom du site</p>{% endset %}
+            {% set demoTitre %}<p class="ts-xl tg1-1 th-09 tw-4">Nom du site</p>{% endset %}
             {{ macro.table_demo_code(demoTitre) }}
 
             {% set demoTitre %}<p class="ts-xl tg1-1 tw-4">Niveau 1</p>{% endset %}
@@ -177,7 +174,7 @@ date: 2021-03-06
 
             {% set demoTitre %}
     <p class="ts-l tg1-2 th-2 tw-4">Niveau 2</p>
-    <p class="ts-l tg1-2 th-2 tw-4" id="niveau2">Niveau 2</p>
+    <p class="ts-l tg1-2 th-2 tw-4" id="niveau2">Niveau 2 avec ancre</p>
             {% endset %}
             {% set macroTitre %}
     &#x7B;&#x7B; macro.h2("Niveau 2") &#125;&#125;
