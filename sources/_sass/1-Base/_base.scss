@@ -121,3 +121,13 @@ cite {
   color: var(--gamme1__texte4);
   font-weight: 500;
 }
+
+table {
+  border:1px solid var(--gamme1__bordure);
+  border-collapse: collapse;
+}
+table th,
+table td {
+  padding: 7px;
+  border:1px solid var(--gamme1__bordure);
+}

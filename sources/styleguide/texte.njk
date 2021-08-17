@@ -3,236 +3,40 @@ layout: layout/styleguide.njk
 titre: "Texte"
 tags: ['styleguidev9', 'recueil']
 homeStyleguide: "true"
-date: 2021-03-06
+date: 2021-08-17
 ---
-{% import "macro/styleguide.njk" as macro %}
-
-
-{% set demo %}
-    <p class="ts-xl mb-s">Tres grand</p>
-
-    <p class="ts-l mb-s">Grand</p>
-
-    <p class="mb-s">Normal, <strong>Strong</strong></p>
-
-    <p class="ts-s">Petit</p>
-{% endset %}
-{% set code %}
-<p class="ts-xl">Tres grand</p>
-
-<p class="ts-l">Grand</p>
-
-<p>Normal, <strong>Strong</strong></p>
-
-<p class="ts-s">Petit</p>
-{% endset %}
-{{ macro.demo_code("Taille", demo, code) }}
+{% import "macro/styleguide.njk" as styleguide %}
+{% import "macro/contenu.njk" as macro %}
 
 
 
 
-{% set demo %}
-    <p class="mb-s">
-        <span class="tg1-1">Une :</span>
-        Texte courant
-    </p>
-    <p class="mb-s">
-        <span class="tg1-2">Deux :</span>
-        Texte secondaire, légende image, date, bloc scroll horizontal
-    </p>
-    <p class="mb-s">
-        <span class="tg1-3">Trois :</span>
-        Lien
-    </p>
-    <p>
-        <span class="tg1-4">Quatre :</span>
-        Titre de niveau 2, Citation, puce des liste non ordonnée
-    </p>
-{% endset %}
-{% set code %}
-<p class="tg1-1">Une</p>
-
-<p class="tg1-2">Deux</p>
-
-<p class="tg1-3">Trois</p>
-
-<p class="tg1-4">Quatre</p>
-{% endset %}
-{{ macro.demo_code("Couleur", demo, code) }}
+{{ macro.sommaire(["Alignement", "Citation", "Couleur", "Graisse du texte", "Hauteur de ligne", "Lien", "Liste", "Taille", "Texte souligné", "Titre" ]) }}
 
 
 
 
-{% set demo %}
-    <div class="d-flex">
-        <p class="th-09 mr-m">
-            Zero neuf<br>
-            Zero neuf<br>
-            Zero neuf
-        </p>
-        <p class="mr-m">
-            Normal<br>
-            Normal<br>
-            Normal
-        </p>
-        <p class="th-2">
-            Deux<br>
-            Deux<br>
-            Deux
-        </p>
-    </div>
-{% endset %}
-{% set code %}
-<p class="th-09">Zero neuf</p>
-
-<p>Normal</p>
-
-<p class="th-2">Deux</p>
-{% endset %}
-{{ macro.demo_code("Hauteur de ligne", demo, code) }}
-
-
-
-
-{% set demo %}
-    <p class="mb-s">Défaut, <span class="tw-3">Normal</span> (300)</p>
-    <p class="tw-4 mb-s">Quatre-cents (400)</p>
-    <p class="mb-s"><span class="tw-7">Sept-cents</span>, <strong>strong</strong> (700)</p>
-    <hr class="mb-s">
-    <p class="tg1-4 mb-s">Couleur quatre : défaut (500)</p>
-    <p class="tg1-4"><span class="tw-7">Couleur quatre : Sept-cents</span>, <strong>strong</strong> (700)</p>
-{% endset %}
-{% set code %}
-
-<p>Défaut, <span class="tw-3">Normal</span></p>
-
-<p class="tw-4">Quatre cents</p>
-
-<p><span class="tw-7">Sept-cents</span>, <strong>strong</strong></p>
-
-
-<p class="tg1-4">Couleur quatre : défaut (500)</p>
-
-<p class="tg1-4"><span class="tw-7">Couleur quatre : Sept-cents</span>, <strong>strong</strong></p>
-
-{% endset %}
-{{ macro.demo_code("Graisse du texte", demo, code, intro) }}
-
-
-
-
-{% set demo %}
-    <a href="#" class="tg1-1">Lien souligné (défaut)</a>
-    <br><br>
-    <a href="#" class="tg1-1 td-0">Lien non souligné</a>
-    <br><br>
-    <span class="tg1-1 td-1">Texte souligné (menu actif)</span>
-{% endset %}
-{% set code %}
-<a href="#" class="tg1-1">Lien souligné (défaut)</a>
-
-<a href="#" class="tg1-1 td-0">Lien non souligné</a>
-
-<span class="tg1-1 td-1">Texte souligné (menu actif)</span>
-{% endset %}
-{{ macro.demo_code("Text souligné", demo, code) }}
-
-
-
-
+{{ macro.h2("Alignement", "ancre") }}
 {% set demo %}
     <p>A gauche par défaut</p>
-    <p class="text-center">texte centré</p>
 {% endset %}
 {% set code %}
 <p>A gauche par défaut</p>
-
-<p class="text-center">texte centré</p>
 {% endset %}
-{{ macro.demo_code("Alignement", demo, code) }}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
 
-
-
-
-{{ macro.h2("Titre") }}
-<div class="scroll-x-auto mb-xl">
-    <table>
-        <thead>
-        <tr>
-            <th>Rendus</th>
-            <th>HTML</th>
-            <th>Macro Nunjucks</th>
-        </tr>
-        </thead>
-        <tbody>
-            {% set demoTitre %}<p class="ts-xl tg1-1 th-09 tw-4">Nom du site</p>{% endset %}
-            {{ macro.table_demo_code(demoTitre) }}
-
-            {% set demoTitre %}<p class="ts-xl tg1-1 tw-4">Niveau 1</p>{% endset %}
-            {{ macro.table_demo_code(demoTitre) }}
-
-            {% set demoTitre %}
-<p class="ts-l tg1-4 th-2 tw-4">Niveau 2</p>
-            {% endset %}
-            {% set macroTitre %}
-&#x7B;&#x7B; macro.h2("Niveau 2") &#125;&#125;
-&#x7B;&#x7B; macro.h2("Niveau 2", "ancre", "16/08/2021") &#125;&#125;
-&#x7B;&#x7B; macro.h2("Niveau 2", "", "16/08/2021") &#125;&#125;
-            {% endset %}
-            {{ macro.table_demo_code(demoTitre, macroTitre) }}
-
-            {% set demoTitre %}
-<p class="ts-l mb-s">Niveau 3</p>
-            {% endset %}
-            {% set macroTitre %}
-&#x7B;&#x7B; macro.h3("Niveau 3") &#125;&#125;
-&#x7B;&#x7B; macro.h3("Niveau 3", "16/08/2021") &#125;&#125;
-            {% endset %}
-            {{ macro.table_demo_code(demoTitre, macroTitre) }}
-
-            {% set demoTitre %}<p>Texte courant</p>{% endset %}
-            {{ macro.table_demo_code(demoTitre) }}
-
-            {% set demoTitre %}<p class="ts-s tg1-2 tw-4">Niveau 4</p>{% endset %}
-            {{ macro.table_demo_code(demoTitre) }}
-        </tbody>
-    </table>
-</div>
-
-
-
-
-{% set intro %}
-    La lien d'évitement est affiché au focus en absolute en haut à gauche
-{% endset %}
 {% set demo %}
-    <style>
-        .affiche-evitement {
-            position: static;
-        }
-    </style>
-    <a href="#">Lien primaire</a>
-    <br><br>
-    <a class="lien-niveau2" href="#">Lien secondaire</a>
-    <br><br>
-    <a href="#" class="tg1-1 td-0">Lien de couleur "une"</a>
-    <br><br><br>
-    <a href="#contenu" class="lien-evitement affiche-evitement">Lien évitement</a>
+    <p class="text-center">texte centré</p>
 {% endset %}
 {% set code %}
-<a href="#">Lien primaire</a>
-
-<a class="lien-niveau2" href="#">Lien desondaire</a>
-
-<a href="#" class="tg1-1 td-0">Lien de couleur "une"</a>
-
-<a href="#contenu" class="lien-evitement">Lien évitement</a>
+    <p class="text-center">texte centré</p>
 {% endset %}
-{{ macro.demo_code("lien", demo, code, intro) }}
+{{ styleguide.demo_code(demo, code) }}
 
 
 
 
+{{ macro.h2("Citation", "ancre") }}
 {% set demo %}
     <blockquote>
         <p>Accusamus commodi cumque ea excepturi expedita facilis, quisquam sed soluta voluptas voluptatum!</p>
@@ -245,13 +49,234 @@ date: 2021-03-06
     <cite>Lorem ipsum</cite>
 </blockquote>
 {% endset %}
-{{ macro.demo_code("Citation", demo, code) }}
+{{ styleguide.demo_code(demo, code) }}
 
 
 
 
 
-{{ macro.h2("Liste") }}
+{{ macro.h2("Couleur", "ancre") }}
+{% set demo %}
+    <span class="tg1-1">Une :</span>
+    Texte courant
+{% endset %}
+{% set code %}
+<p class="tg1-1">Une : Texte courant</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <span class="tg1-2">Deux :</span>
+    Texte secondaire, légende image, date, bloc scroll horizontal
+{% endset %}
+{% set code %}
+<p class="tg1-2">Deux : Texte secondaire, légende image, date, bloc scroll horizontal</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <span class="tg1-3">Trois :</span>
+    Lien
+{% endset %}
+{% set code %}
+<p class="tg1-3">Trois : Lien</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <span class="tg1-4">Quatre :</span>
+    Titre de niveau 2, Citation, puce des liste non ordonnée
+{% endset %}
+{% set code %}
+<p class="tg1-4">Quatre : Titre de niveau 2, Citation, puce des liste non ordonnée</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{{ macro.h2("Graisse du texte", "ancre") }}
+{% set demo %}
+    Défaut, <span class="tw-3">Normal</span> (300)
+{% endset %}
+{% set code %}
+<p>Défaut, <span class="tw-3">Normal</span></p>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <p class="tw-4">Quatre-cents (400)</p>
+{% endset %}
+{% set code %}
+<p class="tw-4">Quatre cents</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <span class="tw-7">Sept-cents</span>, <strong>strong</strong> (700)
+{% endset %}
+{% set code %}
+    <span class="tw-7">Sept-cents</span>, <strong>strong</strong>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <p class="tg1-4">Couleur quatre : défaut (500)</p>
+{% endset %}
+{% set code %}
+    <p class="tg1-4">Couleur quatre : défaut (500)</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <p class="tg1-4"><span class="tw-7">Couleur quatre : Sept-cents</span>, <strong>strong</strong> (700)</p>
+{% endset %}
+{% set code %}
+    <p class="tg1-4"><span class="tw-7">Couleur quatre : Sept-cents</span>, <strong>strong</strong></p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{{ macro.h2("Hauteur de ligne", "ancre") }}
+{% set demo %}
+        <p class="th-09">
+            Zero neuf<br>
+            Zero neuf<br>
+            Zero neuf
+        </p>
+{% endset %}
+{% set code %}
+<p class="th-09">Zero neuf</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+        <p class="mr-m">
+            Normal<br>
+            Normal<br>
+            Normal
+        </p>
+{% endset %}
+{% set code %}
+    <p>Normal</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+        <p class="th-2">
+            Deux<br>
+            Deux<br>
+            Deux
+        </p>
+{% endset %}
+{% set code %}
+    <p class="th-2">Deux</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{{ macro.h2("Lien", "ancre") }}
+{% set intro %}
+    La lien d'évitement est affiché au focus en absolute en haut à gauche
+{% endset %}
+{% set demo %}
+    <a href="#">Lien primaire</a>
+{% endset %}
+{% set code %}
+<a href="#">Lien primaire</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code, intro, "intermédiaire") }}
+
+{% set demo %}
+    <a href="0" rel="external">Lien primaire externe</a>
+{% endset %}
+{% set code %}
+    <a href="" rel="external">Lien primaire externe</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <a class="lien-niveau2" href="#">Lien secondaire</a>
+{% endset %}
+{% set code %}
+    <a class="lien-niveau2" href="#">Lien secondaire</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <a class="lien-niveau2" href="0" rel="external">Lien secondaire externe</a>
+{% endset %}
+{% set code %}
+    <a class="lien-niveau2" href="" rel="external">Lien secondaire externe</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <ul class="ul-sommaire">
+        <li><a class="lien-niveau2" href="#">Sommaire</a></li>
+    </ul>
+{% endset %}
+{% set code %}
+<ul class="ul-sommaire">
+    <li><a class="lien-niveau2" href="#">Sommaire</a></li>
+</ul>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <a href="#" class="tg1-1 td-0">Lien de couleur "une"</a>
+{% endset %}
+{% set code %}
+    <a href="#" class="tg1-1 td-0">Lien de couleur "une"</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <style>
+        .affiche-evitement {
+            position: static;
+        }
+    </style>
+    <a href="#contenu" class="lien-evitement affiche-evitement">Lien évitement</a>
+{% endset %}
+{% set code %}
+    <a href="#contenu" class="lien-evitement">Lien évitement</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <a href="#" class="tg1-1 tw-7">Menu header niveau 1</a>
+{% endset %}
+{% set code %}
+    <a href="#" class="tg1-1 tw-7">Menu header niveau 1</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <a href="#" class="tg1-1">Menu header niveau 2</a>
+{% endset %}
+{% set code %}
+    <a href="#" class="tg1-1">Menu header niveau 2</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <a href="#" class="tg1-1 td-0">Menu footer</a>
+{% endset %}
+{% set code %}
+    <a href="#" class="tg1-1 td-0">Menu footer</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+
+{{ macro.h2("Liste", "ancre") }}
 <div class="scroll-x-auto mb-xl">
     <table>
         <thead>
@@ -264,57 +289,158 @@ date: 2021-03-06
         </thead>
         <tbody>
         {% set demoListe %}
-            <ul>
-                <li>un</li>
-                <li>deux</li>
-                <li>trois</li>
-            </ul>
+<ul>
+    <li>un</li>
+    <li>deux</li>
+    <li>trois</li>
+</ul>
         {% endset %}
-        {{ macro.table_demo_code(demoListe, "", "Contenu") }}
+        {{ styleguide.table_demo_code(demoListe, "", "Contenu") }}
 
 
         {% set demoTitre %}
-            <ul class="ul-sommaire">
-                <li class="mb-xs">
-                    <a href="#" class="lien-niveau2">
-                        un
-                    </a>
-                </li>
-                <li class="mb-xs">
-                    <a href="#" class="lien-niveau2">
-                        deux
-                    </a>
-                </li>
-                <li class="mb-xs">
-                    <a href="#" class="lien-niveau2">
-                        trois
-                    </a>
-                </li>
-            </ul>
+<ul class="ul-sommaire">
+    <li class="mb-xs">
+        <a href="#" class="lien-niveau2">
+            un
+        </a>
+    </li>
+    <li class="mb-xs">
+        <a href="#" class="lien-niveau2">
+            deux
+        </a>
+    </li>
+    <li class="mb-xs">
+        <a href="#" class="lien-niveau2">
+            trois
+        </a>
+    </li>
+</ul>
         {% endset %}
         {% set macroTitre %}
             &#x7B;&#x7B; macro.sommaire(["un : Sommaire", "deux", "trois"]) &#125;&#125;
         {% endset %}
-        {{ macro.table_demo_code(demoTitre, macroTitre, "Sommaire") }}
+        {{ styleguide.table_demo_code(demoTitre, macroTitre, "Sommaire") }}
 
         {% set demoListe %}
-            <ul class="ul-reset">
-                <li>un</li>
-                <li>deux</li>
-                <li>trois</li>
-            </ul>
+<ul class="ul-reset">
+    <li>un</li>
+    <li>deux</li>
+    <li>trois</li>
+</ul>
         {% endset %}
-        {{ macro.table_demo_code(demoListe, "", "Reinitialisé") }}
+        {{ styleguide.table_demo_code(demoListe, "", "Reinitialisé") }}
 
         {% set demoListe %}
-            <ol>
-                <li>un</li>
-                <li>deux</li>
-                <li>trois</li>
-            </ol>
+<ol>
+    <li>un</li>
+    <li>deux</li>
+    <li>trois</li>
+</ol>
         {% endset %}
-        {{ macro.table_demo_code(demoListe, "", "Numéroté") }}
+        {{ styleguide.table_demo_code(demoListe, "", "Numéroté") }}
         </tbody>
     </table>
 </div>
+
+
+
+{{ macro.h2("Taille", "ancre") }}
+{% set demo %}
+    <p class="ts-xl">Tres grand</p>
+{% endset %}
+{% set code %}
+<p class="ts-xl">Tres grand</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <p class="ts-l">Grand</p>
+{% endset %}
+{% set code %}
+    <p class="ts-l">Grand</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <p class="">Normal, <strong>Strong</strong></p>
+{% endset %}
+{% set code %}
+    <p>Normal, <strong>Strong</strong></p>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <p class="ts-s">Petit</p>
+{% endset %}
+{% set code %}
+    <p class="ts-s">Petit</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+
+{{ macro.h2("Texte souligné", "ancre") }}
+{% set demo %}
+    <span class="tg1-1 td-1">Menu actif</span>
+{% endset %}
+{% set code %}
+<span class="tg1-1 td-1">Menu actif</span>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+
+
+
+{{ macro.h2("Titre", "ancre") }}
+<div class="scroll-x-auto mb-xl">
+    <table>
+        <thead>
+        <tr>
+            <th>Rendus</th>
+            <th>HTML</th>
+            <th>Macro Nunjucks</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% set demoTitre %}<p class="ts-xl tg1-1 th-09 tw-4">Nom du site</p>{% endset %}
+            {{ styleguide.table_demo_code(demoTitre) }}
+
+            {% set demoTitre %}<p class="ts-xl tg1-1 tw-4">Niveau 1</p>{% endset %}
+            {{ styleguide.table_demo_code(demoTitre) }}
+
+            {% set demoTitre %}
+<p class="ts-l tg1-4 th-2 tw-4">Niveau 2</p>
+            {% endset %}
+            {% set macroTitre %}
+&#x7B;&#x7B; macro.h2("Niveau 2") &#125;&#125;
+&#x7B;&#x7B; macro.h2("Niveau 2", "ancre", "16/08/2021") &#125;&#125;
+&#x7B;&#x7B; macro.h2("Niveau 2", "", "16/08/2021") &#125;&#125;
+            {% endset %}
+            {{ styleguide.table_demo_code(demoTitre, macroTitre) }}
+
+            {% set demoTitre %}
+<p class="ts-l mb-s">Niveau 3</p>
+            {% endset %}
+            {% set macroTitre %}
+&#x7B;&#x7B; macro.h3("Niveau 3") &#125;&#125;
+&#x7B;&#x7B; macro.h3("Niveau 3", "16/08/2021") &#125;&#125;
+            {% endset %}
+            {{ styleguide.table_demo_code(demoTitre, macroTitre) }}
+
+            {% set demoTitre %}<p>Texte courant</p>{% endset %}
+            {{ styleguide.table_demo_code(demoTitre) }}
+
+            {% set demoTitre %}<p class="ts-s tg1-2 tw-4">Niveau 4</p>{% endset %}
+            {{ styleguide.table_demo_code(demoTitre) }}
+        </tbody>
+    </table>
+</div>
+
+
 

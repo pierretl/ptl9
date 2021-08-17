@@ -9,14 +9,10 @@ description: "Détails sur l'évolution de la nouvelle version de mon site perso
 
 ## Avant propos
 
-Tous les deux ans en moyenne, je réalise une nouvelle version de mon [portfolio](/realisations/historique-portfolio).
+Tous les deux ans en moyenne, je réalise une nouvelle version de mon [portfolio](/realisations/site-perso).
 Le site étant en lui-même le projet le plus récent que j'ai à présenter, il me permet surtout d'expérimenter des méthodologies, d'appliquer des idées de conception et d'utiliser des technologies.
 
-J'ai été surpris du résultat de l'outil d'estimation d'empreinte carbon : [Website Carbon Calculator](https://www.websitecarbon.com/website/pierre-tl/) en soumettant mon portfolio en version 8
-Un très mauvais résultat et d'autant plus comparer au site pour lequel je travaille, mais ceci est une autre [sujet](/recueil/empreinte-carbone)
-
-Ça fait un moment que je vois passer des articles sur les générateurs de site statique, imbattable niveau performance.
-Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt que d'utiliser un outil en [WYSIWYG](https://www.linternaute.fr/dictionnaire/fr/definition/wysiwyg/)
+Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/performance-du-site) que j'ai obtenu sur [Website Carbon Calculator](https://www.websitecarbon.com/) et comme cela faisait un moment que je vois passer des articles sur les générateurs de site statique, je me suis dit que l'heure était venu
 
 
 ## A faire
@@ -37,6 +33,10 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 
 ## 17 aout
 * Correction du design des liens suite au passage du site en ``https://``
+* Ajout d'un meta description par défaut
+* Ajout d'une Content Security Policy
+* Écris [Performance du site](/recueil/performance-du-site/) 
+* Mise à jour du [styleguide](/styleguide/block/)
 
 
 ## 15 Aout

@@ -3,55 +3,56 @@ layout: layout/styleguide.njk
 titre: "Déco"
 tags: "styleguidev9"
 ---
-{% import "macro/styleguide.njk" as macro %}
+{% import "macro/styleguide.njk" as styleguide %}
+{% import "macro/contenu.njk" as macro %}
+
+{{ macro.sommaire(["Bordure", "Coloration SVG", "Fond", "Image pixel art" ]) }}
 
 
-
+{{ macro.h2("Bordure", "ancre") }}
 
 {% set demo %}
-    <div class="bordure-h">contenu</div>
+    <div class="bordure-h">Haut</div>
 {% endset %}
 {% set code %}
 <div class="bordure-h"></div>
 {% endset %}
-{{ macro.demo_code("Bordure haut", demo, code) }}
-
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
 
 
 
 {% set demo %}
-    <div class="bordure-b">contenu</div>
+    <div class="bordure-b">Bas</div>
 {% endset %}
 {% set code %}
 <div class="bordure-b"></div>
 {% endset %}
-{{ macro.demo_code("Bordure bas", demo, code) }}
-
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
 
 
 
 {% set demo %}
-    <div class="bordure-l">contenu</div>
+    <div class="bordure-l">Gauche</div>
 {% endset %}
 {% set code %}
     <div class="bordure-l"></div>
 {% endset %}
-{{ macro.demo_code("Bordure gauche", demo, code) }}
-
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
 
 
 
 {% set demo %}
-    <div class="bordure">contenu</div>
+    <div class="bordure">Bordure</div>
 {% endset %}
 {% set code %}
     <div class="bordure"></div>
 {% endset %}
-{{ macro.demo_code("Bordure", demo, code) }}
+{{ styleguide.demo_code(demo, code) }}
 
 
 
 
+{{ macro.h2("Coloration SVG", "ancre") }}
 {% set demo %}
     <svg width="18px" height="18px" class="fill--mode">
         <use xlink:href="#darkMode"></use>
@@ -62,11 +63,11 @@ tags: "styleguidev9"
     <use xlink:href="#darkMode"></use>
 </svg>
 {% endset %}
-{{ macro.demo_code("Coloration SVG", demo, code) }}
+{{ styleguide.demo_code(demo, code) }}
 
 
 
-
+{{ macro.h2("Fond", "ancre") }}
 {% set intro %}
     <strong>Thème sombre : </strong>Fond clair + padding
     <br>
@@ -78,11 +79,11 @@ tags: "styleguidev9"
 {% set code %}
 <img src="" alt="" loading="lazy" class="fond-clair"/>
 {% endset %}
-{{ macro.demo_code("Fond", demo, code, intro) }}
+{{ styleguide.demo_code(demo, code, intro) }}
 
 
 
-
+{{ macro.h2("Image pixel art", "ancre") }}
 {% set intro %}
     Empêche que l'image soit flout
 {% endset %}
@@ -92,4 +93,4 @@ tags: "styleguidev9"
 {% set code %}
     <img src="" alt="" loading="lazy" class="pa"/>
 {% endset %}
-{{ macro.demo_code("Pixel Art", demo, code, intro) }}
+{{ styleguide.demo_code(demo, code, intro) }}

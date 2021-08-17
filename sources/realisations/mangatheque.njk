@@ -19,39 +19,11 @@ description: "Évolution de ma liste de lecture de manga en ligne"
 
 
 
-
-<h2 class="ts-l mb-s">
-    Sommaire
-</h2>
-<ul class="ul-sommaire mb-l">
-    <li class="mb-xs">
-        <a class="lien-niveau2" href="#design">Design</a>
-    </li>
-    <li class="mb-xs">
-        <span class="mb-xs">Fonctionnalité par version :</span>
-        <ul>
-            <li>
-                <a class="lien-niveau2" href="#version-1">2008 : style Apple</a>
-            </li>
-            <li>
-                <a class="lien-niveau2" href="#version-2">2009, janvier : Version 2</a>
-            </li>
-            <li>
-                <a class="lien-niveau2" href="#version-3">2009, juillet : Version 3</a>
-            </li>
-            <li>
-                <a class="lien-niveau2" href="#version-4">2011 : Version 4</a>
-            </li>
-            <li>
-                <a class="lien-niveau2" href="#version-5">2013 : Version 5</a>
-            </li>
-        </ul>
-    </li>
-</ul>
+{{ macro.sommaire(["Évolution du design", "2008 : Style Apple", "2009 : Version 2", "2010 : Version 3", "2011 : Version 4", "2013 : Version 5"]) }}
 
 
 
-{{ macro.h2("Design", "ancre") }}
+{{ macro.h2("Évolution du design", "ancre") }}
 <ul class="ul-reset scroll-x js--scroll-x mb-xs">
     <li>
         {{ macro.figure(
@@ -64,14 +36,14 @@ description: "Évolution de ma liste de lecture de manga en ligne"
         {{ macro.figure(
             "/images/mangatheque/liste-v2.jpg",
             "",
-            "janvier 2009"
+            "2009"
         ) }}
     </li>
     <li>
         {{ macro.figure(
             "/images/mangatheque/liste-v3.jpg",
             "",
-            " juillet 2009"
+            "2010"
         ) }}
     </li>
     <li>
@@ -108,14 +80,14 @@ description: "Évolution de ma liste de lecture de manga en ligne"
         {{ macro.figure(
             "/images/mangatheque/option-v2.jpg",
             "",
-            "janvier 2009"
+            "2009"
         ) }}
     </li>
     <li>
         {{ macro.figure(
             "/images/mangatheque/option-v3.jpg",
             "",
-            " juillet 2009"
+            "2010"
         ) }}
     </li>
     <li>
@@ -147,7 +119,7 @@ description: "Évolution de ma liste de lecture de manga en ligne"
 
 
 
-{{ macro.h2("Version 1", "ancre") }}
+{{ macro.h2("2008 : Style Apple", "ancre") }}
 <div class="d-flex mb-xl">
     <div class="w-50">
         <img src="{{ metadata.siteUrl }}/images/mangatheque/mangatheque-v1.png" alt="" loading="lazy" />
@@ -171,7 +143,7 @@ description: "Évolution de ma liste de lecture de manga en ligne"
 
 
 
-{{ macro.h2("Version 2", "ancre") }}
+{{ macro.h2("2009 : Version 2", "ancre") }}
 <div class="d-flex mb-xl">
     <div class="w-50">
         <img src="{{ metadata.siteUrl }}/images/mangatheque/mangatheque-v2.png" alt="" loading="lazy" />
@@ -196,7 +168,7 @@ description: "Évolution de ma liste de lecture de manga en ligne"
 
 
 
-{{ macro.h2("Version 3", "ancre") }}
+{{ macro.h2("2010 : Version 3", "ancre") }}
 <div class="d-flex mb-xl">
     <div class="w-50">
         <img src="{{ metadata.siteUrl }}/images/mangatheque/mangatheque-v3.png" alt="" loading="lazy" />
@@ -221,7 +193,7 @@ description: "Évolution de ma liste de lecture de manga en ligne"
 
 
 
-{{ macro.h2("Version 4", "ancre") }}
+{{ macro.h2("2011 : Version 4", "ancre") }}
 <div class="d-flex mb-xl">
     <div class="w-50">
         <img src="{{ metadata.siteUrl }}/images/mangatheque/mangatheque-v4.png" alt="" loading="lazy" />
@@ -253,7 +225,7 @@ description: "Évolution de ma liste de lecture de manga en ligne"
 
 
 
-{{ macro.h2("Version 5", "ancre") }}
+{{ macro.h2("2013 : Version 5", "ancre") }}
 <div class="d-flex">
     <div class="w-50">
         <img src="{{ metadata.siteUrl }}/images/mangatheque/mangatheque-v5.png" alt="" loading="lazy" />

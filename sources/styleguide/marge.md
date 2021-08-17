@@ -22,8 +22,6 @@ markdown: "true"
 
 ## Enfant d'un conteneur
 
-### Espace à droite ou à gauche
-
 S'applique aux enfants direct, quelle que soit la balise, mais **pas au premier enfant**
 
 <br>

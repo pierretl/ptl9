@@ -3,22 +3,50 @@ layout: layout/styleguide.njk
 titre: "Block"
 tags: "styleguidev9"
 ---
-{% import "macro/styleguide.njk" as macro %}
+{% import "macro/styleguide.njk" as styleguide %}
+{% import "macro/contenu.njk" as macro %}
 
 
 
 
+{{ macro.sommaire(["Affichage", "Block", "Flexbox", "Formulaire", "Grille", "Largeur", "Scroll-x" ]) }}
+
+
+
+{{ macro.h2("Affichage", "ancre") }}
+{% set demo %}
+    <div class="hide">Caché</div>
+{% endset %}
+{% set code %}
+    <div class="hide">Caché</div>
+{% endset %}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+
+{% set demo %}
+    <div class="sr-only">Texte pour les screen reader uniquement</div>
+{% endset %}
+{% set code %}
+    <div class="sr-only">Texte pour les screen reader uniquement</div>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{{ macro.h2("Block", "ancre") }}
 {% set demo %}
     <span class="d-block" href="#">span en mode block</span>
 {% endset %}
 {% set code %}
 <span class="d-block" href="#">span en mode block</span>
 {% endset %}
-{{ macro.demo_code("Block", demo, code) }}
+{{ styleguide.demo_code(demo, code) }}
 
 
 
 
+{{ macro.h2("Flexbox", "ancre") }}
 {% set demo %}
     <div class="d-flex" style="border: 1px solid var(--gamme1__texte3);margin-bottom:10px">Flexbox</div>
     <div class="d-flex jc-sb" style="border: 1px solid var(--gamme1__texte3);margin-bottom:10px">
@@ -70,38 +98,30 @@ tags: "styleguidev9"
     <div>flex-direction: column;</div>
 </div>
 {% endset %}
-{{ macro.demo_code("Flexbox", demo, code) }}
+{{ styleguide.demo_code(demo, code) }}
 
 
 
 
+{{ macro.h2("Formulaire", "ancre") }}
 {% set demo %}
-<div><div class="w-100" style="border:1px solid var(--gamme1__texte3)">largeur 100%</div></div>
-<div><div class="w-70" style="border:1px solid var(--gamme1__texte3)">largeur 70%</div></div>
-<div><div class="w-50" style="border:1px solid var(--gamme1__texte3)">largeur 50%</div></div>
-<div><div class="w-33" style="border:1px solid var(--gamme1__texte3)">largeur 33.333%</div></div>
-<div><div class="w-30" style="border:1px solid var(--gamme1__texte3)">largeur 30%</div></div>
+    <input type="checkbox" class="hide-checkbox" id="checkCache"/>
+    <label for="checkCache">Démo</label>
 {% endset %}
 {% set code %}
-<div class="w-100">largeur 100%</div>
-
-<div class="w-70">largeur 70%</div>
-
-<div class="w-50">largeur 50%</div>
-
-<div class="w-33">largeur 33.333%</div>
-
-<div class="w-30">largeur 30%</div>
+<input type="checkbox" class="hide-checkbox" id="demo"/>
+<label for="demo">Démo</label>
 {% endset %}
-{{ macro.demo_code("Largeur", demo, code) }}
+{{ styleguide.demo_code(demo, code) }}
 
 
 
 
+{{ macro.h2("Grille", "ancre") }}
 {% set intro %}
     <strong>Medium down :</strong> Les colonnes font 100% et sont espacé de <a href="../marge/">$espace-m</a>
     <br>
-    <strong>large :</strong> La deuxième colonne est de la taille indiqué moins la taille de la gouttière <a href="../marge/">$espace-m</a>
+    <strong>Large :</strong> La deuxième colonne est de la taille indiqué moins la taille de la gouttière <a href="../marge/">$espace-m</a>
 {% endset %}
 {% set demo %}
     <div class="d-flex mb-l">
@@ -144,46 +164,37 @@ tags: "styleguidev9"
     <div class="w-33">Colonne 3</div>
 </div>
 {% endset %}
-{{ macro.demo_code("Grille", demo, code, intro) }}
+{{ styleguide.demo_code(demo, code, intro) }}
 
 
 
 
+{{ macro.h2("Largeur", "ancre") }}
+<p style="color:red">bonjouir</p>
 {% set demo %}
-    <div class="hide">Caché</div>
+<div><div class="w-100" style="border:1px solid var(--gamme1__texte3)">largeur 100%</div></div>
+<div><div class="w-70" style="border:1px solid var(--gamme1__texte3)">largeur 70%</div></div>
+<div><div class="w-50" style="border:1px solid var(--gamme1__texte3)">largeur 50%</div></div>
+<div><div class="w-33" style="border:1px solid var(--gamme1__texte3)">largeur 33.333%</div></div>
+<div><div class="w-30" style="border:1px solid var(--gamme1__texte3)">largeur 30%</div></div>
 {% endset %}
 {% set code %}
-<div class="hide">Caché</div>
+<div class="w-100">largeur 100%</div>
+
+<div class="w-70">largeur 70%</div>
+
+<div class="w-50">largeur 50%</div>
+
+<div class="w-33">largeur 33.333%</div>
+
+<div class="w-30">largeur 30%</div>
 {% endset %}
-{{ macro.demo_code("Bloc caché", demo, code) }}
+{{ styleguide.demo_code(demo, code) }}
 
 
 
 
-{% set demo %}
-    <input type="checkbox" class="hide-checkbox" id="checkCache"/>
-    <label for="checkCache">Démo</label>
-{% endset %}
-{% set code %}
-<input type="checkbox" class="hide-checkbox" id="demo"/>
-<label for="demo">Démo</label>
-{% endset %}
-{{ macro.demo_code("Checkbox caché", demo, code) }}
-
-
-
-
-{% set demo %}
-    <div class="sr-only">Texte pour les screen reader uniquement</div>
-{% endset %}
-{% set code %}
-<div class="sr-only">Texte pour les screen reader uniquement</div>
-{% endset %}
-{{ macro.demo_code("Screen reader only", demo, code) }}
-
-
-
-
+{{ macro.h2("Scroll-x", "ancre") }}
 {% set demo %}
     <ul class="ul-reset scroll-x mb-xs">
         <li>11111111111111111111111111111111111111111111111111111111</li>
@@ -210,10 +221,10 @@ tags: "styleguidev9"
     <em>Légende si nécessaire</em>
 </p>
 
-    <ul class="ul-reset scroll-x var--90 mb-xs">
-        <li>un</li>
-        <li>deux</li>
-        <li>trois</li>
-    </ul>
+<ul class="ul-reset scroll-x var--90 mb-xs">
+    <li>un</li>
+    <li>deux</li>
+    <li>trois</li>
+</ul>
 {% endset %}
-{{ macro.demo_code("Scroll-x", demo, code) }}
+{{ styleguide.demo_code(demo, code) }}

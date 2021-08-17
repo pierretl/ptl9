@@ -26,7 +26,6 @@
 .markdown h3 {
   font-size: $texte-l;
   color: var(--gamme1__texte1);
-  font-weight: 700;
   margin-top: $espace-m;
   margin-bottom: $espace-s;
 }
@@ -39,31 +38,18 @@
 
 
 .markdown.var--styleguide h2{
-  color: var(--gamme1__texte4);
-  font-size: $texte-xl;
   margin-bottom: $espace-m;
-  font-weight: 400;
 }
 .markdown.var--styleguide h2:not(:first-child){
   margin-top: $espace-xl;
 }
 .markdown.var--styleguide h3{
-  color: var(--gamme1__texte4);
-  font-size: $texte-l;
   margin-top: $espace-m;
   margin-bottom: $espace-m;
-  font-weight: 400;
 }
 
 
 
 .markdown table {
-  border:1px solid var(--gamme1__bordure);
-  border-collapse: collapse;
   margin-bottom: $espace-m;
-}
-.markdown table th,
-.markdown table td {
-  padding: 7px;
-  border:1px solid var(--gamme1__bordure);
 }
