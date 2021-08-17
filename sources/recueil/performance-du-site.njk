@@ -1,0 +1,57 @@
+---
+layout: layout/standard.njk
+titre: "Performances du site"
+tags: "recueil"
+date: 2021-08-17
+description: "Résultat du site sur différentes moulinettes de performance et calcul"
+---
+{% import "macro/contenu.njk" as macro %}
+
+{{ macro.sommaire(["Website Carbon Calculator", "Dareboost", "GTmetrix", "PageSpeed Insights"]) }}
+
+
+{{ macro.h2("Website Carbon Calculator", "ancre", "Plus propre que 91% des pages web testées") }}
+<figure class="mb-l" role="figure" aria-label="Résultat : plus propre que 91% des pages web testées">
+    <img src="{{ metadata.siteUrl }}/images/performance/website-carbon-calculator-ptl9.png" alt="Capture d'écran du résultat" loading="lazy" />
+    <figcaption>
+        <a href="https://www.websitecarbon.com/website/pierre-tl/" rel="external">Website Carbon Calculator</a>
+    </figcaption>
+</figure>
+
+
+
+
+{{ macro.h2("Dareboost", "ancre", "Note : 91%") }}
+<figure class="mb-l" role="figure" aria-label="Résultat : 91%, 4 issues, 2 improvements, 73 successes">
+    <img src="{{ metadata.siteUrl }}/images/performance/dareboost-20-08-17.png" alt="Capture d'écran du résultat" loading="lazy" />
+    <figcaption>
+        <a href="https://www.dareboost.com/en/report/a_1611bccb6d0609d1c74ee4f30?reportIds=a_1611bccb6d0609d1c74ee4f30" rel="external">dareboost</a>
+    </figcaption>
+</figure>
+
+
+
+
+{{ macro.h2("GTmetrix", "ancre", "Grade A") }}
+<figure class="mb-l" role="figure" aria-label="Note : A, performance : 100%, Structure : 100%">
+    <img src="{{ metadata.siteUrl }}/images/performance/GTmetrix_2021-08-17.png" alt="Capture d'écran du résultat" loading="lazy" />
+    <figcaption>
+        <a href="https://gtmetrix.com/reports/www.pierre.tl/hzMkSYmU/" rel="external">GTmetrix</a>
+    </figcaption>
+</figure>
+
+
+
+
+{{ macro.h2("PageSpeed Insights", "ancre", "98 en mobile, 100 sur ordinateur") }}
+
+<p class="mb-m">
+    <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.pierre.tl%2F&tab=mobile" rel="external">PageSpeed Insights</a>
+</p>
+
+{{ macro.h3("Mobile") }}
+<img class="mb-m" src="{{ metadata.siteUrl }}/images/performance/pagespeed-insights_mobile_2021-08-17.png" alt="Capture d'écran du résultat mobile : 98" loading="lazy" />
+
+{{ macro.h3("Ordinateur") }}
+<img src="{{ metadata.siteUrl }}/images/performance/pagespeed-insights_desktop_2021-08-17.png" alt="Capture d'écran du résultat ordinateur : 100" loading="lazy" />
+
