@@ -35,6 +35,10 @@ Idéal aussi, comme je suis bien plus à l'aise les mains dans le code plutôt q
 * XTheque avec google doc
 * Recherche
 
+## 17 aout
+* Correction du design des liens suite au passage du site en ``https://``
+
+
 ## 15 Aout
 * Repasse graphique sur les titres, la graisse des textes et les couleurs des composants
 * Correction coquille sur la page 404
