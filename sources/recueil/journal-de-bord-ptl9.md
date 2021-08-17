@@ -34,7 +34,7 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 ## 17 aout
 * Correction du design des liens suite au passage du site en ``https://``
 * Ajout d'un meta description par défaut
-* Ajout d'une Content Security Policy
+* ~~Ajout d'une Content Security Policy~~ annulé car cela désactive les styles et scripts inline
 * Écris [Performance du site](/recueil/performance-du-site/) 
 * Mise à jour du [styleguide](/styleguide/block/)
 
