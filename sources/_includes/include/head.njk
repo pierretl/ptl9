@@ -1,14 +1,19 @@
 <meta charset="utf-8" />
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 {% if accueil %}
     {% set titrePage %}{{ metadata.siteName }}{% endset %}
 {% else %}
     {% set titrePage %}{{titre}} - {{ metadata.siteName }}{% endset %}
 {% endif %}
 <title>{{ titrePage | safe }}</title>
-<meta name="description" content="{{ description | safe or metadata.description | safe }}">
+
+{% if description %}
+    <meta name="description" content="{{ description | safe }}">
+{% else %}
+    <meta name="description" content="{{ metadata.description }}">
+{% endif %}
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self';"><!-- tout le contenu du site soit fourni par la même origine (on exclut les sous-domaines) -->
 
 <link rel="stylesheet" href="/style.css" />
 
