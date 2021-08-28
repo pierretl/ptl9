@@ -36,6 +36,7 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * Ajout de l'année pour chaque ligne du journal de bord
 * Suppression de l'url [Radiophonix](/realisations/radiophonix/), car le site a brulé avec OVH le 11 mars 2021
 * Ajout de mon logo au header
+* Repasse alignement du header suite à l'ajout du logo
 
 ## 17 aout 2021
 * Correction du design des liens suite au passage du site en ``https://``

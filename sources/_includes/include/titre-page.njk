@@ -1,6 +1,6 @@
 {% if accueil %}
     <div class="d-flex ai-c">
-        <svg width="40px" height="40px" class="fill--mode mr-xs">
+        <svg width="{{ metadata.tailleLogo }}" height="{{ metadata.tailleLogo }}" class="fill--mode mr-xs">
             <use xlink:href="#logo"></use>
         </svg>
         <h1 class="w- ts-xl tg1-1 th-09 tw-4">
@@ -9,7 +9,7 @@
     </div>
 {% else %}
     <div class="d-flex ai-c">
-        <svg width="40px" height="40px" class="fill--mode mr-xs">
+        <svg width="{{ metadata.tailleLogo }}" height="{{ metadata.tailleLogo }}" class="fill--mode mr-xs">
             <use xlink:href="#logo"></use>
         </svg>
         <a href="/" class="w- d-block ts-xl tg1-1 th-09 tw-4 td-0">

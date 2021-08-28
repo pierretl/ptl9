@@ -6,11 +6,12 @@
     <body class="d-flex fd-c">
         {% include "../include/evitement.html" %}
         <header class="d-flex jc-sb ai-c fw-w pt-m px-tranche bordure-b">
-            <div class="mr-m mb-m">
+            <div class="mb-m">
                 {% include "../include/titre-page.njk" %}
             </div>
-            <nav class="d-flex mr-m__enfant mb-s">
-                <ul class="d-flex mr-m__enfant mb-s__enfant">
+            <nav class="d-flex mb-s">
+                <span style="width:{{ metadata.tailleLogo }}" class="mr-xs"></span>
+                <ul class="d-flex ai-c mr-m__enfant mb-s__enfant">
                     {% for menu in collections.menuPrincipal %}
                         <li class="{% if page.url == menu.url %} tg1-1 td-1 tw-7{% endif %}">
                             {% if page.url == menu.url %}
@@ -35,8 +36,10 @@
                             Contact
                         </a>
                     </li>
+                    <li>
+                        {% include "../include/switch-mode.html" %}
+                    </li>
                 </ul>
-                {% include "../include/switch-mode.html" %}
             </nav>
         </header>
         <main id="contenu" tabindex="-1" role="main" class="s_page{% if markdown %} markdown{% endif %}{% if accueil %} var--mosaique{% endif %}{% if classCssMain %} {{ classCssMain }}{% endif %}">
