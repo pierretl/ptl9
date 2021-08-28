@@ -1,0 +1,62 @@
+---
+permalink: /rss.xml
+exclureRss: "true"
+---
+<?xml version="1.0" ?>
+<rss version="2.0">
+    <channel>
+        <title>{{ metadata.siteName }} - Intégrateur Web</title>
+        <link>{{ metadata.siteUrl }}/</link>
+        <description>{{ metadata.description }}</description>
+        <language>fr-FR</language>
+        <pubDate>
+            {% for all in collections.all | reverse  %}
+                {% if all.data.brouillon or all.data.exclureRss %}
+                {% else %}
+                    {% if all.data.titre | slug == "journal-de-bord" %}
+                        {{ all.date.toUTCString() }}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </pubDate>
+        <lastBuildDate>
+            {% for all in collections.all | reverse  %}
+                {% if all.data.brouillon or all.data.exclureRss %}
+                {% else %}
+                    {% if all.data.titre | slug == "journal-de-bord" %}
+                        {{ all.date }}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </lastBuildDate>
+        <image>
+            <url>{{ metadata.siteUrl }}{{ metadata.faviconUrl }}favicon-32x32.png</url>
+            <link>{{ metadata.siteUrl }}/</link>
+        </image>
+
+        {% for blog in collections.recueil | reverse %}
+            <item>
+                <title>{{ blog.data.titre }}</title>
+                <link>{{ metadata.siteUrl }}/recueil/{{ blog.data.titre | slug }}/</link>
+                <description>{{ blog.data.description }}</description>
+                <pubDate>{{ blog.data.date }}</pubDate>
+                <category>Recueil</category>
+            </item>
+        {% endfor %}
+        {% for all in collections.all | reverse %}
+            {% if all.data.brouillon or all.data.exclureRss %}
+            {% else %}
+                <item>
+                    <title>{{ all.data.titre }}</title>
+                    <link>{{ metadata.siteUrl }}{{ all.url }}/</link>
+                    <description>{{ all.data.description }}</description>
+                    <pubDate>{{ all.date }}</pubDate>
+                    {% if all.data.tags %}
+                        <category>{{ all.data.tags }}</category>
+                    {% endif %}
+                </item>
+            {% endif %}
+        {% endfor %}
+
+    </channel>
+</rss>

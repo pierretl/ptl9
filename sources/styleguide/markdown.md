@@ -3,6 +3,7 @@ layout: layout/styleguide.njk
 titre: "Markdown"
 tags: "styleguidev9"
 markdown: "true"
+exclureRss: "true"
 ---
 
 Pour stylisé une page rédigé en markdown :

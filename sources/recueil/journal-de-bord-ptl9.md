@@ -23,7 +23,6 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * Réduction des images à partir d'image retina
 * Conversion en format "webP" et "avif"
 * Tag
-* Flux RSS
 * SEO opti :
     * faq
     * page description
@@ -37,6 +36,7 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * Suppression de l'url [Radiophonix](/realisations/radiophonix/), car le site a brulé avec OVH le 11 mars 2021
 * Ajout de mon logo au header
 * Repasse alignement du header suite à l'ajout du logo
+* Ajout [flux RSS](/rss.xml)
 
 ## 17 aout 2021
 * Correction du design des liens suite au passage du site en ``https://``
