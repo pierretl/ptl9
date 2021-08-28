@@ -25,8 +25,9 @@
             <div class="mr-m mb-m">
                 {% include "../include/titre-page.njk" %}
             </div>
-            <nav class="d-flex mr-m__enfant mb-s">
-                <ul class="d-flex mr-m__enfant mb-s__enfant">
+            <nav class="d-flex mb-s">
+                <span style="width:{{ metadata.tailleLogo }}" class="mr-xs"></span>
+                <ul class="d-flex ai-c mr-m__enfant mb-s__enfant">
                     {% for menu in collections.menuPrincipal %}
                         <li class="{% if page.url == menu.url %} tg1-1 td-1 tw-7{% endif %}">
                             {% if page.url == menu.url %}
@@ -54,10 +55,13 @@
                             Contact
                         </a>
                     </li>
+                    <li>
+                        {% include "../include/switch-mode.html" %}
+                    </li>
                 </ul>
-                {% include "../include/switch-mode.html" %}
             </nav>
-            <nav class="w-100">
+            <nav class="d-flex w-100">
+                <span style="width:{{ metadata.tailleLogo }}" class="mr-xs"></span>
                 <ul class="d-flex mr-m__enfant mb-s__enfant mb-s">
                     {% for styleguide in collections.styleguidev9 %}
                         <li class="{% if page.url == styleguide.url %} tg1-1 td-1{% endif %}">
