@@ -31,7 +31,12 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * XTheque avec google doc
 * Recherche
 
-## 17 aout
+## 28 aout 2021
+* [Test d'outils pour utiliser google Sheets en base de données](/recueil/google-sheets-database/)
+* Ajout de l'année pour chaque ligne du journal de bord
+* Suppression de l'url [Radiophonix](/realisations/radiophonix/), car le site a brulé avec OVH le 11 mars 2021
+
+## 17 aout 2021
 * Correction du design des liens suite au passage du site en ``https://``
 * Ajout d'un meta description par défaut
 * ~~Ajout d'une Content Security Policy~~ ``<meta http-equiv="Content-Security-Policy" content="default-src 'self';">`` annulé car cela désactive les styles et scripts inline
@@ -39,27 +44,27 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * Mise à jour du [styleguide](/styleguide/block/)
 
 
-## 15 Aout
+## 15 Aout 2021
 * Repasse graphique sur les titres, la graisse des textes et les couleurs des composants
 * Correction coquille sur la page 404
 
 
-## 24 juillet 
+## 24 juillet  2021
 * Passage de la police en local pour améliorer les performances du site
 * Correction lien en 404 sur [gitpod](../gitpod/)
 * Ajout des images de l'accueil en webp et avif quand elles ne sont pas vectoriel
 
-## 21 juin
+## 21 juin 2021
 * [Liaison de mon nom de domaine à Netlify](/recueil/lier-netlify-ovh/)
 
-## 13 juin
+## 13 juin 2021
 * Ajout de la balise ``<desciption>`` pour chaque page
 * On affiche la balise ``<meta name="date"`` seulement pour les réalisations et articles
 * Ajout [page de maintenance](../../maintenance/)
 * Passage du script de changement de thème sombre/clair en &laquo;in line&raquo;
 * Utilisation du logo en ascii pour la page de maintenance
   
-## 06 juin
+## 06 juin 2021
 * Suppression de l'intitulé de poste dans le header
 * Changement de taille, couleur et d'espacement dans le header
 * Repasse sur le menu principal et le sous-menu du styleguide
@@ -67,36 +72,36 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * Écris [Machine à écrire](/recueil/machine-a-ecrire/)
 * Mise à jour du [styleguide](/styleguide/texte/)
   
-## 05 juin
+## 05 juin 2021
 * Retropixel : mise en forme du reste à faire + repasse logo
 * Pixel-art : ajout des concours Retropixel + mise en forme du vrac/reste à faire
 * Mise à jour mosaique pour Retropixel et Pixelart
   
-## 04 juin
+## 04 juin 2021
 * Rédaction [Poweo, page de maintenance](/realisations/poweo/)
 * Suite de la rédaction de [Retropixel](/realisations/retropixel/) (en cours)
 * Rédaction [Mangatheque](/realisations/mangatheque/)
 * Rédaction [Kinematik](/realisations/kinematik/)
   
-## 24 mai
+## 24 mai 2021
 * Mise a jour des lien
 * Galerie d’image en full HTML/CSS style lightbox, voir [pixels en vrac](/realisations/pixel-art/#pixel-en-vrac)
       
-## 22 mai
+## 22 mai 2021
 * [Correction affichage du caractères spécial](../caracteres-speciaux-safari-mobile/) "↗" sur Safari mobile
 * Ajout macro "code", "titre h2" et "sommaire"
 
-## 19 mai
+## 19 mai 2021
 * Rédaction article
 * Ajout de média
   
-## 02 mai
+## 02 mai 2021
 * [Conversion automatique](../conversion-image/) en format "webP" et "avif" pour les images en .png .jpg et .jpeg
 * Correction focus theme switch
 * Retire les recueils en brouillon
 
 
-## 25 avril
+## 25 avril 2021
 * Ajuste des styles pour les balise `<code>` `<pre>`
 * passage de la citation en html dans le markdown pour respecter la charte
 * Rédaction suite et fin : site statique
@@ -107,15 +112,15 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * Ajout du sitemap.xml
 
 
-## 21 avril
+## 21 avril 2021
 * 1er commit via [Gitpod](gitpod.io)
 * Coloration des listes ordonnée
 * Ajout de "créer un site statique" au recueil (wip)
 
-## 20 avril
+## 20 avril 2021
 * Rédaction suite et fin : site perso
 
-## 18 avril
+## 18 avril 2021
 * Changement de style de base des listes non ordonnée
 * Modification graisse style de base
 * Ajout style de lien secondaire
@@ -125,58 +130,58 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * Repasse styleguide
 
 
-## 17 avril
+## 17 avril 2021
 * Rédaction en cours : ~~historique portfolio~~ site perso 
 * Ajout d'un composant qui scroll horizontalement
 
-## 16 avril
+## 16 avril 2021
 * Amélioration du rendu des images en pixel art
 * Ajout des vignettes de concours
 * Ajout projet wet
 
-## 15 avril
+## 15 avril 2021
 * Optimisation des images de la mosaïque
 
-## 13 avril
+## 13 avril 2021
 * Test image responsive
 
-## 11 avril
+## 11 avril 2021
 Changement de la mosaïque :
 * Améliore l'affichage en mobile
 * Diminution du code
 * Changement d'aspect au survol
 
-## 10 avil
+## 10 avril 2021
 * Repasse rédactionnel sur Metalfest et Kirby 
 * Rédaction et mise en forme pour Radiophonix, Aux délices d'Ahmed, Formz et Faire part mariage
 * Rédaction et mise en forme en cours pour Pixel Art
 
-## 05 avril
+## 05 avril 2021
 * Design citation
 * Couleur de fond clair pour les images sombre dans le thème sombre
 * Ajout de 2 tailles pour faire des mises en pages en large
 * Ajout intro facultatif au macro du styleguide
 * Rédaction et mise en forme : Cuyz, Kirby, Norder's Meat
 
-## 21 mars
+## 21 mars 2021
 * Script machine à écrire sur la page d'accueil uniquement
 * Mise en place lien d'évitement
 * Repasse rédactionnel sur la réalisation t-shirt Metalfest
 
-## 20 mars
+## 20 mars 2021
 * Ajout des pages de réalisation pour la mosaïque, contenu rédiger
 * Simplification de l'organisation des couleurs
 * Mise en forme des éléments de mosaïques s'il n'y a pas d'image
 * Dynamisation de la taille d'un élément de mosaïque
 * Mise en place du script machine à écrire
    
-## 17 mars
+## 17 mars 2021
 * Article "intitulé de poste" + lien caché dans le header
 * Ajout d'un [mailto crypté](https://www.nicolas-hoffmann.net/utilitaires/crypteur.php) pour le contact au lieu d'une page avec un formulaire.
 * Ajoute "↗" apres les liens ne provenant pas [pierre.tl](http://www.pierre.tl/), [ptl9.netlify.app](https://ptl9.netlify.app/) ou étant local. <br>
 C'est pas idéal mais ca fonctionne pour les pages écrite en markdown
 
-## 10 mars
+## 10 mars 2021
 * Réorganisation des couleurs
 * Ajout des styles pour le focus des liens/label
 * Ajout de la mosaïque des realisation (en cours)
@@ -184,45 +189,45 @@ C'est pas idéal mais ca fonctionne pour les pages écrite en markdown
 * Ajout d'élément dans la liste des choses à faire
 * Ajout de 3 réalisations pour la mosaïque (rédaction et dynamisation en cours)
 
-## 06 mars
+## 06 mars 2021
 * Refonte des couleurs de l'ascii art
 * Ajout page 404
 * Correction des menus en small 
 
-## 05 mars
+## 05 mars 2021
 * Passage du switch de thème en icone
 * Découpage des layouts en include
 * Ajouts des icons & favicons (génération via [Favicon Generator](https://realfavicongenerator.net))
 * Amélioration de l'affichage en mobile
 
 
-## 01 mars
+## 01 mars 2021
 Ajout de metadata, amélioration du layout standard, ajout d'une todolist, styleguide, repasse sur les styles
 
 
-## 26 février
+## 26 février 2021
 Ajout du journal de bord, repasse design menu
 
 
-## 25 février
+## 25 février 2021
 Dynamisation des menus en [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) et réorganisation des fichiers, merci [Bryan Robinson](https://www.youtube.com/watch?v=xzH2XZubgEk)
 Dans mes sources d'inspiration je suis tombée sur un site qui afficher un texte et le corriger façon machine à écrire j'ai beaucoup aimé le style ne pas la façon de faire donc j'ai recréé un code JavaScript permettant de faire le même résultat mettre un un codeoen. Je compte l'utiliser pour l'intitulé de mon job qui est quelque chose de très controversée dans le métier français faire un lien vers l'article en question
 
 
-## 22 février
+## 22 février 2021
 Durant ma recherche d'inspiration je suis tombé sur une site qui avait animé un texte façon machine à écrire.
 Super effet pour introduire mon [intitulé de poste si controverser](/recueil/intitule-poste/). Création d'un [script Javascript Vanilla pour reproduire l'effet](https://codepen.io/pierre_tl/pen/oNYeXJd)
 
 
-## 20 février
+## 20 février 2021
 Ajout du design de base
 
 
-## 17 février
+## 17 février 2021
 Mise en place de la méthode [BUSES](/recueil/methode-buses/) et d'un switch de thème sombre/clair
 
 
-## 14 février
+## 14 février 2021
 Ajout de la compilation de SASS dans 11ty, merci [Dennis Hagemeier](https://www.d-hagemeier.com/en/sass-compile-11ty/) et [Cassey Lottman](https://github.com/clottman/cassey-on-eleventy/pull/9/files)
 
 
