@@ -1,9 +1,15 @@
 {% if accueil %}
-    <h1 class="ts-xl tg1-1 th-09 tw-4">
-        Pierre <br class="hide-for-small">Tampon-Lajarriette
-    </h1>
+    <div class="d-flex ai-c">
+        <img src="{{ metadata.siteUrl }}/images/logo.svg" alt="" width="40" height="40" class="mr-xs">
+        <h1 class="w- ts-xl tg1-1 th-09 tw-4">
+            Pierre <br class="hide-for-small">Tampon-Lajarriette
+        </h1>
+    </div>
 {% else %}
-    <a href="/" class="d-block ts-xl tg1-1 th-09 tw-4 td-0">
-        Pierre <br class="hide-for-small">Tampon-Lajarriette
-    </a>
+    <div class="d-flex ai-c">
+        <img src="{{ metadata.siteUrl }}/images/logo.svg" alt="" width="40" height="40" class="mr-xs">
+        <a href="/" class="w- d-block ts-xl tg1-1 th-09 tw-4 td-0">
+            Pierre <br class="hide-for-small">Tampon-Lajarriette
+        </a>
+    </div>
 {% endif %}
