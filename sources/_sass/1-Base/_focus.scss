@@ -2,10 +2,9 @@
 /* Focus                                                              */
 /*--------------------------------------------------------------------*/
 a:not([class]):focus:not(:hover),
-a.tg1-1:focus:not(:hover),
+a.tg1-1:focus:not(:hover):not(d-block),
 input:focus + label svg,
 .s_mosaique__lien:focus:not(:hover)
 {
-  outline: .2rem dashed var(--gamme1__texte3);
-  outline-offset: .2rem;
+  @include style-focus;
 }

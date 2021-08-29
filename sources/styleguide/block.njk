@@ -37,10 +37,10 @@ exclureRss: "true"
 
 {{ macro.h2("Block", "ancre") }}
 {% set demo %}
-    <span class="d-block" href="#">span en mode block</span>
+    <span class="d-block">span en mode block</span>
 {% endset %}
 {% set code %}
-<span class="d-block" href="#">span en mode block</span>
+<span class="d-block">span en mode block</span>
 {% endset %}
 {{ styleguide.demo_code(demo, code) }}
 
@@ -113,7 +113,12 @@ exclureRss: "true"
 <input type="checkbox" class="hide-checkbox" id="demo"/>
 <label for="demo">Démo</label>
 {% endset %}
-{{ styleguide.demo_code(demo, code) }}
+{{ styleguide.demo_code(demo, code, "", "intermédiaire") }}
+
+{% set demo %}
+    <input type="text" placeholder="Placeholder"/>
+{% endset %}
+{{ styleguide.demo_code(demo, demo) }}
 
 
 

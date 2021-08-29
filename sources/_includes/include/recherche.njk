@@ -1,0 +1,94 @@
+<div id="rechercheSite"{% if masqueDonnesRecherche %}  class="w-70"{% endif %}>
+    <div class="mb-m">
+        <input type="text" class="search js--rechercheBtn {% if masqueDonnesRecherche %}w-100{% else %}w-50{% endif %}" placeholder="Que recherchez-vous ?" />
+        <p class="js--rechercheMessageKo hide tg1-4 pt-m">
+            Il n'y a pas de résultat pour cette recherche
+        </p>
+    </div>
+
+
+    <div class="{% if masqueDonnesRecherche %}hide js--rechercheHide {% endif %}js--rechercheDonnees">
+
+        <!-- ne pas retiré class="list" c'est pour le script list.min.js -->
+        <ul class="list ul-reset js--rechercheResultat">
+            {% for all in collections.all | reverse %}
+                {% if all.data.brouillon or all.data.exclureRss %}
+                {% else %}
+                    <li class="mb-m">
+                        <a href="{{ metadata.siteUrl }}{{ all.url }}" class="tg1-1 td-0 tw-4 d-block">
+                            {% if all.data.homeStyleguide %}
+                                <span class="js--rechercheValeurTitre ts-l th-09">Styleguide du site</span>
+                                <span class="js--rechercheValeurDate ts-s tg1-2">—&nbsp;{{ all.date | readableDate }}</span>
+                                <p class="js--rechercheValeurDescription">
+                                    Les différents éléments qui composent la charte graphique du site, ainsi que la façon de faire fonctionner tout ça
+                                </p>
+                                <span class="js--rechercheValeurTags tg1-4">{{ all.data.tags }}</span>
+                            {% else %}
+                                <span class="js--rechercheValeurTitre ts-l th-09">{{ all.data.titre }}</span>
+                                <span class="js--rechercheValeurDate ts-s tg1-2">—&nbsp;{{ all.date | readableDate }}</span>
+                                <p class="js--rechercheValeurDescription">{{ all.data.description }}</p>
+                                <span class="js--rechercheValeurTags tg1-4">{{ all.data.tags }}</span>
+                            {% endif %}
+                            <span class="js--rechercheValeurSlug hide">{{ all.data.titre | slug }}</span>
+                            <span class="js--rechercheValeurUrl hide">{{ all.url }}</span>
+                        </a>
+                        <div class="js--rechercheValeurContenu hide">{{ all.templateContent | safe }}</div>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <ul class="js--recherchePagination ul-reset d-flex ai-c ts-l mr-m__enfant"></ul>
+    </div>
+
+</div>
+
+
+<script src="{{ metadata.siteUrl }}/js/list.min.js"></script>
+<script>
+    // recherche
+    var options = {
+        valueNames: [
+            'js--rechercheValeurTitre',
+            'js--rechercheValeurSlug',
+            'js--rechercheValeurUrl',
+            'js--rechercheValeurDescription',
+            'js--rechercheValeurContenu',
+            'js--rechercheValeurDate',
+            'js--rechercheValeurTags'
+        ],
+        page: 8,
+        pagination: [{
+            paginationClass: 'js--recherchePagination',
+            item: '<li><a class="page lien-niveau2" href="#"></a></li>',
+            left: 1,
+            right: 1
+        }],
+
+    };
+    var userList = new List('rechercheSite', options);
+
+
+    // affichage erreur et données
+    var rechercheBtn = document.querySelector('.js--rechercheBtn');
+    var rechercheDonnees = document.querySelector('.js--rechercheDonnees');
+    var rechercheResultat = document.querySelector('.js--rechercheResultat');
+    var rechercheMessageKo = document.querySelector('.js--rechercheMessageKo');
+
+    rechercheBtn.onkeyup = function() {
+
+        // affiche les résultats si le champ de saisi est renseigné
+        if (this.value === '' && rechercheDonnees.classList.contains("js--rechercheHide")) {
+            rechercheDonnees.classList.add('hide');
+        } else {
+            rechercheDonnees.classList.remove('hide');
+        }
+
+        //Affiche un message pas de résultat
+        if (rechercheResultat.innerHTML === '') {
+            rechercheMessageKo.classList.remove('hide');
+        } else {
+            rechercheMessageKo.classList.add('hide');
+        }
+
+    };
+</script>

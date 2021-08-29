@@ -4,10 +4,11 @@ titre: "Page non trouvée"
 pasDeTitre: "true"
 permalink: 404.html
 exclureRss: "true"
+masqueDonnesRecherche: "true"
 ---
 
 
-<div class="d-flex ai-c jc-c ml-s__enfant">
+<div class="d-flex ai-c jc-c ml-s__enfant mb-m">
     <span class="ts-xl th-09">404</span>
     <p class="bordure-l pl-s">
         <span class="tw-7">Désolé</span><br>
@@ -15,5 +16,11 @@ exclureRss: "true"
         il n'y a rien ici...
     </p>
 </div>
+
+
+<div class="d-flex jc-c">
+    {% include "include/recherche.njk" %}
+</div>
+
 
 {% include "include/logo-ascii.njk" %}

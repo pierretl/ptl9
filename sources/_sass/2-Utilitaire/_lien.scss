@@ -15,7 +15,8 @@ main a[href^="https://www.pierre.tl/"]:after,
 main a[href^="/"]:after,
 main a[href^="../"]:after,
 main a[href^="#"]:after,
-main a:not([href]):after
+main a:not([href]):after,
+main a.ascii__lien:after
 {
   content: "";
 }
@@ -84,6 +85,9 @@ a.tg1-1:hover, // lien
 }
 .lien-niveau2:hover {
   text-decoration-color: var(--gamme1__texte1);
+}
+.lien-niveau2:focus {
+  @include style-focus;
 }
 
 

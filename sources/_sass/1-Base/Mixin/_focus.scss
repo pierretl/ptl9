@@ -1,0 +1,4 @@
+@mixin style-focus() {
+  outline: .2rem dashed var(--gamme1__texte3);
+  outline-offset: .2rem;
+}

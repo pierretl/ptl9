@@ -17,21 +17,26 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 
 ## A faire
 
-* Ajouter les images en webp article
-* Coloration syntaxique des exemples de code 
-* Compression image
-* Réduction des images à partir d'image retina
-* Conversion en format "webP" et "avif"
+* Image
+    * Compression
+    * Ajouter les images en webp article
+    * Réduction des images à partir d'image retina
+    * Conversion en format "webP" et "avif"
+* Coloration syntaxique des exemples de code
 * Tag
 * SEO opti :
     * faq
     * page description
 * Formulaire de contact
 * XTheque avec google doc
-* Recherche
+* Amélioration rss : Découper le journal de bord, chaque mise à jour dois être une page
+* Changer la typographie car les chiffre ne font pas tous la meme taille ! 0123456789
+* Revoir le système du styleguide pour tous faire remonter dans la recherche. Une page par éléments ?
 
 ## 29 aout 2021
 * Correction duplication de contenu dans le flux RSS
+* Premier jet de design de [pagination](/styleguide/texte/#pagination) pour la recherche
+* Ajout de la [recherche](/recherche/) et de la functionnalité sur la [page 404](/404.html)
 
 ## 28 aout 2021
 * [Test d'outils pour utiliser google Sheets en base de données](/recueil/google-sheets-database/)
