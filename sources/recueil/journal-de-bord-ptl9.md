@@ -30,6 +30,9 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * XTheque avec google doc
 * Recherche
 
+## 29 aout 2021
+* Correction duplication de contenu dans le flux RSS
+
 ## 28 aout 2021
 * [Test d'outils pour utiliser google Sheets en base de données](/recueil/google-sheets-database/)
 * Ajout de l'année pour chaque ligne du journal de bord

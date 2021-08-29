@@ -34,15 +34,6 @@ exclureRss: "true"
             <link>{{ metadata.siteUrl }}/</link>
         </image>
 
-        {% for blog in collections.recueil | reverse %}
-            <item>
-                <title>{{ blog.data.titre }}</title>
-                <link>{{ metadata.siteUrl }}/recueil/{{ blog.data.titre | slug }}/</link>
-                <description>{{ blog.data.description }}</description>
-                <pubDate>{{ blog.data.date }}</pubDate>
-                <category>Recueil</category>
-            </item>
-        {% endfor %}
         {% for all in collections.all | reverse %}
             {% if all.data.brouillon or all.data.exclureRss %}
             {% else %}
