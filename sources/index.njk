@@ -13,17 +13,28 @@ exclureRss: "true"
 
         {% if work.data.mosaiqueTaille == "2-1" %}
             {% set classTailleMosaique =" s_mosaique__2-1" %}
+            {% set imageMosaiqueWidth ="320" %}
+            {% set imageMosaiqueHeight ="150" %}
         {% elseif work.data.mosaiqueTaille == "2-2" %}
             {% set classTailleMosaique =" s_mosaique__2-2" %}
+            {% set imageMosaiqueWidth ="320" %}
+            {% set imageMosaiqueHeight ="320" %}
         {% else %}
             {% set classTailleMosaique ="" %}
+            {% set imageMosaiqueWidth ="150" %}
+            {% set imageMosaiqueHeight ="150" %}
         {% endif %}
 
         <li class="s_mosaique__item{{ classTailleMosaique }}">
             <a class="s_mosaique__lien" href="{{ work.url | url }}">
                 {% if work.data.mosaiqueImage %}
                     {% if work.data.mosaiqueImageExtension == ".svg" %}
-                        <img class="s_mosaique__image{{ work.data.mosaiqueClassCss }}" src="{{ metadata.siteUrl }}/images/mosaique/{{ work.data.mosaiqueImage }}.svg" alt="" title="{{ work.data.titre }}">
+                        <img class="s_mosaique__image{{ work.data.mosaiqueClassCss }}"
+                             src="{{ metadata.siteUrl }}/images/mosaique/{{ work.data.mosaiqueImage }}.svg"
+                             alt=""
+                             title="{{ work.data.titre }}"
+                             width="{{ imageMosaiqueWidth }}"
+                             height="{{ imageMosaiqueHeight }}">
                     {% else %}
                         <picture class="s_mosaique__image{{ work.data.mosaiqueClassCss }}">
                             <source type="image/webp" srcset="{{ metadata.siteUrl }}/images/mosaique/auto/{{ work.data.mosaiqueImage }}.webp 1x, {{ metadata.siteUrl }}/images/mosaique/auto/{{ work.data.mosaiqueImage }}_2x.webp 2x">
@@ -33,7 +44,9 @@ exclureRss: "true"
                                  srcset=" {{ metadata.siteUrl }}/images/mosaique/{{ work.data.mosaiqueImage }}{{ work.data.mosaiqueImageExtension }} 1x,
                                       {{ metadata.siteUrl }}/images/mosaique/{{ work.data.mosaiqueImage }}_2x{{ work.data.mosaiqueImageExtension }} 2x"
                                  alt=""
-                                 title="{{ work.data.titre }}">
+                                 title="{{ work.data.titre }}"
+                                 width="{{ imageMosaiqueWidth }}"
+                                 height="{{ imageMosaiqueHeight }}">
                         </picture>
                     {% endif %}
                 {% else %}

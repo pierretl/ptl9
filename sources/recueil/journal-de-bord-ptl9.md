@@ -37,6 +37,7 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * Correction duplication de contenu dans le flux RSS
 * Premier jet de design de [pagination](/styleguide/texte/#pagination) pour la recherche
 * Ajout de la [recherche](/recherche/) et de la functionnalité sur la [page 404](/404.html)
+* Ajout de la taille des images sur la mosaïque pour améliorer les perf
 
 ## 28 aout 2021
 * [Test d'outils pour utiliser google Sheets en base de données](/recueil/google-sheets-database/)
