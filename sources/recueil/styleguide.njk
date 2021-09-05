@@ -1,0 +1,71 @@
+---
+layout: layout/standard.njk
+titre: "Styleguide du site"
+tags: "recueil"
+date: 2021-09-05
+description: "Documentation qui regroupe tous les éléments de la charte graphiques et les composants de ce site"
+---
+
+<div id="rechercheSite">
+
+    <div class="mb-m">
+        <input type="text" class="search js--rechercheBtn w-100" placeholder="Rechercher un composant, utilitaire, classe CSS, macro Nunjucks..." />
+        <p class="js--rechercheMessageKo hide tg1-4 pt-m">
+            Il n'y a pas de résultat pour cette recherche
+        </p>
+    </div>
+
+
+    <ul class="list ul-reset js--rechercheResultat">
+
+        {% for atome in collections.styleguideptl  %}
+
+            <li class="mb-xl" id="{{ atome.data.titre | slug }}">
+
+                <h2 class="ts-l tg1-4 th-2 tw-4 js--rechercheValeurTitre">
+                    {{ atome.data.titre | safe }}
+                    {% if atome.data.tags[1] %}
+                        <span class="ts-s tg1-2">—&nbsp;{{ atome.data.tags[1] | capitalize }}</span>
+                    {% endif %}
+                </h2>
+
+                <div class="js--rechercheValeurDescription">
+                    {{ atome.templateContent | safe }}
+                </div>
+
+            </li>
+
+        {% endfor %}
+    </ul>
+
+</div>
+
+<script src="{{ metadata.siteUrl }}/js/list.min.js"></script>
+<script>
+    // recherche
+    var options = {
+        valueNames: [
+            'js--rechercheValeurTitre',
+            'js--rechercheValeurDescription'
+        ]
+
+    };
+    var userList = new List('rechercheSite', options);
+
+
+    // affichage erreur et données
+    var rechercheBtn = document.querySelector('.js--rechercheBtn');
+    var rechercheResultat = document.querySelector('.js--rechercheResultat');
+    var rechercheMessageKo = document.querySelector('.js--rechercheMessageKo');
+
+    rechercheBtn.onkeyup = function() {
+
+        //Affiche un message pas de résultat
+        if (rechercheResultat.innerHTML === '') {
+            rechercheMessageKo.classList.remove('hide');
+        } else {
+            rechercheMessageKo.classList.add('hide');
+        }
+
+    };
+</script>

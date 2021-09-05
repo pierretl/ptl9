@@ -1,4 +1,4 @@
-{% macro demo_code(demo, code, intro, intermediaire) %}
+{% macro demo_code(demo, code, intro) %}
 
     {% if intro %}
         <p class="mb-m">
@@ -6,7 +6,7 @@
         </p>
     {% endif %}
 
-    <div class="d-flex ai-c {% if intermediaire %}mb-m{% else %}mb-xl{% endif %}">
+    <div class="d-flex ai-c jc-c mb-m">
         <div class="w-50">
             {{ demo | safe }}
         </div>

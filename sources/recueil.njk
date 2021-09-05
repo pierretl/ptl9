@@ -16,11 +16,7 @@ exclureRss: "true"
                 <a href="{{ blog.url | url }}" class="tg1-1 td-0 tw-4">
 
                     <span class="ts-l th-09">
-                        {%  if blog.data.homeStyleguide %}
-                            Styleguide du site
-                        {% else %}
-                            {{ blog.data.titre }}
-                        {% endif %}
+                        {{ blog.data.titre }}
                     </span>
                     <span class="ts-s tg1-2">—&nbsp;{{ blog.date | readableDate }}</span>
 

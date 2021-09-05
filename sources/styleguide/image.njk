@@ -1,0 +1,24 @@
+---
+layout: layout/standard.njk
+titre: "Image"
+tags: styleguideptl
+description: "Empêche qu'une image en pixel art soit flout sur des écrans à forte densité de pixel"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+
+
+{% set intro %}
+    Empêche que l'image soit flout
+{% endset %}
+{% set demo %}
+    <img src="{{ metadata.siteUrl }}/images/pixel-art/favicon/favicon_team-fun.gif" alt="favicon en pixel art" loading="lazy" class="pa"/>
+{% endset %}
+{% set code %}
+    <img src="" alt="" loading="lazy" class="pa"/>
+{% endset %}
+{{ styleguide.demo_code(demo, code, intro) }}
+

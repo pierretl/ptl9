@@ -1,0 +1,29 @@
+---
+layout: layout/standard.njk
+titre: "Alignement"
+tags: ["styleguideptl", "texte"]
+description: "Arrangement des textes"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+{% set demo %}
+    <p>A gauche par défaut</p>
+{% endset %}
+{% set code %}
+    <p>A gauche par défaut</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{% set demo %}
+    <p class="text-center">texte centré</p>
+{% endset %}
+{% set code %}
+    <p class="text-center">texte centré</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}

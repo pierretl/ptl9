@@ -1,0 +1,52 @@
+---
+layout: layout/standard.njk
+titre: "Taille"
+tags: ["styleguideptl", "texte"]
+description: "Définit la taille de fonte utilisée pour le texte"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+
+
+{% set demo %}
+    <p class="ts-xl">Tres grand</p>
+{% endset %}
+{% set code %}
+    <p class="ts-xl">Tres grand</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+{% set demo %}
+    <p class="ts-l">Grand</p>
+{% endset %}
+{% set code %}
+    <p class="ts-l">Grand</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+{% set demo %}
+    <p class="">Normal, <strong>Strong</strong></p>
+{% endset %}
+{% set code %}
+    <p>Normal, <strong>Strong</strong></p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+{% set demo %}
+    <p class="ts-s">Petit</p>
+{% endset %}
+{% set code %}
+    <p class="ts-s">Petit</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+

@@ -1,0 +1,26 @@
+---
+layout: layout/standard.njk
+titre: "Fond"
+tags: ["styleguideptl", "image"]
+description: "Ajoute une couleur de fond clair et des marges à un visuel foncé lorsque le mode sombre est activé, ne fait rien si c'est le mode clair"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+
+
+{% set intro %}
+    <strong>Thème sombre : </strong>Fond clair + padding
+    <br>
+    <strong>Thème clair : </strong> transparent sans padding
+{% endset %}
+{% set demo %}
+    <img src="{{ metadata.siteUrl }}/images/cuyz/logo-notiz.png" alt="logo Notiz" loading="lazy" class="fond-clair"/>
+{% endset %}
+{% set code %}
+    <img src="" alt="" loading="lazy" class="fond-clair"/>
+{% endset %}
+{{ styleguide.demo_code(demo, code, intro) }}
+

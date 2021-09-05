@@ -1,0 +1,28 @@
+---
+layout: layout/standard.njk
+titre: "Affichage"
+tags: ["styleguideptl", "bloc"]
+description: "Utilitaire pour masquer un élément et/ou le masqué visuellement mais le laisser accessible aux technologies d'assistance telles que les lecteurs d'écran"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+
+{% set demo %}
+    <div class="hide">Caché</div>
+{% endset %}
+{% set code %}
+    <div class="hide">Caché</div>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+{% set demo %}
+    <div class="sr-only">Texte pour les screen reader uniquement</div>
+{% endset %}
+{% set code %}
+    <div class="sr-only">Texte pour les screen reader uniquement</div>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}

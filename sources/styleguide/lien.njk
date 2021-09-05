@@ -1,0 +1,131 @@
+---
+layout: layout/standard.njk
+titre: "Lien"
+tags: ["styleguideptl", "texte"]
+description: "Lien hypertexte vers des pages web, des fichiers, des adresses e-mail, des emplacements se trouvant dans la même page, ou tout ce qu'une URL peut adresser"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+
+
+{% set intro %}
+    La lien d'évitement est affiché au focus en absolute en haut à gauche
+{% endset %}
+{% set demo %}
+    <a href="#">Lien primaire</a>
+{% endset %}
+{% set code %}
+<a href="#">Lien primaire</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code, intro, "intermédiaire") }}
+
+
+
+
+{% set demo %}
+    <a href="0" rel="external">Lien primaire externe</a>
+{% endset %}
+{% set code %}
+<a href="" rel="external">Lien primaire externe</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{% set demo %}
+    <a class="lien-niveau2" href="#">Lien secondaire</a>
+{% endset %}
+{% set code %}
+<a class="lien-niveau2" href="#">Lien secondaire</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{% set demo %}
+    <a class="lien-niveau2" href="0" rel="external">Lien secondaire externe</a>
+{% endset %}
+{% set code %}
+<a class="lien-niveau2" href="" rel="external">Lien secondaire externe</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{% set demo %}
+    <ul class="ul-sommaire">
+        <li><a class="lien-niveau2" href="#">Sommaire</a></li>
+    </ul>
+{% endset %}
+{% set code %}
+<ul class="ul-sommaire">
+    <li><a class="lien-niveau2" href="#">Sommaire</a></li>
+</ul>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{% set demo %}
+    <a href="#" class="tg1-1 td-0">Lien de couleur "une"</a>
+{% endset %}
+{% set code %}
+<a href="#" class="tg1-1 td-0">Lien de couleur "une"</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{% set demo %}
+    <style>
+        .affiche-evitement {
+            position: static;
+        }
+    </style>
+    <a href="#contenu" class="lien-evitement affiche-evitement">Lien évitement</a>
+{% endset %}
+{% set code %}
+<a href="#contenu" class="lien-evitement">Lien évitement</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{% set demo %}
+    <a href="#" class="tg1-1 tw-7">Menu header niveau 1</a>
+{% endset %}
+{% set code %}
+<a href="#" class="tg1-1 tw-7">Menu header niveau 1</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{% set demo %}
+    <a href="#" class="tg1-1">Menu header niveau 2</a>
+{% endset %}
+{% set code %}
+<a href="#" class="tg1-1">Menu header niveau 2</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{% set demo %}
+    <a href="#" class="tg1-1 td-0">Menu footer</a>
+{% endset %}
+{% set code %}
+<a href="#" class="tg1-1 td-0">Menu footer</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}

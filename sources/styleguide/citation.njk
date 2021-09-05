@@ -1,0 +1,24 @@
+---
+layout: layout/standard.njk
+titre: "Citation"
+tags: ["styleguideptl", "texte"]
+description: "Citer des blocs de contenu d'une autre source"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+{% set demo %}
+    <blockquote>
+        <p>Accusamus commodi cumque ea excepturi expedita facilis, quisquam sed soluta voluptas voluptatum!</p>
+        <cite>Lorem ipsum</cite>
+    </blockquote>
+{% endset %}
+{% set code %}
+<blockquote>
+    <p>Accusamus commodi cumque ea excepturi expedita facilis ...</p>
+    <cite>Lorem ipsum</cite>
+</blockquote>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}

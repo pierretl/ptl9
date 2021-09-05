@@ -1,7 +1,7 @@
 
 {% if tags == "realisations" %}
 
-    <ul class="ul-reset d-flex mb-l">
+    <ul class="ul-reset d-flex ai-c mb-l">
         <li>
             <a class="lien-niveau2" href="{{ metadata.siteUrl }}/">Réalisations</a>
         </li>
@@ -17,13 +17,37 @@
 
 {% if tags == "recueil" %}
 
-    <ul class="ul-reset d-flex mb-l">
+    <ul class="ul-reset d-flex ai-c mb-l">
         <li>
             <a class="lien-niveau2" href="{{ metadata.siteUrl }}/">Accueil</a>
         </li>
         <li>
             &nbsp;&nbsp;>&nbsp;
             <a class="lien-niveau2" href="{{ metadata.siteUrl }}/recueil/">Recueil</a>
+        </li>
+        <li>
+            &nbsp;&nbsp;>&nbsp;
+            {{titre}}
+        </li>
+    </ul>
+
+{% endif %}
+
+
+
+{% if tags[0] == "styleguideptl" %}
+
+    <ul class="ul-reset d-flex ai-c mb-l">
+        <li>
+            <a class="lien-niveau2" href="{{ metadata.siteUrl }}/">Accueil</a>
+        </li>
+        <li>
+            &nbsp;&nbsp;>&nbsp;
+            <a class="lien-niveau2" href="{{ metadata.siteUrl }}/recueil/">Recueil</a>
+        </li>
+        <li>
+            &nbsp;&nbsp;>&nbsp;
+            <a class="lien-niveau2" href="{{ metadata.siteUrl }}/recueil/styleguide">Styleguide du site</a>
         </li>
         <li>
             &nbsp;&nbsp;>&nbsp;

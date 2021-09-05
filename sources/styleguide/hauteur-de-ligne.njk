@@ -1,0 +1,47 @@
+---
+layout: layout/standard.njk
+titre: "Hauteur de ligne"
+tags: ["styleguideptl", "texte"]
+description: "Hauteur minimale des lignes au sein de l'élément"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+
+{% set demo %}
+    <p class="th-09">
+        Zero neuf<br>
+        Zero neuf<br>
+        Zero neuf
+    </p>
+{% endset %}
+{% set code %}
+    <p class="th-09">Zero neuf</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+{% set demo %}
+    <p class="mr-m">
+        Normal<br>
+        Normal<br>
+        Normal
+    </p>
+{% endset %}
+{% set code %}
+    <p>Normal</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+{% set demo %}
+    <p class="th-2">
+        Deux<br>
+        Deux<br>
+        Deux
+    </p>
+{% endset %}
+{% set code %}
+    <p class="th-2">Deux</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}

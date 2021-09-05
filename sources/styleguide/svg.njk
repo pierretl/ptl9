@@ -1,0 +1,25 @@
+---
+layout: layout/standard.njk
+titre: "SVG"
+tags: ["styleguideptl", "image"]
+description: "Coloration d'un SVG selon le thème clair/sombre sélectionné"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+
+
+{% set demo %}
+    <svg width="18px" height="18px" class="fill--mode">
+        <use xlink:href="#darkMode"></use>
+    </svg>
+{% endset %}
+{% set code %}
+<svg width="18px" height="18px" class="fill--mode">
+    <use xlink:href="#darkMode"></use>
+</svg>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+

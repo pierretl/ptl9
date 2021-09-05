@@ -1,0 +1,110 @@
+---
+layout: layout/standard.njk
+titre: "Flexbox"
+tags: ["styleguideptl", "bloc"]
+description: "Gérez rapidement l'alignement de composant avec des utilitaires CSS"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+
+
+{% set demo %}
+    <div class="d-flex" style="border: 1px solid var(--gamme1__texte3);margin-bottom:10px">Flexbox</div>
+{% endset %}
+{% set code %}
+    <div class="d-flex">Flexbox</div>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+
+{% set demo %}
+    <div class="d-flex jc-sb" style="border: 1px solid var(--gamme1__texte3);margin-bottom:10px">
+        <div>space-between</div>
+        <div>item</div>
+    </div>
+{% endset %}
+{% set code %}
+<div class="d-flex jc-sb">
+    <div>space-between</div>
+    <div>item</div>
+</div>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+
+{% set demo %}
+    <div class="d-flex jc-c" style="border: 1px solid var(--gamme1__texte3);margin-bottom:10px">
+        <div>space-center</div>
+        <div>item</div>
+    </div>
+{% endset %}
+{% set code %}
+<div class="d-flex jc-c">
+    <div>space-center</div>
+    <div>item</div>
+</div>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+
+{% set demo %}
+    <div class="d-flex ai-c" style="border: 1px solid var(--gamme1__texte3);margin-bottom:10px">
+        <div>align-items:<br> center</div>
+        <div>item</div>
+    </div>
+{% endset %}
+{% set code %}
+<div class="d-flex jc-c" style="border: 1px solid var(--gamme1__texte3);margin-bottom:10px">
+    <div>space-center</div>
+    <div>item</div>
+</div>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+
+{% set demo %}
+    <div class="d-flex fw-w" style="border: 1px solid var(--gamme1__texte3);margin-bottom:10px; width:100px">
+        <div>flex-wrap: wrap;</div>
+        <div>item</div>
+    </div>
+{% endset %}
+{% set code %}
+<div class="d-flex fw-w">
+    <div>flex-wrap: wrap;</div>
+    <div>item</div>
+</div>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+
+{% set demo %}
+    <div class="d-flex fd-c" style="border: 1px solid var(--gamme1__texte3);margin-bottom:10px">
+        <div>flex-direction: column;</div>
+        <div>flex-direction: column;</div>
+    </div>
+{% endset %}
+{% set code %}
+<div class="d-flex fd-c">
+    <div>flex-direction: column;</div>
+    <div>flex-direction: column;</div>
+</div>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}

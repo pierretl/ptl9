@@ -1,0 +1,49 @@
+---
+layout: layout/standard.njk
+titre: "Scroll-x"
+tags: ["styleguideptl", "bloc"]
+description: "Contraint une série d'éléments est restée côte à côte et provoque l'apparition d'une barre de défilement horizontal"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+{% set demo %}
+    <ul class="ul-reset scroll-x mb-xs">
+        <li>1111111111111111111111111111111111111111</li>
+        <li>2222222222222222222222222222222222222222</li>
+        <li>3333333333333333333333333333333333333333</li>
+    </ul>
+    <p class="tg1-2 mb-s">
+        <em>Légende si nécessaire</em>
+    </p>
+{% endset %}
+{% set code %}
+<ul class="ul-reset scroll-x mb-xs">
+    <li>un</li>
+    <li>deux</li>
+    <li>trois</li>
+</ul>
+<p class="tg1-2 mb-s">
+    <em>Légende si nécessaire</em>
+</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+{% set demo %}
+    <ul class="ul-reset scroll-x var--90 mb-xs">
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aperiam cum, dolor eius error et explicabo fugiat harum laudantium minima obcaecati ratione reiciendis sint sit vel vitae voluptas voluptates?</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aperiam cum, dolor eius error et explicabo fugiat harum laudantium minima obcaecati ratione reiciendis sint sit vel vitae voluptas voluptates?</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aperiam cum, dolor eius error et explicabo fugiat harum laudantium minima obcaecati ratione reiciendis sint sit vel vitae voluptas voluptates?</li>
+    </ul>
+{% endset %}
+{% set code %}
+<ul class="ul-reset scroll-x var--90 mb-xs">
+    <li>un</li>
+    <li>deux</li>
+    <li>trois</li>
+</ul>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}

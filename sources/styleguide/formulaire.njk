@@ -1,0 +1,31 @@
+---
+layout: layout/standard.njk
+titre: "Formulaire"
+tags: ["styleguideptl", "bloc"]
+description: "Mise en forme  de checkbox masqué visuellement et input text"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+
+
+{% set demo %}
+    <input type="checkbox" class="hide-checkbox" id="checkCache"/>
+    <label for="checkCache">Démo</label>
+{% endset %}
+{% set code %}
+<input type="checkbox" class="hide-checkbox" id="demo"/>
+<label for="demo">Démo</label>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+
+{% set demo %}
+    <input type="text" placeholder="Placeholder"/>
+{% endset %}
+{{ styleguide.demo_code(demo, demo) }}

@@ -15,14 +15,21 @@
                 {% if all.data.brouillon or all.data.exclureRss %}
                 {% else %}
                     <li class="mb-m">
-                        <a href="{{ metadata.siteUrl }}{{ all.url }}" class="tg1-1 td-0 tw-4 d-block">
-                            {% if all.data.homeStyleguide %}
-                                <span class="js--rechercheValeurTitre ts-l th-09">Styleguide du site</span>
-                                <span class="js--rechercheValeurDate ts-s tg1-2">—&nbsp;{{ all.date | readableDate }}</span>
-                                <p class="js--rechercheValeurDescription">
-                                    Les différents éléments qui composent la charte graphique du site, ainsi que la façon de faire fonctionner tout ça
-                                </p>
-                                <span class="js--rechercheValeurTags tg1-4">{{ all.data.tags }}</span>
+                        {% if all.data.tags[0] == 'styleguideptl' %}
+                            {% set href %}{{ metadata.siteUrl }}/styleguide-du-site/#{{ all.data.titre | slug }}{% endset %}
+                        {% else %}
+                            {% set href %}{{ metadata.siteUrl }}{{ all.url }}{% endset %}
+                        {% endif %}
+                        <a href="{{ href }}" class="tg1-1 td-0 tw-4 d-block">
+                            {% if all.data.tags[0] == 'styleguideptl' %}
+                                <span class="js--rechercheValeurTitre ts-l th-09">{{ all.data.titre }} </span>
+                                <p class="js--rechercheValeurDescription">{{ all.data.description }}</p>
+                                <span class="js--rechercheValeurTags tg1-4">
+                                    styleguide du site
+                                    {% if all.data.tags[1] %}
+                                        , {{ all.data.tags[1] }}
+                                    {% endif %}
+                                </span>
                             {% else %}
                                 <span class="js--rechercheValeurTitre ts-l th-09">{{ all.data.titre }}</span>
                                 <span class="js--rechercheValeurDate ts-s tg1-2">—&nbsp;{{ all.date | readableDate }}</span>

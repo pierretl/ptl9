@@ -1,0 +1,55 @@
+---
+layout: layout/standard.njk
+titre: "Couleur"
+tags: ["styleguideptl", "texte"]
+description: "Palette de couleur harmonieuse et accessible"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+{% set demo %}
+<span class="tg1-1">Une :</span>
+Texte courant
+{% endset %}
+{% set code %}
+    <p class="tg1-1">Une : Texte courant</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{% set demo %}
+    <span class="tg1-2">Deux :</span>
+    Texte secondaire, légende image, date, bloc scroll horizontal
+{% endset %}
+{% set code %}
+    <p class="tg1-2">Deux : Texte secondaire, légende image, date, bloc scroll horizontal</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{% set demo %}
+    <span class="tg1-3">Trois :</span>
+    Lien
+{% endset %}
+{% set code %}
+    <p class="tg1-3">Trois : Lien</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{% set demo %}
+    <span class="tg1-4">Quatre :</span>
+    Titre de niveau 2, Citation, puce des liste non ordonnée
+{% endset %}
+{% set code %}
+    <p class="tg1-4">Quatre : Titre de niveau 2, Citation, puce des liste non ordonnée</p>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}

@@ -1,0 +1,19 @@
+---
+layout: layout/standard.njk
+titre: "Bloc"
+tags: styleguideptl
+description: "Utilitaire pour basculé un élément «inline» en type «block»"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+
+{% set demo %}
+    <span class="d-block">span en mode</span>  block
+{% endset %}
+{% set code %}
+<span class="d-block">span en mode</span> block
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}

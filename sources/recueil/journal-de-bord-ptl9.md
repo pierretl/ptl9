@@ -31,11 +31,14 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * XTheque avec google doc
 * Amélioration rss : Découper le journal de bord, chaque mise à jour dois être une page
 * Changer la typographie car les chiffre ne font pas tous la meme taille ! 0123456789
-* Revoir le système du styleguide pour tous faire remonter dans la recherche. Une page par éléments ?
+
+
+## 5 Septembre 2021
+* [Refonte styleguide](/recueil/styleguide/) + ajout recherche
 
 ## 29 aout 2021
 * Correction duplication de contenu dans le flux RSS
-* Premier jet de design de [pagination](/styleguide/texte/#pagination) pour la recherche
+* Premier jet de design de [pagination](/recueil/styleguide/#pagination) pour la recherche
 * Ajout de la [recherche](/recherche/) et de la functionnalité sur la [page 404](/404.html)
 * Ajout de la taille des images sur la mosaïque pour améliorer les perf
 
@@ -52,7 +55,7 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * Ajout d'un meta description par défaut
 * ~~Ajout d'une Content Security Policy~~ ``<meta http-equiv="Content-Security-Policy" content="default-src 'self';">`` annulé car cela désactive les styles et scripts inline
 * Écris [Performance du site](/recueil/performance-du-site/) 
-* Mise à jour du [styleguide](/styleguide/block/)
+* Mise à jour du [styleguide](/recueil/styleguide/#bloc)
 
 
 ## 15 Aout 2021
@@ -81,7 +84,7 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * Repasse sur le menu principal et le sous-menu du styleguide
 * Repasse [Intitulé de poste](/recueil/intitule-poste/)
 * Écris [Machine à écrire](/recueil/machine-a-ecrire/)
-* Mise à jour du [styleguide](/styleguide/texte/)
+* Mise à jour du [styleguide](/recueil/styleguide/)
   
 ## 05 juin 2021
 * Retropixel : mise en forme du reste à faire + repasse logo

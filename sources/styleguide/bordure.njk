@@ -1,0 +1,57 @@
+---
+layout: layout/standard.njk
+titre: "Bordure"
+tags: ["styleguideptl", "décoration"]
+description: "Styliser rapidement des bordure et séparation de contenu"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+
+
+{% set demo %}
+    <div class="bordure-h">Haut</div>
+{% endset %}
+{% set code %}
+    <div class="bordure-h"></div>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+
+{% set demo %}
+    <div class="bordure-b">Bas</div>
+{% endset %}
+{% set code %}
+    <div class="bordure-b"></div>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+
+{% set demo %}
+    <div class="bordure-l">Gauche</div>
+{% endset %}
+{% set code %}
+    <div class="bordure-l"></div>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+
+{% set demo %}
+    <div class="bordure">Bordure</div>
+{% endset %}
+{% set code %}
+    <div class="bordure"></div>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+

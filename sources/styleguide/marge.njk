@@ -1,0 +1,125 @@
+---
+layout: layout/standard.njk
+titre: "Marge"
+tags: ["styleguideptl", "bloc"]
+description: "Utilitaires d'espacement pour contrôler la façon dont les éléments et les composants sont espacés et dimensionnés"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+{% import "macro/contenu.njk" as macro %}
+
+
+{{ macro.h3("Espacement standard") }}
+<table class="mb-l">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Haut</th>
+            <th>Droite</th>
+            <th>Bas</th>
+            <th>Gauche</th>
+            <th>Haut et Bas</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>120px</td>
+            <td></td>
+            <td></td>
+            <td><code>mb-xl</code></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>60px</td>
+            <td></td>
+            <td></td>
+            <td><code>mb-l</code></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>30px</td>
+            <td><code>pt-m</code></td>
+            <td><code>mr-m</code></td>
+            <td><code>mb-m</code></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>15px</td>
+            <td></td>
+            <td></td>
+            <td><code>mb-s</code></td>
+            <td><code>pl-s</code></td>
+            <td><code>py-s</code></td>
+        </tr>
+        <tr>
+            <td>7px</td>
+            <td></td>
+            <td><code>mr-xs</code></td>
+            <td><code>mb-xs</code></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+{{ macro.h3("Conteneur header et footer") }}
+{% set demo %}
+    <div class="px-tranche">
+        header ou footer
+    </div>
+{% endset %}
+{% set code %}
+<div class="px-tranche">
+    header ou footer
+</div>
+{% endset %}
+{{ styleguide.demo_code(demo, code, intro) }}
+
+
+
+
+{{ macro.h3("Enfant d'un conteneur") }}
+{% set intro %}
+    S'applique aux enfants direct, quelle que soit la balise, sauf <strong>au premier enfant</strong>
+{% endset %}
+{% set demo %}
+    <div class="d-flex mr-m__enfant">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+{% endset %}
+{% set code %}
+<div class="d-flex mr-m__enfant">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+{% endset %}
+{{ styleguide.demo_code(demo, code, intro) }}
+
+
+
+
+{% set demo %}
+    <div class="d-flex ml-s__enfant">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+{% endset %}
+{% set code %}
+<div class="d-flex ml-s__enfant">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+

@@ -1,0 +1,77 @@
+---
+layout: layout/standard.njk
+titre: "Liste"
+tags: ["styleguideptl", "texte"]
+description: "À puce, sans ordre particulier ou numéroté"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+
+<div class="scroll-x-auto mb-xl">
+    <table>
+        <thead>
+        <tr>
+            <th>Type</th>
+            <th>Rendus</th>
+            <th>HTML</th>
+            <th>Macro Nunjucks</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% set demoListe %}
+<ul>
+    <li>un</li>
+    <li>deux</li>
+    <li>trois</li>
+</ul>
+        {% endset %}
+        {{ styleguide.table_demo_code(demoListe, "", "Contenu") }}
+
+
+        {% set demoTitre %}
+<ul class="ul-sommaire">
+    <li class="mb-xs">
+        <a href="#" class="lien-niveau2">
+            un
+        </a>
+    </li>
+    <li class="mb-xs">
+        <a href="#" class="lien-niveau2">
+            deux
+        </a>
+    </li>
+    <li class="mb-xs">
+        <a href="#" class="lien-niveau2">
+            trois
+        </a>
+    </li>
+</ul>
+        {% endset %}
+        {% set macroTitre %}
+            &#x7B;&#x7B; macro.sommaire(["un : Sommaire", "deux", "trois"]) &#125;&#125;
+        {% endset %}
+        {{ styleguide.table_demo_code(demoTitre, macroTitre, "Sommaire") }}
+
+        {% set demoListe %}
+<ul class="ul-reset">
+    <li>un</li>
+    <li>deux</li>
+    <li>trois</li>
+</ul>
+        {% endset %}
+        {{ styleguide.table_demo_code(demoListe, "", "Reinitialisé") }}
+
+        {% set demoListe %}
+<ol>
+    <li>un</li>
+    <li>deux</li>
+    <li>trois</li>
+</ol>
+        {% endset %}
+        {{ styleguide.table_demo_code(demoListe, "", "Numéroté") }}
+        </tbody>
+    </table>
+</div>

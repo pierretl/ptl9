@@ -1,0 +1,50 @@
+---
+layout: layout/standard.njk
+titre: "Pagination"
+tags: ["styleguideptl", "texte"]
+description: "Indique qu'une série de contenus connexes existe sur plusieurs pages."
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+
+{% set intro %}
+    Pagination pour la recherche : utilise <a href="https://listjs.com/">listjs.com</a><br>
+    Cette recherche impose les classe CSS <code>page</code>, <code>active</code>, <code>disabled</code> et interdit l'utilisation de <code>pagination</code> sinon plus rien ne fonctionne !
+{% endset %}
+{% set demo %}
+<ul class="ul-reset d-flex ai-c ts-l mr-m__enfant">
+    <li>
+        <a class="page lien-niveau2" href="#" data-i="1" data-page="3">1</a>
+    </li>
+    <li class="disabled">
+        <a class="page lien-niveau2" href="#">...</a>
+    </li>
+    <li>
+        <a class="page lien-niveau2" href="#" data-i="4" data-page="3">4</a>
+    </li>
+    <li>
+        <a class="page lien-niveau2" href="#" data-i="5" data-page="3">5</a>
+    </li>
+    <li class="active">
+        <a class="page lien-niveau2" href="#" data-i="6" data-page="3">6</a>
+    </li>
+    <li>
+        <a class="page lien-niveau2" href="#" data-i="7" data-page="3">7</a>
+    </li>
+    <li>
+        <a class="page lien-niveau2" href="#" data-i="8" data-page="3">8</a>
+    </li>
+    <li class="disabled">
+        <a class="page lien-niveau2" href="#">...</a>
+    </li>
+    <li>
+        <a class="page lien-niveau2" href="#" data-i="10" data-page="3">10</a>
+    </li>
+</ul>
+{% endset %}
+{{ styleguide.demo_code(demo, demo, intro) }}
+
+
