@@ -2,6 +2,9 @@
 <html lang="fr">
     <head>
         {% include "../include/head.njk" %}
+        {% if styleCss %}
+            <link href="/js/{{ styleCss }}" rel="stylesheet"/>
+        {% endif %}
     </head>
     <body class="d-flex fd-c">
         {% include "../include/evitement.html" %}

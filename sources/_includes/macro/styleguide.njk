@@ -11,7 +11,7 @@
             {{ demo | safe }}
         </div>
         <div class="w-50">
-            <pre><code>{{ code | trim }}</code></pre>
+            <pre><code class="language-html">{{ code | trim }}</code></pre>
         </div>
     </div>
 
@@ -46,11 +46,11 @@
             {{ demo | safe }}
         </td>
         <td>
-            <pre><code>{{ demo | trim }}</code></pre>
+            <pre><code class="language-html">{{ demo | trim }}</code></pre>
         </td>
         <td>
             {% if macro %}
-                <pre><code>{{ macro | safe | trim }}</code></pre>
+                <pre><code class="language-twig">{{ macro | safe | trim }}</code></pre>
             {% endif %}
         </td>
     </tr>

@@ -16,7 +16,7 @@
                 {% else %}
                     <li class="mb-m">
                         {% if all.data.tags[0] == 'styleguideptl' %}
-                            {% set href %}{{ metadata.siteUrl }}/styleguide-du-site/#{{ all.data.titre | slug }}{% endset %}
+                            {% set href %}{{ metadata.siteUrl }}/recueil/styleguide/#{{ all.data.titre | slug }}{% endset %}
                         {% else %}
                             {% set href %}{{ metadata.siteUrl }}{{ all.url }}{% endset %}
                         {% endif %}
