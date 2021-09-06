@@ -29,14 +29,15 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * Formulaire de contact
 * XTheque avec google doc
 * Amélioration rss : Découper le journal de bord, chaque mise à jour dois être une page
-* Changer la typographie car les chiffre ne font pas tous la meme taille ! 0123456789
 
 
 ## 6 septembre 2021
 * Coloration syntaxique des balises de code sur le [styleguide](/recueil/styleguide/)<br>
 Personnalisation des couleurs sur une base [monokai](http://www.monokai.nl/)
 * Correction des liens pointant sur le styleguide à partir d'une recherche
-
+* Remplacement de la police *raleway* pour *OpenSans* car les chiffre ne font pas tous la même taille :<br>
+  ![](/images/site-perso/font-raleway.png)<br>
+  Mais quelle idée franchement !?!
 
 ## 5 Septembre 2021
 [Refonte styleguide](/recueil/styleguide/) + ajout recherche
