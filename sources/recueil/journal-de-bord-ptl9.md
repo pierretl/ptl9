@@ -38,6 +38,8 @@ Personnalisation des couleurs sur une base [monokai](http://www.monokai.nl/)
 * Remplacement de la police *raleway* pour *OpenSans* car les chiffre ne font pas tous la même taille :<br>
   ![](/images/site-perso/font-raleway.png)<br>
   Mais quelle idée franchement !?!
+* Affichage du focus des liens et boutons au clavier uniquement
+* Harmonisation des bordures arrondis + changement de style les inputs type text et search
 
 ## 5 Septembre 2021
 [Refonte styleguide](/recueil/styleguide/) + ajout recherche

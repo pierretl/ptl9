@@ -38,7 +38,7 @@ h1,h2,h3,h4,h5,h6 {
 
 code {
   padding: 3px 5px;
-  border-radius: 6px;;
+  border-radius: $radius-defaut;
   background-color: $arsenic;
   color: $peach;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;

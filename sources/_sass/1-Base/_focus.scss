@@ -1,10 +1,10 @@
 /*--------------------------------------------------------------------*/
 /* Focus                                                              */
 /*--------------------------------------------------------------------*/
-a:not([class]):focus:not(:hover),
-a.tg1-1:focus:not(:hover):not(d-block),
-input:focus + label svg,
-.s_mosaique__lien:focus:not(:hover)
+a:not([class]):focus-visible,
+a.tg1-1:focus-visible:not(d-block),
+input:focus-visible + label svg,
+.s_mosaique__lien:focus-visible
 {
   @include style-focus;
 }

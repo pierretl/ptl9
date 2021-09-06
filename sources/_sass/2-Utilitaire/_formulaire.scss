@@ -1,20 +1,32 @@
 input {
   font-size: $texte-m;
-  background-color: var(--gamme1__fond);
-  border: 1px solid var(--gamme1__texte4);
-  border-radius: $texte-m;
-  color: var(--gamme1__texte1);
-  padding: $espace-xs $espace-s;
+  background-color: var(--gamme3__fond);
+  border: 0 none;
+  border-radius: $radius-defaut;
+  color: var(--gamme3__texte1);
+  padding: $espace-s $espace-s;
+  width: 100%;
 }
 
 input::placeholder {
-  color: var(--gamme1__texte2);
+  color: var(--gamme3__texte2);
   opacity: 1;
 }
 
 input:focus {
-  @include style-focus;
-  border-color: var(--gamme1__texte2);
+  box-shadow: 0 0 0 1px var(--gamme1__texte4);
+  outline: none;
+}
+
+
+
+
+
+input[type="search"] {
+  padding-right: $espace-s + rem-calc(24) + $espace-s;
+}
+input[type="search"] + svg {
+  margin-right: $espace-s;
 }
 
 

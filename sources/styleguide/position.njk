@@ -1,0 +1,41 @@
+---
+layout: layout/standard.njk
+titre: "Position"
+tags: styleguideptl
+description: "Positionné un élément qui sort du flux"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+
+{% set demo %}
+<div class="pr">position relative</div>
+{% endset %}
+{{ styleguide.demo_code(demo, demo) }}
+
+
+
+
+
+{% set demo %}
+    <p class="mb-s">
+        Positionné l'icône centré à droite
+    </p>
+    <div class="pr w-50">
+        <input type="search" class="search js--rechercheBtn" placeholder="Demo..." />
+        <svg class="pa-cr fill--mode" width="24px" height="24px">
+            <use xlink:href="#loupe"></use>
+        </svg>
+    </div>
+{% endset %}
+{% set code %}
+<div class="pr w-50">
+    <input type="search" class="search js--rechercheBtn" placeholder="Demo..." />
+    <svg class="pa-cr fill--mode" width="24px" height="24px">
+        <use xlink:href="#loupe"></use>
+    </svg>
+</div>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}

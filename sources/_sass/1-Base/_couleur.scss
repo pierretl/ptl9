@@ -2,6 +2,7 @@
 /* Couleurs                                                     */
 /*--------------------------------------------------------------------*/
 $grey-dune: #332f35;
+$arsenic: #454047;
 $grey-davy: #575757;
 $grey-dove: #6D6D6D;
 $grey-quill: #d3d3d3;
@@ -13,7 +14,7 @@ $aquamarine-medium: #54DD93;
 $corn-harvest: #9B6B00;
 $peach: #F4BB7E;
 
-$arsenic: #454047;
+
 
 
 
@@ -31,8 +32,10 @@ $arsenic: #454047;
   --gamme2__fond: #{$aquamarine-medium};
   --gamme2__texte1: #{$grey-dune};
 
-  --gamme3__fond: #{$grey-dove};
+  --gamme3__fond: #{$arsenic};
+  --gamme3__bordure: #{$peach};
   --gamme3__texte1: #{$grey-pale};
+  --gamme3__texte2: #{$grey-quill};
 
 
   --ascii1: #ed5565;
@@ -59,7 +62,9 @@ $arsenic: #454047;
   --gamme2__texte1: #{$grey-pale};
 
   --gamme3__fond: #{$grey-quill};
+  --gamme3__bordure: #{$corn-harvest};
   --gamme3__texte1: #{$grey-davy};
+  --gamme3__texte2: #{$grey-dove};
 
   --ascii1: #636363;
   --ascii2: #5A5A5A;

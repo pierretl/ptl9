@@ -86,7 +86,7 @@ a.tg1-1:hover, // lien
 .lien-niveau2:hover {
   text-decoration-color: var(--gamme1__texte1);
 }
-.lien-niveau2:focus {
+.lien-niveau2:focus-visible {
   @include style-focus;
 }
 

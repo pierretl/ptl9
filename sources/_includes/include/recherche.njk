@@ -1,6 +1,11 @@
 <div id="rechercheSite"{% if masqueDonnesRecherche %}  class="w-70"{% endif %}>
     <div class="mb-m">
-        <input type="text" class="search js--rechercheBtn {% if masqueDonnesRecherche %}w-100{% else %}w-50{% endif %}" placeholder="Que recherchez-vous ?" />
+        <div class="pr {% if masqueDonnesRecherche %}w-100{% else %}w-50{% endif %}">
+            <input type="search" class="search js--rechercheBtn" placeholder="Que recherchez-vous ?" />
+            <svg class="pa-cr fill--mode" width="24px" height="24px">
+                <use xlink:href="#loupe"></use>
+            </svg>
+        </div>
         <p class="js--rechercheMessageKo hide tg1-4 pt-m">
             Il n'y a pas de résultat pour cette recherche
         </p>

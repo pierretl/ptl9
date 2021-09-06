@@ -26,6 +26,20 @@ date: 2021-03-01
 
 
 {% set demo %}
-    <input type="text" placeholder="Placeholder"/>
+    <input type="text" placeholder="type text"/>
+{% endset %}
+{{ styleguide.demo_code(demo, demo) }}
+
+
+
+
+
+{% set demo %}
+<div class="pr w-50">
+    <input type="search" class="search js--rechercheBtn" placeholder="Demo..." />
+    <svg class="pa-cr fill--mode" width="24px" height="24px">
+        <use xlink:href="#loupe"></use>
+    </svg>
+</div>
 {% endset %}
 {{ styleguide.demo_code(demo, demo) }}
