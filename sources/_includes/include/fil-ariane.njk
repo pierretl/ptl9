@@ -56,3 +56,39 @@
     </ul>
 
 {% endif %}
+
+
+
+{% if tags[0] == "contact" %}
+
+    <ul class="ul-reset d-flex ai-c mb-l">
+        <li>
+            <a class="lien-niveau2" href="{{ metadata.siteUrl }}/">Accueil</a>
+        </li>
+        <li>
+            &nbsp;&nbsp;>&nbsp;
+            {{titre}}
+        </li>
+    </ul>
+
+{% endif %}
+
+
+
+{% if tags[0] == "contact-succes" %}
+
+    <ul class="ul-reset d-flex ai-c mb-l">
+        <li>
+            <a class="lien-niveau2" href="{{ metadata.siteUrl }}/">Accueil</a>
+        </li>
+        <li>
+            &nbsp;&nbsp;>&nbsp;
+            <a class="lien-niveau2" href="{{ metadata.siteUrl }}/contact/">Contact</a>
+        </li>
+        <li>
+            &nbsp;&nbsp;>&nbsp;
+            {{titre}}
+        </li>
+    </ul>
+
+{% endif %}
