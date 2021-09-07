@@ -8,7 +8,7 @@
 }
 
 [class^="w-"] + [class^="w-"] {
-  margin-top: $espace-m;
+  margin-top: $espace-s;
 }
 
 @include breakpoint(large) {

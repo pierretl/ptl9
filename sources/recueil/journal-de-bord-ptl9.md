@@ -31,6 +31,9 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * Amélioration rss : Découper le journal de bord, chaque mise à jour dois être une page
 
 
+## 7 septembre 2021
+* Harmonisation des espacements
+
 ## 6 septembre 2021
 * Coloration syntaxique des balises de code sur le [styleguide](/recueil/styleguide/)<br>
 Personnalisation des couleurs sur une base [monokai](http://www.monokai.nl/)
@@ -41,7 +44,7 @@ Personnalisation des couleurs sur une base [monokai](http://www.monokai.nl/)
 * Affichage du focus des liens et boutons au clavier uniquement
 * Harmonisation des bordures arrondis + changement de style les inputs type text et search
 
-## 5 Septembre 2021
+## 5 septembre 2021
 [Refonte styleguide](/recueil/styleguide/) + ajout recherche
 
 ## 29 aout 2021
