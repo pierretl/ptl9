@@ -1,0 +1,11 @@
+{% macro li_menu(siteUrl, titreMenu, titre, index) %}
+    <li class="{% if titreMenu == titre %}tg1-1 td-1 tw-7{% endif %}">
+        {% if titreMenu == titre %}
+            {{ titre }}
+        {% else %}
+            <a class="tg1-1 td-0 tw-7" href="{{ siteUrl }}{% if index %}{% else %}/{{ titre | slug }}/{% endif %}">
+                {{ titre }}
+            </a>
+        {% endif %}
+    </li>
+{% endmacro %}

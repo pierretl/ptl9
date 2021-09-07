@@ -33,6 +33,7 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 
 ## 7 septembre 2021
 * Harmonisation des espacements
+* Refonte du menu principal pour ordonner manuellement les liens
 
 ## 6 septembre 2021
 * Coloration syntaxique des balises de code sur le [styleguide](/recueil/styleguide/)<br>
