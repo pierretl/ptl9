@@ -18,11 +18,7 @@
                 <ul class="d-flex ai-c mr-m__enfant mb-s__enfant">
                     {{ menu.li_menu(metadata.siteUrl, titreMenu, 'Réalisation', 'index') }}
                     {{ menu.li_menu(metadata.siteUrl, titreMenu, 'Recueil') }}
-                    <li>
-                        <a class="tg1-1 td-0 tw-7" href="mailto:&#99;on&#116;&#97;%63&#116;&#64;%70i&#101;%72%72e%2e&#116;%6c">
-                            Contact
-                        </a>
-                    </li>
+                    {{ menu.li_menu(metadata.siteUrl, titreMenu, 'Contact') }}
                     {{ menu.li_menu(metadata.siteUrl, titreMenu, 'Recherche') }}
                     <li>
                         {% include "../include/switch-mode.html" %}

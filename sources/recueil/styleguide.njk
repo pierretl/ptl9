@@ -30,12 +30,14 @@ styleCss: "prism.css"
 
             <li class="mb-xl" id="{{ atome.data.titre | slug }}">
 
-                <h2 class="ts-l tg1-4 th-2 tw-4 js--rechercheValeurTitre">
-                    {{ atome.data.titre | safe }}
-                    {% if atome.data.tags[1] %}
-                        <span class="ts-s tg1-2">—&nbsp;{{ atome.data.tags[1] | capitalize }}</span>
-                    {% endif %}
-                </h2>
+                <a href="#{{ atome.data.titre | slug }}" class="td-0">
+                    <h2 class="ts-l tg1-4 th-2 tw-4 js--rechercheValeurTitre">
+                        {{ atome.data.titre | safe }}
+                        {% if atome.data.tags[1] %}
+                            <span class="ts-s tg1-2">—&nbsp;{{ atome.data.tags[1] | capitalize }}</span>
+                        {% endif %}
+                    </h2>
+                </a>
 
                 <div class="js--rechercheValeurDescription">
                     {{ atome.templateContent | safe }}

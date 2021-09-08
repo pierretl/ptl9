@@ -6,24 +6,28 @@ tags: "contact"
 exclureRss: "true"
 ---
 
-<form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" action="contact/succes">
-    <p class="hidden">
-        <label>Ne remplissez pas ce formulaire si vous êtes humain<input name="bot-field" /></label>
-    </p>
-    <p>
-        <label>Quel est votre nom ou celui de votre entreprise ?<input type="text" name="nom" /></label>
-    </p>
-    <p>
-        <label>Quel est votre email ?<input type="email" name="mail" /></label>
-    </p>
-    <p>
-        <label>C'est à quel sujet ? <em>(facultatif)</em><input type="text" name="objet" /></label>
-    </p>
-    <p>
-        <label>Votre message<textarea name="message"></textarea></label>
-    </p>
-    <p>
-        <button type="submit">Envoyer</button>
-    </p>
+<form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" action="/contact/succes/">
+
+
+    <label class="hide" for="botField">Ne remplissez pas ce champ si vous êtes humain</label>
+    <input class="hide" id="botField" name="bot-field" />
+
+    <label for="nom" class="d-block mb-xs">Quel est votre nom ou celui de votre entreprise ?</label>
+    <input id="nom" type="text" name="nom" required class="mb-m" />
+
+    <label for="mail" class="d-block mb-xs">Quel est votre email ?</label>
+    <input id="mail" type="email" name="mail" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" class="mb-m" />
+
+    <label for="objet" class="d-block mb-xs">
+        C'est à quel sujet ?
+        <span class="ts-m tg1-2">—&nbsp;Facultatif</span>
+    </label>
+    <input id="objet" type="text" name="objet" class="mb-m" />
+
+    <label for="message" class="d-block mb-xs">Votre message</label>
+    <textarea id="message" name="message" required class="d-block mb-m"></textarea>
+
+    <button type="submit" class="bouton mb-l">Envoyer votre message</button>
+
 </form>
 

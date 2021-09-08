@@ -1,0 +1,7 @@
+@mixin base-input {
+  font-family: 'FontPtl', sans-serif;
+  font-size: $texte-m;
+  border: 0 none;
+  border-radius: $radius-defaut;
+  padding: $espace-s $espace-s;
+}

@@ -1,19 +1,19 @@
-input {
-  font-size: $texte-m;
+input,
+textarea {
+  @include base-input;
   background-color: var(--gamme3__fond);
-  border: 0 none;
-  border-radius: $radius-defaut;
   color: var(--gamme3__texte1);
-  padding: $espace-s $espace-s;
   width: 100%;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: var(--gamme3__texte2);
   opacity: 1;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   box-shadow: 0 0 0 1px var(--gamme1__texte4);
   outline: none;
 }
@@ -28,5 +28,28 @@ input[type="search"] {
 input[type="search"] + svg {
   margin-right: $espace-s;
 }
+
+
+
+
+
+
+.bouton {
+  @include base-input;
+  color: var(--gamme1__texte3);
+  background-color: var(--gamme1__fond);
+  box-shadow: 0 0 0 1px var(--gamme1__texte3);
+}
+.bouton:hover {
+  color: var(--gamme1__texte1);
+  box-shadow: 0 0 0 1px var(--gamme1__texte1);
+  cursor: pointer;
+}
+.bouton:focus-visible {
+  @include style-focus;
+  box-shadow: none;
+}
+
+
 
 

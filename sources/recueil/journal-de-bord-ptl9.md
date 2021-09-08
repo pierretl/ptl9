@@ -30,6 +30,10 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * XTheque avec google doc
 * Amélioration rss : Découper le journal de bord, chaque mise à jour dois être une page
 
+## 8 septembre 2021
+* [Formulaire de contact](/contact/) et sa [page de succès](/contact/sucess/)
+* Ajout d'ancre sur les titres des éléments du [styleguide](/recueil/styleguide/)
+* Ajout des nouveaux éléments de formulaire au styleguide
 
 ## 7 septembre 2021
 * Harmonisation des espacements
