@@ -14,8 +14,12 @@ textarea::placeholder {
 
 input:focus,
 textarea:focus {
-  box-shadow: 0 0 0 1px var(--gamme1__texte4);
+  border-color: var(--gamme1__texte4);
   outline: none;
+}
+
+input:not(:placeholder-shown):not(:focus):invalid {
+  border-color: #ea5566;
 }
 
 
