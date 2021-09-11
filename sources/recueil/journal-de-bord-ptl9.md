@@ -23,10 +23,10 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
     * Réduction des images à partir d'image retina
     * Conversion en format "webP" et "avif"
 * Tag
-* SEO opti :
-    * faq
-    * page description
-* Amélioration rss : Découper le journal de bord, chaque mise à jour dois être une page
+* SEO opti : faq ?
+
+## 11 septembre 2021
+* Repasse mise en forme [Liste](/recueil/styleguide/#liste), [Titre](/recueil/styleguide//recueil/styleguide/#titre), [Marge](/recueil/styleguide/#marge), [Caractères spéciaux sur Safari mobile](/recueil/caracteres-speciaux-safari-mobile/)
 
 ## 10 septembre 2021
 * Couleur bordure rouge si le champ mail du formulaire de contact n'est pas valide

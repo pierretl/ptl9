@@ -1,4 +1,4 @@
-{% macro demo_code(demo, code, intro) %}
+{% macro demo_code(demo, code, intro, code2) %}
 
     {% if intro %}
         <p class="mb-m">
@@ -11,47 +11,15 @@
             {{ demo | safe }}
         </div>
         <div class="w-50">
-            <pre><code class="language-html">{{ code | trim }}</code></pre>
+            {% if code2 %}
+                <div class="mb-s">
+                    <pre><code class="language-html">{{ code | trim }}</code></pre>
+                </div>
+                <pre><code class="language-twig">{{ code2 | safe | trim }}</code></pre>
+            {% else %}
+                <pre><code class="language-html">{{ code | trim }}</code></pre>
+            {% endif %}
         </div>
     </div>
 
-{% endmacro %}
-
-
-
-
-
-{% macro code(titre, code) %}
-
-    <h2 class="mb-m tg1-4 ts-xl tw-4">{{ titre }}</h2>
-
-    <div class="mb-xl">
-        <pre><code>{{ code | trim }}</code></pre>
-    </div>
-
-{% endmacro %}
-
-
-
-
-
-{% macro table_demo_code(demo, macro, type) %}
-    <tr>
-        {% if type %}
-            <td>
-                {{ type | safe }}
-            </td>
-        {% endif %}
-        <td>
-            {{ demo | safe }}
-        </td>
-        <td>
-            <pre><code class="language-html">{{ demo | trim }}</code></pre>
-        </td>
-        <td>
-            {% if macro %}
-                <pre><code class="language-twig">{{ macro | safe | trim }}</code></pre>
-            {% endif %}
-        </td>
-    </tr>
 {% endmacro %}

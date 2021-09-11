@@ -5,33 +5,25 @@ tags: ["styleguideptl", "texte"]
 description: "À puce, sans ordre particulier ou numéroté"
 date: 2021-03-01
 ---
+{% import "macro/contenu.njk" as macro %}
 {% import "macro/styleguide.njk" as styleguide %}
 
 
 
-
-<div class="scroll-x-auto mb-xl">
-    <table>
-        <thead>
-        <tr>
-            <th>Type</th>
-            <th>Rendus</th>
-            <th>HTML</th>
-            <th>Macro Nunjucks</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% set demoListe %}
+{{ macro.h3("Liste standard de contenu") }}
+{% set demo %}
 <ul>
     <li>un</li>
     <li>deux</li>
     <li>trois</li>
 </ul>
-        {% endset %}
-        {{ styleguide.table_demo_code(demoListe, "", "Contenu") }}
+{% endset %}
+{{ styleguide.demo_code(demo, demo) }}
 
 
-        {% set demoTitre %}
+
+{{ macro.h3("Liste pour sommaire") }}
+{% set demo %}
 <ul class="ul-sommaire">
     <li class="mb-xs">
         <a href="#" class="lien-niveau2">
@@ -49,29 +41,32 @@ date: 2021-03-01
         </a>
     </li>
 </ul>
-        {% endset %}
-        {% set macroTitre %}
-            &#x7B;&#x7B; macro.sommaire(["un : Sommaire", "deux", "trois"]) &#125;&#125;
-        {% endset %}
-        {{ styleguide.table_demo_code(demoTitre, macroTitre, "Sommaire") }}
+{% endset %}
+{% set nunjucks %}
+    &#x7B;&#x7B; macro.sommaire(["Un", "Deux", "Trois"]) &#125;&#125;
+{% endset %}
+{{ styleguide.demo_code(demo, demo, "", nunjucks) }}
 
-        {% set demoListe %}
+
+
+{{ macro.h3("Liste sans style", "Reinitialisé") }}
+{% set demo %}
 <ul class="ul-reset">
     <li>un</li>
     <li>deux</li>
     <li>trois</li>
 </ul>
-        {% endset %}
-        {{ styleguide.table_demo_code(demoListe, "", "Reinitialisé") }}
+{% endset %}
+{{ styleguide.demo_code(demo, demo) }}
 
-        {% set demoListe %}
+
+
+{{ macro.h3("Liste numéroté") }}
+{% set demo %}
 <ol>
     <li>un</li>
     <li>deux</li>
     <li>trois</li>
 </ol>
-        {% endset %}
-        {{ styleguide.table_demo_code(demoListe, "", "Numéroté") }}
-        </tbody>
-    </table>
-</div>
+{% endset %}
+{{ styleguide.demo_code(demo, demo) }}

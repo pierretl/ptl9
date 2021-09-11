@@ -36,7 +36,13 @@
 
 
 {% macro code(code, class) %}
-<pre{% if class %} class="{{ class | safe }}"{% endif %}><code>{{ code | trim }}</code></pre>
+    {% if class %}
+        <div class="{{ class | safe }}">
+            <pre class="language-html"><code>{{ code | trim }}</code></pre>
+        </div>
+    {% else %}
+        <pre class="language-html"><code>{{ code | trim }}</code></pre>
+    {% endif %}
 {% endmacro %}
 
 

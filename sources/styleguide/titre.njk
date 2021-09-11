@@ -10,50 +10,56 @@ date: 2021-03-01
 
 
 
+{% set demo %}
+    <p class="ts-xl tg1-1 tw-4 th-09">Nom du site - header</p>
+{% endset %}
+{{ styleguide.demo_code(demo, demo) }}
 
 
-<div class="scroll-x-auto mb-xl">
-    <table>
-        <thead>
-        <tr>
-            <th>Rendus</th>
-            <th>HTML</th>
-            <th>Macro Nunjucks</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% set demoTitre %}<p class="ts-xl tg1-1 th-09 tw-4">Nom du site</p>{% endset %}
-        {{ styleguide.table_demo_code(demoTitre) }}
 
-        {% set demoTitre %}<p class="ts-xl tg1-1 tw-4">Niveau 1</p>{% endset %}
-        {{ styleguide.table_demo_code(demoTitre) }}
 
-        {% set demoTitre %}
-            <p class="ts-l tg1-4 th-2 tw-4">Niveau 2</p>
-        {% endset %}
-        {% set macroTitre %}
+{% set demo %}
+    <p class="ts-xl tg1-1 tw-4">Niveau 1 - titre page</p>
+{% endset %}
+{{ styleguide.demo_code(demo, demo) }}
+
+
+
+
+{% set demo %}
+    <p class="ts-l tg1-4 th-2 tw-4">Niveau 2</p>
+{% endset %}
+{% set nunjucks %}
 &#x7B;&#x7B; macro.h2("Niveau 2") &#125;&#125;
 &#x7B;&#x7B; macro.h2("Niveau 2", "ancre", "16/08/2021") &#125;&#125;
 &#x7B;&#x7B; macro.h2("Niveau 2", "", "16/08/2021") &#125;&#125;
-        {% endset %}
-        {{ styleguide.table_demo_code(demoTitre, macroTitre) }}
+{% endset %}
+{{ styleguide.demo_code(demo, demo, "", nunjucks) }}
 
-        {% set demoTitre %}
-            <p class="ts-l mb-s">Niveau 3</p>
-        {% endset %}
-        {% set macroTitre %}
+
+
+
+{% set demo %}
+    <p class="ts-l mb-s">Niveau 3</p>
+{% endset %}
+{% set nunjucks %}
 &#x7B;&#x7B; macro.h3("Niveau 3") &#125;&#125;
 &#x7B;&#x7B; macro.h3("Niveau 3", "16/08/2021") &#125;&#125;
-        {% endset %}
-        {{ styleguide.table_demo_code(demoTitre, macroTitre) }}
-
-        {% set demoTitre %}<p>Texte courant</p>{% endset %}
-        {{ styleguide.table_demo_code(demoTitre) }}
-
-        {% set demoTitre %}<p class="ts-s tg1-2 tw-4">Niveau 4</p>{% endset %}
-        {{ styleguide.table_demo_code(demoTitre) }}
-        </tbody>
-    </table>
-</div>
+{% endset %}
+{{ styleguide.demo_code(demo, demo, "", nunjucks) }}
 
 
+
+
+{% set demo %}
+    <p>Texte courant</p>
+{% endset %}
+{{ styleguide.demo_code(demo, demo) }}
+
+
+
+
+{% set demo %}
+    <p class="ts-s tg1-2 tw-4">Niveau 4</p>
+{% endset %}
+{{ styleguide.demo_code(demo, demo) }}
