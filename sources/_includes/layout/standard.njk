@@ -19,7 +19,7 @@
                     {{ menu.li_menu(metadata.siteUrl, titreMenu, 'Réalisation', 'index') }}
                     {{ menu.li_menu(metadata.siteUrl, titreMenu, 'Recueil') }}
                     {{ menu.li_menu(metadata.siteUrl, titreMenu, 'Contact') }}
-                    {{ menu.li_menu(metadata.siteUrl, titreMenu, 'Recherche') }}
+                    {% include "../include/menu-recherche.njk" %}
                     <li>
                         {% include "../include/switch-mode.html" %}
                     </li>

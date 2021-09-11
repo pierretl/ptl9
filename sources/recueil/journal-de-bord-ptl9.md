@@ -28,6 +28,7 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 ## 11 septembre 2021
 * Repasse mise en forme [Liste](/recueil/styleguide/#liste), [Titre](/recueil/styleguide//recueil/styleguide/#titre), [Marge](/recueil/styleguide/#marge), [Caractères spéciaux sur Safari mobile](/recueil/caracteres-speciaux-safari-mobile/)
 * Ajout des [sites et services](/realisations/site-perso/#2021-:-generateur-site-statique) qui ont participé à l'élaboration du ce site
+* Passage du menu *Recherche* en pictogramme
 
 ## 10 septembre 2021
 * Couleur bordure rouge si le champ mail du formulaire de contact n'est pas valide

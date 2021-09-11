@@ -1,0 +1,23 @@
+{% if titreMenu == "Recherche" %}
+    <li class="td-1 tg1-1">
+        <span class="sr-only">Recherche</span>
+        <svg width="24px" height="24px" class="fill--mode">
+            <use xlink:href="#loupe">
+                <title>Recherchez sur le site</title>
+            </use>
+        </svg>
+    </li>
+{% else %}
+    <li>
+        <a href="/recherche/">
+            <span class="sr-only">Recherche</span>
+            <svg width="24px" height="24px" class="fill--mode var--lien">
+                <use xlink:href="#loupe">
+                    <title>Recherchez sur le site</title>
+                </use>
+            </svg>
+        </a>
+    </li>
+{% endif %}
+
+

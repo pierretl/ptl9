@@ -5,21 +5,28 @@ tags: ["styleguideptl", "image"]
 description: "Coloration d'un SVG selon le thème clair/sombre sélectionné"
 date: 2021-03-01
 ---
+{% import "macro/contenu.njk" as macro %}
 {% import "macro/styleguide.njk" as styleguide %}
 
 
 
 
-
+{{ macro.h3("Coloration selon le thème") }}
 {% set demo %}
-    <svg width="18px" height="18px" class="fill--mode">
-        <use xlink:href="#darkMode"></use>
-    </svg>
-{% endset %}
-{% set code %}
 <svg width="18px" height="18px" class="fill--mode">
     <use xlink:href="#darkMode"></use>
 </svg>
 {% endset %}
-{{ styleguide.demo_code(demo, code) }}
+{{ styleguide.demo_code(demo, demo) }}
+
+
+
+
+{{ macro.h3("Changement de couleur au survol") }}
+{% set demo %}
+<svg width="18px" height="18px" class="fill--mode var--lien">
+    <use xlink:href="#darkMode"></use>
+</svg>
+{% endset %}
+{{ styleguide.demo_code(demo, demo) }}
 
