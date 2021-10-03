@@ -26,6 +26,7 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 
 ## 03 octobre 2021
 * Ajout de la [palette de couleur](/recueil/styleguide/#palette-de-couleur) au styleguide
+* Position sticky du champ de recherche sur le [styleguide](/recueil/styleguide/)
 
 
 ## 11 septembre 2021
