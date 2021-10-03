@@ -23,10 +23,13 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
     * Réduction des images à partir d'image retina
     * Conversion en format "webP" et "avif"
 * Tag
-* SEO opti : faq ?
+
+## 03 octobre 2021
+* Ajout de la [palette de couleur](/recueil/styleguide/#palette-de-couleur) au styleguide
+
 
 ## 11 septembre 2021
-* Repasse mise en forme [Liste](/recueil/styleguide/#liste), [Titre](/recueil/styleguide//recueil/styleguide/#titre), [Marge](/recueil/styleguide/#marge), [Caractères spéciaux sur Safari mobile](/recueil/caracteres-speciaux-safari-mobile/)
+* Repasse mise en forme [Liste](/recueil/styleguide/#liste), [Titre](/recueil/styleguide/#titre), [Marge](/recueil/styleguide/#marge), [Caractères spéciaux sur Safari mobile](/recueil/caracteres-speciaux-safari-mobile/)
 * Ajout des [sites et services](/realisations/site-perso/#2021-:-generateur-site-statique) qui ont participé à l'élaboration du ce site
 * Passage du menu *Recherche* en pictogramme
 

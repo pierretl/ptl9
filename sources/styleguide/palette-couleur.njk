@@ -1,0 +1,119 @@
+---
+layout: layout/standard.njk
+titre: "Palette de couleur"
+tags: ["styleguideptl", "Gamme"]
+description: "Palette de couleur harmonieuse et accessible"
+date: 2021-10-03
+---
+{% import "macro/contenu.njk" as macro %}
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+<style>
+    .palette {
+        width:50px;
+        height:50px;
+        border:1px solid var(--gamme1__bordure)
+    }
+</style>
+
+
+
+{{ macro.h3("Gamme 1","Base") }}
+{% set demo %}
+    <div class="d-flex ai-c">
+        <div class="palette mr-m" style="background-color:var(--gamme1__fond)"></div>
+        <p>Fond principal</p>
+    </div>
+    <div class="d-flex ai-c">
+        <div class="palette mr-m" style="background-color:var(--gamme1__bordure)"></div>
+        <p>Bordure</p>
+    </div>
+    <div class="d-flex ai-c">
+        <div class="palette mr-m" style="background-color:var(--gamme1__texte1)"></div>
+        <p>Texte courant</p>
+    </div>
+    <div class="d-flex ai-c">
+        <div class="palette mr-m" style="background-color:var(--gamme1__texte2)"></div>
+        <p>Texte secondaire, légende, date, rubrique</p>
+    </div>
+    <div class="d-flex ai-c">
+        <div class="palette mr-m" style="background-color:var(--gamme1__texte3)"></div>
+        <p>Lien</p>
+    </div>
+    <div class="d-flex ai-c">
+        <div class="palette mr-m" style="background-color:var(--gamme1__texte4)"></div>
+        <p>Titre, puce, citation</p>
+    </div>
+{% endset %}
+{% set code %}
+var(--gamme1__fond)
+var(--gamme1__bordure)
+
+var(--gamme1__texte1)
+var(--gamme1__texte2)
+var(--gamme1__texte3)
+var(--gamme1__texte4)
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+{{ macro.h3("Gamme 2","Sélection de texte") }}
+{% set demo %}
+    <div class="d-flex ai-c">
+        <div class="palette mr-m" style="background:var(--gamme2__fond)"></div>
+        <div class="">
+            Fond
+        </div>
+    </div>
+    <div class="d-flex ai-c">
+        <div class="palette mr-m" style="background:var(--gamme2__texte1)"></div>
+        <div class="">
+            Texte
+        </div>
+    </div>
+{% endset %}
+{% set code %}
+var(--gamme2__fond)
+var(--gamme2__texte1)
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+{{ macro.h3("Gamme 3", "Démo de code simple et Formulaire") }}
+{% set demo %}
+    <div class="d-flex ai-c">
+        <div class="palette mr-m" style="background:var(--gamme3__fond)"></div>
+        <div class="">
+            Fond
+        </div>
+    </div>
+    <div class="d-flex ai-c">
+        <div class="palette mr-m" style="background:var(--gamme3__bordure)"></div>
+        <div class="">
+            Bordure
+        </div>
+    </div>
+    <div class="d-flex ai-c">
+        <div class="palette mr-m" style="background:var(--gamme3__texte1)"></div>
+        <div class="">
+            Texte
+        </div>
+    </div>
+    <div class="d-flex ai-c">
+        <div class="palette mr-m" style="background:var(--gamme3__texte2)"></div>
+        <div class="">
+            Placeholder formulaire
+        </div>
+    </div>
+{% endset %}
+{% set code %}
+var(--gamme3__fond)
+var(--gamme3__bordure)
+var(--gamme3__texte1)
+var(--gamme3__texte2)
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
