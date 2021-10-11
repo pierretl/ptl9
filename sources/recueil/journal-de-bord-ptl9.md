@@ -24,9 +24,12 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
     * Conversion en format "webP" et "avif"
 * Tag
 
+
 ## 11 octobre 2021
 * Repasse microtypographie
 * Date en français et en toutes lettres sur la page exhaustive des [recueils](/recueil/)
+* Ajout d'une page [mentions légales](/mention-legales/)
+
 
 ## 03 octobre 2021
 * Ajout de la [palette de couleur](/recueil/styleguide/#palette-de-couleur) au styleguide

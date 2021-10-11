@@ -1,0 +1,28 @@
+---
+layout: layout/standard.njk
+titre: "Mentions légales"
+exclureRss: "true"
+description: "Information légal du site"
+---
+{% import "macro/contenu.njk" as macro %}
+
+
+{{ macro.sommaire(["Crédits", "Licence", "Cookies & Statistiques"]) }}
+
+
+{{ macro.h2("Crédits", "1") }}
+<p class="mb-xl">
+    Logo, conception, graphisme, intégration et rédaction par Pierre Tampon-Lajarriette
+</p>
+
+{{ macro.h2("Licence", "1") }}
+<div class="mb-xl">
+    <p class="mb-xs">Le site est publié sous la licence GNU General Public License v3.0</p>
+    <ul>
+        <li>Code source : <a href="https://github.com/pierretl/ptl9" target="_blank">https://github.com/pierretl/ptl9</a></li>
+        <li>Déploiement : <a href="https://app.netlify.com/sites/ptl9/overview" target="_blank">https://app.netlify.com/sites/ptl9/overview</a></li>
+    </ul>
+</div>
+
+{{ macro.h2("Cookies & Statistiques", "1") }}
+<p>Il n'y a ni cookie ni tracking sur ce site</p>
