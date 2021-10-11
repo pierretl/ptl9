@@ -19,7 +19,7 @@ pasDeTitre: "true"
                     <span class="ts-l th-09">
                         {{ blog.data.titre }}
                     </span>
-                    <span class="ts-s tg1-2">—&nbsp;{{ blog.date | readableDate }}</span>
+                    <span class="ts-s tg1-2">—&nbsp;{{ blog.date | frDate | safe }}</span>
 
                 </a>
 

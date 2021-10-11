@@ -31,11 +31,24 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.setDataDeepMerge(true);
 
-    // Convertis les dates en format lisible
+    // Convertis les dates en format lisible : 11 10 2021
     eleventyConfig.addFilter('readableDate', (dateObj) => {
         return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(
             'dd MM yyyy'
         );
+    });
+
+    // Convertis les dates en format lisible : 11 octobre 2021
+    eleventyConfig.addFilter('frDate', (date) => {
+
+        const months = ["janvier", "février", "mars","avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+
+        const formatDate = (date)=>{
+            let formatted_date = date.getDate() + "&nbsp;" + months[date.getMonth()] + "&nbsp;" + date.getFullYear()
+            return formatted_date;
+        }
+
+        return formatDate(date);
     });
 
     eleventyConfig.on("beforeBuild", () => {
