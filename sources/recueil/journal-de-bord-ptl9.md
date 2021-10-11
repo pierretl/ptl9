@@ -24,6 +24,9 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
     * Conversion en format "webP" et "avif"
 * Tag
 
+## 11 octobre 2021
+* Repasse microtypographie
+
 ## 03 octobre 2021
 * Ajout de la [palette de couleur](/recueil/styleguide/#palette-de-couleur) au styleguide
 * Position sticky du champ de recherche sur le [styleguide](/recueil/styleguide/)
