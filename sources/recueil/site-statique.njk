@@ -1,0 +1,264 @@
+---
+layout: layout/standard.njk
+titre: "Créer un site statique avec déploiement continu"
+tags: "recueil"
+date: 2021-04-21
+description: "Tutoriel de base pour la création de sites statiques avec Eleventy et Netlify"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+
+
+<p class="mb-m">À chaque <code>push</code>, le site sera compilé et mis en ligne</p>
+
+
+{{ macro.sommaire(["Git", "PhpStorm", "Eleventy", "Netlify"]) }}
+
+
+
+
+{{ macro.h2("Git","1") }}
+
+<p class="mb-s">Exemple pour <a href="https://github.com" target="_blank">GitHub</a></p>
+
+<p class="mb-s">Dans le menu <strong>Repositories</strong>, cliquez sur le bouton  <strong>New</strong></p>
+
+<table class="mb-xl">
+    <thead>
+        <tr>
+            <td>Label</td>
+            <td>Saisie</td>
+            <td>Remarque</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Repository name</td>
+            <td>mon-projet</td>
+            <td>un nom simple et court</td>
+        </tr>
+        <tr>
+            <td>add .gitignore</td>
+            <td>Node</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Choose a license</td>
+            <td>GNU General Public License v3.0</td>
+            <td>Open source et qui doit le rester</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+
+
+{{ macro.h2("PhpStorm","1") }}
+
+{{ macro.h3("Mettre en place l'environement sur l'<abbr title='integrated development environment'>IDE</abbr>") }}
+
+<ul class="mb-l">
+    <li>Menu <strong>Git</strong></li>
+    <li><strong>clone</strong></li>
+    <li>url : coller le lien du dépot</li>
+    <li>Directory : Ajouter un dossier du nom du projet avec un antislash <code>\mon-projet</code></li>
+    <li>
+        Dans le terminal :
+        <ul>
+            <li><code>npm install -y</code> pour installer npm</li>
+            <li><code>npm install -g @11ty/eleventy</code> pour installer eleventy</li>
+            <li><code>npx eleventy --serve</code> pour lancer la dev/preview</li>
+        </ul>
+    </li>
+</ul>
+
+{{ macro.h3("Coloration syntaxique de Nunjucks") }}
+
+<ul class="mb-xl">
+    <li>Go to File -> Settings -> Editor -> File Types</li>
+    <li>Find <strong>Twig</strong>, it's identical template engine but for PHP and add custom extension. click green plus and type *.nunj. Now all *.nunj files are parsed as Twig so in the end - support Nunjucks.</li>
+</ul>
+
+
+
+
+
+
+
+{{ macro.h2("Eleventy","1") }}
+
+<p class="mb-l">
+    <a href="https://github.com/11ty/eleventy" target="_blank">Eleventy</a> est un générateur de site statique, <br>
+    il fonctionne nativement avec de nombreux moteur de template, comme <a href="https://mozilla.github.io/nunjucks/templating.html" target="_blank">Nunjucks</a>
+</p>
+
+
+
+
+{{ macro.h3("Exclure de Git le site compilé") }}
+
+<div class="mb-l">
+    <p>
+        Dans le fichier <code>.gitignore</code>, ajouter
+    </p>
+
+    <pre><code class="language-html"># eleventy
+_site/</code></pre>
+</div>
+
+
+
+
+{{ macro.h3("Exclure de la compilation d'Eleventy un dossier/fichier") }}
+
+<div class="mb-l">
+    <p>Modifier ou ajouter le fichier <code>.eleventyignore</code> à la racine du projet</p>
+
+    <pre><code class="language-html">dossier/sous-dossier-exclu/
+fichier-exclu.md</code></pre>
+</div>
+
+
+
+
+
+{{ macro.h3("Principal ligne de commande") }}
+
+<table class="mb-l">
+    <thead>
+        <tr>
+            <td>Commande</td>
+            <td>Effet</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>npx eleventy</code></td>
+            <td>initialisation</td>
+        </tr>
+        <tr>
+            <td><code>npx eleventy --serve</code></td>
+            <td>initialisation + lancement serveur local</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+{{ macro.h3("Compiler du SASS") }}
+
+<p class="mb-m">
+    Merci <a href="https://www.d-hagemeier.com/en/sass-compile-11ty/" target="_blank">Dennis Hagemeier</a> et <a
+            href="https://github.com/clottman/cassey-on-eleventy/pull/9/files" target="_blank">Cassey Lottman</a>
+</p>
+
+<p class="mb-m">Installer les dépendances</p>
+
+<table class="mb-m">
+    <thead>
+    <tr>
+        <td>Commande</td>
+        <td>nom</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><code>npm install fs-extra</code></td>
+        <td>fs-extra</td>
+    </tr>
+    <tr>
+        <td><code>npm install --save-dev sass</code></td>
+        <td>Sass</td>
+    </tr>
+    <tr>
+        <td><code>npm install postcss postcss-cssnext</code></td>
+        <td>PostCss</td>
+    </tr>
+    <tr>
+        <td><code>npm install postcss-cli autoprefixer</code></td>
+        <td>Autoprefixer</td>
+    </tr>
+    </tbody>
+</table>
+
+<p>Dossier et fichier de base : <code>_sass/style.scss</code></p>
+
+
+
+
+
+{{ macro.h3("Configuration dans 11ty") }}
+
+<div class="mb-xl">
+    <p class="mb-m">Dans <code>.eleventy.js</code> ajouter</p>
+
+    <pre><code class="language-javascript">const fs = require("fs-extra");
+const sass = require("sass");
+const postcss = require("postcss");
+const autoprefixer = require("autoprefixer");
+
+module.exports = function (eleventyConfig) {
+
+    // compile sass and optimize it https://www.d-hagemeier.com/en/articles/sass-compile-11ty/
+    eleventyConfig.on("beforeBuild", () => {
+
+        // Compile Sass
+        let result = sass.renderSync({
+            file: "_sass/style.scss",
+            sourceMap: false,
+            outputStyle: "compressed",
+        });
+        console.log("SCSS compiled");
+
+        // Optimize and write file with PostCSS
+        let css = result.css.toString();
+        postcss([autoprefixer])
+            .process(css, { from: "style.css", to: "style.css" })
+            .then((result) => {
+                fs.outputFile("_site/style.css", result.css, (err) => {
+                    if (err) throw err;
+                    console.log("CSS optimized");
+                });
+            });
+    });
+
+
+    // trigger a rebuild if sass changes
+    eleventyConfig.addWatchTarget("_sass/");
+
+};</code></pre>
+</div>
+
+
+
+
+
+{{ macro.h2("Netlify","1") }}
+
+<p class="mb-m"><a href="https://app.netlify.com/">Netlify</a> est une plateforme de déploiement et de collaboration basé sur Git (GitHub, GitLab, Bitbucket)</p>
+
+<ul class="mb-m">
+    <li>Dans le menu <strong>Sites</strong>, cliquez sur le bouton <strong>New site from git</strong></li>
+    <li>Continuous Deployment : <strong>GitHub</strong></li>
+    <li>Autorisé le lien entre les 2 plateformes</li>
+    <li>Choisir le dépot</li>
+    <li><strong>Deploy site</strong></li>
+</ul>
+
+
+<p class="mb-s">Renommmer l'url :</p>
+
+<ul>
+    <li>Deploy settings</li>
+    <li>Change site name</li>
+    <li>mon-projet</li>
+    <li>save</li>
+</ul>
+
+

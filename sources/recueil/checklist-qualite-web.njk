@@ -1,0 +1,53 @@
+---
+layout: layout/standard.njk
+titre: "Checklist qualité Web"
+tags: "recueil"
+date: 2021-10-11
+description: "Les 240 règles de la qualité Web selon Opquast"
+---
+{% import "macro/contenu.njk" as macro %}
+
+{{ macro.h2("La checklist opquast, en bref") }}
+
+<blockquote class="mb-xl">
+    <p>La présente checklist se compose de 240 règles. Chacune d’entre elle est discutée de manière
+        communautaire. La checklist est diffusée sous licence ouverte. Chaque règle contribue à
+        produire mieux et plus vite de meilleurs sites et applications web.</p>
+    <cite>
+        <a href="https://checklists.opquast.com/fr/assurance-qualite-web/" target="_blank">Opquast</a>
+    </cite>
+</blockquote>
+
+{{ macro.h2("Vérification pour ce site","","Règles 2020 – Version : 4.0") }}
+<p class="mb-s">Règles 2020 – Version : 4.0</p>
+<ol class="mb-s__enfant">
+    <li>
+        Le site fournit aux utilisateurs la possibilité de connaître les nouveaux contenus ou
+        services.
+        {{ macro.verifOpquast() }}
+        <a href="/recueil/journal-de-bord-ptl9/">Journal de bord</a>
+    </li>
+    <li>
+        Les informations relatives aux droits de copie et de réutilisation sont disponibles depuis
+        toutes les pages.
+        {{ macro.verifOpquast() }}
+        <a href="/mention-legales/#licence">Licence</a>
+    </li>
+    <li>
+        Le code source de chaque page contient une métadonnée qui en décrit le contenu.
+        {{ macro.verifOpquast() }}
+        <span class="tg1-2">Utilise en une par défaut si une page n'en a pas de spécifique</span>
+    </li>
+    <li>
+        Les dates sont présentées dans des formats explicites.
+        {{ macro.verifOpquast() }}
+        <span class="tg1-2">Repasse sur toutes les pages</span>
+    </li>
+    <li>
+        La première occurrence d'une abréviation ou d'un acronyme dans le corps de chaque
+        page donne accès à sa signification.
+        {{ macro.verifOpquast() }}
+        <span class="tg1-2">Tous les jours je me bas contre l'abus d'abréviations et d'acronymes et j'en avais plein dans mon site !</span>
+    </li>
+</ol>
+<p>Reste <strong class="ts-l">135</strong> règles à vérifier !</p>

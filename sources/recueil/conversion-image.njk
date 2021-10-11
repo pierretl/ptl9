@@ -4,10 +4,14 @@ titre: "Conversion d'image automatique avec Eleventy"
 tags: "recueil"
 date: 2021-05-02
 description: "Test de génération automatique d'image en WebP en Avif"
+scriptJs: "prism.js"
+styleCss: "prism.css"
 ---
+{% import "macro/contenu.njk" as macro %}
 
-<p class="mb-l">
+<p class="mb-xl">
     Utilise le plugin <a href="https://www.11ty.dev/docs/plugins/image/" rel="external">Image d'Eleventy</a>
+    <br><br>
     <code>npm install @11ty/eleventy-img</code>
 </p>
 
@@ -15,8 +19,7 @@ description: "Test de génération automatique d'image en WebP en Avif"
 
 
 
-
-<p class="ts-l tg1-1 th-2 tw-4">Convertis une image</p>
+{{ macro.h2("Convertis une image") }}
 
 <p class="mb-s">
     Pour nommer l'image générée comme sa source j'utilise la function <code>filenameFormat</code> avec
@@ -26,8 +29,8 @@ description: "Test de génération automatique d'image en WebP en Avif"
     Dans <code>eleventy.js</code>
 </p>
 
-<div class="mb-l">
-    <pre><code>const path = require("path");
+<div class="mb-xl">
+    <pre><code class="language-javascript">const path = require("path");
 const Image = require("@11ty/eleventy-img");
 
 (async () => {
@@ -50,7 +53,10 @@ module.exports = function (eleventyConfig) {
 </div>
 
 
-<p class="ts-l tg1-1 th-2 tw-4">Convertis un dossier d'images</p>
+
+
+
+{{ macro.h2("Convertis un dossier d'images") }}
 
 <p class="mb-s">
     Installer <a href="https://www.npmjs.com/package/fast-glob" rel="external">fast-glob</a>
@@ -60,8 +66,8 @@ module.exports = function (eleventyConfig) {
     Dans <code>eleventy.js</code>
 </p>
 
-<div class="mb-l">
-    <pre><code>const path = require("path");
+<div class="mb-xl">
+    <pre><code class="language-javascript">const path = require("path");
 const Image = require("@11ty/eleventy-img");
 const fg = require('fast-glob');
 
@@ -90,14 +96,18 @@ module.exports = function (eleventyConfig) {
     console.log('images généré');
 
 };</code></pre>
-    <p class="tg1-4 pt-m">-> Pas terrible, ca relace le watch pour chaque image, <strong>à désactiver après usage</strong></p>
+
+    <p class="pt-m">&#8627; Pas terrible, ca relace le watch pour chaque image, <strong>à désactiver après usage</strong></p>
 
 </div>
 
-<p class="ts-l tg1-1 th-2 tw-4">Exemple</p>
+
+
+
+{{ macro.h2("Exemple") }}
 
 <div class="mb-s">
-<pre>&lt;img src=&quot;{{ metadata.siteUrl }}/images/mosaique/aux-delices-ahmed.jpg&quot; alt=&quot;normal&quot;&gt;
+<pre><code class="language-html">&lt;img src=&quot;{{ metadata.siteUrl }}/images/mosaique/aux-delices-ahmed.jpg&quot; alt=&quot;normal&quot;&gt;
 &lt;img src=&quot;{{ metadata.siteUrl }}/images/mosaique/auto/aux-delices-ahmed.webp&quot; alt=&quot;webp auto&quot;&gt;</code></pre>
 </div>
 

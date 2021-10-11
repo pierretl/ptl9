@@ -13,7 +13,7 @@ Intégrateur Web, Frond-End Développer, Front-End Designer, pourquoi autant d'i
 
 2. Quand nos amis du ~~numérique~~ Digital grand amateur d'anglicisme ainsi que des commerciaux et recruteurs cherchant plus un intitulé à la mode qu'autre chose, ils se sont tourné sur l'équivalent anglais &laquo;Front-End Developper&raquo;
 
-3. Sauf qu'au même moment, pléthore de techno basée sur du Javascript arrive à la mode. Pas mal de développeurs back se reconvertissent sans pour autant toucher une bille en HTML, CSS, qualité, accessibilité, SEO etc…
+3. Sauf qu'au même moment, pléthore de techno basée sur du Javascript arrive à la mode. Pas mal de développeurs back se reconvertissent sans pour autant toucher une bille en <abbr title="Hypertext Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>, qualité, accessibilité, <abbr title="Search Engine Optimization">SEO</abbr> etc…
 
 En 2015 déjà [Marie Guillaumet](https://marieguillaumet.com/les-mots-qui-fachent-2-integrateur-web-vs-developpeur-front-end/) et [STPo](https://www.stpo.fr/blog/je-ne-suis-pas-developpeur/) ouvraient le débat dans le métier francophone sur cette dénomination foireuse, suivi en 2017 par [Julie Moyat](https://www.lalutineduweb.fr/je-suis-integrateur-web/) pour cité que ces trois la.
 De nos jours en parcourant les profils Twitter de nombreux professionnel, c'est la véritable foire à la saucisse de l'intitulé 😅

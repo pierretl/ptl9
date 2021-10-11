@@ -29,6 +29,7 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 * Repasse microtypographie
 * Date en français et en toutes lettres sur la page exhaustive des [recueils](/recueil/)
 * Ajout d'une page [mentions légales](/mention-legales/)
+* Passage en revus de la [Checklist qualité Web](/recueil/checklist-qualite-web) pour ce site
 
 
 ## 03 octobre 2021
@@ -67,7 +68,7 @@ Personnalisation des couleurs sur une base [monokai](http://www.monokai.nl/)
 [Refonte styleguide](/recueil/styleguide/) + ajout recherche
 
 ## 29 aout 2021
-* Correction duplication de contenu dans le flux RSS
+* Correction duplication de contenu dans le <abbr title="really simple syndication">RSS</abbr>
 * Premier jet de design de [pagination](/recueil/styleguide/#pagination) pour la recherche
 * Ajout de la [recherche](/recherche/) et de la functionnalité sur la [page 404](/404.html)
 * Ajout de la taille des images sur la mosaïque pour améliorer les perf
