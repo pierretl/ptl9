@@ -26,7 +26,7 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
 
 ## 11 octobre 2021
 * Repasse microtypographie
-* Date en français et en toutes lettres sur la page exhausitive des [recueils](/recueil/)
+* Date en français et en toutes lettres sur la page exhaustive des [recueils](/recueil/)
 
 ## 03 octobre 2021
 * Ajout de la [palette de couleur](/recueil/styleguide/#palette-de-couleur) au styleguide
