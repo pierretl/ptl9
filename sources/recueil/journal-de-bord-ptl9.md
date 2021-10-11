@@ -24,6 +24,9 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
     * Conversion en format "webP" et "avif"
 * Tag
 
+## 12 octobre 2021
+* Correction du lien du footer
+
 
 ## 11 octobre 2021
 * Repasse microtypographie
