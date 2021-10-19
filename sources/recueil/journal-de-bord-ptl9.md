@@ -24,6 +24,9 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
     * Conversion en format "webP" et "avif"
 * Tag
 
+## 19 octobre 2021
+* Mise en place du re-design de mon avatar en guise de [logo](/realisations/site-perso/#logo-2021)
+
 ## 12 octobre 2021
 * Correction du lien du footer
 

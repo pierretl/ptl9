@@ -80,9 +80,17 @@ description: "Évolution de mon site personnel de 2007 à nos jours"
     </li>
     <li>
         <figure role="figure" aria-label="2020">
-            <img src="{{ metadata.siteUrl }}/images/site-perso/logo/logo-v8.png" height="98px" alt="" loading="lazy" />
+            <img src="{{ metadata.siteUrl }}/images/site-perso/logo/logo-v8.svg" height="98px" alt="" loading="lazy" />
             <figcaption>
                 2020
+            </figcaption>
+        </figure>
+    </li>
+    <li>
+        <figure role="figure" aria-label="2021">
+            <img src="{{ metadata.siteUrl }}/images/site-perso/logo/logo-v9.svg" height="98px" alt="" loading="lazy" />
+            <figcaption>
+                2021
             </figcaption>
         </figure>
     </li>
@@ -114,12 +122,23 @@ description: "Évolution de mon site personnel de 2007 à nos jours"
     En 2015, je trouverais un juste milieu entre les couleurs flashy du début et la version pâle.
     Depuis 2020, le logo proposera un contour moins régulier, fait main, pour symboliser l'artisanat
 </p>
-<p class="mb-xl">
-    Une réflexion est en cours pour la prochaine ; <br>
-    Une version filaire et monochrome <br>
-    ou <br>
-    Un resign total, basé sur l'avatar que j'utilise actuellement partout : <br> <img width="100px" src="{{ metadata.siteUrl }}/images/avatar.png" alt="" loading="lazy" />
+<p class="mb-s" id="logo-2021">
+    Depuis 2021, un resign total, basé sur l'avatar que j'utilise actuellement partout&nbsp;:<br>
 </p>
+<div class="d-flex mr-m__enfant mb-xl">
+    <figure aria-label="Précédent avatar">
+        <img width="100px" src="{{ metadata.siteUrl }}/images/avatar.png" alt="" loading="lazy" />
+        <figcaption>Précédent avatar</figcaption>
+    </figure>
+    <figure aria-label="Re-design">
+        <img width="100px" src="{{ metadata.siteUrl }}/images/site-perso/logo/logo-v9-carre.svg" alt="" loading="lazy" />
+        <figcaption>Re-design</figcaption>
+    </figure>
+    <figure aria-label="Monochrome">
+        <img width="100px" src="{{ metadata.siteUrl }}/images/site-perso/logo/logo-v9-monochrome.svg" alt="" loading="lazy" />
+        <figcaption>Monochrome</figcaption>
+    </figure>
+</div>
 
 
 
@@ -616,6 +635,8 @@ description: "Évolution de mon site personnel de 2007 à nos jours"
     <p class="mb-xs"><strong>Design</strong></p>
     <ul>
         <li>Design minimaliste</li>
+        <li><a href="/realisations/logo-v8-ascii/">Logo v8 en ASCII</a></li>
+        <li>Re-design de mon avatar en guise de <a href="#logo-2021">logo</a></li>
     </ul>
 {% endset %}
 {{ macro.version_ptl("2021 : Générateur site statique", "Version 9", "21 juin 2021", col1, col2) }}

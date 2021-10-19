@@ -1,0 +1,65 @@
+---
+layout: layout/standard.njk
+titre: "Logo v8 en ASCII"
+tags: "site-perso"
+date: 2020-10-19
+description: "Déclinaison du logo en version 8, facon art ASCII"
+exclureRss: "true"
+---
+
+<style>
+    :root {
+        --ascii1: #ed5565;
+        --ascii2: #ffce54;
+        --ascii3: #97c671;
+        --ascii4: #ffffff;
+        --ascii5: #a4e9e9;
+        --ascii6: #4fc1e9;
+    }
+    [data-mode="light"] {
+        --ascii1: #636363;
+        --ascii2: #5A5A5A;
+        --ascii3: #5E5E5E;
+        --ascii4: #070707;
+        --ascii5: #686868;
+        --ascii6: #676767;
+    }
+
+    .ascii {
+        font-family: monospace;
+        font-size: 11px;
+        line-height: normal;
+        padding: 20px 0;
+    }
+
+    .ascii__lien {
+        text-decoration: none;
+    }
+
+    .ascii__lien:hover span,
+    .ascii__lien:focus span {
+        color: var(--gamme1__texte1);
+    }
+
+    .ascii__couleur-1 { color: var(--ascii1)}
+    .ascii__couleur-2 { color: var(--ascii2)}
+    .ascii__couleur-3 { color: var(--ascii3)}
+    .ascii__couleur-4 { color: var(--ascii4)}
+    .ascii__couleur-5 { color: var(--ascii5)}
+    .ascii__couleur-6 { color: var(--ascii6)}
+</style>
+
+
+<blockquote class="mb-l">
+    <p>L’art <abbr title="American Standard Code for Information Interchange">ASCII</abbr> consiste à réaliser des images uniquement à l'aide des lettres et caractères spéciaux contenus dans le code
+        <a href="https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange" target="_blank">ASCII</a>.</p>
+    <cite>Wikipedia</cite>
+</blockquote>
+
+
+<p class="mb-l">
+    Initialement conçus pour habiller le lien de retour à la page d'accueil sur la page 404 du site
+</p>
+
+{% include "include/logo-ascii.njk" %}
+
