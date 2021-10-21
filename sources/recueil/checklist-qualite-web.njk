@@ -2,7 +2,7 @@
 layout: layout/standard.njk
 titre: "Checklist qualité Web"
 tags: "recueil"
-date: 2021-10-11
+date: 2021-10-21
 description: "Les 240 règles de la qualité Web selon Opquast"
 ---
 {% import "macro/contenu.njk" as macro %}
@@ -51,6 +51,92 @@ description: "Les 240 règles de la qualité Web selon Opquast"
         {{ macro.verifOpquast() }}
         <span class="tg1-2">Tous les jours je me bas contre l'abus d'abréviations et d'acronymes et j'en avais plein dans mon site !</span>
     </li>
+    <li>
+        La date de publication des contenus qui le nécessitent est indiquée
+        {{ macro.verifOpquast() }}
+        <span class="tg1-2">Ajout de la date des réalisations et recueils sous le titre de page</span>
+    </li>
+    <li>
+        Un lexique ou un glossaire adapté au public visé explique le vocabulaire sectoriel ou
+        technique.
+        {{ macro.verifOpquastNA() }}
+    </li>
+    <li>
+        Les contenus publicitaires ou sponsorisés sont identifiés comme tels.
+        {{ macro.verifOpquast() }}
+        <span class="tg1-2">Ni de pub, ni sponso ici</span>
+    </li>
+    <li>
+        Les conditions de modération des espaces publics sont indiquées.
+        {{ macro.verifOpquastNA() }}
+    </li>
+    <li>
+        Les contenus ou fichiers destinés à des espaces publics peuvent être vérifiés avant leur
+        envoi définitif.
+        {{ macro.verifOpquastNA() }}
+    </li>
+    <li>
+        Les espaces publics proposent au moins un moyen de signaler les abus.
+        {{ macro.verifOpquastNA() }}
+    </li>
+    <li>
+        Chaque graphique est accompagné de ses données numériques
+        {{ macro.verifOpquastNA() }}
+    </li>
+    <li>
+        La page des résultats de recherche indique le nombre de résultats, le nombre de pages
+        de résultats, et le nombre de résultats par page.
+        {{ macro.verifOpquast() }}
+        <span class="tg1-2">Fait</span>
+    </li>
 </ol>
 
-<p>Reste <strong class="ts-l">135</strong> règles à vérifier !</p>
+{{ macro.h3("Données personnelles") }}
+<ol class="mb-s__enfant mb-l" start="14">
+    <li>
+        La politique de confidentialité et de respect de la vie privée est disponible depuis toutes
+        les pages.
+        {{ macro.verifOpquast() }}
+        <span class="tg1-2">Deja dans le footer !</span>
+    </li>
+    <li>
+        La procédure d'accès et de rectification des données personnelles est décrite.
+        {{ macro.verifOpquastNA() }}
+    </li>
+    <li>
+        La création de compte est possible sans recours à un système d'identification tiers.
+        {{ macro.verifOpquastNA() }}
+    </li>
+    <li>
+        La création d'un compte est soumise à un processus de confirmation.
+        {{ macro.verifOpquastNA() }}
+    </li>
+    <li>
+        Le site propose un mécanisme de prévention des usurpations de compte ou d'identité
+        {{ macro.verifOpquastNA() }}
+    </li>
+    <li>
+        Les comptes ou abonnements ouverts en ligne peuvent être fermés par le même moyen.
+        {{ macro.verifOpquastNA() }}
+    </li>
+    <li>
+        Si le site propose un espace personnel ou abonné, il est possible de sauvegarder les
+        contenus personnels.
+        {{ macro.verifOpquastNA() }}
+    </li>
+    <li>
+        La connexion à tous les services proposés est possible avec les mêmes identifiants
+        {{ macro.verifOpquastNA() }}
+    </li>
+    <li>
+        Il est possible de se déconnecter des espaces privés.
+        {{ macro.verifOpquastNA() }}
+    </li>
+    <li>
+        Le site accepte les alias mail contenant le signe +
+        {{ macro.verifOpquast() }}
+        <span class="tg1-2">Pas de problème sur le formulaire de contact</span>
+    </li>
+</ol>
+
+<p>Reste <strong class="ts-l">216</strong> règles à vérifier !</p>

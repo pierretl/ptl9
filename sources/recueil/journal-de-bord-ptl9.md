@@ -3,7 +3,7 @@ layout: layout/standard.njk
 titre: "Journal de bord"
 tags: "recueil"
 markdown: "true"
-date: Last Modified
+date: 2021-10-21
 description: "Détails sur l'évolution de la nouvelle version de mon site personnel"
 ---
 
@@ -23,6 +23,10 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
     * Réduction des images à partir d'image retina
     * Conversion en format "webP" et "avif"
 * Tag
+
+## 21 octobre 2021
+* Passage en revus des règles 6 à 24 de la [Checklist qualité Web](/recueil/checklist-qualite-web)
+* Debug de l'affichage des messages de la recherche
 
 ## 19 octobre 2021
 * Mise en place du re-design de mon avatar en guise de [logo](/realisations/site-perso/#logo-2021)

@@ -1,21 +1,23 @@
 <div id="rechercheSite"{% if masqueDonnesRecherche %}  class="w-70"{% endif %}>
-    <div class="mb-m">
-        <div class="pr {% if masqueDonnesRecherche %}w-100{% else %}w-50{% endif %}">
-            <input type="search" class="search js--rechercheBtn" placeholder="Que recherchez-vous ?" />
-            <svg class="pa-cr fill--mode" width="24px" height="24px">
-                <use xlink:href="#loupe"></use>
-            </svg>
-        </div>
-        <p class="js--rechercheMessageKo hide tg1-4 pt-m">
-            Il n'y a pas de résultat pour cette recherche
-        </p>
+
+    <div class="pr {% if masqueDonnesRecherche %}w-100{% else %}w-50{% endif %}">
+        <input type="search" class="search js--rechercheBtn" placeholder="Que recherchez-vous ?" />
+        <svg class="pa-cr fill--mode" width="24px" height="24px">
+            <use xlink:href="#loupe"></use>
+        </svg>
     </div>
+    <p class="js--rechercheMessageKo hide tg1-4 pt-m">
+        Il n'y a pas de résultat pour cette recherche
+    </p>
+    <p class="js--rechercheMessageOk tg1-4 pt-m{% if masqueDonnesRecherche %} hide{% endif %}">
+        <span class="js--nombreResultat"></span> résultats de recherche (<span class="js--nombreResultatPage"></span> résultats par page - <span class="js--nombrePage"></span> pages)
+    </p>
 
 
     <div class="{% if masqueDonnesRecherche %}hide js--rechercheHide {% endif %}js--rechercheDonnees">
 
         <!-- ne pas retiré class="list" c'est pour le script list.min.js -->
-        <ul class="list ul-reset js--rechercheResultat">
+        <ul class="list ul-reset js--rechercheResultat pt-m">
             {% for all in collections.all | reverse %}
                 {% if all.data.brouillon or all.data.exclureRss %}
                 {% else %}
@@ -77,7 +79,7 @@
         }],
 
     };
-    var userList = new List('rechercheSite', options);
+    var recherche = new List('rechercheSite', options);
 
 
     // affichage erreur et données
@@ -85,22 +87,44 @@
     var rechercheDonnees = document.querySelector('.js--rechercheDonnees');
     var rechercheResultat = document.querySelector('.js--rechercheResultat');
     var rechercheMessageKo = document.querySelector('.js--rechercheMessageKo');
+    var rechercheMessageOk = document.querySelector('.js--rechercheMessageOk');
+    var nombreResultat = document.querySelector('.js--nombreResultat');
+    var nombreResultatPage = document.querySelector('.js--nombreResultatPage');
+    var nombrePage = document.querySelector('.js--nombrePage');
+
+    majNombreResultat();
 
     rechercheBtn.onkeyup = function() {
 
         // affiche les résultats si le champ de saisi est renseigné
         if (this.value === '' && rechercheDonnees.classList.contains("js--rechercheHide")) {
             rechercheDonnees.classList.add('hide');
+            rechercheMessageOk.classList.add('hide');
         } else {
             rechercheDonnees.classList.remove('hide');
+            rechercheMessageOk.classList.remove('hide');
         }
 
         //Affiche un message pas de résultat
-        if (rechercheResultat.innerHTML === '') {
-            rechercheMessageKo.classList.remove('hide');
-        } else {
-            rechercheMessageKo.classList.add('hide');
-        }
+        setTimeout(message, 500);
 
     };
+
+    function message(){
+        if (rechercheResultat.innerHTML === '') {
+            rechercheMessageKo.classList.remove('hide');
+            rechercheMessageOk.classList.add('hide');
+        } else {
+            rechercheMessageKo.classList.add('hide');
+            rechercheMessageOk.classList.remove('hide');
+        }
+        majNombreResultat();
+    }
+
+    function majNombreResultat(){
+        nombreResultat.innerHTML = recherche.matchingItems.length;
+        nombreResultatPage.innerHTML = recherche.page;
+        nombrePage.innerHTML = Math.ceil(recherche.matchingItems.length / recherche.page);
+    }
+
 </script>
