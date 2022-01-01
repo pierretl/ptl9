@@ -1,0 +1,81 @@
+---
+layout: layout/standard.njk
+titre: "Recevoir les email du domaine OVH Cloud avec un hébergement Netlify ?"
+tags: "recueil"
+date: 2022-01-01
+description: "Tutoriel : Configuration des DNS, champ MX"
+---
+{% import "macro/contenu.njk" as macro %}
+
+{{ macro.h2("Connaître la configuration MX d’OVH") }}
+
+<p class="mb-m">
+  Selon la <a href="https://docs.ovh.com/fr/domains/mail-mutualise-guide-de-configuration-mx-avec-zone-dns-ovh/#etape-2-connaitre-la-configuration-mx-dovh">documentaion d'OVH</a><br>
+  Certaines offres mails OVH ont des MX particulier
+</p>
+
+<table class="mb-xl">
+  <thead>
+  <tr>
+    <th>Domaine</th>
+    <th>TTL</th>
+    <th>Type d'enregistrement</th>
+    <th>Priorité</th>
+    <th>Cible</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><em>laisser vide</em></td>
+    <td>3600</td>
+    <td>MX</td>
+    <td>1</td>
+    <td>mx0.mail.ovh.net.</td>
+  </tr>
+  <tr>
+    <td><em>laisser vide</em></td>
+    <td>3600</td>
+    <td>MX</td>
+    <td>5</td>
+    <td>mx1.mail.ovh.net.</td>
+  </tr>
+  <tr>
+    <td><em>laisser vide</em></td>
+    <td>3600</td>
+    <td>MX</td>
+    <td>50</td>
+    <td>mx2.mail.ovh.net.</td>
+  </tr>
+  <tr>
+    <td><em>laisser vide</em></td>
+    <td>3600</td>
+    <td>MX</td>
+    <td>100</td>
+    <td>mx3.mail.ovh.net.</td>
+  </tr>
+  <tr>
+    <td><em>laisser vide</em></td>
+    <td>3600</td>
+    <td>MX</td>
+    <td>200</td>
+    <td>mx4.mail.ovh.net.</td>
+  </tr>
+  </tbody>
+</table>
+
+
+{{ macro.h2("Renseigner les DNS chez Netlify") }}
+
+<ul class="mb-m">
+  <li>Menu &laquo;Domains &raquo;</li>
+  <li>Cliquer sur votre nom de domaine </li>
+  <li>Dans la partie &laquo; DNS settings &raquo;</li>
+  <li>Bouton &laquo; MAdd new record &raquo;</li>
+  <li>Saisis les DNS trouvé précédemment</li>
+  <li>Bouton &laquo; Save &raquo;</li>
+</ul>
+
+
+<p class="mb-m">Un délai de 48h est nécessaire pour la propagation aux autres DNS</p>
+
+<p>Tutoriel rédiger d'après mon expérience personnel pour ce site web</p>
