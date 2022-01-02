@@ -2,44 +2,52 @@
 layout: layout/standard.njk
 titre: "Google Sheets as BDD"
 tags: "recueil"
-date: 2021-08-28
-description: "Test d'outils en ligne qui permet d'utiliser un google Sheets en base de données pour un site web"
+date: 2022-01-02
+description: "Test d'outils en ligne et d'un script JavaScript qui permet d'utiliser un google Sheets en base de données pour un site web"
 ---
 {% import "macro/contenu.njk" as macro %}
 
-{{ macro.sommaire(["Outils", "Test des versions gratuites"]) }}
-
-
-{{ macro.h2("Outils", "ancre") }}
-<ul class="mb-xl">
-    <li><a href="https://sheety.co/" target="_blank" rel="external">sheety.com</a></li>
-    <li><a href="https://sheetsu.com/" target="_blank" rel="external">sheetsu.com</a></li>
-    <li><a href="https://sheet2api.com" target="_blank" rel="external">sheet2api.com</a></li>
-    <li><a href="https://sheetdb.io/" target="_blank" rel="external">sheetdb.io</a></li>
-    <li><a href="https://sheet.best/" target="_blank" rel="external">sheet.best</a></li>
-</ul>
+{{ macro.sommaire(["JavaScript","Outils en ligne"]) }}
 
 
 
 
-{{ macro.h2("Test des versions gratuites", "ancre") }}
 
-{{ macro.h3("Sheety.com") }}
+
+{{ macro.h2("JavaScript", "ancre", "02 janvier 2022") }}
+
+<div class="mb-xl">
+    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="GRMxBmd" data-user="pierre_tl" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/pierre_tl/pen/GRMxBmd">
+  Google Spreadsheet as JSON data for website</a> by Pierre TL (<a href="https://codepen.io/pierre_tl">@pierre_tl</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
+
+
+
+
+
+{{ macro.h2("Outils en ligne", "ancre", "28 aout 2021") }}
+
+<a href="https://sheety.co/" target="_blank" rel="external">sheety.com</a>
 <p class="mb-l">100 lignes maximum par tableur, trop restreint donc <span class="tg1-4">éliminé</span></p>
 
 
 
-{{ macro.h3("Sheetsu.com") }}
+<a href="https://sheetsu.com/" target="_blank" rel="external">sheetsu.com</a>
 <p class="mb-l">20 lignes maximum par tableur, c'est encore pire, <span class="tg1-4">éliminé</span> aussi</p>
 
 
 
-{{ macro.h3("Sheet2api.com") }}
+<a href="https://sheet2api.com" target="_blank" rel="external">sheet2api.com</a>
 <p class="mb-l">25 lignes maximum par tableur, <span class="tg1-4">éliminé</span></p>
 
 
 
-{{ macro.h3("Sheetdb.io") }}
+<a href="https://sheetdb.io/" target="_blank" rel="external">sheetdb.io</a>
 <ul class="mb-m">
     <li>2 spreadsheets <abbr title="Application Programming Interface">API</abbr>s</li>
     <li>500 request/month</li>
@@ -57,7 +65,7 @@ description: "Test d'outils en ligne qui permet d'utiliser un google Sheets en b
 
 
 
-{{ macro.h3("Sheet.best") }}
+<a href="https://sheet.best/" target="_blank" rel="external">sheet.best</a>
 <ul class="mb-m">
     <li>3 connections</li>
     <li>500 requests/month</li>
