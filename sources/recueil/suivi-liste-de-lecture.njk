@@ -1,0 +1,76 @@
+---
+layout: layout/standard.njk
+titre: "Suivi de projet &laquo; Liste de lecture &raquo;"
+tags: "recueil"
+date: 2022-01-03
+description: "Suivi du side projet &laquo; Liste de lecture &raquo; (ex Mangathèque)"
+---
+{% import "macro/contenu.njk" as macro %}
+
+
+{{ macro.sommaire(["Introduction", "Objectif", "Inspirations", "Google Sheet as BDD"]) }}
+
+
+{{ macro.h2("Introduction") }}
+<p class="mb-xl">
+    Anciennement <a href="{{ metadata.siteUrl }}/realisations/mangatheque/">Mangathèque</a>, pour sa version sixième version j'ai envie de faire plein de changement technique et assez peu finalement d'évolution fonctionnelle
+</p>
+
+
+
+
+
+{{ macro.h2("Objectif") }}
+<ul class="mb-xl">
+    <li>Fini MySQL et PHP, on passe à des données provenant d'un Google Sheet</li>
+    <li>Redesign dans un ton plus moderne et simpliste</li>
+    <li>Wireframe sur Figma</li>
+    <li>Ajout d'un thème sombre/clair</li>
+    <li>Ajout des notions &laquo; vendu &raquo;, &laquo; lu &raquo;</li>
+    <li>Animation du logo avec Animate pour un petit effet Wahoo</li>
+    <li>Ajout d'une recherche</li>
+</ul>
+
+
+
+
+{{ macro.h2("Inspirations") }}
+<figure role="figure" aria-label="Icônes et illustrations sur le thème du Japon" class="mb-m">
+    <img src="{{ metadata.siteUrl }}/images/suivi-liste-de-lecture/inspiration-icon.png" alt="Planche d’inspiration sur le thème du Japon" loading="lazy" />
+    <figcaption>
+        Icônes et illustrations sur le thème du Japon
+    </figcaption>
+</figure>
+<p class="mb-m">
+    J'aime beaucoup l'association des couleurs : rouge, blanc, noir, gris <br>
+    et la grosse illustration du Tori et de la montagne
+</p>
+<figure role="figure" aria-label="Quelque simples interfaces " class="mb-xl">
+    <img src="{{ metadata.siteUrl }}/images/suivi-liste-de-lecture/inspiration-interface.png" alt="Planche d’inspiration d'interface colorée et minimaliste" loading="lazy" />
+    <figcaption>
+        Quelque simples interfaces
+    </figcaption>
+</figure>
+
+
+
+
+
+{{ macro.h2("Google sheet as BDD") }}
+<p class="mb-m">Google a modifié quelque chose car les méthodes pour passer un sheet en json ne fonctionnent plus, <a href="../google-sheets-database/">j'ai tenté pas mal d'outil en ligne</a> qui fait toujours le travail mais sans payer les limites sont trop facilement atteints.</p>
+<p class="mb-s">Pour arriver enfin à avoir un résultat basique en Javascript</p>
+<div class="mb-m">
+    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="GRMxBmd" data-user="pierre_tl" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/pierre_tl/pen/GRMxBmd">
+  Google Spreadsheet as JSON data for website</a> by Pierre TL (<a href="https://codepen.io/pierre_tl">@pierre_tl</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+</div>
+<p class="mb-xl">
+    C'est une première partie mais ça ne sera pas suffisant.<br>
+    La manipulation du &laquo; json &raquo; va être coton (me faudrait un dev pour faire ça correctement), donc je vais voir pour contourner le problème avec
+    <a href="https://listjs.com/" rel="external" target="_blank">listjs</a> comme je veux de toute façon l'utiliser pour la recherche.
+</p>
+
+
