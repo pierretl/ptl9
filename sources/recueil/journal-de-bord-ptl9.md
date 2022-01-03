@@ -3,7 +3,7 @@ layout: layout/standard.njk
 titre: "Journal de bord"
 tags: "recueil"
 markdown: "true"
-date: 2021-10-21
+date: 2022-01-03
 description: "Détails sur l'évolution de la nouvelle version de mon site personnel"
 ---
 
@@ -21,8 +21,11 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
     * Compression
     * Ajouter les images en webp article
     * Réduction des images à partir d'image retina
-    * Conversion en format "webP" et "avif"
+    * Conversion en format &laquo; webP &raquo; et &laquo; avif &raquo;
 * Tag
+
+## 03 janvier 2022
+* Prise en compte des caractères spéciaux dans les titres, la liste des &laquo; Recueil &raquo;, le fil d'Ariane et titre de page
 
 ## 21 octobre 2021
 * Passage en revus des règles 6 à 24 de la [Checklist qualité Web](/recueil/checklist-qualite-web)

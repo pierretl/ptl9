@@ -18,7 +18,7 @@ description: "Journal de bord, tutoriel et écrit sur mon site personnel, mes cr
                 <a href="{{ blog.url | url }}" class="tg1-1 td-0 tw-4">
 
                     <span class="ts-l th-09">
-                        {{ blog.data.titre }}
+                        {{ blog.data.titre | safe }}
                     </span>
                     <span class="ts-s tg1-2">—&nbsp;{{ blog.date | frDate | safe }}</span>
 

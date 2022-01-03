@@ -3,14 +3,14 @@
 {% if accueil %}
     {% set titrePage %}{{ metadata.siteName }}{% endset %}
 {% else %}
-    {% set titrePage %}{{titre}} - {{ metadata.siteName }}{% endset %}
+    {% set titrePage %}{{titre | safe}} - {{ metadata.siteName }}{% endset %}
 {% endif %}
 <title>{{ titrePage | safe }}</title>
 
 {% if description %}
     <meta name="description" content="{{ description | safe }}">
 {% else %}
-    <meta name="description" content="{{ metadata.description }}">
+    <meta name="description" content="{{ metadata.description | safe }}">
 {% endif %}
 
 <link rel="stylesheet" href="/style.css" />

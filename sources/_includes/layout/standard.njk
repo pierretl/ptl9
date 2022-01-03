@@ -39,10 +39,10 @@
             {% if accueil or pasDeTitre %}
             {% else %}
                 {% if date %}
-                    <h1 class="ts-xl tg1-1 tw-4">{{titre}}</h1>
+                    <h1 class="ts-xl tg1-1 tw-4">{{titre | safe }}</h1>
                     <span class="d-block tg1-2 mb-m">{{ date | frDate | safe }}</span>
                 {% else %}
-                    <h1 class="ts-xl tg1-1 tw-4 mb-m">{{titre}}</h1>
+                    <h1 class="ts-xl tg1-1 tw-4 mb-m">{{titre | safe }}</h1>
                 {% endif %}
             {% endif %}
 
