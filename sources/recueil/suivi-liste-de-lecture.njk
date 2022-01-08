@@ -2,16 +2,16 @@
 layout: layout/standard.njk
 titre: "Suivi de projet &laquo; Liste de lecture &raquo;"
 tags: "recueil"
-date: 2022-01-03
+date: 2022-01-08
 description: "Suivi du side projet &laquo; Liste de lecture &raquo; (ex Mangathèque)"
 ---
 {% import "macro/contenu.njk" as macro %}
 
 
-{{ macro.sommaire(["Introduction", "Objectif", "Inspirations", "Google Sheet as BDD"]) }}
+{{ macro.sommaire(["Introduction", "Objectif", "Inspirations", "Google Sheet as BDD", "Couleurs", "Wireframe", "Prototype", "Dépôt, déploiement et sous-domaine"]) }}
 
 
-{{ macro.h2("Introduction") }}
+{{ macro.h2("Introduction", "ancre") }}
 <p class="mb-xl">
     Anciennement <a href="{{ metadata.siteUrl }}/realisations/mangatheque/">Mangathèque</a>, pour sa version sixième version j'ai envie de faire plein de changement technique et assez peu finalement d'évolution fonctionnelle
 </p>
@@ -20,11 +20,11 @@ description: "Suivi du side projet &laquo; Liste de lecture &raquo; (ex Mangath�
 
 
 
-{{ macro.h2("Objectif") }}
+{{ macro.h2("Objectif", "ancre") }}
 <ul class="mb-xl">
-    <li>Fini MySQL et PHP, on passe à des données provenant d'un Google Sheet</li>
-    <li>Redesign dans un ton plus moderne et simpliste</li>
-    <li>Wireframe sur Figma</li>
+    <li>Fini MySQL et PHP, on passe à des données provenant d'un <a class="lien-niveau2" href="#google-sheet-as-bdd">Google Sheet</a></li>
+    <li>Redesign dans un ton plus moderne et simpliste, voir les <a class="lien-niveau2" href="#inspirations">inspirations</a></li></li>
+    <li><a class="lien-niveau2" href="#wireframe">Wireframe</a> sur Figma</li>
     <li>Ajout d'un thème sombre/clair</li>
     <li>Ajout des notions &laquo; vendu &raquo;, &laquo; lu &raquo;</li>
     <li>Animation du logo avec Animate pour un petit effet Wahoo</li>
@@ -34,7 +34,7 @@ description: "Suivi du side projet &laquo; Liste de lecture &raquo; (ex Mangath�
 
 
 
-{{ macro.h2("Inspirations") }}
+{{ macro.h2("Inspirations", "ancre") }}
 <figure role="figure" aria-label="Icônes et illustrations sur le thème du Japon" class="mb-m">
     <img src="{{ metadata.siteUrl }}/images/suivi-liste-de-lecture/inspiration-icon.png" alt="Planche d’inspiration sur le thème du Japon" loading="lazy" />
     <figcaption>
@@ -56,14 +56,14 @@ description: "Suivi du side projet &laquo; Liste de lecture &raquo; (ex Mangath�
 
 
 
-{{ macro.h2("Google sheet as BDD") }}
+{{ macro.h2("Google sheet as BDD", "ancre") }}
 <p class="mb-m">Google a modifié quelque chose car les méthodes pour passer un sheet en json ne fonctionnent plus, <a href="../google-sheets-database/">j'ai tenté pas mal d'outil en ligne</a> qui fait toujours le travail mais sans payer les limites sont trop facilement atteints.</p>
 <p class="mb-s">Pour arriver enfin à avoir un résultat basique en Javascript</p>
 <div class="mb-m">
     <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="GRMxBmd" data-user="pierre_tl" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/pierre_tl/pen/GRMxBmd">
+  <span>See the Pen <a target="_blank" rel="external" href="https://codepen.io/pierre_tl/pen/GRMxBmd">
   Google Spreadsheet as JSON data for website</a> by Pierre TL (<a href="https://codepen.io/pierre_tl">@pierre_tl</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
+  on <a target="_blank" rel="external" href="https://codepen.io">CodePen</a>.</span>
     </p>
     <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 </div>
@@ -72,5 +72,47 @@ description: "Suivi du side projet &laquo; Liste de lecture &raquo; (ex Mangath�
     La manipulation du &laquo; json &raquo; va être coton (me faudrait un dev pour faire ça correctement), donc je vais voir pour contourner le problème avec
     <a href="https://listjs.com/" rel="external" target="_blank">listjs</a> comme je veux de toute façon l'utiliser pour la recherche.
 </p>
+
+
+
+
+
+{{ macro.h2("Couleurs", "ancre") }}
+<figure role="figure" aria-label="Wireframe sommaire et couleur accessible" class="mb-xl">
+    <img src="{{ metadata.siteUrl }}/images/suivi-liste-de-lecture/recherche-couleurs.png" alt="Expérimentation de palette de couleurs" loading="lazy" />
+    <figcaption>
+        Wireframe sommaire et couleur accessible
+    </figcaption>
+</figure>
+
+
+
+
+{{ macro.h2("Wireframe", "ancre") }}
+<iframe class="mb-xl" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FnSNkfj69uji0H4e2W8NmGt%2FListe-de-lecture%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
+
+
+
+
+{{ macro.h2("Prototype", "ancre", "5 janvier 2022") }}
+<div class="mb-xl">
+    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="MWEGGrJ" data-user="pierre_tl" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a target="_blank" rel="external" href="https://codepen.io/pierre_tl/pen/MWEGGrJ">
+  Liste de lecture - WIP</a> by Pierre TL (<a target="_blank" rel="external" href="https://codepen.io/pierre_tl">@pierre_tl</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
+
+
+
+{{ macro.h2("Dépôt, déploiement et sous-domaine", "ancre", "8 janvier 2022") }}
+<ul>
+    <li>Dépot : <a target="_blank" rel="external" href="https://github.com/pierretl/liste-de-lecture">https://github.com/pierretl/liste-de-lecture</a></li>
+    <li>Déploiement : chez Netlify, <a target="_blank" rel="external" href="https://liste-de-lecture.netlify.app/">https://liste-de-lecture.netlify.app</a></li>
+    <li>Sous-domaine : Via Netlify également : <a target="_blank" rel="external" href="https://lecture.pierre.tl/">https://lecture.pierre.tl</a></li>
+</ul>
+
 
 
