@@ -3,7 +3,7 @@ layout: layout/standard.njk
 titre: "Journal de bord"
 tags: "recueil"
 markdown: "true"
-date: 2022-01-03
+date: 2022-01-11
 description: "Détails sur l'évolution de la nouvelle version de mon site personnel"
 ---
 
@@ -23,6 +23,10 @@ Ce qui ma pousser à faire une nouvelle version, c'est le [résultat](/recueil/p
     * Réduction des images à partir d'image retina
     * Conversion en format &laquo; webP &raquo; et &laquo; avif &raquo;
 * Tag
+
+## 11 jnavier 2022
+* Mise à jour des informations de licence et d'auteur sur package.json du site
+* Passage du suivi de l'avancement du projet  &laquo; [Liste de lecture](/recueil/suivi-liste-de-lecture/) &raquo; directement sur le domaine dédié : [lecture.pierre.tl](https://lecture.pierre.tl)
 
 ## 03 janvier 2022
 * Prise en compte des caractères spéciaux dans les titres, la liste des &laquo; Recueil &raquo;, le fil d'Ariane et titre de page

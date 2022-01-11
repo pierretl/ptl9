@@ -2,7 +2,7 @@
 layout: layout/standard.njk
 titre: "Mangathèque"
 tags: "realisations"
-date: 2013-12-17
+date: 2022-01-11
 scriptJs: "horizontal-scroll.js"
 mosaiqueImage: "mangatheque"
 mosaiqueImageExtension: ".jpg"
@@ -10,16 +10,19 @@ description: "Évolution de ma liste de lecture de manga en ligne"
 ---
 {% import "macro/contenu.njk" as macro %}
 
-<p class="mb-l">
+<p class="mb-s">
     Ma collection de Manga grandissant sans cesse. <br>
     Il me venait difficile de suivre à quel tome de quelle série j'en étais. <br>
     Mon system de liste dans un carnet était à bout de souffle <br>
-    J'ai donc entrepris de faire un mini-site &laquo;<a href="http://pierre.tl.free.fr/site/mangatheque/">Mangathèque</a>&raquo; à la place
+    J'ai donc entrepris de faire un mini-site &laquo;<a target="_blank" rel="external" href="http://pierre.tl.free.fr/site/mangatheque/">Mangathèque</a>&raquo; à la place
+</p>
+<p class="mb-m">
+    Qui évolue en 2022 en &laquo;<a target="_blank" rel="external" href="https:lecture.pierre.tl">Liste de lecture</a>&raquo;
 </p>
 
 
 
-{{ macro.sommaire(["Évolution du design", "2008 : Style Apple", "2009 : Version 2", "2010 : Version 3", "2011 : Version 4", "2013 : Version 5"]) }}
+{{ macro.sommaire(["Évolution du design", "2008 : Style Apple", "2009 : Version 2", "2010 : Version 3", "2011 : Version 4", "2013 : Version 5", "2022 : Liste de lecture"]) }}
 
 
 
@@ -226,7 +229,7 @@ description: "Évolution de ma liste de lecture de manga en ligne"
 
 
 {{ macro.h2("2013 : Version 5", "ancre") }}
-<div class="d-flex">
+<div class="d-flex mb-xl">
     <div class="w-50">
         <img src="{{ metadata.siteUrl }}/images/mangatheque/mangatheque-v5.png" alt="" loading="lazy" />
     </div>
@@ -246,3 +249,29 @@ description: "Évolution de ma liste de lecture de manga en ligne"
         </ul>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+{{ macro.h2("2022 : Liste de lecture", "ancre") }}
+<p class="mb-s">Nouvelle version en cours de création avec une approche plus hétéroclite ;<br>
+    Manga, Comics, Roman, Bande Dessinée etc...</p>
+<ul>
+    <li>
+        Suivi de projet : « <a href="{{ metadata.siteUrl }}/recueil/suivi-liste-de-lecture/">Liste de lecture</a> »
+    </li>
+    <li>
+        Code source : <a target="_blank" rel="external" href="https://github.com/pierretl/liste-de-lecture">https://github.com/pierretl/liste-de-lecture</a>
+    </li>
+    <li>
+        Prototype : <a target="_blank" rel="external" href="https://lecture.pierre.tl">lecture.pierre.tl</a>
+    </li>
+</ul>
+
