@@ -1,12 +1,12 @@
 ---
 layout: layout/standard.njk
-titre: "Mangathèque"
+titre: "Liste de lecture"
 tags: "realisations"
-date: 2022-01-11
+date: 2022-02-05
 scriptJs: "horizontal-scroll.js"
-mosaiqueImage: "mangatheque"
-mosaiqueImageExtension: ".jpg"
-description: "Évolution de ma liste de lecture de manga en ligne"
+mosaiqueImage: "liste-de-lecture"
+mosaiqueImageExtension: ".svg"
+description: "Évolution de ma liste de lecture en ligne"
 ---
 {% import "macro/contenu.njk" as macro %}
 
@@ -14,15 +14,15 @@ description: "Évolution de ma liste de lecture de manga en ligne"
     Ma collection de Manga grandissant sans cesse. <br>
     Il me venait difficile de suivre à quel tome de quelle série j'en étais. <br>
     Mon system de liste dans un carnet était à bout de souffle <br>
-    J'ai donc entrepris de faire un mini-site &laquo;<a target="_blank" rel="external" href="http://pierre.tl.free.fr/site/mangatheque/">Mangathèque</a>&raquo; à la place
+    J'ai donc entrepris de faire un mini-site <a target="_blank" rel="external" href="https://lecture.pierre.tl">Liste de lecture</a> à la place.
 </p>
 <p class="mb-m">
-    Qui évolue en 2022 en &laquo;<a target="_blank" rel="external" href="https://lecture.pierre.tl">Liste de lecture</a>&raquo;
+    Initialement &laquo;Mangathèque&raquo;, il se diversifie au fil des années (Comics, Roman, Bande Dessinée), même si la grande majorité des ouvrages référencer reste des mangas
 </p>
 
 
 
-{{ macro.sommaire(["Évolution du design", "2008 : Style Apple", "2009 : Version 2", "2010 : Version 3", "2011 : Version 4", "2013 : Version 5", "2022 : Liste de lecture"]) }}
+{{ macro.sommaire(["Évolution du design", "2008 : Style Apple", "2009 : Version 2", "2010 : Version 3", "2011 : Version 4", "2013 : Version 5", "2022 : Version 6"]) }}
 
 
 
@@ -30,42 +30,49 @@ description: "Évolution de ma liste de lecture de manga en ligne"
 <ul class="ul-reset scroll-x js--scroll-x mb-xs">
     <li>
         {{ macro.figure(
-            "/images/mangatheque/liste-v1.jpg",
+            "/images/liste-de-lecture/liste-v1.jpg",
             "",
             "2008"
         ) }}
     </li>
     <li>
         {{ macro.figure(
-            "/images/mangatheque/liste-v2.jpg",
+            "/images/liste-de-lecture/liste-v2.jpg",
             "",
             "2009"
         ) }}
     </li>
     <li>
         {{ macro.figure(
-            "/images/mangatheque/liste-v3.jpg",
+            "/images/liste-de-lecture/liste-v3.jpg",
             "",
             "2010"
         ) }}
     </li>
     <li>
         {{ macro.figure(
-            "/images/mangatheque/liste-v4.jpg",
+            "/images/liste-de-lecture/liste-v4.jpg",
             "",
             "2011"
         ) }}
     </li>
     <li>
         {{ macro.figure(
-            "/images/mangatheque/liste-v5.jpg",
+            "/images/liste-de-lecture/liste-v5.jpg",
             "",
             "2013"
         ) }}
     </li>
+    <li>
+        {{ macro.figure(
+            "/images/liste-de-lecture/liste-v6.png",
+            "",
+            "2022"
+        ) }}
+    </li>
 </ul>
 <p class="tg1-2 mb-l">
-    <em>Listage des mangas</em>
+    <em>Listage des lectures</ins></em>
 </p>
 
 
@@ -74,37 +81,44 @@ description: "Évolution de ma liste de lecture de manga en ligne"
 <ul class="ul-reset scroll-x js--scroll-x mb-xs">
     <li>
         {{ macro.figure(
-            "/images/mangatheque/option-v1.jpg",
+            "/images/liste-de-lecture/option-v1.jpg",
             "",
             "2008"
         ) }}
     </li>
     <li>
         {{ macro.figure(
-            "/images/mangatheque/option-v2.jpg",
+            "/images/liste-de-lecture/option-v2.jpg",
             "",
             "2009"
         ) }}
     </li>
     <li>
         {{ macro.figure(
-            "/images/mangatheque/option-v3.jpg",
+            "/images/liste-de-lecture/option-v3.jpg",
             "",
             "2010"
         ) }}
     </li>
     <li>
         {{ macro.figure(
-            "/images/mangatheque/option-v4.jpg",
+            "/images/liste-de-lecture/option-v4.jpg",
             "",
             "2011"
         ) }}
     </li>
     <li>
         {{ macro.figure(
-            "/images/mangatheque/option-v5.jpg",
+            "/images/liste-de-lecture/option-v5.jpg",
             "",
             "2013"
+        ) }}
+    </li>
+    <li>
+        {{ macro.figure(
+            "/images/liste-de-lecture/option-v6.png",
+            "",
+            "2022"
         ) }}
     </li>
 </ul>
@@ -125,7 +139,7 @@ description: "Évolution de ma liste de lecture de manga en ligne"
 {{ macro.h2("2008 : Style Apple", "ancre") }}
 <div class="d-flex mb-xl">
     <div class="w-50">
-        <img src="{{ metadata.siteUrl }}/images/mangatheque/mangatheque-v1.png" alt="" loading="lazy" />
+        <img src="{{ metadata.siteUrl }}/images/liste-de-lecture/mangatheque-v1.png" alt="" loading="lazy" />
     </div>
     <div class="w-50">
         <ul>
@@ -149,12 +163,12 @@ description: "Évolution de ma liste de lecture de manga en ligne"
 {{ macro.h2("2009 : Version 2", "ancre") }}
 <div class="d-flex mb-xl">
     <div class="w-50">
-        <img src="{{ metadata.siteUrl }}/images/mangatheque/mangatheque-v2.png" alt="" loading="lazy" />
+        <img src="{{ metadata.siteUrl }}/images/liste-de-lecture/mangatheque-v2.png" alt="" loading="lazy" />
     </div>
     <div class="w-50">
         <ul>
             <li>Design plus chaleureux rappelant un château japonnais</li>
-            <li>Ajout d’un favicon pour les navigateur web : <img src="{{ metadata.siteUrl }}/images/mangatheque/favicon-v2.png" alt="" loading="lazy" />
+            <li>Ajout d’un favicon pour les navigateur web : <img src="{{ metadata.siteUrl }}/images/liste-de-lecture/favicon-v2.png" alt="" loading="lazy" />
             <li>Ajout du choix d’affichage séries abandonnées et du classement par préférence (notation sur 6)</li>
             <li>Une seconde version ajoutera un abécédaire au debut de chaque lettre en guise d’intercalaire et un lien vers la page otions</li>
         </ul>
@@ -174,7 +188,7 @@ description: "Évolution de ma liste de lecture de manga en ligne"
 {{ macro.h2("2010 : Version 3", "ancre") }}
 <div class="d-flex mb-xl">
     <div class="w-50">
-        <img src="{{ metadata.siteUrl }}/images/mangatheque/mangatheque-v3.png" alt="" loading="lazy" />
+        <img src="{{ metadata.siteUrl }}/images/liste-de-lecture/mangatheque-v3.png" alt="" loading="lazy" />
     </div>
     <div class="w-50">
         <ul>
@@ -199,7 +213,7 @@ description: "Évolution de ma liste de lecture de manga en ligne"
 {{ macro.h2("2011 : Version 4", "ancre") }}
 <div class="d-flex mb-xl">
     <div class="w-50">
-        <img src="{{ metadata.siteUrl }}/images/mangatheque/mangatheque-v4.png" alt="" loading="lazy" />
+        <img src="{{ metadata.siteUrl }}/images/liste-de-lecture/mangatheque-v4.png" alt="" loading="lazy" />
     </div>
     <div class="w-50">
         <ul>
@@ -209,7 +223,7 @@ description: "Évolution de ma liste de lecture de manga en ligne"
             <li>La notation passe à une note sur 10, avec de nouveaux smiley pour les représenter</li>
             <li>
                 Ajout d’une icon iPhone personnalisé<br>
-                <img src="{{ metadata.siteUrl }}/images/mangatheque/v4-icon-iphone.png" alt="" loading="lazy" />
+                <img src="{{ metadata.siteUrl }}/images/liste-de-lecture/v4-icon-iphone.png" alt="" loading="lazy" />
             </li>
             <li>Ajout d’un system accordéon qui affiche des informations supplémentaires (auteur, éditeur, résumé et avis si renseigné.) Selon le type d’affichage en cours. L’index étant toujours la liste des mangas en cours les seules informations supplémentaires sont l’auteur et l’éditeur pour ne pas alourdir la page. Sur celle qui affiche tous les mangas, toutes les informations suplémentaires apparaissent.</li>
             <li>Fusion de la page Option et Identification</li>
@@ -231,7 +245,7 @@ description: "Évolution de ma liste de lecture de manga en ligne"
 {{ macro.h2("2013 : Version 5", "ancre") }}
 <div class="d-flex mb-xl">
     <div class="w-50">
-        <img src="{{ metadata.siteUrl }}/images/mangatheque/mangatheque-v5.png" alt="" loading="lazy" />
+        <img src="{{ metadata.siteUrl }}/images/liste-de-lecture/mangatheque-v5.png" alt="" loading="lazy" />
     </div>
     <div class="w-50">
         <ul>
@@ -240,9 +254,9 @@ description: "Évolution de ma liste de lecture de manga en ligne"
             <li>Image adapter au écran classique et Retina/<abbr title="High Density">HD</abbr></li>
             <li>
                 Ajout des icons mobile (iphone, windows phone, android ) personnalisé <br>
-                <img src="{{ metadata.siteUrl }}/images/mangatheque/v5-icon-iphone.png" alt="" loading="lazy" />
+                <img src="{{ metadata.siteUrl }}/images/liste-de-lecture/v5-icon-iphone.png" alt="" loading="lazy" />
             </li>
-            <li>Favicon : <img src="{{ metadata.siteUrl }}/images/mangatheque/favicon-v5.png" alt="" loading="lazy" /></li>
+            <li>Favicon : <img src="{{ metadata.siteUrl }}/images/liste-de-lecture/favicon-v5.png" alt="" loading="lazy" /></li>
             <li>Suppression de l’accordéon d’information supplémentaire qui était peu utile et qui alourdissez le site</li>
             <li>Fusion de la page Option/Identification et de la liste</li>
             <li>Utilisation de la librairie Minifield, bien plus légère que jQuery</li>
@@ -260,18 +274,36 @@ description: "Évolution de ma liste de lecture de manga en ligne"
 
 
 
-{{ macro.h2("2022 : Liste de lecture", "ancre") }}
-<p class="mb-s">Nouvelle version en cours de création avec une approche plus hétéroclite ;<br>
-    Manga, Comics, Roman, Bande Dessinée etc...</p>
-<ul>
-    <li>
-        Suivi de projet : « <a href="{{ metadata.siteUrl }}/recueil/suivi-liste-de-lecture/">Liste de lecture</a> »
-    </li>
-    <li>
-        Code source : <a target="_blank" rel="external" href="https://github.com/pierretl/liste-de-lecture">https://github.com/pierretl/liste-de-lecture</a>
-    </li>
-    <li>
-        Prototype : <a target="_blank" rel="external" href="https://lecture.pierre.tl">lecture.pierre.tl</a>
-    </li>
-</ul>
+{{ macro.h2("2022 : Version 6", "ancre") }}
+<div class="d-flex mb-xl">
+    <div class="w-50">
+        <img src="{{ metadata.siteUrl }}/images/liste-de-lecture/liste-de-lecture-v6.jpg" alt="" loading="lazy" />
+    </div>
+    <div class="w-50">
+        <p class="mb-s">Nouvelle version avec une approche plus hétéroclite ;<br>
+            Manga, Comics, Roman, Bande Dessinée etc...</p>
+        <ul>
+        <ul>
+            <li>Source du projet sur <a target="_blank" rel="external" href="https://github.com/pierretl/liste-de-lecture">github</a></li>
+            <li>Thème sombre par défaut et un clair en option. La préférence est enregistrée dans le Local Storage</li>
+            <li>BDD via une feuille de calcul Google</li>
+            <li>Une animation se joue le temps du chargement des données, mais comme c'est très rapide, on pas le temps d'en profiter !</li>
+            <li>Affichage du menu via le header ou le footer</li>
+            <li>Selon la position du clic/tap, le menu s'ouvre du côté (droite/gauche) correspondant et du sens (haut/bas) de manière que le bouton fermé soit le premier accessible.
+                <br>
+                Il est possible de fermer le menu également en cliquant à l'extérieur du menu
+                <br>
+                Option qui permet d'avoir une interface et un menu avec les labels
+            </li>
+            <li>
+                Ajout des icons mobile (iphone, windows phone, android ) personnalisé <br>
+                <img src="{{ metadata.siteUrl }}/images/liste-de-lecture/v6-icon-iphone.png" alt="" loading="lazy" />
+            </li>
+            <li>Favicon : <img src="{{ metadata.siteUrl }}/images/liste-de-lecture/favicon-v6.png" alt="" loading="lazy" /></li>
+            <li>
+                Suivi de projet : « <a href="{{ metadata.siteUrl }}/recueil/suivi-liste-de-lecture/">Liste de lecture</a> »
+            </li>
+        </ul>
+    </div>
+</div>
 
