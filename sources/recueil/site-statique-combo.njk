@@ -1,0 +1,83 @@
+---
+layout: layout/standard.njk
+titre: "Site statique avec CMS"
+tags: "recueil"
+date: 2022-02-08
+description: "Tutoriel facile de mise en place d'un site statique avec un CMS"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<p class="mb-m">
+    Merci à <a href="https://github.com/danurbanowicz" rel="external" target="_blank">Dan Urbanowicz</a> pour son <a href="https://github.com/danurbanowicz/eleventy-netlify-boilerplate" rel="external" target="_blank">modèle pré-généré</a>
+</p>
+
+
+
+{{ macro.h2("Services et pre-requis") }}
+
+<p class="mb-s">
+    Il est nécessaire de créer un compte gratuit sur ces différents services
+</p>
+
+<ul class="mb-l">
+    <li><a href="https://github.com" rel="external" target="_blank">GitHub</a> : Hébergement des sources</li>
+    <li><a href="https://www.netlify.com/" rel="external" target="_blank">Netlify</a> : Déploiement</li>
+    <li>Netlify CMS : système de gestion de contenu, pas de compte a créé celui de Netlify suffit</li>
+</ul>
+
+
+{{ macro.h2("C'est partie !") }}
+
+{{ macro.h3("Production") }}
+<ol class="mb-m">
+    <li>
+        <a target="_blank" href="https://app.netlify.com/start/deploy?repository=https://github.com/danurbanowicz/eleventy-netlify-boilerplate&stack=cms" rel="external">Déploiement du site de démonstration sur netlify</a>
+    </li>
+    <li>
+        Cliquez sur le bouton &laquo;Connect to Github&raquo;
+    </li>
+    <li>
+        Renommez le &laquo;Repository name&raquo;, peut être fait plus tard dans les réglages de Github
+    </li>
+    <li>
+        Cliquez sur le bouton &laquo;Save & Deploy&raquo;
+    </li>
+    <li>
+        Le site se déploie, cela ne prend qu'une dizaine de seconde.
+        <br>
+        L'URL passe en vert quand c'est terminé avec plus bas la mention &laquo;Your site is deployed ✓&raquo;
+    </li>
+    <li>
+        Un des deux mails que vous recevraient vous invitera à crer le premier utilisateur sur le CMS.
+        <br>
+        Cliquez sur le lien dans le mail
+    </li>
+    <li>
+        Vous allez être redirigé sur votre site, ajouter à la fin de l'URL &laquo;/admin&raquo;
+    </li>
+    <li>
+        Vous êtes inviter à saisir un mot de passe sinon saisir votre adresse mail et cliquez sur le lien &laquo;Forgot password?&raquo;
+    </li>
+</ol>
+
+
+
+{{ macro.h3("Developpement") }}
+
+<h4 class="tw-7 mb-s">Mise en place</h4>
+<ol class="mb-m">
+    <li>Clone le dépôt <code>{site}</code> sur Github</li>
+    <li>Installer le projet en mettant dans la console <code>npm install @11ty/eleventy</code></li>
+    <li>Lancer le build : <code>npx @11ty/eleventy --serve</code></li>
+</ol>
+
+<h4 class="tw-7 mb-s">Accédé au CMS</h4>
+<ol class="mb-l">
+    <li>Allez dans le fichier : <code>{site}\admin\config.yml</code></li>
+    <li>Ajoutez à la ligne 9
+        <br>
+        <pre><code># Please run "npx netlify-cms-proxy-server" for local backend
+local_backend: true</code></pre>
+    </li>
+    <li>Lancer la commande <code>npx netlify-cms-proxy-server</code></li>
+</ol>
