@@ -1,0 +1,55 @@
+---
+layout: layout/standard.njk
+titre: "MasterM¿nd"
+tags: realisations
+date: 2022-03-05
+mosaiqueImage: "mastermind"
+mosaiqueImageExtension: ".svg"
+mosaiqueTaille: "2-1"
+description: "Réplique de l'un des plus classiques des jeux de société, le Mastermind, un jeu de réflexion et de déduction"
+---
+{% import "macro/contenu.njk" as macro %}
+
+
+<p class="mb-s">
+    Un petit défit personnel, de réaliser en JavaScript un des jeux qui a bercé mon enfance.<br>
+    Un jeu idéal pour tuer le temps quand c'est nécessaire...
+</p>
+
+<p class="mb-l">
+    <img src="{{ metadata.siteUrl }}/images/jeux/mastermind/icon.svg" alt="" width="16">
+    <a href="https://jeux.pierre.tl" target="_blank" rel="external">jeux.pierre.tl</a>
+    <img src="https://api.netlify.com/api/v1/badges/52004e4e-c04a-4ab9-84a3-9555c3553dca/deploy-status" alt="Status du déploiement">
+</p>
+
+<p class="mb-l">
+    Source sur <a href="https://github.com/pierretl/jeux" target="_blank" rel="external">Github</a>
+</p>
+
+<figure role="figure" aria-label="Accueil - thème sombre par défaut" class="mb-l">
+    <img src="{{ metadata.siteUrl }}/images/jeux/mastermind/accueil-sombre.png" alt="Page d'accueil sombre" loading="lazy" />
+    <figcaption>
+        Accueil - thème sombre par défaut
+    </figcaption>
+</figure>
+
+<figure role="figure" aria-label="Accueil - thème clair" class="mb-l">
+    <img src="{{ metadata.siteUrl }}/images/jeux/mastermind/accueil-clair.png" alt="Page d'accueil clair" loading="lazy" />
+    <figcaption>
+        Accueil - thème clair
+    </figcaption>
+</figure>
+
+<figure role="figure" aria-label="Écran des règles" class="mb-l">
+    <img src="{{ metadata.siteUrl }}/images/jeux/mastermind/regles.png" alt="Page régles" loading="lazy" />
+    <figcaption>
+        Écran des règles
+    </figcaption>
+</figure>
+
+<figure role="figure" aria-label="Partie en cours">
+    <img src="{{ metadata.siteUrl }}/images/jeux/mastermind/partie.png" alt="Partie en cours" loading="lazy" />
+    <figcaption>
+        Partie en cours
+    </figcaption>
+</figure>
