@@ -14,7 +14,16 @@ description: "Tutoriel : Configuration des DNS, champ MX"
   Certaines offres mails OVH ont des MX particulier
 </p>
 
+<ul class="mb-m">
+  <li>Allez dans le menu <strong>Web Cloud</strong></li>
+  <li>Menu déroulant <strong>Noms de domaines</strong></li>
+  <li>Clique sur le nom de domaine désiré <strong>exemple.fr</strong></li>
+  <li>Onglet <strong>Zone DNS</strong></li>
+  <li>Vous trouverez un tableau, les lignes de <strong>type : MX</strong> nous intéresse </li>
+</ul>
+
 <table class="mb-xl">
+  <caption>Exemple de configuration MX</caption>
   <thead>
   <tr>
     <th>Domaine</th>
@@ -26,35 +35,35 @@ description: "Tutoriel : Configuration des DNS, champ MX"
   </thead>
   <tbody>
   <tr>
-    <td><em>laisser vide</em></td>
+    <td>@</td>
     <td>3600</td>
     <td>MX</td>
     <td>1</td>
     <td>mx0.mail.ovh.net.</td>
   </tr>
   <tr>
-    <td><em>laisser vide</em></td>
+    <td>@</td>
     <td>3600</td>
     <td>MX</td>
     <td>5</td>
     <td>mx1.mail.ovh.net.</td>
   </tr>
   <tr>
-    <td><em>laisser vide</em></td>
+    <td>@</td>
     <td>3600</td>
     <td>MX</td>
     <td>50</td>
     <td>mx2.mail.ovh.net.</td>
   </tr>
   <tr>
-    <td><em>laisser vide</em></td>
+    <td>@</td>
     <td>3600</td>
     <td>MX</td>
     <td>100</td>
     <td>mx3.mail.ovh.net.</td>
   </tr>
   <tr>
-    <td><em>laisser vide</em></td>
+    <td>@</td>
     <td>3600</td>
     <td>MX</td>
     <td>200</td>
@@ -66,16 +75,24 @@ description: "Tutoriel : Configuration des DNS, champ MX"
 
 {{ macro.h2("Renseigner les DNS chez Netlify") }}
 
-<ul class="mb-m">
-  <li>Menu &laquo;Domains &raquo;</li>
+<ul class="mb-l">
+  <li>Menu <strong>Domains</strong></li>
   <li>Cliquer sur votre nom de domaine </li>
-  <li>Dans la partie &laquo; DNS settings &raquo;</li>
-  <li>Bouton &laquo; MAdd new record &raquo;</li>
-  <li>Saisis les DNS trouvé précédemment</li>
-  <li>Bouton &laquo; Save &raquo;</li>
+  <li>Dans la partie <strong>DNS settings</strong></li>
+  <li>Bouton <strong>Add new record</strong></li>
+  <li>
+    Saisis les DNS trouvé précédemment
+    <ul>
+      <li><strong>Record type</strong> :sélectionner MX</li>
+      <li><strong>Name</strong> : Laissez le &laquo; @ &raquo;</li>
+      <li><strong>Priority</strong> : voir les recommendations dans le tableau</li>
+      <li><strong>Value</strong> : voir le tableau</li>
+      <li><strong>TTL</strong> : le 3600 seconds par défaut est recommandé</li>
+    </ul>
+  </li>
+  <li>Bouton <strong>Save</strong></li>
+  <li>Ajouté autant DNS record qu'il y a de ligne MX dans votre tableau</li>
 </ul>
 
 
-<p class="mb-m">Un délai de 48h est nécessaire pour la propagation aux autres DNS</p>
-
-<p>Tutoriel rédiger d'après mon expérience personnel pour ce site web</p>
+<p class="mb-m">Un délai de 15 minutes à <strong>48 heures</strong> est nécessaire pour la propagation</p>
