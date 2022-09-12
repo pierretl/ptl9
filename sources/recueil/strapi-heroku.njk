@@ -1,0 +1,216 @@
+---
+layout: layout/standard.njk
+titre: "Déployer Strapi V4 sur Heroku"
+tags: "recueil"
+date: 2022-09-12
+description: "18 étapes simples et détaillées pour déployer Strapi V4 en production sur Heroku"
+---
+{% import "macro/contenu.njk" as macro %}
+
+{{ macro.h2("Services et pre-requis") }}
+
+<p class="mb-s">
+    Il est nécessaire de créer un compte sur ces différents services
+</p>
+
+<ul class="mb-l">
+    <li><a href="https://github.com" rel="external" target="_blank">GitHub</a> : Hébergement des sources</li>
+    <li><a href="https://strapi.io/" rel="external" target="_blank">Strapi</a> : CMS open-source headless</li>
+    <li>
+        <a href="https://www.heroku.com/" rel="external" target="_blank">Heroku</a> : Plate-forme d'applications en ligne
+        <br>
+        À partir du 28 novembre 2022, les ressources gratuites Heroku Dynos, Heroku Postgres et Heroku Data for Redis® ne seront plus disponibles.
+    </li>
+</ul>
+
+{{ macro.h2("De la création du projet à sa mise en production") }}
+
+<ol class="mb-l">
+    <li class="mb-m">
+        Créer un projet Strapi V4 : <br>
+        Dans un terminal à l'emplacement du dossier de projet désiré
+        <br>
+        <code>yarn create strapi-app dossier-du-projet --quickstart</code>
+    </li>
+    <li class="mb-m">
+        Une fois l'installation terminée, le navigateur ouvre automatiquement un nouvel onglet.<br>Il faut enregistrer le premier utilisateur qui sera le super admin
+        <img src="{{ metadata.siteUrl }}/images/strapi-heroku/1_admin.png" alt="" loading="" />
+        <img src="{{ metadata.siteUrl }}/images/strapi-heroku/2_dashboard.png" alt="" loading="lazy" />
+    </li>
+    <li class="mb-m">
+        Commit/push le projet sur GitHub
+    </li>
+    <li class="mb-m">
+        Allez sur Heroku.com, se connecté,<br>
+        Cliquez sur "create a new app"
+        <img src="{{ metadata.siteUrl }}/images/strapi-heroku/3_create.png" alt="" loading="lazy" />
+    </li>
+    <li class="mb-m">
+        Entrez le nom de votre application (Heroku vous dira si le nom est disponible).
+        <img src="{{ metadata.siteUrl }}/images/strapi-heroku/4_name.png" alt="" loading="lazy" />
+    </li>
+    <li class="mb-m">
+        Choisissez GitHub, puis recherchez le dépôt que vous souhaitez déployer
+        <img src="{{ metadata.siteUrl }}/images/strapi-heroku/5_git.png" alt="" loading="lazy" />
+    </li>
+    <li class="mb-m">
+        Activez les déploiements automatiques, puis déployer
+        <img src="{{ metadata.siteUrl }}/images/strapi-heroku/6_deploy.png" alt="" loading="lazy" />
+    </li>
+    <li>
+        Si vous avez une erreur, pas de panique, on continue !
+        <img src="{{ metadata.siteUrl }}/images/strapi-heroku/0_app-error.png" alt="" loading="lazy" />
+        <img src="{{ metadata.siteUrl }}/images/strapi-heroku/7_production.png" alt="" loading="lazy" />
+    </li>
+    <li class="mb-m">
+        Utiliser l'add-on Postgres de Heroku comme base de données<br>
+        Cliquez sur le menu "Ressources"<br>
+        puis dans la barre de recherche "Heroku Postgres"
+        <img src="{{ metadata.siteUrl }}/images/strapi-heroku/9_postgres.png" alt="" loading="lazy" />
+    </li>
+    <li class="mb-m">
+        Submit Order Form
+        <img src="{{ metadata.siteUrl }}/images/strapi-heroku/10_submit.png" alt="" loading="lazy" />
+    </li>
+    <li class="mb-m">
+        menu "Settings"
+        <img src="{{ metadata.siteUrl }}/images/strapi-heroku/11_headback.png" alt="" loading="lazy" />
+    </li>
+    <li class="mb-m">
+        En cliquant sur "Reveal Config Vars" vous afficherez uniquement DATABASE_URL.<br>
+        Voici à quoi devrait ressembler la syntaxe complète<br>
+        <code>postgres://{user}:{password}@{hostname}:{port}/{database-name}</code>
+        <img src="{{ metadata.siteUrl }}/images/strapi-heroku/12_reveal.png" alt="" loading="lazy" />
+        <img src="{{ metadata.siteUrl }}/images/strapi-heroku/13_dbsecret.png" alt="" loading="lazy" />
+    </li>
+    <li class="mb-m">
+        Ajouter les "key value" selon votre DATABASE_URL<br>
+        <code>postgres://aaaaaaaa:bbbbbbbbbbbbbbbbbbbbbbbbbbbb@ccc-cc-ccc-cc:dddd/eeeeeee</code>
+        <table class="mb-m">
+            <thead>
+                <tr>
+                    <td>KEY</td>
+                    <td>VALUE</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>DATABASE_USERNAME</td>
+                    <td>aaaaaaaa</td>
+                </tr>
+                <tr>
+                    <td>DATABASE_PASSWORD</td>
+                    <td>bbbbbbbbbbbbbbbbbbbbbbbbbbb</td>
+                </tr>
+                <tr>
+                    <td>DATABASE_HOST</td>
+                    <td>ccc-cc-ccc-cc</td>
+                </tr>
+                <tr>
+                    <td>DATABASE_PORT</td>
+                    <td>dddd</td>
+                </tr>
+                <tr>
+                    <td>DATABASE_AUTHENTICATION_DATABASE</td>
+                    <td>eeeeeee</td>
+                </tr>
+                <tr>
+                    <td>DATABASE_NAME</td>
+                    <td>eeeeeee</td>
+                </tr>
+            </tbody>
+        </table>
+        et à la racine de votre projet, dans le fichier <code>.env</code> vous trouveriez quatre autres jeux de "key value" à ajouter à la suite
+        <table>
+            <thead>
+            <tr>
+                <td>KEY</td>
+                <td>VALUE</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>ADMIN_JWT_SECRET</td>
+                <td>fffffffffff/fffff==</td>
+            </tr>
+            <tr>
+                <td>API_TOKEN_SALT</td>
+                <td>ggggg/ggggggggggg==</td>
+            </tr>
+            <tr>
+                <td>APP_KEYS</td>
+                <td>hhh/hhhh==,hhh/hhhh==,hhh/hhhh==,hhh/hhhh==,</td>
+            </tr>
+            <tr>
+                <td>JWT_SECRET</td>
+                <td>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii==</td>
+            </tr>
+            </tbody>
+        </table>
+        <img src="{{ metadata.siteUrl }}/images/strapi-heroku/13bis_dbsecret.png" alt="" loading="lazy" />
+    </li>
+    <li class="mb-m">
+        <p class="mb-m">
+            Ajoutez les variables d'environnement à Strapi<br>
+            Dans le dossier <code>./Config</code> de votre projet, créez les sous-dossier <code>env/production</code> puis les fichiers <code>database.js</code> et <code>server.js</code> à l'intérieur, ajoutez-y les codes suivant
+        </p>
+        <div class="d-flex ai-c">
+            <div class="w-30">
+                <img src="{{ metadata.siteUrl }}/images/strapi-heroku/arborescence.jpg" alt="" loading="lazy" />
+            </div>
+            <div class="w-70">
+                <code>database.js</code>
+                <code>
+            <pre>
+const parse = require('pg-connection-string').parse;
+const config = parse(process.env.DATABASE_URL);
+
+module.exports = ({ env }) => ({
+  connection: {
+    client: 'postgres',
+    connection: {
+      host: config.host,
+      port: config.port,
+      database: config.database,
+      user: config.user,
+      password: config.password,
+      ssl: {
+        rejectUnauthorized: false
+      },
+    },
+    debug: false,
+  },
+});
+            </pre>
+                </code>
+                <br><br>
+                <code>server.js</code>
+                <code>
+                    <pre>
+module.exports = ({ env }) => ({
+    url: env('MY_HEROKU_URL'),
+});
+                    </pre>
+                </code>
+            </div>
+        </div>
+    </li>
+    <li class="mb-m">
+        Dans le terminal, lancer les commandes<br>
+        <code>yarn add pg-connection-string</code><br>
+        et <br>
+        <code>yarn add pg</code>
+    </li>
+    <li class="mb-m">
+        Commit/push le code sur Github
+    </li>
+    <li class="mb-m">
+        &nbsp;
+        <img src="{{ metadata.siteUrl }}/images/strapi-heroku/14_prod.png" alt="" loading="lazy" />
+    </li>
+    <li class="mb-m">
+        Ajouter <code>/admin</code> pour accéder à Strapi
+        <img src="{{ metadata.siteUrl }}/images/strapi-heroku/15_register.png" alt="" loading="lazy" />
+    </li>
+</ol>
+
