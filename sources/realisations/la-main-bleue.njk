@@ -1,0 +1,59 @@
+---
+layout: layout/standard.njk
+titre: "La Main Bleue"
+tags: realisations
+date: 2022-08-31
+mosaiqueImage: "la-main-bleue"
+mosaiqueImageExtension: ".jpg"
+description: "Réalisation du site vitrine de La Main Bleue qui réunit diverses approches liées au geste en conscience"
+---
+{% import "macro/contenu.njk" as macro %}
+
+
+<div class="d-flex ai-c mb-xl">
+    <div class="w-50">
+        <figure role="figure" aria-label="Visuel principal du site en mode claire et sombre">
+            <img src="{{ metadata.siteUrl }}/images/la-main-bleue/main.jpg" alt="visuel principal" loading="lazy" />
+            <figcaption>
+                Visuel principal du site en mode claire et sombre
+            </figcaption>
+        </figure>
+    </div>
+    <div class="w-50">
+        <p class="mb-s">Studio basé à Genève où se rencontrent les diverses approches liées au corps et au sensible via le massage,le yoga,les arts visuels</p>
+        <ul class="mb-m">
+            <li>Réalisation d'un mockup sur <a href="https://www.figma.com/file/VnWhfR5L5k5868SfDLShLU/La-main-bleue?node-id=0%3A1" target="_blank" rel="external">figma</a> à partir des textes fournis</li>
+            <li>puis carte blanche pour mettre en forme avec la seul contrainte de faire un style minimaliste</li>
+            <li>site vitrine statique avec <a href="https://www.11ty.dev/" rel="external" target="_blank">Eleventy</a></li>
+            <li>Thème claire et sombre</li>
+            <li>
+                Source sur <a href="https://github.com/pierretl/lamainbleue" target="_blank" rel="external">Github</a>
+            </li>
+            <li>Paramétrage afin que les mails de divers services arrivent sur la même messagerie</li>
+            <li>
+                <a href="https://www.lamainbleue.ch/" target="_blank" rel="external">La Main Bleue</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<figure role="figure" aria-label="Art - Accueil" class="mb-l">
+    <img src="{{ metadata.siteUrl }}/images/la-main-bleue/screenshot-art.png" alt="Accueil de la rubrique Art" loading="lazy" />
+    <figcaption>
+        Art - Accueil
+    </figcaption>
+</figure>
+
+<figure role="figure" aria-label="Massages - Cartes des soins proposés" class="mb-l">
+    <img src="{{ metadata.siteUrl }}/images/la-main-bleue/screenshot-massage.png" alt="Rubrique des soins proposés" loading="lazy" />
+    <figcaption>
+        Massages - Cartes des soins proposés
+    </figcaption>
+</figure>
+
+<figure role="figure" aria-label="Yoga - Référence du Yogi" class="mb-l">
+    <img src="{{ metadata.siteUrl }}/images/la-main-bleue/screenshot-yoga.png" alt="Parcours et témoignages" loading="lazy" />
+    <figcaption>
+        Yoga - Référence du Yogi
+    </figcaption>
+</figure>
