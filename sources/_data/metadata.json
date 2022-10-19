@@ -2,6 +2,7 @@
   "siteName": "Pierre Tampon-Lajarriette",
   "description": "Site personnel et laboratoire créatif depuis 2007 de Pierre Tampon-Lajarriette aka Katre, Intégrateur Web.",
   "siteUrl": "https://www.pierre.tl",
+  "siteUrl": "http://localhost:8080",
   "faviconUrl": "/images/favicon/",
   "tailleLogo": "40px"
 }
