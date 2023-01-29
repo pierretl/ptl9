@@ -1,0 +1,90 @@
+---
+layout: layout/standard.njk
+titre: "Garder le focus à l'intérieur d'une modale - Accessibilité"
+tags: "recueil"
+date: 2023-01-29
+description: "Fonction JavaScript pour garder le focus à l'intérieur d'une boîte de dialogue que l'ont vien d'ouvrir"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+
+{{ macro.h2("Introduction") }}
+
+<p class="mb-m">Selon le <a title="Nouvelle fenêtre" href="https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/" target="_blank" rel="noreferrer noopener">motif de conception du W3C</a>, lorsqu'une boîte de dialogue s'ouvre, le focus doit déplacer vers un élément à l'intérieur de la boîte de dialogue</p>
+
+
+<ul class="mb-m">
+    <li>
+        <kbd>Tab</kbd> :
+        <ul>
+            <li>Déplace le focus sur le prochain élément tabulable de la boîte de dialogue.</li>
+            <li>Si le focus est sur le dernier élément tabulable de la boîte de dialogue, il est déplacé vers le premier élément tabulable de la boîte de dialogue.</li>
+        </ul>
+    </li>
+    <li>
+        <kbd>Shift + Tab</kbd> :
+        <ul>
+            <li>Déplace le focus sur l'élément tabulable précédent dans la boîte de dialogue.</li>
+            <li>Si le focus est sur le premier élément tabbable de la boîte de dialogue, il est déplacé vers le dernier élément tabbable de la boîte de dialogue.</li>
+        </ul>
+    </li>
+    <li>
+        <kbd>Echap</kbd> : Ferme la boîte de dialogue.
+    </li>
+</ul>
+
+{{ macro.h2("Code") }}
+
+<p class="mb-m">
+    Le code suivant est largement inspiré de celui <a title="Nouvelle fenêtre" href="https://uxdesign.cc/how-to-trap-focus-inside-modal-to-make-it-ada-compliant-6a50f9a70700" target="_blank" rel="noreferrer noopener">Yogesh Chavan</a> avec quelques optimisations pour une meilleur re-utilisation
+</p>
+
+{% set code %}
+function trapFocusIn(modal) {
+  modal.addEventListener("keydown", function (e) {
+
+    let isTabPressed = e.key === "Tab" || e.keyCode === 9;
+
+    if (!isTabPressed) {
+      return;
+    }
+
+    let focusableElement = modal.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    let firstFocusableElement = focusableElement[0];
+    let lastFocusableElement = focusableElement[focusableElement.length - 1];
+
+    if (e.shiftKey) {
+      // if shift key pressed for shift + tab combination
+      if (document.activeElement === firstFocusableElement) {
+        lastFocusableElement.focus(); // add focus for the last focusable element
+        e.preventDefault();
+      }
+    } else {
+      // if tab key is pressed
+      if (document.activeElement === lastFocusableElement) {
+        // if focused has reached to last focusable element then focus first focusable element after pressing tab
+        firstFocusableElement.focus(); // add focus for the first focusable element
+        e.preventDefault();
+      }
+    }
+
+  });
+}
+{% endset %}
+{{ macro.code(code, "mb-m", "language-js") }}
+
+
+
+{{ macro.h2("Rendu") }}
+<div class="mb-l">
+    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="wvxXdBY" data-user="pierre_tl" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/pierre_tl/pen/wvxXdBY">
+  Dialog</a> by Pierre TL (<a href="https://codepen.io/pierre_tl">@pierre_tl</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+</div>

@@ -37,13 +37,19 @@
 
 
 
-{% macro code(code, class) %}
+{% macro code(code, class, language) %}
+    {% if language %}
+        {% set prismLanguage = language %}
+    {% else %}
+        {% set prismLanguage = "language-html" %}
+    {% endif %}
+
     {% if class %}
         <div class="{{ class | safe }}">
-            <pre class="language-html"><code>{{ code | trim }}</code></pre>
+            <pre class="{{ prismLanguage }}"><code>{{ code | trim }}</code></pre>
         </div>
     {% else %}
-        <pre class="language-html"><code>{{ code | trim }}</code></pre>
+        <pre class="{{ prismLanguage }}"><code>{{ code | trim }}</code></pre>
     {% endif %}
 {% endmacro %}
 
