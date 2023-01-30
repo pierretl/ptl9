@@ -1,0 +1,138 @@
+---
+layout: layout/standard.njk
+titre: "Quelques notes sur accessibilité du Web"
+tags: "recueil"
+date: 2023-01-30
+description: "Découvrir l’accessibilité du Web, les enjeux humains, le contexte juridique et technique"
+---
+{% import "macro/contenu.njk" as macro %}
+
+
+{{ macro.h2("Un droit fondamental") }}
+
+{{ macro.h3("Contexte") }}
+
+<p>Convention relative aux droits des personnes handicapées de l’ONU 13 décembre 2006</p>
+<p class="mb-m">Signé par tous les États membres dons la France</p>
+
+<p>Incapacité physique, mentales, intellectuelle ou sensoriel</p>
+<p class="mb-m">C'est le manque d'adaptation qui crée la situation de handicap</p>
+
+<p>Différents types de handicaps physique et sensoriel</p>
+<ul class="mb-m">
+    <li>Visuel (contraste, tache, vision)</li>
+    <li>Cognitif (décodage, DYS)</li>
+    <li>Physique</li>
+</ul>
+
+<p class="mb-m">Polyhandicap : multiple handicap</p>
+
+<p class="mb-m">En accessibilité on ne cible pas par type de handicap (car il y en trop), mais par besoin</p>
+
+<p class="mb-m">L'universalité inclut l'accessibilité.<br>
+    Le W3C ce veut Universalité : matériel, logiciel, infra, langue, culture, localisation et aptitudes physique ou mentale</p>
+
+<p class="mb-m">Accessibilité c'est différent du référencement et de la performance, c'est même parfois contre-productif</p>
+
+<p class="mb-m">Les personnes en situation de handicap n'ont pas de possibilité de résoudre leur problème <br>À ne pas confondre avec le  handicap situationnel qui peut être résolu sans aide, par exemple si on est dans un milieu trop ensoleillé ou dans un véhicule qui bouge</p>
+
+{{ macro.h3("Pourquoi faire de l'accessibilité") }}
+
+<p>Le numérique, c'est une promesse d'inclusion</p>
+<ul class="mb-m">
+    <li>Faire des choses qui n'étaient pas faisables en autonomie</li>
+    <li>Parfois la seule méthode pour communiquer</li>
+</ul>
+
+<ul class="mb-m">
+    <li>Parler des personnes en situation de handicap</li>
+    <li>Respect de leur droit</li>
+    <li>Ne pas parler de &laquo;ça sert à tout le monde&raquo;, car ils vont penser que c'est de l'amélioration alors que l'accessibilité entraine des contraintes</li>
+</ul>
+
+<p>Exemple de besoin</p>
+<ul class="mb-m">
+    <li>Navigation clavier (par forcement clavier dalleur, ça peut être des boutons au niveau de la tete)</li>
+    <li>Uniquement a la souris : dispositif qui déplace le curseur (eyes tracking pa exemple</li>
+    <li>Description élément visuel (aveugle, mal voyante)</li>
+    <li>Description audio (sourd, malentendant)</li>
+    <li>Naviguer à son rythme, maitrise son environnement (trouble psychique)</li>
+    <li>Personnalise l'affichage (couleur, taille police, police etc.</li>
+    <li>Perte acuité visuel, audition, mental</li>
+    <li>Appréhension technologique, peur de casser, faire mal</li>
+</ul>
+
+
+<p class="mb-m"><a href="https://www.youtube.com/watch?v=px6u5IIqxMc" title="Vidéo YouTube | Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Améliorer la participation des personnes handicapées à la société (enfin !) grâce à l’accessibilité numérique</a></p>
+
+
+<p class="mb-m">Technologie d'assistance, quel exemple : Plage braille, clavier mono manuel, headstick, eye-tracking, clavier visuel, lecteur écran, contacteur au souffle, trackball, contrôle par la pensée (à l'état de recherche) etc</p>
+
+
+{{ macro.h2("Norme et référentiel") }}
+
+{{ macro.h3("Norme") }}
+
+<ul class="mb-m">
+    <li><b>UAAG</b> pour les agents utilisateurs&nbsp;: affichage par le navigateur de l’info-bulle d’un lien à la souris et au clavier.</li>
+    <li><b>ATAG</b> pour les outils d’édition de contenus&nbsp;: alternatives aux boutons de mise en forme, production de contenus conformes.</li>
+    <li><b>WCAG</b> pour les contenus web&nbsp;: alternatives aux éléments graphiques.</li>
+    <li>L’API <b>ARIA</b> pour les composants riches.</li>
+</ul>
+
+<p>Version du WCAG : </p>
+<ul class="mb-m">
+    <li>Avant la 2.1, pour les non voyant essentiellement</li>
+    <li>version 2.1 : basse vision, troubles cognitifs et difficultés d’apprentissage, DYS </li>
+    <li>version 2.2 : prévue pour début 2023</li>
+</ul>
+
+<p>Trois niveaux d'accessibilité WCAG</p>
+<ul class="mb-m">
+    <li><strong>A :</strong> Accès à l’information et d’une utilisabilité de base : 80% des critères.</li>
+    <li><strong>AA :</strong> Améliorations et la prise en charge de contextes particuliers (exemple couleur)</li>
+    <li><strong>AAA :</strong> Ne peut pas s'appliquer à tous les types de contenus et de situations</li>
+</ul>
+
+<blockquote class="mb-m">
+    <p>Il n’est pas recommandé de faire de la conformité au <strong>niveau AAA</strong> une politique générale pour des sites entiers parce qu’il n’est pas possible de satisfaire tous les critères de succès de niveau AAA pour certains contenus.</p>
+    <cite>
+        <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance.html#uc-conf-req1-head" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Source WCAG (en anglais)</a>
+    </cite>
+</blockquote>
+
+{{ macro.h3("Référentiel RGAA") }}
+
+<p class="mb-m">En France on a créé un révérenciel; donner une méthode opérationnelle pour vérifier que les WCAG sont bien respectées sans avoir à tout lire</p>
+
+<p>C'est le <a href="https://accessibilite.numerique.gouv.fr/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">RGAA</a></p>
+<ul class="mb-m">
+    <li>Évaluer la conformité à la norme.</li>
+    <li>Mesurer et attester.</li>
+    <li>Servir de socle technique à la réglementation.</li>
+</ul>
+
+<p>Conformité obligatoire (RGAA 100%) selon la législation française :</p>
+<ul class="mb-m">
+    <li>Administration</li>
+    <li>Privé qui gère du public (transport, eau)</li>
+    <li>Culturel, social</li>
+    <li>Les entreprises privées dont le chiffre d’affaires excède 25 millions d'euros</li>
+</ul>
+
+<p class="mb-m">
+    <a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Critères et tests du RGAA</a>
+</p>
+
+{{ macro.h3("Aménagement raisonnable") }}
+
+<blockquote class="mb-m">
+    <p>«&nbsp;On entend par <i>“aménagement raisonnable”</i> les modifications et ajustements <b>nécessaires et appropriés</b> n’imposant <b>pas de charge disproportionnée ou indue</b> apportés, en fonction des besoins dans une situation donnée, pour assurer aux personnes handicapées la jouissance ou l’exercice, sur la base de l’<b>égalité avec les autres</b>, de tous les droits de l’homme et de toutes les libertés fondamentales.&nbsp;»</p>
+    <cite>Article 2 de la <abbr tabindex="0" title="Convention relative aux droits de spersonnes handicapées">CRDPH</abbr>.</cite>
+</blockquote>
+
+<p class="mb-l">
+    En d'autre termes, en cas de dérogation sur un cas particulier, il faudrait fournir tous de même une alternative<br>
+    Sauf si cette alternative représente elle aussi une charge disproportionnée<br>
+    Alors il faut pouvoir permettre à l'utilisateur de faire un signalement et de lui répondre dans un délai raisonnable
+</p>
