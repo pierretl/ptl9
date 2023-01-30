@@ -1,0 +1,186 @@
+---
+layout: layout/standard.njk
+titre: "Note sur la thématique RGAA : Tableaux"
+tags: "recueil"
+date: 2023-01-30
+description: "Tableaux de mise en forme - accessibilité"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#5" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><abbr tabindex="0" title="Référentiel général d’amélioration de l’accessibilité">RGAA</abbr> : Tableaux</a></p>
+
+
+
+{{ macro.h2("Faire de la mise en forme") }}
+
+<ul class="mb-m">
+    <li>
+        Même si leur utilisation pour faire de la mise en forme n'est pas interdite cela n'est pas conseillée<br>
+        Si c'est tout de même utilisé pour faire de la mise en en forme, il ne faut pas utiliser des balises ou d’attributs de tableaux de données&nbsp;:<br>
+        <code>&lt;th&gt;</code>
+        <code>&lt;thead&gt;</code>
+        <code>&lt;tfoot&gt;</code>
+        <code>&lt;caption&gt;</code>
+        <code>scope</code>
+        <code>headers</code>
+        <code>colgroup</code>
+        <code>axis</code>
+        <code>role="columnheader"</code>
+        <code>role="rowheader"</code>
+    </li>
+    <li>
+        <code>role="presentation"</code> sur la balise <code lang="en">table</code><br>
+        Cette propriété supprime la sémantique du tableau, penser à redonner de la structure aux textes (titres, paragraphes, listes ...) dans ces cas.
+    </li>
+    <li>Si la propriété <code>summary=""</code> est présente (HTML4), videz la !</li>
+</ul>
+
+
+
+{{ macro.h2("Tableaux simples") }}
+
+{{ macro.h3("Sémantique") }}
+
+<ul class="mb-m">
+    <li>
+        <b>Un titre</b> <code>&lt;caption&gt;</code>
+        Si le tableau est précédé d'un titre et que le <code>&lt;caption&gt;</code> est non nécessaire, il faut relié ce titre via un <code>aria-labelledby=""</code>
+        {% set code %}
+<h2 id="exemple">Mon titre</h2>
+<table aria-labelledby="exemple">
+    ...
+</table>
+        {% endset %}
+        {{ macro.code(code, "") }}
+    </li>
+    <li>
+        Déclaration <b>des entêtes</b> <code>&lt;th scope="[col|row]"&gt;</code><br>
+        Permets d'indiquer la direction de la cellule d'entête<br>
+        Le scope est obligatoire si plusieurs entré
+        {% set code %}
+<table>
+    <caption>Parc et fréquentation des autres hébergements collectifs touristiques en 2018</caption>
+    <tr>
+        <th scope="col">Type d’hébergement professionnel</th>
+        <th scope="col">Nombre d’établissements</th>
+        [...]
+    </tr>
+    <tr>
+        <td>Résidences de tourisme</td>
+        <td>2 426</td>
+        [...]
+    </tr>
+</table>
+        {% endset %}
+        {{ macro.code(code, "") }}
+    </li>
+</ul>
+
+
+{{ macro.h3("Équivalents ARIA") }}
+
+<ul class="mb-s">
+    <li>Tableau&nbsp;: <code>role="table"</code></li>
+    <li>Titre&nbsp;: <code>aria-label="Nom du tableau"</code> ou <code>aria-labelledby="@id_titre"</code></li>
+    <li>Entêtes&nbsp;: <code>role="rowheader"</code> / <code>role="columnheader"</code></li>
+    <li>Cellules&nbsp;: <code>role="cell"</code></li>
+</ul>
+{% set code %}
+<p id="titre">Parc et fréquentation des autres hébergements collectifs touristiques en 2018</p>
+<div role="table" aria-labelledby="titre">
+
+    <div role="row">
+        <div role="columnheader">Type d’hébergement professionnel</div>
+        <div role="columnheader">Nombre d’établissements</div>
+        [...]
+    </div>
+
+    <div role="row">
+        <div role="cell">Résidences de tourisme</div>
+        <div role="cell">2 426</div>
+        [...]
+    </div>
+
+</div>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+
+
+{{ macro.h2("Tableaux complexes") }}
+
+<p class="mb-m">Un tableau est complexe quand il contient plus d'une ligne d'entête (col ou row) ou s'il y a des fusions cellule</p>
+
+{{ macro.h3("Titre et résumé de l’organisation du tableau") }}
+
+<ul class="mb-s">
+    <li>Dans le <code>caption</code> ou via le <code>aria-labelledby=""</code>, mettre le titre + un résumé de l’organisation du tableau (HTML5)</li>
+    <li>Pour le résumé pour les versions précédentes de HTML, le mettre dans <code>summary=""</code>(HTML4)</li>
+</ul>
+{% set code %}
+<caption>
+    Figure 2 - Répartition des déchets non dangereux non minéraux hors boues de l’industrie manufacturière par type en 2016
+    <span class="sr-only">
+        Les industries agroalimentaires (IAA) et les industries manufacturières (hors IAA) sont présentées sur 2 colonnes, avec, pour chacune d’elles la quantité en milliers de tonnes le pourcentage. Une troisième colonne présente le total des deux industries, en milliers de tonnes et en pourcentage.
+    </span>
+</caption>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+<p class="mb-s">Le sommaire, pouvant être utile à d'autres usagers que ceux utilisant un lecteur d'écran, il est préférable de le mettre dans un bloc qui s'affiche via un bouton de type afficher / masquer</p>
+{% set code %}
+<caption>
+    Figure 2 - Répartition des déchets non dangereux non minéraux hors boues de l’industrie manufacturière par type en 2016
+    <button type="button" aria-expanded="false">Résumé de l’organisation du tableau</button>
+    <span class="hide">
+        Les industries agroalimentaires (IAA) et les industries manufacturières (hors IAA) sont présentées sur 2 colonnes, avec, pour chacune d’elles la quantité en milliers de tonnes le pourcentage. Une troisième colonne présente le total des deux industries, en milliers de tonnes et en pourcentage.
+    </span>
+</caption>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+
+{{ macro.h3("Version alternative") }}
+
+<p class="mb-s">
+    Pour les tableaux complexes préférés une alternative car cela inclura tout le monde et non seulement les lecteurs d'écran (et c'est plus simple à développer !)<p>
+<ul class="mb-s">
+    <li>Passage en mode liste par exemple</li>
+    <li>On affiche un bouton pour afficher la version alternative</li>
+</ul>
+<p class="mb-m">Plus besoin de mettre le résumé et header s'il y a une alternative</p>
+
+
+{{ macro.h3("Cellules d’en-têtes") }}
+
+<p class="mb-s"><b>Identifier les cellules d’en-têtes</b> via un attribut <code lang="en">id</code> et lier les cellules de données via l’attribut <code lang="en">headers</code>.</p>
+
+<p class="mb-s">Exemple&nbsp;: <code>headers="id_1 id_2"</code>.</p>
+
+{% set code %}
+<tr>
+    <td aria-hidden="true"></td>
+    <th id="entete1" colspan="2">Industries agroalimentaires (IAA)</th>
+    <th id="entete2" colspan="2">Industries manufacturières (hors IAAA)</th>
+    <th id="entete3" colspan="2">Ensemble</th>
+</tr>
+<tr>
+    <td aria-hidden="true"></td>
+    <th id="entete4">Quantités (en milliers de tonnes)</th>
+    <th id="entete5">en %</th>
+    <th id="entete6">Quantités (en milliers de tonnes)</th>
+    <th id="entete7">en %</th>
+    [...]
+</tr>
+<tr>
+    <td>Déchets banals</td>
+    <td headers="entete1 entete4">1 147</td>
+    <td headers="entete1 entete5">31</td>
+    <td headers="entete2 entete6">9 795</td>
+    <td headers="entete2 entete7">97</td>
+    [..]
+</tr>
+{% endset %}
+{{ macro.code(code, "mb-m") }}

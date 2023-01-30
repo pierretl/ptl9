@@ -1,0 +1,163 @@
+---
+layout: layout/standard.njk
+titre: "Note sur la thématique RGAA : Structuration de l’information"
+tags: "recueil"
+date: 2023-01-30
+description: "Structurer l'information pour l'accessibilité"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#9" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><abbr tabindex="0" title="Référentiel général d’amélioration de l’accessibilité">RGAA</abbr> : Structuration de l’information</a></p>
+
+
+
+{{ macro.h2("Utilisé les régions natives") }}
+
+<code>&lt;header&gt;</code><br>
+<ul class="mb-m">
+    <li>Obligatoire pour l’en-tête du document</li>
+    <li>Contenus d’introduction, peut contenir des titres, de la navigation</li>
+    <li>Une balise <code>&lt;header&gt;</code> peux être utiliser dans une <code>&lt;section&gt;</code></li>
+</ul>
+
+<code>&lt;main&gt;</code><br>
+<p class="mb-m">Unique ou une seule balise est visible simultanément</p>
+
+<code>&lt;section&gt;</code>≠<code>&lt;div&gt;</code>
+<ul class="mb-m">
+    <li>une <code>&lt;div&gt;</code> n'a pas de valeur sémantique</li>
+    <li>une <code>&lt;section&gt;</code> avec titre <code>aria-label</code> ou <code>aria-labelledby</code> : région déclarée dans les plans des lecteurs d'écran, ne pas en abusé car cela alourdit la page et complexifié inutilement le plan</li>
+</ul>
+
+<code>&lt;nav&gt;</code><br>
+<p class="mb-s">Réservé aux zones de navigation principale et secondaire</p>
+<p>Les navigations secondaires comprennent :</p>
+<ul class="mb-s">
+    <li>menu de sous-rubrique</li>
+    <li>navigation dans les collections de pages</li>
+    <li>navigation dans les résultats de recherche</li>
+    <li>le Fil d'ariane</li>
+    <li>les liens d’évitement</li>
+</ul>
+<p class="mb-s">Ne pas utiliser <code>&lt;nav&gt; </code> pour les listes de lien !</p>
+<p class="mb-m">
+    Le bouton "burger" doit être inclus dans l'élément <code>&lt;nav&gt;</code><br>
+    La navigation principale peut inclure le bouton burger et être inclus dans la même balise <code>&lt;nav&gt;</code><br>
+    Ou en cas de plusieurs <code>&lt;nav&gt;</code>, le bouton doit être dans une balise <code>&lt;nav&gt;</code> seul
+</p>
+
+<code>&lt;aside&gt;</code><br>
+<ul class="mb-m">
+    <li>Optionnel</li>
+    <li>Contenus indirectement reliés au contenu principal, peuvent être consultés de manière indépendante</li>
+</ul>
+
+<code>&lt;footer&gt;</code><br>
+<ul class="mb-m">
+    <li>Obligatoire pour le pied de page du document</li>
+    <li>Contenus de pied de page, d’articles ou de contenus regroupés par <code>&lt;section&gt;</code></li>
+</ul>
+
+
+
+{{ macro.h2("Titrage du contenu") }}
+
+<ul class="mb-m">
+    <li>
+        <b>Hiérarchie cohérente</b>, de h1 à h6<br>
+        Dans la version 4 du RGAA, la règle est plus souple
+        <ul>
+            <li>il peux y avoir des saut entre les titre <code>h2</code> <code>h4</code></li>
+            <li>ne pas avoir de <code>h1</code> peut etre conforme dans certain cas</li>
+            <li>avoir plusieurs <code>h1</code> c'est conforme aussi</li>
+        </ul>
+    </li>
+    <li>Uniquement les titres nécessaires, un texte ne gras n'est pas un titre</li>
+    <li>
+        <code>role="heading" aria-level="[level]"</code>
+        Permet de déclarer un titrage aux technologies d'assistance sans utiliser les balises sémantique, à utiliser en cas de conflit avec les équipe <abbr tabindex="0" title="Search Engine Optimisation">SEO</abbr> par exemple
+        {% set code %}
+<h1>Accueil…</h1>
+    <h2>Actualités…</h2>
+        <h2 role="heading" aria-level="3">Où en est-on ?</h2>
+        <h2 role="heading" aria-level="3">Ils arrivent bientôt !</h2>
+        {% endset %}
+        {{ macro.code(code, "mb-s") }}
+    </li>
+</ul>
+
+
+
+{{ macro.h2("Listes") }}
+
+<ul class="mb-s">
+    <li>Liste <b>non ordonnée</b>&nbsp;: <code class="small">ul li</code></li>
+    <li>Liste <b>ordonnée</b>&nbsp;: <code class="small">ol li</code></li>
+    <li>
+        Liste <b>de définition</b>&nbsp;: <code>dl dt/dd</code><br>
+        C'est assez lourd pour les lecteurs d'écran, préféré de simples listes sauf pour la réalisation d'un glossaire<br>
+        Pour une légende d'un schéma, une liste non ordonnée est plus adaptée<br>
+        Un équivalant aux balises sémantiques :
+        {% set code %}
+<div role="list">
+
+    <div role="term">Terme à définir…</div>
+    <div role="definition"> Définition… </div>
+
+    <div role="term">...</div>
+    <div role="definition">...</div>
+
+</div>
+        {% endset %}
+        {{ macro.code(code, "mb-m") }}
+    </li>
+    <li>
+        Si pas de possibilité de faire une liste sémantique :
+        <ul>
+            <li><code>role="list"</code> équivalent à un <code>ul</code></li>
+            <li><code>role="listitem"</code> équivalent à un <code>li</code></li>
+        </ul>
+        {% set code %}
+<div role="list">
+    <div role="listitem">Favoriser l’information…</div>
+    <div role="listitem">Permettre aux personnes…</div>
+</div>
+        {% endset %}
+        {{ macro.code(code, "mb-m") }}
+    </li>
+    <li>Les suites de liens doivent être structurées avec des listes.</li>
+</ul>
+
+
+
+{{ macro.h2("Citations") }}
+<ul class="mb-m">
+    <li><b>Citation en ligne</b> <code>&lt;q&gt;</code>, mal restitué par <abbr title="NonVisual desktop Access">NVDA</abbr> préféré la citation de bloc</li>
+    <li>
+        <b>Citation en bloc</b> <code>&lt;blockquote&gt;</code>
+        {% set code %}
+<blockquote>
+    <p>Aimer, ce n'est pas se regarder l'un l'autre, c'est regarder ensemble dans la même direction.</p>
+    <cite>Antoine De Saint-Exupéry</cite>
+</blockquote>
+        {% endset %}
+        {{ macro.code(code, "mb-m") }}
+    </li>
+</ul>
+
+
+
+{{ macro.h2("Cadres iframe et frame") }}
+
+<ul class="mb-m">
+    <li>
+        Contenu pertinent, ajouté un  <code>title</code>
+        {% set code %}
+<iframe title="Publicité"></iframe>
+        {% endset %}
+        {{ macro.code(code, "mb-m") }}
+    </li>
+    <li>Pas de titre dans le cas de cadres techniques (Google Analytics, etc.) mais cacher avec <code>aria-hidden="true"</code>.</li>
+</ul>

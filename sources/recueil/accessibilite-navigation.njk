@@ -1,0 +1,129 @@
+---
+layout: layout/standard.njk
+titre: "Note sur la thématique RGAA : Navigation"
+tags: "recueil"
+date: 2023-01-30
+description: "Liste de liens permettant une navigation spécifique dans le site, dans une rubrique ou dans une collection de pages"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#12" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><abbr tabindex="0" title="Référentiel général d’amélioration de l’accessibilité">RGAA</abbr> : Navigation</a></p>
+
+
+
+{{ macro.h2("Lien d’accès rapide") }}
+
+<ul class="mb-m">
+    <li>Accès rapide au contenu principal (obligatoire), d'autres lien possible sans en abuser</li>
+    <li>Visible à la prise de focus</li>
+    <li>Doit se trouver en premier dans le code HTML de la page</li>
+    <li>
+        <code>tabindex="-1"</code> sur l'élément cible pour se retrouver sur la zone et non sur un élément à l'intérieur<br>
+        {% set code %}
+<a href="#main">contenu</a>
+<main id="main" tabindex="-1"> .... </main>
+        {% endset %}
+        {{ macro.code(code, "mb-m") }}
+    </li>
+</ul>
+
+
+
+{{ macro.h2("Positionnement hors écran") }}
+
+{% set code %}
+.sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+{% endset %}
+{{ macro.code(code, "mb-s", "language-css") }}
+
+<p class="mb-m"><a href="https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><span lang="en">Improved</span> par #FFOODD</a></p>
+
+
+
+{{ macro.h2("Landmarks ARIA") }}
+
+<ul class="mb-m">
+    <li>
+        Uniques dans la page :
+        <ul>
+            <li>
+                <code lang="en">role="banner"</code> pour l’en-tête du document
+            </li>
+            <li>
+                <code lang="en">role="main"</code>
+            </li>
+            <li>
+                <code lang="en">role="contentinfo"</code> pour le pied de page
+            </li>
+            <li>
+                <code lang="en">role="search"</code> pour un formulaire de recherche, a positionner sur la balise <code>form</code> ou sur le conteneur du formulaire
+            </li>
+            <li>
+                <code lang="en">role="complementary"</code> pour l'<code>&lt;aside&gt;</code>
+            </li>
+        </ul>
+    </li>
+    <li><code>role="navigation"</code>&nbsp;: plusieurs occurrences autorisées pour les navigations principales et secondaires</li>
+</ul>
+
+
+
+{{ macro.h2("Systèmes de navigation") }}
+
+<p>Il faut en avoir au moins deux parmi :</p>
+<ul class="mb-m">
+    <li>Menu de navigation</li>
+    <li>Plan du site</li>
+    <li>Moteur de recherche</li>
+</ul>
+
+
+
+{{ macro.h3("Menu de navigation") }}
+
+<ul class="mb-s">
+    <li><b>Même place</b> dans chaque ensemble de pages.</li>
+    <li><b>Présentation cohérente</b> dans chaque ensemble de pages.</li>
+</ul>
+<p class="mb-m">La page d'accueil peut avoir un mise en page différente, navigation comprise</p>
+
+
+
+{{ macro.h3("Plan du site") }}
+<ul class="mb-s">
+    <li><b>Même place</b> dans chaque ensemble de pages.</li>
+    <li><b>Même méthode</b> dans chaque ensemble de pages.</li>
+    <li>Représentatif de l’architecture générale du site, pas besoin d'avoir toutes les pages référencer</li>
+    <li>Tous <a href="https://validator.w3.org/checklink" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">les liens sont fonctionnels</a> avec des intitulés pertinents</li>
+</ul>
+
+
+
+{{ macro.h3("Moteur de recherche") }}
+<ul class="mb-s">
+    <li><b>Même place</b> dans chaque ensemble de pages.</li>
+    <li><b>Même méthode</b> dans chaque ensemble de pages.</li>
+    <li>Doit indexer tous les contenus</li>
+</ul>
+
+
+
+{{ macro.h3("Fil d'araine") }}
+<ul class="mb-s">
+    <li>Pas d'obligation de le mettre dans le <code>&lt;main&gt;</code>, peut-être en fin de contenu ou dans le pied de page !</li>
+    <li>Tous les liens sont fonctionnels avec des intitulés pertinents</li>
+</ul>

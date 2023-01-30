@@ -1,0 +1,100 @@
+---
+layout: layout/standard.njk
+titre: "Note sur la thématique RGAA : Éléments obligatoires"
+tags: "recueil"
+date: 2023-01-30
+description: "Respect des standard et de la sémantique - accessibilité"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><abbr tabindex="0" title="Référentiel général d’amélioration de l’accessibilité">RGAA</abbr> : Éléments obligatoires</a></p>
+
+
+
+{{ macro.h2("Respect des standard") }}
+
+<p class="mb-m">Le code doit être valide selon <a href="https://validator.w3.org/nu/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">le HTML Checker du w3C</a></p>
+
+<ul class="mb-m">
+    <li><code>&lt;!DOCTYPE &gt;</code> valide</li>
+    <li><code>lang</code> et/ou <code>xml:lang</code></li>
+    <li><code>dir</code>Obligatoire si changement de sens de lecture par rapport au reste des pages (<code>rtl</code> ou <code>ltr</code>)</li>
+    <li>Imbrication des balises</li>
+    <li>Ouverture et fermeture des balises & attributs</li>
+    <li>Valeurs d’attribut <code>id</code> sont <b>uniques</b> dans la page</li>
+    <li>Attributs pas doublés sur un même élément.</li>
+    <li>Attributs et éléments obsolètes autorisés (mais à tester sur la base de référence)</li>
+</ul>
+
+
+
+{{ macro.h2("Respect de la sémantique") }}
+
+<p class="mb-m">Utiliser les balises pour leur rôle prévu par la spécification</p>
+<ul class="mb-m">
+    <li>Pas de <code>&lt;div&gt;</code> pour les paragraphes</li>
+    <li>Pas de balise de titre <code>&lt;hX&gt;</code> pour des légendes d'image</li>
+    <li>Pas de paragraphe vide pour faire des espace</li>
+    <li><code>&lt;p&gt;</code>a utilisé quand il y a un verbe</li>
+</ul>
+
+
+
+{{ macro.h2("Titre de pages") }}
+
+<p class="mb-m"><strong>Obligatoire, pertinent</strong> et de préférence unique dans le site</p>
+
+<ul class="mb-m">
+    <li>Unique</li>
+    <li>Résultat de recherche : doit contenir les mots saisis</li>
+    <li>Ajouter les erreur de formulaire (facultatif, mais conseillé)</li>
+    <li>Ajouter la pagination si il y en une</li>
+    <li>Tag (facultatif, mais conseillé)</li>
+</ul>
+
+<p class="mb-m">Sans rechargement de page :<br>
+    Simuler le rechargement de la page en changeant le <code>title</code>, avec les nouvelles informations en synchro avec la page puis déplacer le focus sur le début de la page<br>
+    Article pour en savoir davantage :<a href="https://access42.net/accessibilite-rechargement-page-single-page-applications" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Comment gérer le rechargement de page dans les « Single Page Applications » ?</a>
+</p>
+
+
+
+{{ macro.h2("Changements de langue") }}
+
+<ul class="mb-s">
+    <li>Nom propre, lieu, marque, personne : on ne change pas la langue</li>
+    <li>
+        Les mots francisés, exemple &laquo;newsletter&raquo; &laquo;barbecue&raquo;, &laquo;email&raquo; : faire un test avec le lecteur d'écran
+        <ul>
+            <li>&laquo;e-mail&raquo;,c'est bon, mais dans &laquo;email&raquo; sans le tiret deviens &laquo;émail&raquo;</li>
+        </ul>
+    </li>
+</ul>
+
+<p class="mb-s">En cas de changement de langue, ajouter l'attribut <code>lang</code> sur l’élément ou un parent.</p>
+{% set code %}
+<p>Des contenus vidéos sur le Web
+    (<span lang="en">on</span>
+    et <span lang="en">offline</span>).
+</p>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+
+
+{{ macro.h2("Changements de sens de lecture") }}
+
+<ul class="mb-s">
+    <li><code>dir</code> sur l’élément lui-même ou un parent&nbsp;;</li>
+    <li>Deux valeurs&nbsp;: <code>ltr</code> ou <code>rtl</code>&nbsp;;</li>
+    <li><code>ltr</code> implicite, peut être omise sur l’élément <code>html</code>.</li>
+</ul>
+
+{% set code %}
+<span lang="ar" dir="rtl">
+    شكرا جزيلا
+</span>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
