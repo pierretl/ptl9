@@ -68,8 +68,8 @@
 
 
 
- {% macro h3(texte, info) %}
-     <h3 class="ts-l mb-s">
+ {% macro h3(texte, info, ancre) %}
+     <h3 class="ts-l mb-s"{% if ancre %} id="{{ texte | slug  }}"{% endif %}>
          {{ texte | safe }}
          {% if info %}
              <span class="ts-s tg1-2">— {{ info | safe }}</span>
@@ -107,6 +107,27 @@
 
 
 
+ {% macro sommaire2(liste) %}
+    <h2 class="ts-l mb-s">
+        Sommaire
+    </h2>
+    <ul class="ul-sommaire mb-l">
+     {% for item in liste %}
+         <li class="mb-xs">
+             <a class="lien-niveau2" href="#{{ item.titre | slug }}">{{ item.titre }}</a>
+             {% if item.sub %}
+                <ul>
+                    {% for sub in item.sub %}
+                        <li>
+                            <a class="lien-niveau2" href="#{{ sub.titre | slug }}">{{ sub.titre }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+             {% endif %}
+         </li>
+     {% endfor %}
+    </ul>
+ {% endmacro %}
 
 
  {% macro sommaireNiveauMultiple(liste) %}
