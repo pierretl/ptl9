@@ -3,7 +3,7 @@ layout: layout/standard.njk
 titre: "Navigation"
 tags: noteAccessibilite
 dossierRecueil: true
-date: 2023-01-30
+date: 2023-01-31 00:00:12
 description: "Liste de liens permettant une navigation spécifique dans le site, dans une rubrique ou dans une collection de pages"
 scriptJs: "prism.js"
 styleCss: "prism.css"
@@ -12,9 +12,24 @@ styleCss: "prism.css"
 
 <p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#12" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><abbr tabindex="0" title="Référentiel général d’amélioration de l’accessibilité">RGAA</abbr> : Navigation</a></p>
 
+{% set sommaireImages = [
+    {titre: 'Lien d’accès rapide'},
+    {titre: 'Positionnement hors écran'},
+    {titre: 'Landmarks ARIA'},
+    {
+        titre: 'Systèmes de navigation',
+        sub: [
+            {titre: 'Menu de navigation'},
+            {titre: 'Plan du site'},
+            {titre: 'Moteur de recherche'},
+            {titre: "Fil d'Ariane"}
+        ]
+    }
+] %}
+{{ macro.sommaire2(sommaireImages) }}
 
 
-{{ macro.h2("Lien d’accès rapide") }}
+{{ macro.h2("Lien d’accès rapide", "ancre") }}
 
 <ul class="mb-m">
     <li>Accès rapide au contenu principal (obligatoire), d'autres lien possible sans en abuser</li>
@@ -32,7 +47,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Positionnement hors écran") }}
+{{ macro.h2("Positionnement hors écran", "ancre") }}
 
 {% set code %}
 .sr-only {
@@ -55,7 +70,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Landmarks ARIA") }}
+{{ macro.h2("Landmarks ARIA", "ancre") }}
 
 <ul class="mb-m">
     <li>
@@ -83,7 +98,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Systèmes de navigation") }}
+{{ macro.h2("Systèmes de navigation", "ancre") }}
 
 <p>Il faut en avoir au moins deux parmi :</p>
 <ul class="mb-m">
@@ -94,7 +109,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h3("Menu de navigation") }}
+{{ macro.h3("Menu de navigation", "", "ancre") }}
 
 <ul class="mb-s">
     <li><b>Même place</b> dans chaque ensemble de pages.</li>
@@ -104,7 +119,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h3("Plan du site") }}
+{{ macro.h3("Plan du site", "", "ancre") }}
 <ul class="mb-s">
     <li><b>Même place</b> dans chaque ensemble de pages.</li>
     <li><b>Même méthode</b> dans chaque ensemble de pages.</li>
@@ -114,7 +129,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h3("Moteur de recherche") }}
+{{ macro.h3("Moteur de recherche", "", "ancre") }}
 <ul class="mb-s">
     <li><b>Même place</b> dans chaque ensemble de pages.</li>
     <li><b>Même méthode</b> dans chaque ensemble de pages.</li>
@@ -123,7 +138,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h3("Fil d'araine") }}
+{{ macro.h3("Fil d'Ariane", "", "ancre") }}
 <ul class="mb-s">
     <li>Pas d'obligation de le mettre dans le <code>&lt;main&gt;</code>, peut-être en fin de contenu ou dans le pied de page !</li>
     <li>Tous les liens sont fonctionnels avec des intitulés pertinents</li>

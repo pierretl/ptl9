@@ -1,0 +1,60 @@
+---
+layout: layout/standard.njk
+titre: "Couleurs"
+tags: noteAccessibilite
+dossierRecueil: true
+date: 2023-01-31 00:00:03
+description: "Couleur et contraste - accessibilité"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#3" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><abbr tabindex="0" title="Référentiel général d’amélioration de l’accessibilité">RGAA</abbr> : Couleurs</a></p>
+
+{% set sommaire = [
+    {titre: 'Information par la couleur'},
+    {titre: 'Contrastes'},
+    {titre: 'Contrastes des éléments graphiques'}
+] %}
+{{ macro.sommaire2(sommaire) }}
+
+
+
+{{ macro.h2("Information par la couleur", "ancre") }}
+<p class="mb-s">Cas les plus courants :</p>
+<ul class="mb-s">
+    <li>indication de page active&nbsp;;</li>
+    <li>indications d’onglets affichés&nbsp;;</li>
+    <li>carrousel&nbsp;: indication de contenu actif.</li>
+</ul>
+<p class="mb-m">Une information ne doit pas être donnée uniquement par la couleur, ajouter un texte ou une image</p>
+
+
+
+{{ macro.h2("Contrastes", "ancre") }}
+<ul class="mb-m">
+    <li>Ratio de 4,5 minimum&nbsp;:
+        <ul>
+            <li>police &lt; 24px sans graisse</li>
+            <li>police &lt; 18,5px gras</li>
+        </ul>
+    </li>
+    <li>Ratio de 3 minimum&nbsp;:
+        <ul>
+            <li>police &gt;= 24px sans graisse</li>
+            <li>police &gt;= 18,5px gras</li>
+        </ul>
+    </li>
+    <li>Mécanisme de remplacement</li>
+</ul>
+
+
+
+{{ macro.h2("Contrastes des éléments graphiques", "ancre") }}
+<p class="mb-s">Évaluation pour tous les éléments graphiques porteurs d’information (images, boutons, icônes, etc.) sauf <b>cas particuliers</b></p>
+<ul class="mb-s">
+    <li>Contraste minimum de 3:1</li>
+    <li>Présence d’un mécanisme de remplacement.</li>
+</ul>
+<p class="mb-b">Exemples de cas particuliers : composant inactif, composants natifs du navigateur, éléments avec une alternative, logo…</p>

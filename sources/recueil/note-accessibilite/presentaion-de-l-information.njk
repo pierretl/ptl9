@@ -1,0 +1,236 @@
+---
+layout: layout/standard.njk
+titre: "Présentation de l’information"
+tags: noteAccessibilite
+dossierRecueil: true
+date: 2023-01-31 00:00:10
+description: "Style et CSS - accessibilité"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#10" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><abbr tabindex="0" title="Référentiel général d’amélioration de l’accessibilité">RGAA</abbr> : Présentation de l’information</a></p>
+
+{% set sommaire = [
+    {titre: 'Utilisation exclusive de CSS'},
+    {titre: 'Contenus visibles sans CSS'},
+    {titre: 'Contenus compréhensibles sans CSS'},
+    {titre: 'Couleurs par défaut'},
+    {titre: 'Zoom texte'},
+    {titre: 'Linéarisation des contenus'},
+    {titre: 'Adaptation des textes'},
+    {titre: 'Survol et focus'},
+    {titre: 'Contrôle des contenus additionnels au clavier'},
+    {titre: 'Visibilité de la prise de focus'},
+    {titre: 'Visibilité des liens en environnement de texte'},
+    {titre: 'Texte caché'},
+    {titre: 'Information par la forme, la taille ou la position'}
+] %}
+{{ macro.sommaire2(sommaire) }}
+
+
+
+{{ macro.h2("Utilisation exclusive de CSS", "ancre") }}
+<ul class="mb-s">
+    <li>Utilisation exclusive de CSS&nbsp;:
+        <ul>
+            <li><code>&lt;link rel="stylesheet"/&gt;</code>&nbsp;;</li>
+            <li><code>&lt;style&gt;&lt;/style&gt;</code>&nbsp;;</li>
+            <li>ou attribut<code>style</code> en ligne.</li>
+        </ul>
+    </li>
+    <li>Pas d’attribut de mise en forme <code>&lt;table border="0"&gt;</code>.</li>
+    <li>Pas de balise de mise en forme <code>&lt;font&gt;</code>.</li>
+</ul>
+<p class="mb-s">Les attributs <code>width</code> et <code>height</code> utilisés sur d’autres éléments que les balises <code>&lt;img&gt;</code>, <code>&lt;object&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;canvas&gt;</code> et <code>&lt;svg&gt;</code> sont également interdits.</p>
+<p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/glossaire/#presentation-de-l-information" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Liste complète des attributs et balises interdites.</a></p>
+
+
+
+{{ macro.h2("Contenus visibles sans CSS", "ancre") }}
+<p class="mb-s">Le contenu visible reste présent lorsque les feuilles de styles sont désactivées.</p>
+<p class="mb-s"><b>Attention, ne pas faire :</b></p>
+<ul class="mb-s">
+    <li>
+        Contenu inséré par CSS <code>content</code> (texte, icônes porteuses d’information)
+        {% set code %}
+a[target="_blank"]:after{
+    content:"nouvelle fenêtre"
+}
+        {% endset %}
+        {{ macro.code(code, "", "language-css") }}
+    </li>
+    <li>
+        Images de fond porteuses d’informations (<code>background-image</code>)
+        {% set code %}
+h1:after{
+    background-image:url("logo.png")
+}
+        {% endset %}
+        {{ macro.code(code, "", "language-css") }}
+    </li>
+</ul>
+
+
+
+{{ macro.h2("Contenus compréhensibles sans CSS", "ancre") }}
+<p class="mb-s">Le contenu reste compréhensible lorsque les feuilles de styles sont désactivées.</p>
+<ul class="mb-m">
+    <li>Ordre des éléments logique</li>
+    <li>Ordre des éléments cohérent, l’enchaînement de la lecture est cohérent.</li>
+</ul>
+<ul class="mb-m">
+    <li>Les informations qui se rapportent à un titre doivent être placé après et/ou tout mettre dans un <code>li</code></li>
+    <li>Le <code>order</code> en CSS n'est pas pris en compte par les lecteurs d'écran, pratique pour réagencer</li>
+    <li>Le bandeau Cookie, doit être placer en début de page avant même le bandeau d'accès rapide</li>
+    <li>Ne rien mettre dans le code après le bouton de validation d'un formulaire</li>
+</ul>
+
+
+
+{{ macro.h2("Couleurs par défaut", "ancre") }}
+<ul class="mb-m">
+    <li>
+        Toujours déclarer une couleur de texte, de lien et de fond sur le <code>body</code>
+        {% set code %}
+body, body a{color:#000;}
+body{background-color:#fff;}
+        {% endset %}
+        {{ macro.code(code, "", "language-css") }}
+    </li>
+    <li>
+        Texte avec une image en arrière-plan : mettre un <code>background-color</code>
+        {% set code %}
+.elt{
+    background-image:url(...);
+    color:#fff;
+    background-color:#000;
+}
+        {% endset %}
+        {{ macro.code(code, "", "language-css") }}
+    </li>
+</ul>
+
+
+
+{{ macro.h2("Zoom texte", "ancre") }}
+<p class="mb-s"><b>Unités des tailles de police&nbsp;:</b></p>
+<ul class="mb-m">
+    <li>Taille de police relatives&nbsp;: <code>em</code>, <code>rem</code>, <code>%</code></li>
+    <li>Depuis RGAA 4&nbsp;: tailles de polices en <code>px</code> autorisées. (non conseillé car les tailles de police en pixels ne permettent pas d’agrandir les textes sur certains navigateurs)</li>
+    <li>
+        Quand un site propose un dispositif d’agrandissement des caractères (A+/A-), c'est cette fonctionnalité qui sera soumise à la conformité, mieux vaut laisser les navigateurs gérés !
+    </li>
+</ul>
+<p class="mb-s"><strong>Texte lisible avec agrandissement jusqu'à 200% :</strong></p>
+<ul class="mb-m">
+    <li><b>Zoom texte&nbsp;:</b> <span lang="en">Firefox</span>&nbsp;: « Affichage &gt; Zoom texte seul »&nbsp;: agrandissement à 200% (<kbd>Ctrl +</kbd> 6 fois)</li>
+    <li>Ou utilisation des <b>fonctions de zoom du navigateur</b> (zoom graphique)</li>
+</ul>
+
+
+
+{{ macro.h2("Linéarisation des contenus", "ancre") }}
+<p class="mb-s">Les contenus doivent rester présents, lisibles et utilisables sans utilisation des deux ascenseurs :</p>
+<ul class="mb-s">
+    <li>Consultation verticale : 320px de large minimum </li>
+    <li>Consultation horizontale : 256px de hauteur minimum</li>
+</ul>
+<p class="mb-s">
+    Les tableaux ont le droit d'être affiché avec un <span lang="en">scroll</span>
+</p>
+
+
+
+{{ macro.h2("Adaptation des textes", "ancre") }}
+<p class="mb-s">Les textes doivent rester lisibles dans les conditions suivantes :</p>
+<ul class="mb-s">
+    <li><b>interlignage</b> augmenté de <b class="a42-bgcolor-c0">1,5 fois</b> la taille de police&nbsp;;
+    </li>
+    <li><b>marge suivante</b> : <b class="a42-bgcolor-c0">2 fois</b> la taille de police</li>
+    <li><b>espacement des lettres</b> : <b class="a42-bgcolor-c0">0,12 fois</b> la taille de la police</li>
+    <li><b>espacement des mots</b> :  <b class="a42-bgcolor-c0">0,16 fois</b> la taille de la police</li>
+</ul>
+{% set code %}
+* {
+    line-height: 1.5 !important;
+    letter-spacing: 0.12em !important;
+    word-spacing: 0.16em !important;
+}
+
+p {
+    margin-bottom: 2em !important;
+}
+{% endset %}
+{{ macro.code(code, "mb-s", "language-css") }}
+<p class="mb-m">Cas particuliers : sous-titres incrustés, images-texte, texte dans une balise <code>canvas</code>.</p>
+
+
+
+{{ macro.h2("Survol et focus", "ancre") }}
+<p class="mb-s">Contenus qui apparaissent à la prise de focus ou au survol d’un élément :</p>
+<ul class="mb-s">
+    <li>Peut être masquer sans déplacer le focus ou le pointeur pointeur via la touche <kbd>Echap</kbd></li>
+    <li>Peut être survolé sans disparaitre</li>
+    <li>Reste visible tant que le composant est actif</li>
+</ul>
+<p class="mb-m">La balise <code>title</code> natif ou modèle de conception ARIA (tooltip, modale)  n'est pas concernée par cette règle</p>
+
+
+
+{{ macro.h2("Contrôle des contenus additionnels au clavier", "ancre") }}
+<p class="mb-m">Les contenus au survol doivent fonctionner aussi au clavier et autre périphérique de pointage équivalent</p>
+
+
+
+{{ macro.h2("Visibilité de la prise de focus", "ancre") }}
+<ul class="mb-s">
+    <li>Pas de dégradation de l'outline natif <code>outline:0</code> ou outline:none</li>
+    <li>Ou utilisation d’une indication de focus augmentée suffisamment contrastée (ratio mini de 3)</li>
+</ul>
+<p class="mb-m">Les états <code>:focus</code>, <code>:hover</code> des composants doivent également être suffisamment contrastés.</p>
+<p class="mb-s">Attention aux composants interactifs masqués :</p>
+{% set code %}
+<input type="radio" id="default" class="sr-only" />
+<label for="default">Défaut</label>
+{% endset %}
+{{ macro.code(code, "mb-s") }}
+{% set code %}
+input:focus+label{ outline:1px dotted black }
+{% endset %}
+{{ macro.code(code, "mb-m", "language-css") }}
+
+
+
+{{ macro.h2("Visibilité des liens en environnement de texte", "ancre") }}
+<p class="mb-s">A l'intérieur d'un bloc de texte</p>
+<ul class="mb-m">
+    <li>Contraste suffisant (> 3 par rapport au texte environnant) ou ajouter un soulignement</li>
+    <li>Indication supplémentaire a la couleur au survol souris ou prise de focus</li>
+</ul>
+
+
+
+{{ macro.h2("Texte caché", "ancre") }}
+<p class="mb-s">Texte caché qui annule aussi la restitution d'écran :</p>
+<ul class="mb-m">
+    <li><code lang="en">display:none</code></li>
+    <li><code lang="en">visibility:hidden</code></li>
+    <li><code lang="en">font-size:0</code></li>
+</ul>
+<p class="mb-s">Uniquement pour la restitution d'écran : <br>
+    <code>aria-hidden="true"</code> ou <code>hidden</code>
+</p>
+
+
+
+{{ macro.h2("Information par la forme, la taille ou la position", "ancre") }}
+<p class="mb-s">Pensez au alternative textuelle ou une version alternative :</p>
+<ul class="mb-s">
+    <li>Un petit curseur <span lang="en">full CSS</span></li>
+    <li>Une liste de progression sans texte</li>
+    <li>Une petite fleche pour dire nouvelle fenêtre</li>
+    <li>etc...</li>
+</ul>
+<p class="mb-m">Une information ne doit pas être donnée uniquement par la couleur, ajouter un texte ou une image</p>

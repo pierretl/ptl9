@@ -1,0 +1,130 @@
+---
+layout: layout/standard.njk
+titre: "Liens"
+tags: noteAccessibilite
+dossierRecueil: true
+date: 2023-01-31 00:00:06
+description: "Image de décoration et porteuse d'information - accessibilité"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#6" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><abbr tabindex="0" title="Référentiel général d’amélioration de l’accessibilité">RGAA</abbr> : Images</a></p>
+
+{% set sommaireImages = [
+    {
+        titre: 'Liens explicites',
+        sub: [
+            {titre: 'aria-label'},
+            {titre: 'title'}
+        ]
+    },
+    {titre: 'Liens identiques'},
+    {titre: 'Liens vides'},
+    {titre: 'Traduction'}
+] %}
+{{ macro.sommaire2(sommaireImages) }}
+
+
+
+
+{{ macro.h2("Liens explicites", "ancre") }}
+<p class="mb-s">
+    L'intitulé permet de comprendre ont le lien va nous emmener <br>
+    ou
+    Le contexte le permet (Titre, paragraphe et phrase précédente)
+</p>
+
+<ul class="mb-s">
+    <li>&laquo;la suite&raquo;, si le texte est seul, ce n'est pas explicite</li>
+    <li>&laquo;la suite&raquo;, précédé d'un article (titre ou paragraphe), c'est conforme</li>
+</ul>
+<p class="mb-s">
+    Mais on peut améliorer l'intitulé !
+</p>
+<p class="mb-s">
+    Si un lien n'est pas explicite pour le voyant, ce n'est pas une faute, mais plutôt un problème d'UX <br>
+    Le nom visible doit être contenu dans le nom accessible
+</p>
+<p class="mb-s">
+    Pour expliciter un intitulé :
+</p>
+<ul class="mb-m">
+    <li>via un texte caché en <code>sr-only</code> : non voyant uniquement</li>
+    <li><code>title</code> : tous le monde</li>
+    <li><code>aria-label</code> ou <code>aria-labelledby</code> : pas natif donc pas pour tout le monde</li>
+</ul>
+
+{{ macro.h3("aria-label", "", "ancre") }}
+<p class="mb-s">
+    Doit comporter l'intitulé du lien
+</p>
+{% set code %}
+<a href="#url" aria-label="Retour Accueil du site">Retour</a>
+{% endset %}
+{{ macro.code(code, "mb-s") }}
+<p class="mb-m">
+    <code>aria-label</code> surcharge l'intitulé, c'est pour ça que l'on doit mettre l'intitulé dedans
+</p>
+
+{{ macro.h3("title", "", "ancre") }}
+<ul class="mb-s">
+    <li>Le <code>title</code> sera restitué par les lecteurs d'écran et à la souris</li>
+    <li>Par défaut le <code>title</code> est restitué en plus de l'intitulé, mais certain le configure pour etre que seul le title soit restitué</li>
+</ul>
+<p class="mb-s">
+    Doit comporter l'intitulé du lien
+</p>
+{% set code %}
+<a href="#url" title="Retour Accueil du site">Retour</a>
+{% endset %}
+{{ macro.code(code, "mb-s") }}
+
+
+
+{{ macro.h2("Liens identiques", "ancre") }}
+<p class="mb-s">Des liens dons l'intitulé et le contexte sont identiques et ont la même destination <br>
+Si ce n'est pas le cas :</p>
+<ul class="mb-m">
+    <li>Ajouter un titre pour préciser la différence entre les liens</li>
+    <li>Changer le contexte</li>
+</ul>
+
+
+
+{{ macro.h2("Liens vides", "ancre") }}
+<p class="mb-s"><strong>Pas de lien vides</strong><br>
+    Attention au lien avec des images, avec une fait d'icône ou is en forme en CSS uniquement (<code>content</code>)</p>
+<p class="mb-s">Mettre un <code>alt</code> sur les images liens</p>
+{% set code %}
+<a href="#lien">
+    <img alt="intitule">
+</a>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+<p class="mb-s">Ajouter un <code>aria-label</code> ou  <code>aria-labelledby</code> sur le lien si besoin, utilisé si possible les propriétés natives</p>
+{% set code %}
+<a aria-label="intitule">
+    <i class="fa-solid fa-house"></i>
+</a>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+<p class="mb-s">Un <a href="../navigation/#positionnement-hors-ecran">texte positionné hors de l'écran</a>, méthode conseillée</p>
+{% set code %}
+<a href="#lien">
+    <span class="sr-only">intitule</span>
+    <i class="fa-solid fa-house"></i>
+</a>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+
+
+{{ macro.h2("Traduction", "ancre") }}
+<p class="mb-m">
+    <code>aria-label</code> n'est pas correctement traduit par <span lang="en">google translate</span><br>
+    Préféré les méthodes : <code>sr-only</code> ou <code>title</code>
+</p>

@@ -1,0 +1,147 @@
+---
+layout: layout/standard.njk
+titre: "Consultation"
+tags: noteAccessibilite
+dossierRecueil: true
+date: 2023-01-31 00:00:13
+description: "Avertir et laisser le contrôle à l’utilisateur - accessibilité"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#13" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><abbr tabindex="0" title="Référentiel général d’amélioration de l’accessibilité">RGAA</abbr> : Consultation</a></p>
+
+{% set sommaire = [
+    {titre: 'Limite de temps de session'},
+    {titre: 'Rafraichissement automatique'},
+    {titre: 'Nouvelles fenêtres'},
+    {titre: 'Documents en téléchargement'},
+    {titre: 'Clignotement et contenus en mouvement'},
+    {titre: 'Effet de flash'},
+    {titre: 'Son déclenché automatiquement'},
+    {titre: 'Indépendance de l’orientation'},
+    {titre: 'Gestes complexes'},
+    {titre: 'Annulation du pointeur'},
+    {titre: 'Activation par le mouvement '}
+] %}
+{{ macro.sommaire2(sommaire) }}
+
+
+
+{{ macro.h2("Limite de temps de session", "ancre") }}
+<ul class="mb-s">
+    <li>L’utilisateur doit pouvoir <b>supprimer ou augmenter</b> la limite de temps&nbsp;;</li>
+    <li>La limite de temps est de <b>vingt heures au moins</b>&nbsp;;</li>
+    <li>Cas particulier lorsque la limite de temps est <b>essentielle</b>.</li>
+</ul>
+<p class="mb-s">Il faut penser à ceux qui on besoin plus de temps que les autres pour faire les mêmes manipulations, pour un utilisateur de contacteur au souffle ou <a href="https://www.youtube.com/watch?v=kj9UodcwIes" title="Vidéo youtube | Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">autre</a> par exemple</p>
+<p class="mb-m">
+    Afficher un message dans une modale par exemple pour prolonger ou supprimer la limite de session
+</p>
+
+
+
+{{ macro.h2("Rafraichissement automatique", "ancre") }}
+<ul class="mb-s">
+    <li>L'utilisateur peut <b>arrêter et relancer</b> le rafraîchissement&nbsp;;</li>
+    <li>L'utilisateur est <b>alerté de l’imminence</b> d’un rafraichissement et peut augmenter le délai de 10 fois au moins.</li>
+</ul>
+<p class="mb-m">
+    Que le rafraîchissement soit total soit partiel, proposer un bouton pour désactiver/activer le <span lang="en">live upload</span> par exemple
+</p>
+
+
+
+{{ macro.h2("Nouvelles fenêtres", "ancre") }}
+<ul class="mb-m">
+    <li>Pas de nouvelles fenêtres <b>sans action</b> de l’utilisateur</li>
+    <li>Une seule fenêtre s'ouvre à la fois</li>
+</ul>
+
+
+
+{{ macro.h2("Documents en téléchargement", "ancre") }}
+<ul class="mb-s">
+    <li>Document accessible&nbsp;;</li>
+    <li>Ou alternative accessible&nbsp;: HTML, .doc, .odt structurés.</li>
+</ul>
+<p class="mb-s">
+    Pensez à fournir une alternative, notamment pour les PDF qui sont très difficile a rendre accessible
+</p>
+<p class="mb-m"><b>Ressources : </b> <a href="https://accessibilite.public.lu/fr/rgaa4/files/liste-criteres-documents-bureautiques-telechargement-RGAA.docx" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Liste des critères Documents bureautiques en téléchargement (Le Grand-Duché de Luxembourg, docx, 66 kilo-octets).</a> Attention basé sur le RGAA&nbsp;3</p>
+
+
+
+{{ macro.h2("Clignotement et contenus en mouvement", "ancre") }}
+<p class="mb-s">L'utilisateur doit pouvoir&nbsp;:</p>
+<ul class="mb-s">
+    <li>Arrêter et relancer, sur un slider prévoir un bouton pause s'il se lance automatiquement</li>
+    <li>Masquer et réafficher</li>
+    <li>Afficher le contenu sans le mouvement</li>
+    <li>Le mouvement dure 5 secondes ou moins</li>
+    <li>Contrôle individuel</li>
+</ul>
+<p class="mb-m">Évité de lancer une vidéo, un son ou un slider automatiquement</p>
+
+
+
+{{ macro.h2("Effet de flash", "ancre") }}
+<ul class="mb-s">
+    <li>Fréquence limite =< 3 flash par seconde</li>
+    <li>ou surface cumulée =< 21824 pixels</li>
+</ul>
+<p class="mb-s">
+    <a href="https://trace.umd.edu/peat/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Outil PEAT (<span lang="en">Photosensitive Epilepsy Analysis Tool</span>)</a><br>
+</p>
+<p class="mb-m">
+    Mauvais exemple : <a href="https://www.youtube.com/watch?v=vs0hfhSje9M" title="Vidéo youtube | Nouvelle fenêtre" target="_blank" rel="noreferrer noopener" lang="en">London 2012 Olympics Seizure</a>
+</p>
+
+
+
+{{ macro.h2("Son déclenché automatiquement", "ancre") }}
+<ul class="mb-m">
+    <li>Les sons et vidéo doivent être contrôlable</li>
+    <li>On évite de les lancer automatiquement bien sur !</li>
+    <li>De préférence, le contrôle doit être le premier élément de la page.</li>
+</ul>
+
+
+
+{{ macro.h2("Indépendance de l’orientation", "ancre") }}
+<ul class="mb-m">
+    <li>Le contenu doite être consultable portrait et paysage, ne pas bloquer</li>
+    <li>Sauf si l'orientation est essentielle</li>
+</ul>
+
+
+
+{{ macro.h2("Gestes complexes", "ancre") }}
+<p class="mb-s">Les fonctionnalités utilisables par des <b>gestes multipoints</b> (zoom sur une carte) ou basés sur <b>un tracé</b> (<i lang="en">swipe</i>)&nbsp;:</p>
+<ul class="mb-s">
+    <li>peuvent être réalisées avec <b class="a42-bgcolor-c0">un geste à point unique</b> et/ou sans trajectoire,</li>
+    <li>sauf si le geste est essentiel(ex. le dessin d’une signature).</li>
+</ul>
+<p class="mb-m">
+    Sur une <span lang="en">slider</span> au <span lang="en">swipe</span>, ajouter une navigation avec des boutons !
+</p>
+
+
+
+{{ macro.h2("Annulation du pointeur", "ancre") }}
+<ul class="mb-m">
+    <li>Aucun événement ne doit être déclenché sur l’<b class="a42-bgcolor-c0">action descendante</b><br>(<i lang="en">down</i> : <i lang="en">mousedown</i> sur desktop / <i lang="en">touchstart</i> sur mobile) </li>
+    <li>ou prévoir un mécanisme qui permet d’<b>interrompre</b> l'exécution de l'action avant la fin&nbsp;;</li>
+    <li>ou un mécanisme permet d’<b>annuler</b> l'action.</li>
+</ul>
+
+
+
+{{ macro.h2("Activation par le mouvement ", "ancre") }}
+<p class="mb-s">Les fonctions qui sont déclenchées en <b>déplaçant l’appareil</b> (en secouant ou en basculant) ou lorsque l’utilisateur effectue <b>un mouvement</b> capté par les dispositifs de l’appareil (eg. une caméra) peuvent être&nbsp;:</p>
+<ul class="mb-m">
+    <li><b>actionnées par des composants classiques</b> (un bouton)&nbsp;;</li>
+    <li><b>désactivées</b> pour éviter un déclenchement accidentel&nbsp;;</li>
+    <li>sauf si le mouvement est essentiel pour la fonction.</li>
+</ul>
