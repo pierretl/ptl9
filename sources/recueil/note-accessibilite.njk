@@ -1,0 +1,31 @@
+---
+layout: layout/standard.njk
+titre: "Quelques notes sur les thématiques du RGAA"
+tags: "recueil"
+dossierRecueil: noteAccessibilite
+date: 2023-01-30
+description: "Découvrir l’accessibilité du Web au travers une prise de notes durant une formation"
+---
+{% import "macro/contenu.njk" as macro %}
+
+{{ macro.h2("Les thématiques") }}
+
+<ul class="mb-m">
+    {% for blog in collections.noteAccessibilite %}
+
+        {% if blog.data.brouillon %}
+        {% else %}
+            <li class="mb-s">
+
+                <a href="{{ blog.url | url }}" class="tg1-1 td-0 tw-4">
+
+                    {{ blog.data.titre | safe }}
+                    <span class="ts-s tg1-2">—&nbsp;{{ blog.date | frDate | safe }}</span>
+
+                </a>
+
+            </li>
+        {% endif %}
+
+    {% endfor %}
+</ul>
