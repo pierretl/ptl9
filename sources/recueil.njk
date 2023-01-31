@@ -35,13 +35,12 @@ description: "Journal de bord, tutoriel et écrit sur mon site personnel, mes cr
 
                 {% if blog.data.dossierRecueil == "noteAccessibilite" %}
                     <ul class="pl-s">
-                        {% for dossier in collections.noteAccessibilite | reverse %}
+                        {% for dossier in collections.noteAccessibilite %}
                             {% if dossier.data.brouillon %}
                             {% else %}
                                 <li>
                                     <a href="{{ dossier.url | url }}" class="tg1-1 td-0 tw-4">
                                         {{ dossier.data.titre | safe }}
-                                        <span class="ts-s tg1-2">—&nbsp;{{ blog.date | frDate | safe }}</span>
                                     </a>
                                 </li>
                             {% endif %}
