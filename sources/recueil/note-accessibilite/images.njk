@@ -1,0 +1,255 @@
+---
+layout: layout/standard.njk
+titre: "Images"
+tags: noteAccessibilite
+dossierRecueil: true
+date: 2023-01-31
+description: "Image de décoration et porteuse d'information - accessibilité"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><abbr tabindex="0" title="Référentiel général d’amélioration de l’accessibilité">RGAA</abbr> : Images</a></p>
+
+{% set sommaireImages = [
+    {titre: 'Nom accessible'},
+    {
+        titre: 'Images décorative',
+        sub: [
+            {titre: 'Bitmap'},
+            {titre: 'Vectorielles'}
+        ]
+    },
+    {
+        titre: 'Images porteuses d’information',
+        sub: [
+        {titre: 'Bitmap'},
+        {titre: 'Vectorielles'}
+    ]
+    },
+    {titre: 'SEO'},
+    {titre: 'Image map'},
+    {titre: 'Images description détaillée'},
+    {titre: 'Image captcha'},
+    {titre: 'Texte en image'},
+    {titre: 'Images légendées'}
+] %}
+{{ macro.sommaire2(sommaireImages) }}
+
+
+
+
+{{ macro.h2("Nom accessible", "ancre") }}
+<p class="mb-s">Utiliser par les lecteurs d'écran, pas toujours visible (<code>alt</code> par exemple)</p>
+{% set code %}
+    <img src="img.png"
+         alt="2019 EESC Civil society prize Award ceremony 12 december 2019"
+         aria-label="image"/>
+{% endset %}
+{{ macro.code(code, "mb-s") }}
+<p class="mb-m">Le nom accessible de l'exemple sera : « image »</p>
+<p class="mb-s">En cas d’implémentation multiple, le nom accessible utilisera par ordre de priorité :</p>
+<ol class="mb-m">
+    <li><code>aria-labelledby</code></li>
+    <li><code>aria-label</code></li>
+    <li><code>alt</code></li>
+    <li><code>title</code></li>
+    <li>Si aucune des attributs précédents est valide, il n'y aura pas de nom accessible attribué</li>
+</ol>
+
+
+
+{{ macro.h2("Images décorative", "ancre") }}
+
+<ul class="mb-m">
+    <li>Pas d'information dans l'image ni de volonté d'en transmettre une</li>
+    <li>Une image peut comporter du texte sans que celui-ci soit à but d'informatif, elle peut être juste décorative pour habiller une section</li>
+</ul>
+
+{{ macro.h3("Bitmap", "", "ancre") }}
+
+<ul class="mb-s">
+    <li><code>alt</code> vide, préféré cet attribut car natif</li>
+    <li><code>aria-hidden="true"</code></li>
+    <li><code>role="presentation"</code></li>
+</ul>
+{% set code %}
+<img src="image.png" alt="" />
+<img src="image.png" aria-hidden="true"/>
+<img src="image.png" role="presentation"/>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+
+{{ macro.h3("Vectorielles", "", "ancre") }}
+
+<ul class="mb-s">
+    <li><code>aria-hidden="true"</code> sur l’élément <code>&lt;svg&gt;</code></li>
+    <li><b class="a42-bgcolor-c0">Aucun des attributs</b> suivants ne doit être présent&nbsp;: <code>aria-label</code>,
+        <code>aria-describedby</code>, <code>aria-labelledby</code>,
+        <code>role="img"</code>, <code>title</code></li>
+    <li>Les balises <code>&lt;title&gt;</code> et <code>&lt;desc&gt;</code> doivent être vides ou absentes</li>
+</ul>
+{% set code %}
+<svg aria-hidden="true">
+    …
+</svg>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+
+
+{{ macro.h2("Images porteuses d’information", "ancre") }}
+
+<p class="mb-s">Vérifier auprès du contributeur ou de ce qu'a fait le bloc quelle information il veut véhiculer</p>
+
+{{ macro.h3("Bitmap", "", "ancre") }}
+
+<ul class="mb-s">
+    <li><code>alt</code> renseigné, solution a privilégié</li>
+    <li><code>title</code></li>
+    <li><code>aria-label</code></li>
+    <li><code>aria-labelledby</code></li>
+</ul>
+<p class="mb-s">
+    Ne pas cumuler les méthodes car ça peut être contre-productif<br>
+    <code>aria-label</code> écrasera le rendu de <code>alt</code><br>
+    <code>aria-labelledby</code> écrasera le rendu de tous le reste !
+</p>
+{% set code %}
+<img src="image.png" alt="2019 EESC Civil society prize Award ceremony 12 december 2019" />
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+
+{{ macro.h3("Vectorielles", "", "ancre") }}
+<p class="mb-s">Il faut utiliser ses <strong>deux attributs sur l’élément</strong></p>
+<ul class="mb-m">
+    <li><code>role="img"</code></li>
+    <li><code>aria-label</code> contenant l’alternative de l’image</li>
+</ul>
+{% set code %}
+    <svg role="img" aria-label="Profil renseigné à 90%">
+        …
+    </svg>
+{% endset %}
+{{ macro.code(code, "mb-s") }}
+<p class="mb-s">La balise <code>title</code> n'est pas bien supporté, préféré la première version</p>
+{% set code %}
+    <svg role="img" aria-labelledby="title_svg">
+        <title id="title_svg">Profil renseigné à 90%</title>
+        …
+    </svg>
+{% endset %}
+
+
+
+{{ macro.h2("SEO", "ancre") }}
+<ul class="mb-m">
+    <li>Mettre plein de mot clé dans l'<code>alt</code> une idée reçue ça ne fonctionne pas</li>
+    <li>Si l'équipe SEO impose de mettre du contenu dans le alt, ajouter <code>aria-hidden="true"</code> pour que le texte ne soit pas interprété pour les utilisateurs</li>
+</ul>
+{{ macro.code(code, "mb-s") }}
+
+
+
+{{ macro.h2("Image map", "ancre") }}
+<ul class="mb-s">
+    <li><code>alt</code> sur l'<code>img</code> pour décrire sa fonction</li>
+    <li><code>alt</code> sur chaque <code>area</code></li>
+</ul>
+{% set code %}
+<img src="" alt="Carte de France" usemap="#LIEUX" />
+<map id="lieux" name="LIEUX">
+    <area href="regi42" alt="Alsace">
+    <area href="regi53" alt="Bretagne">
+</map>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+
+
+{{ macro.h2("Images description détaillée", "ancre") }}
+<div class="d-flex ai-c mb-m">
+    <div class="w-50">
+        <p class="mb-s">Description détaillée adjacente où bien lien adjacent <br>
+            Exemple&nbsp;:
+            <a href="https://access42.net/etude-usage-ta-2017" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">access42.net (description détaillée adjacente)</a>
+    </div>
+    <div class="w-50">
+        <img loading="lazy" src="/images/recueil/note-accessibilite/1-6-imagelonguedescription.png" alt="">
+    </div>
+</div>
+</p>
+<p class="mb-s">Commme <code>aria-label</code> et <code>aria-labelledby</code> ne sont exploités que par les lecteurs d’écrans.<br>
+La meilleure solution est de proposer une alternative (modal, nouvelle page ou afficher/masquer)<br>
+Mettre un <code>alt</code> trés général puis le bouton &laquo;lire la description détaillée de l'infographie&raquo; par exemple</p>
+{% set code %}
+<img src="img.png" alt="infographie" />
+<a href="description.html">Description détaillée de l'infographie</a>
+
+<img src="img.png" alt="infographie" />
+<button aria-expanded="false">Description détaillée de l'infographie</button>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+
+
+{{ macro.h2("Image captcha", "ancre") }}
+<p class="mb-s">L’alternative de l’image doit permettre d’identifier la nature de l’image</p>
+{% set code %}
+<img src="" alt="Code de confirmation à saisir"/>
+{% endset %}
+{{ macro.code(code, "mb-s") }}
+<p class="mb-s">Proposer une alternative</p>
+<ul class="mb-s">
+    <li>Captcha sonore; pas idéal, le son peut être dangereux pour certaines typologies</li>
+    <li>Captcha de logique; pas conseiller car problématique pour certaines typologies</li>
+    <li>Envoi du code par email/SMS; <strong>Recommander</strong> si possible car plus lourd techniquement</li>
+</ul>
+<p class="mb-s">Le captcha de google est conforme !</p>
+
+
+
+{{ macro.h2("Texte en image", "ancre") }}
+<div class="d-flex ai-c mb-m">
+    <div class="w-50">
+        <p class="mb-s">
+            Interdit sauf pour les logos <br>
+            ou proposer un mécanisme de remplacement :
+        </p>
+        <ul>
+            <li>Déclencher par l'utilisateur via une option accessibilité</li>
+            <li>via un plugin</li>
+        </ul>
+    </div>
+    <div class="w-50">
+        <img loading="lazy" src="/images/recueil/note-accessibilite/1-8-texteenimage-2.png" alt="">
+    </div>
+</div>
+
+
+
+{{ macro.h2("Images légendées", "ancre") }}
+<p class="mb-m">Légende : texte adjacent à une image</p>
+<p class="mb-s">Si un <code>alt</code> est renseigné, il faudrat reporter son contenu dans le <code>aria-label</code> et dans la <code>figcaption</code></p>
+{% set code %}
+<figure role="group|figure" aria-label="alt-image Légende de l’image">
+    <img src="…" alt="alt-image" />
+    <figcaption>
+        alt-image Légende de l’image
+    </figcaption>
+</figure>
+{% endset %}
+{{ macro.code(code, "mb-s") }}
+{% set code %}
+    <figure role="group|figure" aria-label="Légende de l’image">
+        <img src="…" alt="" />
+        <figcaption>
+            Légende de l’image
+        </figcaption>
+    </figure>
+{% endset %}
+{{ macro.code(code, "mb-s") }}
+<p class="mb-m">Si un lien est présent dans le <code>figcaption</code>, reporté unique son intitulé dans le <code>aria-label</code></p>
