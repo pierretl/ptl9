@@ -1,0 +1,68 @@
+---
+layout: layout/standard.njk
+titre: "Multimédia"
+tags: noteAccessibilite
+dossierRecueil: true
+date: 2023-01-31 00:00:04
+description: "Média temporel et non temporel - accessibilité"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#4" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><abbr tabindex="0" title="Référentiel général d’amélioration de l’accessibilité">RGAA</abbr> : Images</a></p>
+
+{% set sommaire = [
+    {
+        titre: 'Média temporel',
+        sub: [
+            {titre: 'Vidéo'},
+            {titre: 'Autres'}
+        ]
+    },
+    {titre: 'Alternatives aux médias'},
+    {titre: 'Média non temporel'}
+] %}
+{{ macro.sommaire2(sommaire) }}
+
+
+
+{{ macro.h2("Média temporel", "ancre") }}
+
+{{ macro.h3("Vidéo", "", "ancre") }}
+<ul class="mb-m">
+    <li>Contrôles obligatoires</li>
+    <li>Clavier/souris</li>
+    <li>Nom pertinent&nbsp;: <span class="ts-s">mises à jour des noms <span lang="en">play</span>/pause</span></li>
+    <li>Mises à jour des valeurs&nbsp;: <span class="ts-s">timing, son, etc.</span></li>
+</ul>
+<p class="mb-s">Lecteurs vidéos :</p>
+<ul class="mb-m">
+    <li><a href="https://ableplayer.github.io/ableplayer/" lang="en" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Able Player</a>, accessibles</li>
+    <li><a href="https://demovideo.francetvaccess.fr/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">MFP Player</a>, accessibles</li>
+    <li><a href="https://plyr.io/" lang="en" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Plyr</a>, accessibles</li>
+    <li><a href="https://www.brightcove.com/en/" lang="en" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">BrightCove</a>, accessibles</li>
+    <li><strong>YouTube</strong>, conforme, mais les pubs peuvent être problématiques</li>
+    <li><strong>Dailymotion</strong>, non conforme</li>
+    <li>Balise <code>&lt;video&gt;</code> native, problème a priori avec NVDA, a confirmé</li>
+</ul>
+
+
+{{ macro.h3("Autres", "", "ancre") }}
+<p class="mb-m">
+    Identifiable grâce au contexte adjacent: <span class="ts-s">titre précédent ou texte adjacent</span>
+</p>
+
+
+
+{{ macro.h2("Alternatives aux médias", "ancre") }}
+<ul class="mb-m">
+    <li><strong>Transcription textuelle</strong>, texte structuré qui reprend l'ensemble du contenu oral et visuel en consultation libre de type <span lang="en">Disclosure</span></li>
+    <li><strong>Sous-titres synchronisés</strong></li>
+    <li><strong>Audiodescription</strong>, obligatoire uniquement si la bande son originale dispose des espaces blancs suffisant pour inclure la piste d'audiodescription </li>
+</ul>
+
+
+
+{{ macro.h2("Média non temporel", "ancre") }}
+<p class="mb-m">
+    Animations intégrées dans <code>Canvas</code> ou  <code>svg</code> : Mettre en place une alternative textuelle si nécessaire
+</p>

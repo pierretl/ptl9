@@ -1,0 +1,344 @@
+---
+layout: layout/standard.njk
+titre: "Formulaires"
+tags: noteAccessibilite
+dossierRecueil: true
+date: 2023-01-31 00:00:11
+description: "Etiquette, regroupement, intitulé, liste, aide, erreur, modification etc...."
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><abbr tabindex="0" title="Référentiel général d’amélioration de l’accessibilité">RGAA</abbr> : Formulaires</a></p>
+
+{% set sommaire = [
+    {titre: 'Étiquette de champ'},
+    {titre: 'Information complémentaire'},
+    {titre: 'Nom visible et nom accessible'},
+    {titre: 'Regroupement de champs'},
+    {titre: 'Liste de choix'},
+    {titre: 'Intitulés de bouton'},
+    {titre: 'Champ obligatoire et facultatif'},
+    {titre: 'Aides et contrôles de saisie'},
+    {titre: 'Personnaliser les messages d’erreurs natif'},
+    {titre: 'Modification, mises à jour ou récupération des données'},
+    {titre: 'Champs avec saisi automatique'}
+] %}
+{{ macro.sommaire2(sommaire) }}
+
+
+
+{{ macro.h2("Étiquette de champ", "ancre") }}
+
+<p class="mb-s">Une étiquette pertinente :</p>
+<ul class="mb-m">
+    <li>label visible</li>
+    <li>ou un bouton visible</li>
+    <li>ou, a minima, un attribut <code>title</code></li>
+</ul>
+<ul class="mb-m">
+    <li>Le <code>placeholder</code> ne remplace pas une étiquette visible.</li>
+    <li>Les labels et les champs doivent être accolés, pas de définition claire (à l'appréciation de chacun !)</li>
+</ul>
+
+<p class="mb-s">Dans le code, le champ doit avoir un <strong>nom accessible</strong></p>
+<ul class="mb-s">
+    <li><code>&lt;label&gt;</code> avec relation <code>for</code> / <code>id</code></li>
+    <li><code>aria-labelledby</code> / <code>id</code></li>
+    <li><code>aria-label</code></li>
+    <li><code>title</code></li>
+</ul>
+<p class="mb-m">Le <code>placeholder</code> n’est pas un nom accessible robuste</p>
+
+
+
+{{ macro.h2("Information complémentaire", "ancre") }}
+<ul class="mb-m">
+    <li>
+        Ajouté le complément directe dans l'étiquette de champ<br>
+        L'utilisation d'une double <code>&lt;label for=""&gt;</code> est déconseiller
+        {% set code %}
+<label for="name">
+    <strong>Prénom</strong><br>
+    40 caractere max
+</label>
+<input id="name"/>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        ou une combinaison de <code>label</code> et de <code>aria-describedby</code>
+        {% set code %}
+<label for="name" aria-describedby="info">Prénom</label>
+<input id="name"/>
+<p id="info">40 caractere max</p>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        ou utilisé un <code>aria-labelledby</code> multiple
+        {% set code %}
+<p id="label">Prénom</p>
+<input type="text" aria-labelledby="label info"/>
+<p id="info">40 caractere max</p>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+</ul>
+
+
+
+{{ macro.h2("Nom visible et nom accessible", "ancre") }}
+<p class="mb-m">
+    Le nom visible doit être contenu dans le nom accessible <br>
+    Attention à l'<a href="https://www.w3.org/TR/html-aam-1.0/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">algorithme de calcul du nom accessible</a>
+</p>
+
+
+
+{{ macro.h2("Regroupement de champs", "ancre") }}
+<p class="mb-s">Réunir les éléments communs avec :</p>
+<ul class="mb-m">
+    <li>
+        <code lang="en">&lt;fieldset&gt;</code> et titrer avec <code lang="en">&lt;legend&gt;</code>
+        {% set code %}
+<fieldset>
+    <legend>Adresse de facturation</legend>
+    [champs ...]
+</fieldset>
+        {% endset %}
+        {{ macro.code(code, "") }}
+    </li>
+    <li>
+        ou une <code lang="en">div</code> avec le <code lang="en">role="group"</code> et titrer avec <code lang="en">aria-label</code> ou <code lang="en">aria-labelledby</code>
+        {% set code %}
+<div role="group" aria-labelledby="toto">
+    <p id="toto">Adresse de livraison</p>
+    [champs ...]
+</div>
+        {% endset %}
+        {{ macro.code(code, "") }}
+    </li>
+</ul>
+
+<p class="mb-m">La légende peut être masqué mais doit être restitué par les lecteurs d'écran</p>
+
+<p class="mb-s">Exemple courant de regroupement à faire :</p>
+<ul class="mb-m">
+    <li>Ensemble de Radio</li>
+    <li>Ensemble de Chexbox</li>
+    <li>Période d'une date (debut, fin)</li>
+    <li>Ajouter un personne, se répétant, (nom, prénom, age)</li>
+</ul>
+
+
+
+{{ macro.h2("Liste de choix", "ancre") }}
+<p class="mb-s">Regrouper les items de même nature d’une liste de choix <code>&lt;select&gt;</code> si nécessaire</p>
+{% set code %}
+<select>
+    <optgroup label="Véhicules">
+        <option>Voiture</option>
+        <option>Motos</option>
+        …
+    </optgroup>
+    <optgroup label="Immobilier">
+        <option>Maison</option>
+        <option>Appartements</option>
+        …
+    </optgroup>
+</select>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+
+
+{{ macro.h2("Intitulés de bouton", "ancre") }}
+<ul class="mb-s">
+    <li>
+        L'intitulé (nom accessible) est pertinent ;
+        <ul>
+            <li>&laquo;Valider&raquo; : ne permet pas de comprendre ce qui va se passer</li>
+            <li>&laquo;Calculer la simulation&raquo; : pertinent</li>
+        </ul>
+    </li>
+    <li>
+        Si le bouton possède un nom visible alors il est aussi contenu dans le nom accessible
+    </li>
+</ul>
+{% set code %}
+<input type="submit" value="Envoyer le message" />
+
+<input type="image" src="loupe.png" alt="Rechercher sur le site">
+
+<input type="submit" value="OK" title="Envoyer le message" />
+
+<input type="submit" aria-label="Effacer mes données"/>
+
+<input type="submit" aria-labelledby="desc-btn" />
+<span id="desc-btn">Envoyer le message</span>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+
+
+{{ macro.h2("Champ obligatoire et facultatif", "ancre") }}
+<ul class="mb-m">
+    <li><strong>Tout est obligatoire :</strong> Mettre en début de formulaire que tous les champs sont obligatoires</li>
+    <li><strong>Mixte :</strong> Ajouter une astérisque dans les champs obligatoire + mettre une légende en haut du formulaire</li>
+    <li><strong>Majorité de facultatif :</strong> Possibililité de mettre les champs optionnels directement après le label</li>
+    <li>
+        Ou au moyen d'un texte relié avec <code>aria-describedby</code>
+        {% set code %}
+<label for="name" aria-describedby="required">Prénom</label>
+<input id="name"/>
+<p id="required">Champs obligatoire</p>
+        {% endset %}
+        {{ macro.code(code, "mb-m") }}
+    </li>
+    <li>Il faut une indication visible, un attribut <code>required</code> ne suffit pas !</li>
+</ul>
+
+
+
+{{ macro.h2("Aides et contrôles de saisie", "ancre") }}
+<ul class="mb-m">
+    <li><strong>Format attendu&nbsp;:</strong> fournir le format de saisie</li>
+    <li><strong>Contrôle de saisie&nbsp;:</strong> fournir un exemple de saisie</li>
+</ul>
+<ul class="mb-m">
+    <li>Directement dans l'étiquette du champ concerné</li>
+    <li>Ou via l’attribut <code class="small">aria-describedby="id_dun_texte"</code>, voir <a href="#information-complementaire">Information complémentaire</a></li>
+    <li>L'indication doit être visible</li>
+</ul>
+
+
+
+{{ macro.h2("Message d'erreur", "ancre") }}
+<p class="mb-s">
+    Le message doit être visible est restitué <br>
+    relié avec un <code>aria-describedby</code>
+</p>
+<p class="mb-s">
+    <strong>Champ obligatoire</strong> : format attendu fourni si possible
+</p>
+<ul class="mb-m">
+    <li>Dans le message d'erreur on peut donner :
+        <ul>
+            <li>un exemple réel 01/02/23 au lieu du JJ/MM/AAAA, pour une date c'est clairement mieux, mais pour une adresse email c'est moins intéressant</li>
+            <li>de l'aide à la complétion, pas obligatoire mais mieux</li>
+        </ul>
+    </li>
+    <li>Les exemples de format ne doivent pas être que dans les <code>placeholders</code> car ce n'est pas accessible</li>
+</ul>
+
+
+
+{{ macro.h2("Personnaliser les messages d’erreurs natif", "ancre") }}
+<p class="mb-s">
+    L'API Constraint validation permet de personnaliser les messages d’erreurs générés par les type d’input particuliers.
+</p>
+<ul class="mb-m">
+    <li><a href="https://caniuse.com/#feat=constraint-validation" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Support de l’API par les navigateurs</a> (trés bon)</li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Documentation MDN</a></li>
+    <li><a href="http://codetheory.in/custom-validation-messages-for-html5-form-constraints/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Custom Validation Messages for HTML5 Form Constraints</a></li>
+</ul>
+
+{% set code %}
+<form>
+    <label class="label" for="emailform">Votre email:</label>
+    <p><input type="email" name="email" id="emailform"></p>
+    <input type="submit" value="valider">
+</form>
+{% endset %}
+{{ macro.code(code, "mb-s") }}
+
+{% set code %}
+var email = document.getElementById("emailform");
+email.addEventListener('invalid', function() {
+    if (this.value.trim() !== '') {
+        this.setCustomValidity("Saisie invalide. Exemple valide\n: toto@foobar.com");
+    }
+}, false);
+{% endset %}
+{{ macro.code(code, "mb-m", "language-js") }}
+
+
+
+{{ macro.h2("Modification, mises à jour ou récupération des données", "ancre") }}
+<p class="mb-s">Si le formulaire</p>
+<ul class="mb-m">
+    <li>modifie ou supprime des données ;</li>
+    <li>ou transmet des données sensibles, réponses à un examen ;</li>
+    <li> a des conséquences financières, juridiques.</li>
+</ul>
+<p class="mb-s">L'utilisateurs doit pouvoir</p>
+<ul class="mb-m">
+    <li>vérifier, modifier ou annuler les saisies avant envoie du formulaire ;</li>
+    <li>ou il existe un mécanisme de confirmation explicite via une case à cocher ou une étape supplémentaire.</li>
+</ul>
+<p class="mb-s">Pour les formulaires de signature électronique, type mandat SEPA, la modification peut être désactivé comme le but de ces formulaires est de valider les données saisies précédemment</p>
+
+
+
+{{ macro.h2("Champs avec saisi automatique", "ancre") }}
+<p class="mb-s">Pour les champs qui collectent des informations personnelles sur l’utilisateur, la nature du champ (finalité) est déterminable à partir du code (attributs/propriétés).</p>
+<p class="mb-m">Utilisation de l’attribut <code>autocomplete</code></p>
+<p class="mb-s"><a href="https://www.w3.org/Translations/WCAG21-fr/#input-purposes" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">La liste des valeurs</a> disponibles est fournie par la spécification WCAG 2.1&nbsp;:</p>
+<ul class="mb-m">
+    <li><code>name</code> - Nom complet&nbsp;;</li>
+    <li><code>honorific-prefix</code> - Abréviation, civilité ou titre&nbsp;;</li>
+    <li><code>given-name</code> - Prénom&nbsp;;</li>
+    <li><code>additional-name</code> - Prénoms additionnels&nbsp;;</li>
+    <li><code>family-name</code> - Nom de famille&nbsp;;</li>
+    <li><code>honorific-suffix</code> - Suffixe honorifique&nbsp;;</li>
+    <li><code>nickname</code> - Surnom, diminutif&nbsp;;</li>
+    <li><code>organization-title</code> - Fonction, intitulé de poste&nbsp;;</li>
+    <li><code>username</code> - Nom d’utilisateur&nbsp;;</li>
+    <li><code>new-password</code> - Nouveau mot de passe (par exemple, lors de la création d’un compte ou d’un changement de mot de passe)&nbsp;;</li>
+    <li><code>current-password</code> - Mot de passe actuel pour le compte identifié par le champ <code>username</code> (par exemple, lors d’une connexion) ;</li>
+    <li><code>organization</code> - Nom de l’organisation correspondant à la personne, à l’adresse ou à l’information de contact dans les autres champs associés avec ce champ&nbsp;;</li>
+    <li><code>street-address</code> - Adresse postale (multiligne, nouvelles lignes conservées) - attention champ <code>textarea</code> attendu&nbsp;;</li>
+    <li><code>address-line1</code> - Adresse postale (une ligne par champ, ligne 1)&nbsp;;</li>
+    <li><code>address-line2</code> - Adresse postale (une ligne par champ, ligne 2)&nbsp;;</li>
+    <li><code>address-line3</code> - Adresse postale (une ligne par champ, ligne 3)&nbsp;;</li>
+    <li><code>address-level4</code> - Le niveau administratif le plus détaillé, pour les adresses pourvues de quatre niveaux administratifs&nbsp;;</li>
+    <li><code>address-level3</code> - Le troisième niveau administratif, pour les adresses pourvues d’au moins trois niveaux administratifs&nbsp;;</li>
+    <li><code>address-level2</code> - Le deuxième niveau administratif, pour les adresses pourvues d’au moins deux niveaux administratifs&nbsp;;</li>
+    <li><code>address-level1</code> - Le plus large niveau administratif d’une adresse, c’est-à-dire la province dans laquelle se trouve la localité&nbsp;;</li>
+    <li><code>country</code> - Code pays&nbsp;;</li>
+    <li><code>country-name</code> - Nom de pays&nbsp;;</li>
+    <li><code>postal-code</code> - Code postal, code CEDEX (si le CEDEX est présent, ajouter “CEDEX”, et ce qui le suit doit être ajouté dans le champ <code>address-level2</code>) ;</li>
+    <li><code>cc-name</code> - Nom complet figurant sur le moyen de paiement&nbsp;;</li>
+    <li><code>cc-given-name</code> - Prénom figurant sur le moyen de paiement&nbsp;;</li>
+    <li><code>cc-additional-name</code> - Prénoms additionnels figurant sur le moyen de paiement cc-family-name - Nom de famille figurant sur le moyen de paiement&nbsp;;</li>
+    <li><code>cc-number</code> - Code identifiant le moyen de paiement (e.g., un numéro de carte bancaire)&nbsp;;</li>
+    <li><code>cc-exp</code> - Date d’expiration du moyen de paiement&nbsp;;</li>
+    <li><code>cc-exp-month</code> - Le mois de la date d’expiration du moyen de paiement&nbsp;;</li>
+    <li><code>cc-exp-year</code> - L’année de la date d’expiration du moyen de paiement&nbsp;;</li>
+    <li><code>cc-csc</code> - Code de sécurité du moyen de paiement <span lang="en">(also known as the card security code (CSC), card validation code (CVC), card verification value (CVV), signature panel code (SPC), credit card ID (CCID), etc.)</span>&nbsp;;</li>
+    <li><code>cc-type</code> - Type de moyen de paiement (e.g. Visa)&nbsp;;</li>
+    <li><code>transaction-currency</code> - La devise qui a la préférence de l’utilisateur lors d’une transaction&nbsp;;</li>
+    <li><code>transaction-amount</code> - Le montant qui a la préférence de l’utilisateur lors d’une transaction (e.g., en réponse à une enchère ou à un prix soldé)&nbsp;;</li>
+    <li><code>language</code> - Langue préférée&nbsp;;</li>
+    <li><code>bday</code> - Date d’anniversaire&nbsp;;</li>
+    <li><code>bday-day</code> - Le jour de la date d’anniversaire&nbsp;;</li>
+    <li><code>bday-month</code> - Le mois de la date d’anniversaire&nbsp;;</li>
+    <li><code>bday-year</code> - L’année de la date d’anniversaire&nbsp;;</li>
+    <li><code>sex</code> - Identité sexuelle&nbsp;;</li>
+    <li><code>url</code> - Page d’accueil ou une autre page Web correspondant à l’organisation, la personne, l’adresse ou à l’information de contact dans les autres champs associés avec ce champ&nbsp;;</li>
+    <li><code>photo</code> - Photographie, icône ou une autre image correspondant à l’organisation, la personne, l’adresse ou à l’information de contact dans les autres champs associés avec ce champ ;</li>
+    <li><code>tel</code> - Numéro de téléphone complet, y compris le code pays&nbsp;;</li>
+    <li><code>tel-country-code</code> - Code pays du numéro de téléphone&nbsp;;</li>
+    <li><code>tel-national</code> - Numéro de téléphone sans la partie code pays, avec un préfixe interne au pays, s’il y a lieu&nbsp;;</li>
+    <li><code>tel-area-code</code> - Indicatif régional du numéro de téléphone, avec un préfixe interne au pays, s’il y a lieu&nbsp;;</li>
+    <li><code>tel-local</code> - Numéro de téléphone sans la partie code pays ni l’indicatif régional&nbsp;;</li>
+    <li><code>tel-local-prefix</code> - La première partie du composant du numéro de téléphone qui suit l’indicatif régional, lorsque ce composant est scindé en deux parties&nbsp;;</li>
+    <li><code>tel-local-suffix</code> - La seconde partie du composant du numéro de téléphone qui suit l’indicatif régional, lorsque ce composant est scindé en deux parties&nbsp;;</li>
+    <li><code>tel-extension</code> - Numéro de téléphone d’un poste interne&nbsp;;</li>
+    <li><code>email</code> - Adresse électronique&nbsp;;</li>
+    <li><code>impp</code> - URL correspondant d’un protocole de messagerie instantanée (par exemple, <code>"aim:goim?screenname=example"</code> ou <code>"xmpp:fred@example.net"</code>).</li>
+</ul>
+</p>
+
