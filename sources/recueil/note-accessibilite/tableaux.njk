@@ -2,7 +2,6 @@
 layout: layout/standard.njk
 titre: "Tableaux"
 tags: noteAccessibilite
-dossierRecueil: true
 date: 2023-01-31 00:00:05
 description: "Tableaux de mise en forme - accessibilité"
 scriptJs: "prism.js"
@@ -11,6 +10,28 @@ styleCss: "prism.css"
 {% import "macro/contenu.njk" as macro %}
 
 <p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#5" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><abbr tabindex="0" title="Référentiel général d’amélioration de l’accessibilité">RGAA</abbr> : Tableaux</a></p>
+
+
+{% set sommaire = [
+    {titre: 'Faire de la mise en forme'},
+    {
+        titre: 'Tableaux simples',
+        sub: [
+            {titre: 'Sémantique'},
+            {titre: 'Équivalents ARIA'}
+        ]
+    },
+    {titre: 'Équivalents ARIA'},
+    {
+        titre: 'Tableaux complexes',
+        sub: [
+            {titre: 'Titre et résumé de l’organisation du tableau'},
+            {titre: 'Version alternative'},
+            {titre: 'Cellules d’en-têtes'}
+        ]
+    }
+] %}
+{{ macro.sommaire2(sommaire) }}
 
 
 

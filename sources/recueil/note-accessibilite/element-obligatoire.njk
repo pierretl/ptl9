@@ -2,7 +2,6 @@
 layout: layout/standard.njk
 titre: "Éléments obligatoires"
 tags: noteAccessibilite
-dossierRecueil: true
 date: 2023-01-31 00:00:08
 description: "Respect des standard et de la sémantique - accessibilité"
 scriptJs: "prism.js"
@@ -11,6 +10,14 @@ styleCss: "prism.css"
 {% import "macro/contenu.njk" as macro %}
 
 <p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><abbr tabindex="0" title="Référentiel général d’amélioration de l’accessibilité">RGAA</abbr> : Éléments obligatoires</a></p>
+{% set sommaire = [
+    {titre: 'Respect des standard'},
+    {titre: 'Respect de la sémantique'},
+    {titre: 'Titre de pages'},
+    {titre: 'Changements de langue'},
+    {titre: 'Changements de sens de lecture'}
+] %}
+{{ macro.sommaire2(sommaire) }}
 
 
 

@@ -2,11 +2,30 @@
 layout: layout/standard.njk
 titre: "Le contexte juridique et technique"
 tags: noteAccessibilite
-dossierRecueil: true
 date: 2023-01-31 00:00:00
 description: "Découvrir l’accessibilité du Web, les enjeux humains, le contexte juridique et technique"
 ---
 {% import "macro/contenu.njk" as macro %}
+
+{% set sommaire = [
+    {
+        titre: 'Un droit fondamental',
+        sub: [
+            {titre: 'Contexte'},
+            {titre: 'Pourquoi faire de l\'accessibilité'}
+        ]
+    },
+    {
+        titre: 'Norme et référentiel',
+        sub: [
+            {titre: 'Norme'},
+            {titre: 'Référentiel RGAA'},
+            {titre: 'Aménagement raisonnable'}
+        ]
+    }
+] %}
+{{ macro.sommaire2(sommaire) }}
+
 
 
 {{ macro.h2("Un droit fondamental") }}
