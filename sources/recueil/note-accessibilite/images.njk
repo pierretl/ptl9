@@ -2,7 +2,6 @@
 layout: layout/standard.njk
 titre: "Images"
 tags: noteAccessibilite
-dossierRecueil: true
 date: 2023-01-31 00:00:01
 description: "Image de décoration et porteuse d'information - accessibilité"
 scriptJs: "prism.js"
@@ -12,7 +11,7 @@ styleCss: "prism.css"
 
 <p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><abbr tabindex="0" title="Référentiel général d’amélioration de l’accessibilité">RGAA</abbr> : Images</a></p>
 
-{% set sommaireImages = [
+{% set sommaire = [
     {titre: 'Nom accessible'},
     {
         titre: 'Images décorative',
@@ -35,12 +34,12 @@ styleCss: "prism.css"
     {titre: 'Texte en image'},
     {titre: 'Images légendées'}
 ] %}
-{{ macro.sommaire2(sommaireImages) }}
+{{ macro.sommaire2(sommaire) }}
 
 
 
 
-{{ macro.h2("Nom accessible", "ancre") }}
+{{ macro.h2("Nom accessible") }}
 <p class="mb-s">Utiliser par les lecteurs d'écran, pas toujours visible (<code>alt</code> par exemple)</p>
 {% set code %}
     <img src="img.png"
@@ -60,14 +59,14 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Images décorative", "ancre") }}
+{{ macro.h2("Images décorative") }}
 
 <ul class="mb-m">
     <li>Pas d'information dans l'image ni de volonté d'en transmettre une</li>
     <li>Une image peut comporter du texte sans que celui-ci soit à but d'informatif, elle peut être juste décorative pour habiller une section</li>
 </ul>
 
-{{ macro.h3("Bitmap", "", "ancre") }}
+{{ macro.h3("Bitmap") }}
 
 <ul class="mb-s">
     <li><code>alt</code> vide, préféré cet attribut car natif</li>
@@ -82,7 +81,7 @@ styleCss: "prism.css"
 {{ macro.code(code, "mb-m") }}
 
 
-{{ macro.h3("Vectorielles", "", "ancre") }}
+{{ macro.h3("Vectorielles") }}
 
 <ul class="mb-s">
     <li><code>aria-hidden="true"</code> sur l’élément <code>&lt;svg&gt;</code></li>
@@ -100,11 +99,11 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Images porteuses d’information", "ancre") }}
+{{ macro.h2("Images porteuses d’information") }}
 
 <p class="mb-s">Vérifier auprès du contributeur ou de ce qu'a fait le bloc quelle information il veut véhiculer</p>
 
-{{ macro.h3("Bitmap", "", "ancre") }}
+{{ macro.h3("Bitmap") }}
 
 <ul class="mb-s">
     <li><code>alt</code> renseigné, solution a privilégié</li>
@@ -123,7 +122,7 @@ styleCss: "prism.css"
 {{ macro.code(code, "mb-m") }}
 
 
-{{ macro.h3("Vectorielles", "", "ancre") }}
+{{ macro.h3("Vectorielles") }}
 <p class="mb-s">Il faut utiliser ses <strong>deux attributs sur l’élément</strong></p>
 <ul class="mb-m">
     <li><code>role="img"</code></li>
@@ -145,7 +144,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("SEO", "ancre") }}
+{{ macro.h2("SEO") }}
 <ul class="mb-m">
     <li>Mettre plein de mot clé dans l'<code>alt</code> une idée reçue ça ne fonctionne pas</li>
     <li>Si l'équipe SEO impose de mettre du contenu dans le alt, ajouter <code>aria-hidden="true"</code> pour que le texte ne soit pas interprété pour les utilisateurs</li>
@@ -154,7 +153,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Image map", "ancre") }}
+{{ macro.h2("Image map") }}
 <ul class="mb-s">
     <li><code>alt</code> sur l'<code>img</code> pour décrire sa fonction</li>
     <li><code>alt</code> sur chaque <code>area</code></li>
@@ -170,7 +169,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Images description détaillée", "ancre") }}
+{{ macro.h2("Images description détaillée") }}
 <div class="d-flex ai-c mb-m">
     <div class="w-50">
         <p class="mb-s">Description détaillée adjacente où bien lien adjacent <br>
@@ -196,7 +195,7 @@ Mettre un <code>alt</code> trés général puis le bouton &laquo;lire la descrip
 
 
 
-{{ macro.h2("Image captcha", "ancre") }}
+{{ macro.h2("Image captcha") }}
 <p class="mb-s">L’alternative de l’image doit permettre d’identifier la nature de l’image</p>
 {% set code %}
 <img src="" alt="Code de confirmation à saisir"/>
@@ -212,7 +211,7 @@ Mettre un <code>alt</code> trés général puis le bouton &laquo;lire la descrip
 
 
 
-{{ macro.h2("Texte en image", "ancre") }}
+{{ macro.h2("Texte en image") }}
 <div class="d-flex ai-c mb-m">
     <div class="w-50">
         <p class="mb-s">
@@ -231,7 +230,7 @@ Mettre un <code>alt</code> trés général puis le bouton &laquo;lire la descrip
 
 
 
-{{ macro.h2("Images légendées", "ancre") }}
+{{ macro.h2("Images légendées") }}
 <p class="mb-m">Légende : texte adjacent à une image</p>
 <p class="mb-s">Si un <code>alt</code> est renseigné, il faudrat reporter son contenu dans le <code>aria-label</code> et dans la <code>figcaption</code></p>
 {% set code %}

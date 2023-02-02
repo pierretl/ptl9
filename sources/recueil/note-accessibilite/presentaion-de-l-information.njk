@@ -2,7 +2,6 @@
 layout: layout/standard.njk
 titre: "Présentation de l’information"
 tags: noteAccessibilite
-dossierRecueil: true
 date: 2023-01-31 00:00:10
 description: "Style et CSS - accessibilité"
 scriptJs: "prism.js"
@@ -31,7 +30,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Utilisation exclusive de CSS", "ancre") }}
+{{ macro.h2("Utilisation exclusive de CSS") }}
 <ul class="mb-s">
     <li>Utilisation exclusive de CSS&nbsp;:
         <ul>
@@ -48,7 +47,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Contenus visibles sans CSS", "ancre") }}
+{{ macro.h2("Contenus visibles sans CSS") }}
 <p class="mb-s">Le contenu visible reste présent lorsque les feuilles de styles sont désactivées.</p>
 <p class="mb-s"><b>Attention, ne pas faire :</b></p>
 <ul class="mb-s">
@@ -59,7 +58,7 @@ a[target="_blank"]:after{
     content:"nouvelle fenêtre"
 }
         {% endset %}
-        {{ macro.code(code, "", "language-css") }}
+        {{ macro.code(code, "language-css") }}
     </li>
     <li>
         Images de fond porteuses d’informations (<code>background-image</code>)
@@ -68,13 +67,13 @@ h1:after{
     background-image:url("logo.png")
 }
         {% endset %}
-        {{ macro.code(code, "", "language-css") }}
+        {{ macro.code(code, "language-css") }}
     </li>
 </ul>
 
 
 
-{{ macro.h2("Contenus compréhensibles sans CSS", "ancre") }}
+{{ macro.h2("Contenus compréhensibles sans CSS") }}
 <p class="mb-s">Le contenu reste compréhensible lorsque les feuilles de styles sont désactivées.</p>
 <ul class="mb-m">
     <li>Ordre des éléments logique</li>
@@ -89,7 +88,7 @@ h1:after{
 
 
 
-{{ macro.h2("Couleurs par défaut", "ancre") }}
+{{ macro.h2("Couleurs par défaut") }}
 <ul class="mb-m">
     <li>
         Toujours déclarer une couleur de texte, de lien et de fond sur le <code>body</code>
@@ -97,7 +96,7 @@ h1:after{
 body, body a{color:#000;}
 body{background-color:#fff;}
         {% endset %}
-        {{ macro.code(code, "", "language-css") }}
+        {{ macro.code(code, "language-css") }}
     </li>
     <li>
         Texte avec une image en arrière-plan : mettre un <code>background-color</code>
@@ -114,7 +113,7 @@ body{background-color:#fff;}
 
 
 
-{{ macro.h2("Zoom texte", "ancre") }}
+{{ macro.h2("Zoom texte") }}
 <p class="mb-s"><b>Unités des tailles de police&nbsp;:</b></p>
 <ul class="mb-m">
     <li>Taille de police relatives&nbsp;: <code>em</code>, <code>rem</code>, <code>%</code></li>
@@ -131,7 +130,7 @@ body{background-color:#fff;}
 
 
 
-{{ macro.h2("Linéarisation des contenus", "ancre") }}
+{{ macro.h2("Linéarisation des contenus") }}
 <p class="mb-s">Les contenus doivent rester présents, lisibles et utilisables sans utilisation des deux ascenseurs :</p>
 <ul class="mb-s">
     <li>Consultation verticale : 320px de large minimum </li>
@@ -143,7 +142,7 @@ body{background-color:#fff;}
 
 
 
-{{ macro.h2("Adaptation des textes", "ancre") }}
+{{ macro.h2("Adaptation des textes") }}
 <p class="mb-s">Les textes doivent rester lisibles dans les conditions suivantes :</p>
 <ul class="mb-s">
     <li><b>interlignage</b> augmenté de <b class="a42-bgcolor-c0">1,5 fois</b> la taille de police&nbsp;;

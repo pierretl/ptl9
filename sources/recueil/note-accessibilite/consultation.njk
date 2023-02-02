@@ -2,7 +2,6 @@
 layout: layout/standard.njk
 titre: "Consultation"
 tags: noteAccessibilite
-dossierRecueil: true
 date: 2023-01-31 00:00:13
 description: "Avertir et laisser le contrôle à l’utilisateur - accessibilité"
 scriptJs: "prism.js"
@@ -29,7 +28,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Limite de temps de session", "ancre") }}
+{{ macro.h2("Limite de temps de session") }}
 <ul class="mb-s">
     <li>L’utilisateur doit pouvoir <b>supprimer ou augmenter</b> la limite de temps&nbsp;;</li>
     <li>La limite de temps est de <b>vingt heures au moins</b>&nbsp;;</li>
@@ -42,7 +41,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Rafraichissement automatique", "ancre") }}
+{{ macro.h2("Rafraichissement automatique") }}
 <ul class="mb-s">
     <li>L'utilisateur peut <b>arrêter et relancer</b> le rafraîchissement&nbsp;;</li>
     <li>L'utilisateur est <b>alerté de l’imminence</b> d’un rafraichissement et peut augmenter le délai de 10 fois au moins.</li>
@@ -53,7 +52,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Nouvelles fenêtres", "ancre") }}
+{{ macro.h2("Nouvelles fenêtres") }}
 <ul class="mb-m">
     <li>Pas de nouvelles fenêtres <b>sans action</b> de l’utilisateur</li>
     <li>Une seule fenêtre s'ouvre à la fois</li>
@@ -61,7 +60,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Documents en téléchargement", "ancre") }}
+{{ macro.h2("Documents en téléchargement") }}
 <ul class="mb-s">
     <li>Document accessible&nbsp;;</li>
     <li>Ou alternative accessible&nbsp;: HTML, .doc, .odt structurés.</li>
@@ -73,7 +72,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Clignotement et contenus en mouvement", "ancre") }}
+{{ macro.h2("Clignotement et contenus en mouvement") }}
 <p class="mb-s">L'utilisateur doit pouvoir&nbsp;:</p>
 <ul class="mb-s">
     <li>Arrêter et relancer, sur un slider prévoir un bouton pause s'il se lance automatiquement</li>
@@ -86,7 +85,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Effet de flash", "ancre") }}
+{{ macro.h2("Effet de flash") }}
 <ul class="mb-s">
     <li>Fréquence limite =< 3 flash par seconde</li>
     <li>ou surface cumulée =< 21824 pixels</li>
@@ -100,7 +99,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Son déclenché automatiquement", "ancre") }}
+{{ macro.h2("Son déclenché automatiquement") }}
 <ul class="mb-m">
     <li>Les sons et vidéo doivent être contrôlable</li>
     <li>On évite de les lancer automatiquement bien sur !</li>
@@ -109,7 +108,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Indépendance de l’orientation", "ancre") }}
+{{ macro.h2("Indépendance de l’orientation") }}
 <ul class="mb-m">
     <li>Le contenu doite être consultable portrait et paysage, ne pas bloquer</li>
     <li>Sauf si l'orientation est essentielle</li>
@@ -117,7 +116,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Gestes complexes", "ancre") }}
+{{ macro.h2("Gestes complexes") }}
 <p class="mb-s">Les fonctionnalités utilisables par des <b>gestes multipoints</b> (zoom sur une carte) ou basés sur <b>un tracé</b> (<i lang="en">swipe</i>)&nbsp;:</p>
 <ul class="mb-s">
     <li>peuvent être réalisées avec <b class="a42-bgcolor-c0">un geste à point unique</b> et/ou sans trajectoire,</li>
@@ -129,7 +128,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Annulation du pointeur", "ancre") }}
+{{ macro.h2("Annulation du pointeur") }}
 <ul class="mb-m">
     <li>Aucun événement ne doit être déclenché sur l’<b class="a42-bgcolor-c0">action descendante</b><br>(<i lang="en">down</i> : <i lang="en">mousedown</i> sur desktop / <i lang="en">touchstart</i> sur mobile) </li>
     <li>ou prévoir un mécanisme qui permet d’<b>interrompre</b> l'exécution de l'action avant la fin&nbsp;;</li>
@@ -138,7 +137,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Activation par le mouvement ", "ancre") }}
+{{ macro.h2("Activation par le mouvement ") }}
 <p class="mb-s">Les fonctions qui sont déclenchées en <b>déplaçant l’appareil</b> (en secouant ou en basculant) ou lorsque l’utilisateur effectue <b>un mouvement</b> capté par les dispositifs de l’appareil (eg. une caméra) peuvent être&nbsp;:</p>
 <ul class="mb-m">
     <li><b>actionnées par des composants classiques</b> (un bouton)&nbsp;;</li>

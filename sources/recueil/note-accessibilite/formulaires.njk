@@ -2,7 +2,6 @@
 layout: layout/standard.njk
 titre: "Formulaires"
 tags: noteAccessibilite
-dossierRecueil: true
 date: 2023-01-31 00:00:11
 description: "Etiquette, regroupement, intitulé, liste, aide, erreur, modification etc...."
 scriptJs: "prism.js"
@@ -29,7 +28,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Étiquette de champ", "ancre") }}
+{{ macro.h2("Étiquette de champ") }}
 
 <p class="mb-s">Une étiquette pertinente :</p>
 <ul class="mb-m">
@@ -53,7 +52,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Information complémentaire", "ancre") }}
+{{ macro.h2("Information complémentaire") }}
 <ul class="mb-m">
     <li>
         Ajouté le complément directe dans l'étiquette de champ<br>
@@ -89,7 +88,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Nom visible et nom accessible", "ancre") }}
+{{ macro.h2("Nom visible et nom accessible") }}
 <p class="mb-m">
     Le nom visible doit être contenu dans le nom accessible <br>
     Attention à l'<a href="https://www.w3.org/TR/html-aam-1.0/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">algorithme de calcul du nom accessible</a>
@@ -97,7 +96,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Regroupement de champs", "ancre") }}
+{{ macro.h2("Regroupement de champs") }}
 <p class="mb-s">Réunir les éléments communs avec :</p>
 <ul class="mb-m">
     <li>
@@ -108,7 +107,7 @@ styleCss: "prism.css"
     [champs ...]
 </fieldset>
         {% endset %}
-        {{ macro.code(code, "") }}
+        {{ macro.code(code) }}
     </li>
     <li>
         ou une <code lang="en">div</code> avec le <code lang="en">role="group"</code> et titrer avec <code lang="en">aria-label</code> ou <code lang="en">aria-labelledby</code>
@@ -118,7 +117,7 @@ styleCss: "prism.css"
     [champs ...]
 </div>
         {% endset %}
-        {{ macro.code(code, "") }}
+        {{ macro.code(code) }}
     </li>
 </ul>
 
@@ -134,7 +133,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Liste de choix", "ancre") }}
+{{ macro.h2("Liste de choix") }}
 <p class="mb-s">Regrouper les items de même nature d’une liste de choix <code>&lt;select&gt;</code> si nécessaire</p>
 {% set code %}
 <select>
@@ -154,7 +153,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Intitulés de bouton", "ancre") }}
+{{ macro.h2("Intitulés de bouton") }}
 <ul class="mb-s">
     <li>
         L'intitulé (nom accessible) est pertinent ;
@@ -183,7 +182,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Champ obligatoire et facultatif", "ancre") }}
+{{ macro.h2("Champ obligatoire et facultatif") }}
 <ul class="mb-m">
     <li><strong>Tout est obligatoire :</strong> Mettre en début de formulaire que tous les champs sont obligatoires</li>
     <li><strong>Mixte :</strong> Ajouter une astérisque dans les champs obligatoire + mettre une légende en haut du formulaire</li>
@@ -202,7 +201,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Aides et contrôles de saisie", "ancre") }}
+{{ macro.h2("Aides et contrôles de saisie") }}
 <ul class="mb-m">
     <li><strong>Format attendu&nbsp;:</strong> fournir le format de saisie</li>
     <li><strong>Contrôle de saisie&nbsp;:</strong> fournir un exemple de saisie</li>
@@ -215,7 +214,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Message d'erreur", "ancre") }}
+{{ macro.h2("Message d'erreur") }}
 <p class="mb-s">
     Le message doit être visible est restitué <br>
     relié avec un <code>aria-describedby</code>
@@ -235,7 +234,7 @@ styleCss: "prism.css"
 
 
 
-{{ macro.h2("Personnaliser les messages d’erreurs natif", "ancre") }}
+{{ macro.h2("Personnaliser les messages d’erreurs natif") }}
 <p class="mb-s">
     L'API Constraint validation permet de personnaliser les messages d’erreurs générés par les type d’input particuliers.
 </p>
@@ -266,7 +265,7 @@ email.addEventListener('invalid', function() {
 
 
 
-{{ macro.h2("Modification, mises à jour ou récupération des données", "ancre") }}
+{{ macro.h2("Modification, mises à jour ou récupération des données") }}
 <p class="mb-s">Si le formulaire</p>
 <ul class="mb-m">
     <li>modifie ou supprime des données ;</li>
@@ -282,7 +281,7 @@ email.addEventListener('invalid', function() {
 
 
 
-{{ macro.h2("Champs avec saisi automatique", "ancre") }}
+{{ macro.h2("Champs avec saisi automatique") }}
 <p class="mb-s">Pour les champs qui collectent des informations personnelles sur l’utilisateur, la nature du champ (finalité) est déterminable à partir du code (attributs/propriétés).</p>
 <p class="mb-m">Utilisation de l’attribut <code>autocomplete</code></p>
 <p class="mb-s"><a href="https://www.w3.org/Translations/WCAG21-fr/#input-purposes" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">La liste des valeurs</a> disponibles est fournie par la spécification WCAG 2.1&nbsp;:</p>

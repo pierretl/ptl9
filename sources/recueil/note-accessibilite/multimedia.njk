@@ -2,7 +2,6 @@
 layout: layout/standard.njk
 titre: "Multimédia"
 tags: noteAccessibilite
-dossierRecueil: true
 date: 2023-01-31 00:00:04
 description: "Média temporel et non temporel - accessibilité"
 ---
@@ -25,9 +24,9 @@ description: "Média temporel et non temporel - accessibilité"
 
 
 
-{{ macro.h2("Média temporel", "ancre") }}
+{{ macro.h2("Média temporel") }}
 
-{{ macro.h3("Vidéo", "", "ancre") }}
+{{ macro.h3("Vidéo") }}
 <ul class="mb-m">
     <li>Contrôles obligatoires</li>
     <li>Clavier/souris</li>
@@ -46,14 +45,14 @@ description: "Média temporel et non temporel - accessibilité"
 </ul>
 
 
-{{ macro.h3("Autres", "", "ancre") }}
+{{ macro.h3("Autres") }}
 <p class="mb-m">
     Identifiable grâce au contexte adjacent: <span class="ts-s">titre précédent ou texte adjacent</span>
 </p>
 
 
 
-{{ macro.h2("Alternatives aux médias", "ancre") }}
+{{ macro.h2("Alternatives aux médias") }}
 <ul class="mb-m">
     <li><strong>Transcription textuelle</strong>, texte structuré qui reprend l'ensemble du contenu oral et visuel en consultation libre de type <span lang="en">Disclosure</span></li>
     <li><strong>Sous-titres synchronisés</strong></li>
@@ -62,7 +61,7 @@ description: "Média temporel et non temporel - accessibilité"
 
 
 
-{{ macro.h2("Média non temporel", "ancre") }}
+{{ macro.h2("Média non temporel") }}
 <p class="mb-m">
     Animations intégrées dans <code>Canvas</code> ou  <code>svg</code> : Mettre en place une alternative textuelle si nécessaire
 </p>
