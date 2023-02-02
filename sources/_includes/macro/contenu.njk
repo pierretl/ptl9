@@ -56,8 +56,8 @@
 
 
 
- {% macro h2(texte, ancre, info) %}
-     <h2 class="ts-l tg1-4 th-2 tw-4{% if class %} {{ class | safe }}{% endif %}"{% if ancre %} id="{{ texte | slug  }}"{% endif %}>
+ {% macro h2(texte, info) %}
+     <h2 class="ts-l tg1-4 th-2 tw-4{% if class %} {{ class | safe }}{% endif %}" id="{{ texte | slug  }}">
          {{ texte | safe }}
          {% if info %}
              <span class="ts-s tg1-2">— {{ info | safe }}</span>
@@ -68,8 +68,8 @@
 
 
 
- {% macro h3(texte, info, ancre) %}
-     <h3 class="ts-l mb-s"{% if ancre %} id="{{ texte | slug  }}"{% endif %}>
+ {% macro h3(texte, info) %}
+     <h3 class="ts-l mb-s" id="{{ texte | slug  }}">
          {{ texte | safe }}
          {% if info %}
              <span class="ts-s tg1-2">— {{ info | safe }}</span>
@@ -81,7 +81,7 @@
 
 
  {% macro h4(texte) %}
-     <h4 class="mb-s">
+     <h4 class="mb-s" id="{{ texte | slug  }}">
          <strong>
              {{ texte | safe }}
          </strong>
@@ -107,10 +107,12 @@
 
 
 
- {% macro sommaire2(liste) %}
-    <h2 class="ts-l mb-s">
-        Sommaire
-    </h2>
+ {% macro sommaire2(liste, titreSommaire) %}
+     {% if titreSommaire %}
+         <h2 class="ts-l mb-s">
+             Sommaire
+         </h2>
+     {% endif %}
     <ul class="ul-sommaire mb-l">
      {% for item in liste %}
          <li class="mb-xs">
