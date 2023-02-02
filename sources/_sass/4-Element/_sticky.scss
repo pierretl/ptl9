@@ -1,5 +1,9 @@
-.sticky {
-  height: 100vh;
-  position: sticky;
-  top: $espace-s;
+@include breakpoint(large) {
+
+  .sticky {
+    height: 100vh;
+    position: sticky;
+    top: $espace-s;
+  }
+
 }
