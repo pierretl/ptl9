@@ -16,20 +16,26 @@ styleCss: "prism.css"
         <p class="ts-l tg1-4 th-2 tw-4">Les thématiques</p>
         <ul class="ul-sommaire">
             {% for blog in collections.noteAccessibilite %}
-                <li class="mb-s" data-order="{{ blog.data.order }}">
-                    <a href="#{{ blog.data.titre | slug }}" class="tg1-1 td-0 tw-4">
-                        {{ blog.data.titre | safe }}
-                    </a>
-                </li>
+                {% if blog.data.brouillon %}
+                {% else %}
+                    <li class="mb-s" data-order="{{ blog.data.order }}">
+                        <a href="#{{ blog.data.titre | slug }}" class="tg1-1 td-0 tw-4">
+                            {{ blog.data.titre | safe }}
+                        </a>
+                    </li>
+                {% endif %}
             {% endfor %}
         </ul>
     </div>
     <div class="w-70">
         {% for blog in collections.noteAccessibilite %}
-            <article class="mb-xl">
-                <h1 id="{{ blog.data.titre | slug }}" class="ts-xl tg1-1 tw-4">{{ blog.data.titre | safe }}</h1>
-                {{ blog.templateContent | safe }}
-            </article>
+            {% if blog.data.brouillon %}
+            {% else %}
+                <article class="mb-xl">
+                    <h1 id="{{ blog.data.titre | slug }}" class="ts-xl tg1-1 tw-4">{{ blog.data.titre | safe }}</h1>
+                    {{ blog.templateContent | safe }}
+                </article>
+            {% endif %}
         {% endfor %}
     </div>
 </div>
