@@ -19,11 +19,7 @@ description: "Journal de bord, tutoriel et écrit sur mon site personnel, mes cr
         {% else %}
             <li class="mb-m">
 
-            {% if blog.data.dossierRecueil %}
-                {% set classEspacement = " d-block mb-s" %}
-            {% endif %}
-
-                <a href="{{ blog.url | url }}" class="tg1-1 td-0 tw-4{{ classEspacement }}">
+                <a href="{{ blog.url | url }}" class="tg1-1 td-0 tw-4">
 
                     <span class="ts-l th-09">
                         {{ blog.data.titre | safe }}
@@ -31,23 +27,6 @@ description: "Journal de bord, tutoriel et écrit sur mon site personnel, mes cr
                     <span class="ts-s tg1-2">—&nbsp;{{ blog.date | frDate | safe }}</span>
 
                 </a>
-
-
-                {% if blog.data.dossierRecueil == "noteAccessibilite" %}
-                    <ul class="pl-s">
-                        {% for dossier in collections.noteAccessibilite %}
-                            {% if dossier.data.brouillon %}
-                            {% else %}
-                                <li>
-                                    <a href="{{ dossier.url | url }}" class="tg1-1 td-0 tw-4">
-                                        {{ dossier.data.titre | safe }}
-                                    </a>
-                                </li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-
 
             </li>
         {% endif %}
