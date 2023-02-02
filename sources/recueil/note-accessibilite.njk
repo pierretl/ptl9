@@ -2,29 +2,34 @@
 layout: layout/standard.njk
 titre: "Quelques notes sur les thématiques du RGAA"
 tags: "recueil"
-dossierRecueil: noteAccessibilite
 date: 2023-01-30
 description: "Découvrir l’accessibilité du Web au travers une prise de notes durant une formation"
+scriptJs: "prism.js"
+styleCss: "prism.css"
 ---
 {% import "macro/contenu.njk" as macro %}
 
-{{ macro.h2("Les thématiques") }}
 
-<ul class="mb-m">
-    {% for blog in collections.noteAccessibilite %}
 
-        {% if blog.data.brouillon %}
-        {% else %}
-            <li class="mb-s" data-order="{{ blog.data.order }}">
-
-                <a href="{{ blog.url | url }}" class="tg1-1 td-0 tw-4">
-
-                    {{ blog.data.titre | safe }}
-
-                </a>
-
-            </li>
-        {% endif %}
-
-    {% endfor %}
-</ul>
+<div class="d-flex mb-xl">
+    <div class="w-30 sticky">
+        <p class="ts-l tg1-4 th-2 tw-4">Les thématiques</p>
+        <ul class="ul-sommaire">
+            {% for blog in collections.noteAccessibilite %}
+                <li class="mb-s" data-order="{{ blog.data.order }}">
+                    <a href="#{{ blog.data.titre | slug }}" class="tg1-1 td-0 tw-4">
+                        {{ blog.data.titre | safe }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="w-70">
+        {% for blog in collections.noteAccessibilite %}
+            <article class="mb-xl">
+                <h1 id="{{ blog.data.titre | slug }}" class="ts-xl tg1-1 tw-4">{{ blog.data.titre | safe }}</h1>
+                {{ blog.templateContent | safe }}
+            </article>
+        {% endfor %}
+    </div>
+</div>
