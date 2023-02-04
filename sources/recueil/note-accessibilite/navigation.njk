@@ -23,7 +23,10 @@ styleCss: "prism.css"
             {titre: 'Moteur de recherche'},
             {titre: "Fil d'Ariane"}
         ]
-    }
+    },
+    {titre: 'Ordre de tabulation, piège au clavier'},
+    {titre: 'Accès au contenu additionnel affiché'},
+    {titre: 'Raccourcis clavier'}
 ] %}
 {{ macro.sommaire2(sommaire) }}
 
@@ -139,7 +142,61 @@ styleCss: "prism.css"
 
 
 {{ macro.h3("Fil d'Ariane") }}
-<ul class="mb-s">
+<ul class="mb-m">
     <li>Pas d'obligation de le mettre dans le <code>&lt;main&gt;</code>, peut-être en fin de contenu ou dans le pied de page !</li>
     <li>Tous les liens sont fonctionnels avec des intitulés pertinents</li>
 </ul>
+
+
+
+{{ macro.h2("Ordre de tabulation, piège au clavier") }}
+<ul class="mb-m">
+    <li>Ordre de tabulation cohérent avec le code ; titre avant paragraphe, ordre des conteneurs ( vérifier avec le site sans styles)
+    </li>
+    <li>
+        Pas de piège au clavier (focus figé, focus sur un élément invisible, bug JS, boucle infinie)<br>
+        Attention au <span lang="en">datepicker</span>, pensez à mettre un bouton calendrier pour ouvrir et surtout fermer le calendrier pour éviter toute boucle
+    </li>
+    <li>
+        <p class="mb-s">
+            Ne jamais utiliser des <code>tabindex</code> supérieurs à 0, laissez le navigateur faire<br>
+            Il peut avoir plusieurs <code>tabindex="0"</code> et <code>tabindex="-1"</code> dans une page
+        </p>
+
+        <code>tabindex="0"</code>
+        <p class="mb-s">
+            Permets de capturer le focus et être atteint via la navigation au clavier<br>
+            Inclut l'élément dans le parcours séquentiel de tabulation pour un élément qui ne prend pas le focus, une <code>div</code> par exemple
+        </p>
+
+        <code>tabindex="-1"</code>
+        <ul>
+            <li>L'élément peut capturer le focus mais ne peut pas être atteint via la navigation au clavier</li>
+            <li>Exclu du parcours séquentiel un élément qui prend le focus (lien, button…)</li>
+            <li>Permets à l'élément ne prenant pas nativement le focus de le recevoir (méthode javascript focus, une <code>div</code>)
+            </li>
+            <li>Attention l'élément restera accessible par les techniques d'assistance (différent d'aria hidden="true")</li>
+        </ul>
+
+    </li>
+</ul>
+
+
+
+{{ macro.h2("Accès au contenu additionnel affiché") }}
+<ul class="mb-s">
+    <li>L'élément doit être atteint au clavier</li>
+    <li>La zone doit rester visible tant que le focus se trouve dans l'élément</li>
+</ul>
+<p class="mb-m">
+    Penser à mettre un bouton fermer pour pouvoir revenir à l'endroit initial (un bouton qui ouvre un pop-in après le footer dans le code)
+</p>
+
+
+
+{{ macro.h2("Raccourcis clavier") }}
+<ul class="mb-m">
+    <li>Désactiver ou permettre de configurer les raccourcis</li>
+    <li>Ou le raccourci n'est effectif que lorsque le focus est dans le composant sur lequel il s'applique</li>
+</ul>
+
