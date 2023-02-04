@@ -7,3 +7,12 @@
   }
 
 }
+
+.sticky-retour {
+  position: sticky;
+  bottom: $espace-xs;
+  left: 100%;
+  margin-right: $espace-xs;
+  text-decoration: none;
+  padding: $espace-xxs $espace-xs;
+}
