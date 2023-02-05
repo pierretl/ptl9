@@ -12,7 +12,7 @@ description: "Journal de bord, tutoriel et écrit sur mon site personnel, mes cr
     <h2>{{ article.data.title }}</h2>
 {% endfor %}
 
-<ul class="ul-reset">
+<ul class="ul-reset js--go-top-cible">
     {% for blog in collections.recueil | reverse %}
 
         {% if blog.data.brouillon %}
