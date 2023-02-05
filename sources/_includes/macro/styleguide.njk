@@ -1,4 +1,4 @@
-{% macro demo_code(demo, code, intro, code2) %}
+{% macro demo_code(demo, code, intro, code2, language) %}
 
     {% if intro %}
         <p class="mb-m">
@@ -6,20 +6,25 @@
         </p>
     {% endif %}
 
-    <div class="d-flex ai-c jc-c mb-xl">
-        <div class="w-50">
+    <div class="mb-xl">
+
+        <div class="mb-s">
             {{ demo | safe }}
         </div>
-        <div class="w-50">
-            {% if code2 %}
-                <div class="mb-s">
-                    <pre><code class="language-html">{{ code | trim }}</code></pre>
-                </div>
-                <pre><code class="language-twig">{{ code2 | safe | trim }}</code></pre>
+
+        {% if code2 %}
+            <div class="mb-s">
+                <pre><code class="language-html">{{ code | trim }}</code></pre>
+            </div>
+            <pre><code class="language-twig">{{ code2 | safe | trim }}</code></pre>
+        {% else %}
+            {% if language %}
+                <pre><code class="{{ language }}">{{ code | trim }}</code></pre>
             {% else %}
                 <pre><code class="language-html">{{ code | trim }}</code></pre>
             {% endif %}
-        </div>
+        {% endif %}
+
     </div>
 
 {% endmacro %}

@@ -10,84 +10,45 @@ styleCss: "prism.css"
 
 <div id="rechercheSite">
 
-    <div class="mb-m" style="position:sticky;position:-webkit-sticky;top:0" role="search">
-        <form class="pr">
-            <input type="search" class="search js--rechercheInput w-100" placeholder="Rechercher un composant, utilitaire, classe CSS, macro Nunjucks..." aria-label="Rechercher un composant, utilitaire, classe CSS, macro Nunjucks..."/>
-            <button type="button" class="bouton-icon pa-cr js--rechercheBtn" title="Lancer la recherche">
-                <span class="sr-only">Lancer la recherche</span>
-                <svg class="fill--mode" width="24px" height="24px" aria-hidden="true">
-                    <use xlink:href="#loupe"></use>
-                </svg>
-            </button>
-        </form>
+    <div class="d-flex mb-xl">
+        <div class="w-30 sticky">
+            <p class="ts-l tg1-4 th-2 tw-4">Les composants</p>
+            <ul class="ul-sommaire cc2-so">
+                {% for atome in collections.styleguideptl  %}
+                    <li class="mb-s">
+                        <a href="#{{ atome.data.titre | slug }}" class="tg1-1 td-0 tw-4">
+                            {{ atome.data.titre | safe }}
+                            {% if atome.data.tags[1] %}
+                                <span class="ts-s tg1-2">({{ atome.data.tags[1] | capitalize }})</span>
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="w-70">
+            <ul class="list ul-reset">
 
-        <p class="js--rechercheMessageKo hide tg1-4 pt-m" tabindex="-1">
-            Il n'y a pas de résultat pour cette recherche
-        </p>
+                {% for atome in collections.styleguideptl  %}
+
+                    <li class="mb-xl" id="{{ atome.data.titre | slug }}">
+
+                        <a href="#{{ atome.data.titre | slug }}" class="td-0">
+                            <h2 class="ts-l tg1-4 th-2 tw-4">
+                                {{ atome.data.titre | safe }}
+                                {% if atome.data.tags[1] %}
+                                    <span class="ts-s tg1-2">—&nbsp;{{ atome.data.tags[1] | capitalize }}</span>
+                                {% endif %}
+                            </h2>
+                        </a>
+
+                        {{ atome.templateContent | safe }}
+
+                    </li>
+
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 
-
-    <ul class="list ul-reset js--rechercheResultat" tabindex="-1">
-
-        {% for atome in collections.styleguideptl  %}
-
-            <li class="mb-xl" id="{{ atome.data.titre | slug }}">
-
-                <a href="#{{ atome.data.titre | slug }}" class="td-0">
-                    <h2 class="ts-l tg1-4 th-2 tw-4 js--rechercheValeurTitre">
-                        {{ atome.data.titre | safe }}
-                        {% if atome.data.tags[1] %}
-                            <span class="ts-s tg1-2">—&nbsp;{{ atome.data.tags[1] | capitalize }}</span>
-                        {% endif %}
-                    </h2>
-                </a>
-
-                <div class="js--rechercheValeurDescription">
-                    {{ atome.templateContent | safe }}
-                </div>
-
-            </li>
-
-        {% endfor %}
-    </ul>
-
 </div>
-
-<script src="{{ metadata.siteUrl }}/js/list.min.js"></script>
-<script>
-    // recherche
-    var options = {
-        valueNames: [
-            'js--rechercheValeurTitre',
-            'js--rechercheValeurDescription'
-        ]
-
-    };
-    var userList = new List('rechercheSite', options);
-
-
-    // affichage erreur et données
-    var rechercheInput = document.querySelector('.js--rechercheInput');
-    var rechercheBtn = document.querySelector('.js--rechercheBtn');
-    var rechercheResultat = document.querySelector('.js--rechercheResultat');
-    var rechercheMessageKo = document.querySelector('.js--rechercheMessageKo');
-
-    rechercheInput.onkeyup = function() {
-
-        //Affiche un message pas de résultat
-        if (rechercheResultat.innerHTML === '') {
-            rechercheMessageKo.classList.remove('hide');
-        } else {
-            rechercheMessageKo.classList.add('hide');
-        }
-
-    };
-
-    rechercheBtn.addEventListener('click', function () {
-        if (rechercheMessageKo.classList.contains('hide')) {
-            rechercheResultat.focus();
-        } else {
-            rechercheMessageKo.focus();
-        }
-    });
-</script>

@@ -11,47 +11,22 @@ date: 2021-03-01
 
 
 
-{% set intro %}
-    La lien d'évitement est affiché au focus en absolute en haut à gauche
-{% endset %}
 {% set demo %}
-    <a href="#">Lien primaire</a>
+    <p class="mb-s">
+        <a href="#">Lien primaire</a><br>
+        <a href="0" rel="external">Lien primaire externe</a>
+    </p>
+    <p>
+        <a class="lien-niveau2" href="#">Lien secondaire</a><br>
+        <a class="lien-niveau2" href="0" rel="external">Lien secondaire externe</a>
+    </p>
 {% endset %}
 {% set code %}
 <a href="#">Lien primaire</a>
-{% endset %}
-{{ styleguide.demo_code(demo, code, intro, "intermédiaire") }}
+<a href="0" rel="external">Lien primaire externe</a>
 
-
-
-
-{% set demo %}
-    <a href="0" rel="external">Lien primaire externe</a>
-{% endset %}
-{% set code %}
-<a href="" rel="external">Lien primaire externe</a>
-{% endset %}
-{{ styleguide.demo_code(demo, code) }}
-
-
-
-
-{% set demo %}
-    <a class="lien-niveau2" href="#">Lien secondaire</a>
-{% endset %}
-{% set code %}
 <a class="lien-niveau2" href="#">Lien secondaire</a>
-{% endset %}
-{{ styleguide.demo_code(demo, code) }}
-
-
-
-
-{% set demo %}
-    <a class="lien-niveau2" href="0" rel="external">Lien secondaire externe</a>
-{% endset %}
-{% set code %}
-<a class="lien-niveau2" href="" rel="external">Lien secondaire externe</a>
+<a class="lien-niveau2" href="0" rel="external">Lien secondaire externe</a>
 {% endset %}
 {{ styleguide.demo_code(demo, code) }}
 
@@ -84,43 +59,41 @@ date: 2021-03-01
 
 
 
+{% set intro %}
+    La lien d'évitement est affiché au focus en absolute en haut à gauche
+{% endset %}
 {% set demo %}
     <a href="#contenu" class="lien-evitement affiche-evitement">Lien évitement</a>
 {% endset %}
 {% set code %}
 <a href="#contenu" class="lien-evitement">Lien évitement</a>
 {% endset %}
-{{ styleguide.demo_code(demo, code) }}
+{{ styleguide.demo_code(demo, code, intro) }}
 
 
 
 
 {% set demo %}
     <a href="#" class="tg1-1 tw-7">Menu header niveau 1</a>
-{% endset %}
-{% set code %}
-<a href="#" class="tg1-1 tw-7">Menu header niveau 1</a>
-{% endset %}
-{{ styleguide.demo_code(demo, code) }}
-
-
-
-
-{% set demo %}
+    <br>
     <a href="#" class="tg1-1">Menu header niveau 2</a>
-{% endset %}
-{% set code %}
-<a href="#" class="tg1-1">Menu header niveau 2</a>
-{% endset %}
-{{ styleguide.demo_code(demo, code) }}
-
-
-
-
-{% set demo %}
+    <br>
     <a href="#" class="tg1-1 td-0">Menu footer</a>
 {% endset %}
 {% set code %}
+<a href="#" class="tg1-1 tw-7">Menu header niveau 1</a>
+<a href="#" class="tg1-1">Menu header niveau 2</a>
 <a href="#" class="tg1-1 td-0">Menu footer</a>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
+
+
+
+
+{% set demo %}
+    <a class="bouton sticky-retour" href="#contenu" title="Retour en haut de page">Retour en haut</a>
+{% endset %}
+{% set code %}
+<a class="bouton sticky-retour js--go-top-btn" href="#contenu" title="Retour en haut de page">Retour en haut</a>
 {% endset %}
 {{ styleguide.demo_code(demo, code) }}

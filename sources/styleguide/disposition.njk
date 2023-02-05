@@ -1,0 +1,24 @@
+---
+layout: layout/standard.njk
+titre: "Disposition"
+tags: styleguideptl
+description: "répartition du contenu"
+date: 2021-03-01
+---
+{% import "macro/styleguide.njk" as styleguide %}
+
+
+
+{% set intro %}
+    Sur un sommaire, par exemple, répartis la liste sur deux colonnes en <span lang="en">small-only</span>
+{% endset %}
+{% set demo %}
+<ul class="ul-sommaire cc2-so">
+    <li><a class="#" href="#">un</a></li>
+    <li><a class="#" href="#">deux</a></li>
+    <li><a class="#" href="#">trois</a></li>
+    <li><a class="#" href="#">quatre</a></li>
+    <li><a class="#" href="#">cinq</a></li>
+</ul>
+{% endset %}
+{{ styleguide.demo_code(demo, demo, intro) }}

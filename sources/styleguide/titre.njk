@@ -19,46 +19,21 @@ date: 2021-03-01
 
 
 {% set demo %}
-    <p class="ts-xl tg1-1 tw-4">Niveau 1 - titre page</p>
-{% endset %}
-{{ styleguide.demo_code(demo, demo) }}
-
-
-
-
-{% set demo %}
+    <p class="ts-xl tg1-1 tw-4">Niveau 1</p>
     <p class="ts-l tg1-4 th-2 tw-4">Niveau 2</p>
+    <p class="ts-l mb-s">Niveau 3</p>
+    <p>Texte courant</p>
+    <p class="ts-s tg1-2 tw-4">Niveau 4</p>
+{% endset %}
+{% set code %}
+<p class="ts-xl tg1-1 tw-4">Niveau 1</p>
+<p>Texte courant</p>
+<p class="ts-s tg1-2 tw-4">Niveau 4</p>
 {% endset %}
 {% set nunjucks %}
 &#x7B;&#x7B; macro.h2("Niveau 2") &#125;&#125;
 &#x7B;&#x7B; macro.h2("Niveau 2", "16/08/2021") &#125;&#125;
-{% endset %}
-{{ styleguide.demo_code(demo, demo, "", nunjucks) }}
-
-
-
-
-{% set demo %}
-    <p class="ts-l mb-s">Niveau 3</p>
-{% endset %}
-{% set nunjucks %}
 &#x7B;&#x7B; macro.h3("Niveau 3") &#125;&#125;
 &#x7B;&#x7B; macro.h3("Niveau 3", "16/08/2021") &#125;&#125;
 {% endset %}
-{{ styleguide.demo_code(demo, demo, "", nunjucks) }}
-
-
-
-
-{% set demo %}
-    <p>Texte courant</p>
-{% endset %}
-{{ styleguide.demo_code(demo, demo) }}
-
-
-
-
-{% set demo %}
-    <p class="ts-s tg1-2 tw-4">Niveau 4</p>
-{% endset %}
-{{ styleguide.demo_code(demo, demo) }}
+{{ styleguide.demo_code(demo, code, "", nunjucks) }}

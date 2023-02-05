@@ -6,57 +6,33 @@ description: "Poids des caractères adaptés selon la couleur"
 date: 2021-03-01
 ---
 {% import "macro/styleguide.njk" as styleguide %}
+{% import "macro/contenu.njk" as macro %}
 
 
+{{ macro.h3("Texte courant") }}
 
 {% set demo %}
-    Défaut, <span class="tw-3">Normal</span> (300)
+    <span class="tw-3">300 - Trois-cents (défaut)</span>
+    <p class="tw-4">400 - Quatre-cents</p>
+    <span class="tw-7">700 - Sept-cents</span>, <strong>strong</strong>
 {% endset %}
 {% set code %}
-    <p>Défaut, <span class="tw-3">Normal</span></p>
+<span class="tw-3">300 - Trois-cents (Normal)</span>
+<p class="tw-4">400 - Quatre-cents</p>
+<span class="tw-7">700 - Sept-cents</span>, <strong>strong</strong>
 {% endset %}
 {{ styleguide.demo_code(demo, code) }}
 
 
 
+{{ macro.h3("Couleur quatre") }}
 
 {% set demo %}
-    <p class="tw-4">Quatre-cents (400)</p>
+    <p class="tg1-4">500 - Cinq-cents (défaut)</p>
+    <p class="tg1-4"><span class="tw-7">700 - Sept-cents</span>, <strong>strong</strong></p>
 {% endset %}
 {% set code %}
-    <p class="tw-4">Quatre cents</p>
-{% endset %}
-{{ styleguide.demo_code(demo, code) }}
-
-
-
-
-{% set demo %}
-    <span class="tw-7">Sept-cents</span>, <strong>strong</strong> (700)
-{% endset %}
-{% set code %}
-    <span class="tw-7">Sept-cents</span>, <strong>strong</strong>
-{% endset %}
-{{ styleguide.demo_code(demo, code) }}
-
-
-
-
-{% set demo %}
-    <p class="tg1-4">Couleur quatre : défaut (500)</p>
-{% endset %}
-{% set code %}
-    <p class="tg1-4">Couleur quatre : défaut (500)</p>
-{% endset %}
-{{ styleguide.demo_code(demo, code) }}
-
-
-
-
-{% set demo %}
-    <p class="tg1-4"><span class="tw-7">Couleur quatre : Sept-cents</span>, <strong>strong</strong> (700)</p>
-{% endset %}
-{% set code %}
-    <p class="tg1-4"><span class="tw-7">Couleur quatre : Sept-cents</span>, <strong>strong</strong></p>
+<p class="tg1-4">500 - Cinq-cents (défaut)</p>
+<p class="tg1-4"><span class="tw-7">700 - Sept-cents</span>, <strong>strong</strong></p>
 {% endset %}
 {{ styleguide.demo_code(demo, code) }}
