@@ -29,7 +29,7 @@ input:not(:placeholder-shown):not(:focus):invalid {
 input[type="search"] {
   padding-right: $espace-s + rem-calc(24) + $espace-s;
 }
-input[type="search"] + svg {
+input[type="search"] + button {
   margin-right: $espace-s;
 }
 
@@ -52,6 +52,26 @@ input[type="search"] + svg {
 .bouton:focus-visible {
   @include style-focus;
   box-shadow: none;
+}
+
+
+
+
+
+
+.bouton-icon {
+  background-color: transparent;
+  border: 0 none;
+}
+.bouton-icon:hover {
+  cursor: pointer;
+}
+.bouton-icon:hover svg {
+  fill: var(--gamme1__texte3);
+}
+.bouton-icon:focus-visible {
+  border-radius: $radius-defaut;
+  @include style-focus;
 }
 
 

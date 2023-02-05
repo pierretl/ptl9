@@ -35,20 +35,6 @@ date: 2021-03-01
 
 
 {% set demo %}
-<div class="pr w-50">
-    <input type="search" class="search js--rechercheBtn" placeholder="Demo..." />
-    <svg class="pa-cr fill--mode" width="24px" height="24px">
-        <use xlink:href="#loupe"></use>
-    </svg>
-</div>
-{% endset %}
-{{ styleguide.demo_code(demo, demo) }}
-
-
-
-
-
-{% set demo %}
     <textarea placeholder="Textarea"></textarea>
 {% endset %}
 {{ styleguide.demo_code(demo, demo) }}
@@ -59,5 +45,35 @@ date: 2021-03-01
 
 {% set demo %}
     <button class="bouton">Bouton</button>
+{% endset %}
+{{ styleguide.demo_code(demo, demo) }}
+
+
+
+
+
+{% set demo %}
+    <button class="bouton-icon">
+        <svg class="fill--mode" width="24px" height="24px" aria-hidden="true">
+            <use xlink:href="#loupe"></use>
+        </svg>
+    </button>
+{% endset %}
+{{ styleguide.demo_code(demo, demo) }}
+
+
+
+
+
+{% set demo %}
+    <div class="pr w-50">
+        <input type="search" class="search js--rechercheInput" placeholder="Que recherchez-vous ?" aria-label="Que recherchez-vous ?" />
+        <button type="button" class="bouton-icon pa-cr" title="Lancer la recherche">
+            <span class="sr-only">Lancer la recherche</span>
+            <svg class="fill--mode" width="24px" height="24px" aria-hidden="true">
+                <use xlink:href="#loupe"></use>
+            </svg>
+        </button>
+    </div>
 {% endset %}
 {{ styleguide.demo_code(demo, demo) }}

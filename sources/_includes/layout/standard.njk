@@ -9,11 +9,11 @@
     </head>
     <body class="d-flex fd-c">
         {% include "../include/evitement.html" %}
-        <header class="d-flex jc-sb ai-c fw-w pt-m px-tranche bordure-b">
+        <header class="d-flex jc-sb ai-c fw-w pt-m px-tranche bordure-b" role="banner">
             <div class="mb-m">
                 {% include "../include/titre-page.njk" %}
             </div>
-            <nav class="d-flex mb-s">
+            <nav class="d-flex mb-s" role="navigation">
                 <span style="width:{{ metadata.tailleLogo }}" class="mr-xs"></span>
                 <ul class="d-flex ai-c mr-m__enfant mb-s__enfant">
                     {{ menu.li_menu(metadata.siteUrl, titreMenu, 'Réalisation', 'index') }}

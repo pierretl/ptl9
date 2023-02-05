@@ -1,17 +1,23 @@
 <div id="rechercheSite"{% if masqueDonnesRecherche %}  class="w-70"{% endif %}>
 
-    <div class="pr {% if masqueDonnesRecherche %}w-100{% else %}w-50{% endif %}">
-        <input type="search" class="search js--rechercheBtn" placeholder="Que recherchez-vous ?" />
-        <svg class="pa-cr fill--mode" width="24px" height="24px">
-            <use xlink:href="#loupe"></use>
-        </svg>
+    <form class="pr {% if masqueDonnesRecherche %}w-100{% else %}w-50{% endif %}" role="search">
+        <input type="search" class="search js--rechercheInput" placeholder="Que recherchez-vous ?" aria-label="Que recherchez-vous ?" />
+        <button type="button" class="bouton-icon pa-cr js--rechercheBtn" title="Lancer la recherche">
+            <span class="sr-only">Lancer la recherche</span>
+            <svg class="fill--mode" width="24px" height="24px" aria-hidden="true">
+                <use xlink:href="#loupe"></use>
+            </svg>
+        </button>
+    </form>
+
+    <div class="js--rechercheMessage" tabindex="-1">
+        <p class="js--rechercheMessageKo hide tg1-4 pt-m">
+            Il n'y a pas de résultat pour cette recherche
+        </p>
+        <p class="js--rechercheMessageOk tg1-4 pt-m{% if masqueDonnesRecherche %} hide{% endif %}">
+            <span class="js--nombreResultat"></span> résultats de recherche (<span class="js--nombreResultatPage"></span> résultats par page - <span class="js--nombrePage"></span> pages)
+        </p>
     </div>
-    <p class="js--rechercheMessageKo hide tg1-4 pt-m">
-        Il n'y a pas de résultat pour cette recherche
-    </p>
-    <p class="js--rechercheMessageOk tg1-4 pt-m{% if masqueDonnesRecherche %} hide{% endif %}">
-        <span class="js--nombreResultat"></span> résultats de recherche (<span class="js--nombreResultatPage"></span> résultats par page - <span class="js--nombrePage"></span> pages)
-    </p>
 
 
     <div class="{% if masqueDonnesRecherche %}hide js--rechercheHide {% endif %}js--rechercheDonnees js--go-top-cible">
@@ -83,9 +89,11 @@
 
 
     // affichage erreur et données
+    var rechercheInput = document.querySelector('.js--rechercheInput');
     var rechercheBtn = document.querySelector('.js--rechercheBtn');
     var rechercheDonnees = document.querySelector('.js--rechercheDonnees');
     var rechercheResultat = document.querySelector('.js--rechercheResultat');
+    var rechercheMessage = document.querySelector('.js--rechercheMessage');
     var rechercheMessageKo = document.querySelector('.js--rechercheMessageKo');
     var rechercheMessageOk = document.querySelector('.js--rechercheMessageOk');
     var nombreResultat = document.querySelector('.js--nombreResultat');
@@ -94,7 +102,7 @@
 
     majNombreResultat();
 
-    rechercheBtn.onkeyup = function() {
+    rechercheInput.onkeyup = function() {
 
         // affiche les résultats si le champ de saisi est renseigné
         if (this.value === '' && rechercheDonnees.classList.contains("js--rechercheHide")) {
@@ -109,6 +117,10 @@
         setTimeout(message, 500);
 
     };
+
+    rechercheBtn.addEventListener('click', function () {
+        rechercheMessage.focus();
+    });
 
     function message(){
         if (rechercheResultat.innerHTML === '') {
