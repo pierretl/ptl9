@@ -1,0 +1,410 @@
+---
+layout: layout/standard.njk
+titre: "Scripts"
+tags: noteAccessibilite
+date: 2023-01-31 00:00:07
+description: "Scripts compatible avec les technologies d’assistance"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<p class="mb-m"><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#7" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener"><abbr tabindex="0" title="Référentiel général d’amélioration de l’accessibilité">RGAA</abbr> : Scripts</a></p>
+
+
+
+{% set sommaire = [
+    {
+        titre: 'ARIA',
+        sub: [
+            {titre: 'Notes'},
+            {titre: '5 règles de base'}
+        ]
+    },
+    {titre: 'Compatibilité'},
+    {titre: 'Rôle pertinent'},
+    {titre: 'État et changements d\'état'},
+    {titre: 'Changement de contexte'},
+    {
+        titre: 'Message de statut',
+        sub: [
+            {titre: 'Messages d\'erreurs'},
+            {titre: 'Messages d\'informations'},
+            {titre: 'Messages de notifiactions'},
+            {titre: 'Messages d’attente'}
+        ]
+    },
+    {titre: 'Ressources'},
+    {titre: 'Motif de conception'},
+    {titre: 'Environnement de test'}
+] %}
+{{ macro.sommaire2(sommaire) }}
+
+
+
+{{ macro.h2("ARIA") }}
+{{ macro.h3("Notes") }}
+<p class="mb-s">Surcharge de propriété, support général bon</p>
+<ul class="mb-s">
+    <li>
+        <a href="https://www.w3.org/TR/using-aria/" target="_blank" rel="noreferrer">Notes on Using ARIA in HTML</a>
+    </li>
+    <li>
+        Autre note pour les développeurs ARIA :
+        <a href="https://access42.net/kit-de-survie-du-developpeur-aria-1-3" target="_blank" rel="noreferrer">partie&nbsp;1</a>,
+        <a href="https://access42.net/kit-de-survie-du-developpeur-aria-2-3" target="_blank" rel="noreferrer">partie&nbsp;2</a>,
+        <a href="https://access42.net/kit-de-survie-du-developpeur-aria-3-3" target="_blank" rel="noreferrer">partie&nbsp;3</a>
+    </li>
+</ul>
+{{ macro.h3("5 règles de base") }}
+<ol class="mb-s__enfant mb-m">
+    <li>
+        <strong>Privilégier le natif !</strong>
+        <br>
+        Et tester la restitution.
+    </li>
+    <li>
+        <strong>Ne pas changer la sémantique</strong>
+        <br>
+        Sémantique de titre conservé, vérifié avec le validateur du W3C si besoin
+        {% set code %}
+<div role="tab">
+    <h2>Titre onglet</h2>
+</div>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        <strong>Composant interactif utilisable clavier</strong>
+        <ul>
+            <li>Les composants doivent pouvoir être atteint à  la tabulation, voir <a href="/recueil/note-accessibilite/#ordre-de-tabulation-piege-au-clavier">tabindex</a></li>
+            <li>Un bouton doit être sélectionnable avec <kbd>espace</kbd> et <kbd>entrée</kbd></li>
+        </ul>
+    </li>
+    <li>
+        <strong>Ne pas supprimer la sémantique des éléments interactifs ou empêcher leur restitution</strong>
+        <ul>
+            <li>Attention <code>aria-hidden="true"</code> s'hérite des parents</li>
+            <li>
+                Pour bloquer l'accès à un bouton
+                {% set code %}
+<button type="button" tab-index="-1">Menu</button>
+                {% endset %}
+                {{ macro.code(code) }}
+            </li>
+        </ul>
+    </li>
+    <li>
+        <strong>Tout composant interactif doit avoir un nom accessible</strong>
+        <br>
+        <a href="https://www.w3.org/TR/accname-1.1/" target="_blank" rel="noreferrer">Algorithme de calcul du nom accessible</a>
+    </li>
+</ol>
+
+
+
+{{ macro.h2("Compatibilité") }}
+<ul class="mb-m">
+    <li class="mb-s">Nom, rôle et valeurs</li>
+    <li class="mb-s">Accès à la souris et au clavier<br>
+        Voir les <a href="https://www.w3.org/WAI/ARIA/apg/patterns/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Motif de conception (en anglais)</a>
+    </li>
+    <li>
+        Ou une alternative accessible <br>
+        Avec un <span lang="en">datepicker</span> non conforme, l'ajout d'un <code>input</code> saisissable rend le composant conforme<br>
+        (attention à ne pas être piégé dans une boucle de <code>focus</code>)
+    </li>
+</ul>
+
+
+
+{{ macro.h2("Rôle pertinent") }}
+<ul class="mb-s">
+    <li>Lien : changement d'URL</li>
+    <li>Bouton ou implémentation du motif ARIA button : action, événement, fonction JavaScript etc...</li>
+</ul>
+<p class="mb-s">
+    Même pour les <strong lang="en">single page application</strong> ;<br>
+    Un composant qui déclenche l'ouverture d'une page ou d'un onglet doit être un lien même si ce sont des actions Javascript
+</p>
+{% set code %}
+<a role="link" tabindex="0" onclick="myFunction()"></a>
+<!-- ou -->
+<a href="#" onclick="myFunction()"></a>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+
+
+{{ macro.h2("État et changements d'état") }}
+<ul class="mb-m">
+    <li>
+        État sélectionné d'un bouton
+        {% set code %}
+<button aria-pressed="false">Filtrer par nom</button>
+<button aria-pressed="true">Filtrer par nom</button>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        Composant inactif, on utilisera l'attribut <code>disabled</code>
+    </li>
+    <li>
+        L'attribut <code>aria-expanded="true/false"</code> est défini sur un élément pour indiquer si un contrôle est développé
+    </li>
+    <li>
+        Sur un groupe d'éléments liés, indiquer à l'utilisateur qu'il s'agit de l'élément actuel <code>aria-current</code>
+    </li>
+    <li>
+        Lorsqu'un composant change d'état, que sa fonctionnalité est modifiée, on peut également passer par un changement de nom accessible ou de description (par exemple, la transformation d'un bouton lecture en pause, on vérifiera que l'intitulé a bien été modifié pour retranscrire la fonctionnalité qui sera déclenchée à la prochaine activation du bouton, pas uniquement l'apparence visuelle).
+        {% set code %}
+<button>Lecture</button>
+<button class="hide">Pause</button>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Liste exhaustive des États et propriétés ARIA (en anglais)</a>
+    </li>
+</ul>
+
+
+
+{{ macro.h2("Changement de contexte") }}
+<ul class="mb-m">
+    <li>
+        un texte explicatif précédant le changement de contexte <br>
+        Ne pas faire de rechargement de page, d'une partie ou de changement de page par défaut, mettre un bouton pour faire l'action
+    </li>
+    <li>un bouton ou un lien explicite</li>
+</ul>
+
+
+
+{{ macro.h2("Message de statut") }}
+<p class="mb-s">Informer les technologies d’assistance des messages d’alerte de confirmation ou de statut, sans déplacer le focus de l'utilisateur.</p>
+<p class="mb-s">
+    Si le focus est déplacé sur le message ok/Ko général alors pas besoin de mettre le <code>role="alert"</code> ou si la page se recharge et que le bloc est dans le DOM
+    Dans tous les cas on fait une <a href="https://access42.net/reprise-de-focus-et-accessibilite" target="_blank"  rel="noreferrer">reprise de focus</a>.
+</p>
+<p class="mb-s">
+    En cas d'erreur, ont se déplace l'utilisateur sur le premier champ en erreur/ ou message de confirmation + le mieux et de mettre aussi un message dans le titre de la page
+</p>
+
+
+{{ macro.h3("Messages d'erreurs", "Haute priorité") }}
+<div class="d-flex mb-m">
+    <div class="w-50">
+        <code>role="alert"</code> <br>
+        Le <span lang="en">"alert"</span> est restituée correctement
+        {% set code %}
+<p role="alert">Ceci est une alerte ajoutée dynamiquement</p>
+        {% endset %}
+        {{ macro.code(code) }}
+        <button id="rolealert" onclick="alertMethod()">Démonstration : Déclencher l'ajout du rôle status</button>
+        <div class="a42-bgcolor-c2" id="zonealert"></div>
+    </div>
+    <div class="w-50">
+        Méthode alternative :
+        <br>
+        <code>aria-live="assertive"</code>
+    </div>
+</div>
+
+{{ macro.h3("Messages d'informations", "Attends que ce soit son tour pour être vocalisé") }}
+<div class="d-flex mb-m">
+    <div class="w-50">
+        <p>Pas très fiable coté restitution, préféré le <span lang="en">"alert"</span> si ça beug</p>
+        {% set code %}
+<p role="status">Ceci est un status ajouté dynamiquement</p>
+        {% endset %}
+        {{ macro.code(code) }}
+        <button id="rolestatus" onclick="statusMethod()">Démonstration : Déclencher l'ajout du rôle alerte</button>
+        <div id="zonestatus" class="a42-bgcolor-c2"></div>
+    </div>
+    <div class="w-50">
+        Méthode alternative :
+        <br>
+        <code>aria-live="polite"</code>
+        {% set code %}
+<p><span id="myLiveRegion1" aria-live="polite">Mais je sais rester polie</span></p>
+        {% endset %}
+        {{ macro.code(code) }}
+        <button onclick="runExample()">Démonstration : <span lang="en">aria-live</span></button>
+        <p class="a42-bgcolor-c2">
+            <span id="myLiveRegion1" aria-live="polite">
+            </span>
+        </p>
+    </div>
+</div>
+
+{{ macro.h3("Messages de notifiactions") }}
+<div class="d-flex mb-m">
+    <div class="w-50">
+        <code>role="log"</code>
+    </div>
+    <div class="w-50">
+        Méthode alternative :
+        <br>
+        <code>aria-atomic</code>
+        <ul>
+            <li>
+                <code>aria-atomic="true"</code> restitue tout, à ne pas utiliser dans un tchat par exemple
+            </li>
+            <li>
+                <code>aria-atomic="false"</code> restitue uniquement le dernier ajout
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    var zonestatus = document.getElementById('zonestatus');
+    statusMethod = function addstatus() {
+        var node = document.createElement("p");
+        var textnode = document.createTextNode("Ceci est un status ajouté dynamiquement");
+        node.setAttribute('role','status');
+        node.appendChild(textnode);
+        document.getElementById("zonestatus").appendChild(node);
+    }
+
+    var zonealert = document.getElementById('zonealert');
+    alertMethod = function addalert() {
+        var node = document.createElement("p");
+        var textnode = document.createTextNode("Ceci est une alerte ajoutée dynamiquement");
+        node.setAttribute('role','alert');
+        node.appendChild(textnode);
+        document.getElementById("zonealert").appendChild(node);
+    }
+
+    var minimumTime = 4000;
+    var index=0;
+    var lrID = "myLiveRegion1";
+    var messagesArray = new Array("Bonjour tout le monde","Je suis une region vivante","Mais je sais rester polie");
+
+    function updateLiveRegion(liveRegionID, textString){
+        textNode = document.createTextNode(textString);
+        targetNode = document.getElementById(liveRegionID);
+        while (targetNode.firstChild) {
+            targetNode.removeChild(targetNode.firstChild);
+        }
+        targetNode.appendChild(textNode);
+    }
+
+    function runExample(){
+        updateLiveRegion(lrID, messagesArray[index++]);
+        if (index > 2){
+            index=0;
+        }
+        window.setTimeout(runExample, minimumTime);
+    }
+
+    function setMinimumTime(){
+        minimumTimeStr = document.getElementById("throttle").options[document.getElementById("throttle").selectedIndex].text;
+        minimumTime = minimumTimeStr * 1000;
+    }
+    function coment(){
+        document.getElementById("coment").className="visible";
+    }
+</script>
+
+{{ macro.h3("Messages d’attente") }}
+<code>role="progressbar"</code>
+
+<p class="mb-m">Seulement pour des tâches qui prennent beaucoup de temps.</p>
+{% set code %}
+<div role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20 %</div>
+{% endset %}
+{{ macro.code(code) }}
+ou
+{% set code %}
+<div role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuetext="Étape 2&nbsp;: Copie des fichiers…" aria-valuemax="100">
+    Étape 2&nbsp;: Copie des fichiers…
+</div>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+
+
+{{ macro.h2("Ressources") }}
+<ul class="mb-m">
+    <li><a href="https://disic.github.io/rgaa_bibliotheques-javascript/tutoriels/index.html" target="_blank"  rel="noreferrer">Une étude de l’accessibilité de certains bibliothèques JavaScript</a>&nbsp;: jQuery + jQuery-ui, Bootstrap + plugin Paypal, AngularJS + AngularUI Bootstrap, React + Bootstrap, ReactJS.</li>
+    <li>Correctifs proposés pour
+        <a href="https://github.com/DISIC/rgaa_react-bootstrap" target="_blank"  rel="noreferrer">React Bootstrap</a>,
+        <a href="https://github.com/DISIC/rgaa_reactjs" target="_blank"  rel="noreferrer">ReactJS</a>,
+        <a href="https://github.com/DISIC/rgaa_jquery-ui" target="_blank"  rel="noreferrer">Jquery UI</a>,
+        <a href="https://github.com/DISIC/rgaa_angular-bootstrap" target="_blank"  rel="noreferrer">Angular Bootstrap</a>,
+        <a href="https://github.com/DISIC/rgaa_bootstrap-paypal" target="_blank"  rel="noreferrer">Bootstrap Paypal</a>.
+    </li>
+    <li>
+        <a href="https://github.com/DISIC/rgaa-test-suite" target="_blank"  rel="noreferrer">Une suite de tests mocha
+            (nodejs)</a>
+    </li>
+</ul>
+
+
+
+{{ macro.h2("Motif de conception") }}
+<p class="mb-s"><strong>Motif de conception (<span lang="en">design pattern</span>)&nbsp;:</strong> décrit structure, rôles et propriétés et comportement d’un composant JavaScript(widget).
+    <br>
+    <a href="https://www.w3.org/WAI/ARIA/apg/patterns/" target="_blank"  rel="noreferrer">ARIA <span lang="en">authoring practices</span></a>
+</p>
+
+
+
+{{ macro.h2("Environnement de test") }}
+<p class="mb-s">Il est nécessaire de réaliser des tests de restitution et d'utilisation avec les lecteurs d'écran de la base de référence.
+    <br>
+    <a href="https://disic.github.io/guide-lecteurs_ecran/" target="_blank"  rel="noreferrer">Guide sur les lecteurs d'écran.</a>
+</p>
+<table class="mb-s">
+    <caption>Environnement de bureau</caption>
+    <thead>
+    <tr>
+        <th>
+            Technologie d’assistance</th>
+        <th>Navigateur</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>NVDA (dernière version)</td>
+        <td>Firefox</td>
+    </tr>
+    <tr>
+        <td>JAWS (version précédente)</td>
+        <td>Firefox</td>
+    </tr>
+    <tr>
+        <td>VoiceOver (dernière version)</td>
+        <td>Safari</td>
+    </tr>
+    </tbody>
+</table>
+<table class="mb-s">
+    <caption>Environnement mobile</caption>
+    <thead>
+    <tr>
+        <th>Système</th>
+        <th>Technologie d’assistance</th>
+        <th>Navigateur</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>iOS</td>
+        <td>VoiceOver (dernière version)</td>
+        <td>Safari</td>
+    </tr>
+    <tr>
+        <td>Android</td>
+        <td>Talkback (dernière version)</td>
+        <td>Chrome</td>
+    </tr>
+    </tbody>
+</table>
+<p class="mb-s">Pour tester un site web sur un terminal mobile, l’environnement de test devra comporter une des deux combinaisons (iOS ou Android). À noter que dans le cas d’un site web mobile grand public, il est fortement conseillé de tester dans les deux environnements.</p>
+<p class="mb-m">
+    <a href="{{ metadata.siteUrl }}/recueil/note-accessibilite/evaluation-aria.xlsx" download>Tableau d'évaluation d'un modif de conception aria (.xlsx 128ko)</a>
+</p>
+
