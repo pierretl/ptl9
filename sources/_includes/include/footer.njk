@@ -1,12 +1,21 @@
 <footer class="d-flex jc-sb fw-w pt-m px-tranche mb-s mb-s__enfant ts-s tg1-2 tw-4 bordure-h" role="contentinfo">
-    <div class="mr-m">
-        Pas de cookie - Pas de tracking -
-        {% if titre == "Mentions légales" %}
-            <span aria-current="page">Mentions légales</span>
-        {% else %}
-            <a class="tg1-1 td-0" href="/mention-legales/">Mentions légales</a>
-        {% endif %}
-    </div>
+    <ul class="d-flex ml-s__enfant mr-m">
+        <li>Ni cookie ni tracking</li>
+        <li>
+            {% if titre == "Mentions légales" %}
+                <span aria-current="page">Mentions légales</span>
+            {% else %}
+                <a class="tg1-1 td-0" href="/mention-legales/">Mentions légales</a>
+            {% endif %}
+        </li>
+        <li>
+            {% if titre == "Plan du site" %}
+                <span aria-current="page">Plan du site</span>
+            {% else %}
+                <a class="tg1-1 td-0" href="/plan-du-site/">Plan du site</a>
+            {% endif %}
+        </li>
+    </ul>
     <ul class="d-flex ml-s__enfant">
         <li>
             <a class="tg1-1 td-0" href="https://twitter.com/pierre_tl" target="_blank" rel="external">Twitter</a>

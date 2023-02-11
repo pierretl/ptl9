@@ -1,0 +1,47 @@
+---
+layout: layout/standard.njk
+titre: "Plan du site"
+exclureRss: "true"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<ul>
+    <li class="mb-m">
+        {{ macro.h2("Réalisations (accueil)") }}
+        <ul class="mb-s__enfant">
+            {% for page in collections.realisations | reverse %}
+            <li>
+                <a href="{{ page.url | url }}">
+                    {{ page.data.titre | safe }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li>
+        {{ macro.h2("Recueil") }}
+        <ul class="mb-s__enfant">
+            {% for page in collections.recueil | reverse %}
+                {% if blog.data.brouillon %}
+                {% else %}
+                    <li>
+                        <a href="{{ page.url | url }}">
+                            {{ page.data.titre | safe }}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </li>
+    <li>
+        {{ macro.h2("À propos") }}
+        <ul class="mb-s__enfant">
+            <li>
+                <a href="/contact/">Contact</a>
+            </li>
+            <li>
+                <a href="/mention-legales/">Mentions légales</a>
+            </li>
+        </ul>
+    </li>
+</ul>
