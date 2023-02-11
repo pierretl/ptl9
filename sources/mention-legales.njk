@@ -7,23 +7,34 @@ description: "Information légal du site"
 {% import "macro/contenu.njk" as macro %}
 
 
-{{ macro.sommaire(["Crédits", "Licence", "Cookies & Statistiques"]) }}
+{% set sommaire = [
+    {titre: 'Crédits'},
+    {titre: 'Licence'},
+    {titre: 'Cookies & Statistiques'},
+    {titre: 'Plan du site'}
+] %}
+{{ macro.sommaire2(sommaire) }}
 
 
-{{ macro.h2("Crédits", "1") }}
-<p class="mb-xl">
+{{ macro.h2("Crédits") }}
+<p class="mb-l">
     Logo, conception, graphisme, intégration et rédaction par Pierre Tampon-Lajarriette
 </p>
 
-{{ macro.h2("Licence", "1") }}
-<div class="mb-xl">
+{{ macro.h2("Licence") }}
+<div class="mb-l">
     <p class="mb-xs">Le site est publié sous la licence GNU General Public License v3.0</p>
     <ul>
-        <li>Code source : <a href="https://github.com/pierretl/ptl9" target="_blank">https://github.com/pierretl/ptl9</a></li>
-        <li>Déploiement : <a href="https://app.netlify.com/sites/ptl9/overview" target="_blank">https://app.netlify.com/sites/ptl9/overview</a><img
-                    src="https://api.netlify.com/api/v1/badges/c9433773-6b35-4049-9ee1-4a16b39cb3df/deploy-status" alt=""></li>
+        <li><span lang="en">Source code</span> : <a href="https://github.com/pierretl/ptl9" target="_blank" rel="noreferrer" title="Source code (new window)">https://github.com/pierretl/ptl9</a></li>
+        <li>
+            <span lang="en">Deployment</span>: <a href="https://app.netlify.com/sites/ptl9/overview" target="_blank"  rel="noreferrer" title="Deployment (new window)">https://app.netlify.com/sites/ptl9/overview</a>
+            <img src="https://api.netlify.com/api/v1/badges/c9433773-6b35-4049-9ee1-4a16b39cb3df/deploy-status" alt="">
+        </li>
     </ul>
 </div>
 
-{{ macro.h2("Cookies & Statistiques", "1") }}
-<p>Il n'y a ni cookie ni tracking sur ce site</p>
+{{ macro.h2("Cookies & Statistiques") }}
+<p class="mb-l">Il n'y a ni cookie ni tracking sur ce site</p>
+
+{{ macro.h2("Plan du site") }}
+<a href="/plan-du-site/">Plan du site</a>
