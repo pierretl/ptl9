@@ -40,7 +40,7 @@ styleCss: "prism.css"
 
 
 {{ macro.h2("Nom accessible") }}
-<p class="mb-s">Utiliser par les lecteurs d'écran, pas toujours visible (<code>alt</code> par exemple)</p>
+<p class="mb-s">Utiliser par les lecteurs d'écran, le nom accessible n'est pas toujours affiché (le <code>alt</code> par exemple)</p>
 {% set code %}
     <img src="img.png"
          alt="2019 EESC Civil society prize Award ceremony 12 december 2019"
@@ -69,7 +69,7 @@ styleCss: "prism.css"
 {{ macro.h3("Bitmap") }}
 
 <ul class="mb-s">
-    <li><code>alt</code> vide, préféré cet attribut car natif</li>
+    <li><code>alt=""</code>préféré cet attribut car natif</li>
     <li><code>aria-hidden="true"</code></li>
     <li><code>role="presentation"</code></li>
 </ul>
@@ -129,27 +129,31 @@ styleCss: "prism.css"
     <li><code>aria-label</code> contenant l’alternative de l’image</li>
 </ul>
 {% set code %}
-    <svg role="img" aria-label="Profil renseigné à 90%">
-        …
-    </svg>
+<svg role="img" aria-label="Profil renseigné à 90%">
+    …
+</svg>
 {% endset %}
 {{ macro.code(code, "mb-s") }}
-<p class="mb-s">La balise <code>title</code> n'est pas bien supporté, préféré la première version</p>
+<p class="mb-s">Un alternative existe, mais  balise <code>title</code> n'est pas bien supporté, préféré la première version</p>
 {% set code %}
-    <svg role="img" aria-labelledby="title_svg">
-        <title id="title_svg">Profil renseigné à 90%</title>
-        …
-    </svg>
+<svg role="img" aria-labelledby="title_svg">
+    <title id="title_svg">Profil renseigné à 90%</title>
+    …
+</svg>
 {% endset %}
+{{ macro.code(code, "mb-m") }}
 
 
 
 {{ macro.h2("SEO") }}
 <ul class="mb-m">
-    <li>Mettre plein de mot clé dans l'<code>alt</code> une idée reçue ça ne fonctionne pas</li>
+    <li>Mettre plein de mot clé dans l'<code>alt</code>est une idée reçue, ça ne fonctionne pas</li>
     <li>Si l'équipe SEO impose de mettre du contenu dans le alt, ajouter <code>aria-hidden="true"</code> pour que le texte ne soit pas interprété pour les utilisateurs</li>
 </ul>
-{{ macro.code(code, "mb-s") }}
+{% set code %}
+<img src="" alt="Carte France Production Usine" aria-hidden="true" />
+{% endset %}
+{{ macro.code(code, "mb-m") }}
 
 
 
