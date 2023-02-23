@@ -57,7 +57,7 @@
 
 
  {% macro h2(texte, info) %}
-     <h2 class="ts-l tg1-4 th-2 tw-4{% if class %} {{ class | safe }}{% endif %}" id="{{ texte | slug  }}">
+     <h2 class="ts-l tg1-4 tw-4 mb-xs{% if class %} {{ class | safe }}{% endif %}" id="{{ texte | slug  }}">
          {{ texte | safe }}
          {% if info %}
              <span class="ts-s tg1-2">— {{ info | safe }}</span>
