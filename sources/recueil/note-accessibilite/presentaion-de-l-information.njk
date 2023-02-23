@@ -96,7 +96,7 @@ h1:after{
 body, body a{color:#000;}
 body{background-color:#fff;}
         {% endset %}
-        {{ macro.code(code, "language-css") }}
+        {{ macro.code(code, "", "language-css") }}
     </li>
     <li>
         Texte avec une image en arrière-plan : mettre un <code>background-color</code>
@@ -214,9 +214,9 @@ input:focus+label{ outline:1px dotted black }
 {{ macro.h2("Texte caché", "ancre") }}
 <p class="mb-s">Texte caché qui annule aussi la restitution d'écran :</p>
 <ul class="mb-m">
-    <li><code lang="en">display:none</code></li>
-    <li><code lang="en">visibility:hidden</code></li>
-    <li><code lang="en">font-size:0</code></li>
+    <li><code class="language-css" lang="en">display:none</code></li>
+    <li><code class="language-css" lang="en">visibility:hidden</code></li>
+    <li><code class="language-css" lang="en">font-size:0</code></li>
 </ul>
 <p class="mb-s">Uniquement pour la restitution d'écran : <br>
     <code>aria-hidden="true"</code> ou <code>hidden</code>

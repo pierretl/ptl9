@@ -30,8 +30,8 @@ styleCss: "prism.css"
 
 {{ macro.h2("Liens explicites") }}
 <p class="mb-s">
-    L'intitulé permet de comprendre ont le lien va nous emmener <br>
-    ou
+    L'intitulé permet de comprendre ou le lien va nous emmener <br>
+    ou <br>
     Le contexte le permet (Titre, paragraphe et phrase précédente)
 </p>
 
@@ -94,7 +94,7 @@ Si ce n'est pas le cas :</p>
 
 {{ macro.h2("Liens vides") }}
 <p class="mb-s"><strong>Pas de lien vides</strong><br>
-    Attention au lien avec des images, avec une fait d'icône ou is en forme en CSS uniquement (<code>content</code>)</p>
+    Attention au lien avec des images, aux polices d'icônes où les mise en forme en CSS uniquement (<code>content:""</code>)</p>
 <p class="mb-s">Mettre un <code>alt</code> sur les images liens</p>
 {% set code %}
 <a href="#lien">
@@ -103,7 +103,7 @@ Si ce n'est pas le cas :</p>
 {% endset %}
 {{ macro.code(code, "mb-m") }}
 
-<p class="mb-s">Ajouter un <code>aria-label</code> ou  <code>aria-labelledby</code> sur le lien si besoin, utilisé si possible les propriétés natives</p>
+<p class="mb-s">Ajouter un <code>aria-label</code> ou  <code>aria-labelledby</code> sur le lien si besoin,<br>utilisé si possible les propriétés natives</p>
 {% set code %}
 <a aria-label="intitule">
     <i class="fa-solid fa-house"></i>
@@ -111,7 +111,7 @@ Si ce n'est pas le cas :</p>
 {% endset %}
 {{ macro.code(code, "mb-m") }}
 
-<p class="mb-s">Un <a href="../navigation/#positionnement-hors-ecran">texte positionné hors de l'écran</a>, méthode conseillée</p>
+<p class="mb-s">Un <a href="../navigation/#positionnement-hors-ecran">texte positionné hors de l'écran</a> est la méthode conseillée</p>
 {% set code %}
 <a href="#lien">
     <span class="sr-only">intitule</span>
