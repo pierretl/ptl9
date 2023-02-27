@@ -33,7 +33,7 @@ description: "Découvrir l’accessibilité du Web, les enjeux humains, le conte
 {{ macro.h3("Contexte") }}
 
 <p>13 décembre 2006 : Convention relative aux droits des personnes handicapées de l’ONU</p>
-<p class="mb-m">Signé par tous les États membres dons la France</p>
+<p class="mb-m">Signé par tous les États membres dons la France (le 18 février 2010)</p>
 
 <p>Incapacité physique, mentales, intellectuelle ou sensoriel</p>
 <p class="mb-m">C'est le manque d'adaptation qui crée la situation de handicap</p>
@@ -94,8 +94,8 @@ description: "Découvrir l’accessibilité du Web, les enjeux humains, le conte
 {{ macro.h3("Norme") }}
 
 <ul class="mb-m">
-    <li><b>UAAG</b> pour les agents utilisateurs&nbsp;: affichage par le navigateur de l’info-bulle d’un lien à la souris et au clavier.</li>
-    <li><b>ATAG</b> pour les outils d’édition de contenus&nbsp;: alternatives aux boutons de mise en forme, production de contenus conformes.</li>
+    <li><b>UAAG</b> pour les agents utilisateurs (navigateur, lecteur d'écran)&nbsp;: affichage par le navigateur de l’info-bulle d’un lien à la souris et au clavier.</li>
+    <li><b>ATAG</b> pour les outils d’édition de contenus (CMS)&nbsp;: alternatives aux boutons de mise en forme, production de contenus conformes.</li>
     <li><b>WCAG</b> pour les contenus web&nbsp;: alternatives aux éléments graphiques.</li>
     <li>L’API <b>ARIA</b> pour les composants riches.</li>
 </ul>
@@ -114,6 +114,10 @@ description: "Découvrir l’accessibilité du Web, les enjeux humains, le conte
     <li><strong>AAA :</strong> Ne peut pas s'appliquer à tous les types de contenus et de situations</li>
 </ul>
 
+<p class="mb-m">
+    En France, le niveau légal requis est le double A (AA) : pour être conforme il faut que tous les critères A et AA applicable du référentiel, soient conformes.
+</p>
+
 <blockquote class="mb-m">
     <p>Il n’est pas recommandé de faire de la conformité au <strong>niveau AAA</strong> une politique générale pour des sites entiers parce qu’il n’est pas possible de satisfaire tous les critères de succès de niveau AAA pour certains contenus.</p>
     <cite>
@@ -123,21 +127,31 @@ description: "Découvrir l’accessibilité du Web, les enjeux humains, le conte
 
 {{ macro.h3("Référentiel RGAA") }}
 
-<p class="mb-m">En France on a créé un révérenciel; donner une méthode opérationnelle pour vérifier que les WCAG sont bien respectées sans avoir à tout lire</p>
+<p class="mb-m">En France on a créé un révérenciel; donner une méthode opérationnelle pour vérifier que les WCAG sont bien respectées sans avoir à tout lire (rédaction indépendantes des technologies et souvent abstraites)</p>
 
 <p>C'est le <a href="https://accessibilite.numerique.gouv.fr/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">RGAA</a></p>
 <ul class="mb-m">
     <li>Évaluer la conformité à la norme.</li>
     <li>Mesurer et attester.</li>
     <li>Servir de socle technique à la réglementation.</li>
+    <li>Attention au risque d'obsolescence</li>
 </ul>
 
-<p>Conformité obligatoire (RGAA 100%) selon la législation française :</p>
+<p class="mb-m">
+    La version 4 du RGAA a été publiée en septembre 2019. Elle est venue mettre à jour et remplacer le RGAA 3.2017
+</p>
+
+<p>Conformité obligatoire (RGAA 100%) selon la législation française : (décret du 14 mai 2009)</p>
 <ul class="mb-m">
     <li>Administration</li>
     <li>Privé qui gère du public (transport, eau)</li>
     <li>Culturel, social</li>
     <li>Les entreprises privées dont le chiffre d’affaires excède 25 millions d'euros</li>
+</ul>
+
+<ul class="mb-m">
+    <li>Sanction administrative, jusqu'à 5000 €, prononcée chaque année lorsque le manquement perdure</li>
+    <li>Les délais de mise en conformité des sites existants ne peuvent excéder <strong>trois ans</strong></li>
 </ul>
 
 <p class="mb-m">
@@ -151,8 +165,13 @@ description: "Découvrir l’accessibilité du Web, les enjeux humains, le conte
     <cite>Article 2 de la <abbr tabindex="0" title="Convention relative aux droits de spersonnes handicapées">CRDPH</abbr>.</cite>
 </blockquote>
 
-<p class="mb-l">
+<p class="mb-m">
     En d'autre termes, en cas de dérogation sur un cas particulier, il faudrait fournir tous de même une alternative<br>
     Sauf si cette alternative représente elle aussi une charge disproportionnée<br>
     Alors il faut pouvoir permettre à l'utilisateur de faire un signalement et de lui répondre dans un délai raisonnable
+</p>
+
+<p class="mb-l">
+    Refus d'aménagement raisonnable est puni par l'article 225-2 du Code pénal<br>
+    La loi prévoit entre 3 et 5 ans d'emprisonnement et entre 45 000 et 75 000 euros d'amende.
 </p>
