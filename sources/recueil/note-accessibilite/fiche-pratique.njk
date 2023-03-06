@@ -1,0 +1,635 @@
+---
+layout: layout/standard.njk
+titre: "Fiche pratique"
+tags: noteAccessibilite
+date: 2023-01-31 00:00:14
+description: "-------------------------a faire------------------"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+{% set sommaire = [
+    {titre: 'Environnement de test'},
+    {titre: 'Tabulation'},
+    {titre: 'Base HTML'},
+    {
+        titre: 'Autre balise HTML',
+        sub: [
+            {titre: 'Citation'},
+            {titre: 'iframe'},
+            {titre: 'Image'},
+            {titre: 'Vidéo'},
+            {titre: 'Tableaux'}
+        ]
+    },
+    {titre: 'CSS'},
+    {titre: 'Lien'},
+    {titre: 'Formulaire'},
+    {titre: 'Aria'},
+    {titre: 'Attention'}
+] %}
+{{ macro.sommaire2(sommaire) }}
+
+{{ macro.h2("Environnement de test") }}
+<ul class="mb-l">
+    <li>
+        <table class="mb-s">
+            <caption>Environnement de bureau</caption>
+            <thead>
+            <tr>
+                <th>
+                    Technologie d’assistance</th>
+                <th>Navigateur</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>NVDA (dernière version)</td>
+                <td>Firefox</td>
+            </tr>
+            <tr>
+                <td>JAWS (version précédente)</td>
+                <td>Firefox</td>
+            </tr>
+            <tr>
+                <td>VoiceOver (dernière version)</td>
+                <td>Safari</td>
+            </tr>
+            </tbody>
+        </table>
+    </li>
+    <li>
+        <table class="mb-s">
+            <caption>Environnement mobile - Combinaison 1</caption>
+            <thead>
+            <tr>
+                <th>Système</th>
+                <th>Technologie d’assistance</th>
+                <th>Navigateur</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>iOS</td>
+                <td>VoiceOver (dernière version)</td>
+                <td>Safari</td>
+            </tr>
+            </tbody>
+        </table>
+        ou
+        <table class="mb-s">
+            <caption>Environnement mobile - Combinaison 2</caption>
+            <thead>
+            <tr>
+                <th>Système</th>
+                <th>Technologie d’assistance</th>
+                <th>Navigateur</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Android</td>
+                <td>Talkback (dernière version)</td>
+                <td>Chrome</td>
+            </tr>
+            </tbody>
+        </table>
+        Il est fortement conseillé de tester dans les deux environnements mobile
+    </li>
+</ul>
+
+
+{{ macro.h2("Tabulation") }}
+<ul class="mb-l">
+    <li>
+        Ordre de tabulation cohérent avec le code ; titre avant paragraphe, ordre des conteneurs ( vérifier avec le site sans styles)
+    </li>
+    <li>
+        Pas de piège au clavier
+    </li>
+    <li>
+        <p class="mb-s">
+            Ne jamais utiliser des <code>tabindex</code> supérieurs à 0, laissez le navigateur faire<br>
+        </p>
+
+        <code>tabindex="0"</code>
+        <p class="mb-s">
+            Permets de capturer le focus et être atteint via la navigation au clavier<br>
+            Inclut l'élément dans le parcours séquentiel de tabulation pour un élément qui ne prend pas le focus, une <code>div</code> par exemple
+        </p>
+
+        <code>tabindex="-1"</code>
+        <ul>
+            <li>L'élément peut capturer le focus mais ne peut pas être atteint via la navigation au clavier</li>
+            <li>Exclu du parcours séquentiel un élément qui prend le focus (lien, button…)</li>
+            <li>Permets à l'élément ne prenant pas nativement le focus de le recevoir (méthode javascript focus)
+            </li>
+            <li>Attention l'élément restera accessible par les techniques d'assistance (différent d'aria hidden="true")</li>
+        </ul>
+    </li>
+    <li>
+        Accès au contenu additionnel affiché  doit être atteint au clavier
+    </li>
+    <li>La zone doit rester visible tant que le focus se trouve dans l'élément</li>
+    <li>Penser à mettre un bouton fermer pour pouvoir revenir à l'endroit initial</li>
+    <li>Désactiver ou permettre de configurer les raccourcis</li>
+</ul>
+
+{{ macro.h2("Base HTML") }}
+<ul class="mb-l">
+    <li>
+        Ordre des éléments logique (titre avant paragraphe) abusé du <code>flex order</code> ou <code>grid</code>
+    </li>
+    <li>
+        Respect de la sémantique HTML
+    </li>
+    <li>
+        {% set code %}
+<!DOCTYPE html>
+<html lang="fr">
+<title>Titre pertinents et unique</title>
+<header role="banner"></header>
+<main id="contenu" role="main" tabindex="-1"></main>
+<nav role="navigation"></nav><!--navigation principale et secondaire-->
+<aside role="complementary"></aside>
+<footer role="contentinfo"></footer>
+<div role="search">
+    <form></form>
+</div>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        {% set code %}<h2 role="heading" aria-level="3">{% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        {% set code %}
+<a class="lien-evitement" href="#contenu">
+    Aller au contenu
+</a>
+.lien-evitement {
+    position:absolute;
+    left:-99999rem;
+}
+.lien-evitement:focus {
+    left:0
+}
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        Au moins 2 systèmes de navigation parmi :
+        <ul>
+            <li>navigation principale</li>
+            <li>plan du site : non exhaustif autorisé</li>
+            <li>moteur de recherche : exhaustif des pages</li>
+        </ul>
+        Présentation cohérence  et emplacement identique sur chaque page
+    </li>
+    <li>
+        <code>nav</code> réservé aux zones de navigation principale et secondaire :
+        <ul>
+            <li>menu principal</li>
+            <li>menu de sous-rubrique</li>
+            <li>navigation dans les collections de pages</li>
+            <li>navigation dans les résultats de recherche</li>
+            <li>le Fil d'ariane</li>
+            <li>les liens d’évitement</li>
+        </ul>
+    </li>
+    <li>
+        Changement de langue : ajouter l'attribut <code>lang</code> sur l’élément ou un parent.
+    </li>
+    <li>
+        Changements de sens de lecture : <code>dir</code>
+    </li>
+</ul>
+
+
+{{ macro.h2("Autre balise HTML") }}
+
+{{ macro.h3("Citation") }}
+<div class="mb-l">
+    on évite <code>&lt;q&gt;</code>car mal restitué
+    {% set code %}
+<blockquote>
+    <p>Aimer, ce n'est pas se regarder l'un l'autre,
+        c'est regarder ensemble dans la même direction.</p>
+    <cite>Antoine De Saint-Exupéry</cite>
+</blockquote>
+    {% endset %}
+    {{ macro.code(code) }}
+</div>
+
+
+{{ macro.h3("iframe") }}
+<div class="mb-l">
+    {% set code %}
+<iframe title="Publicité"></iframe>
+
+<!--Cadres techniques (Google Analytics, etc.)-->
+<iframe aria-hidden="true"></iframe>
+    {% endset %}
+    {{ macro.code(code) }}
+</div>
+
+
+{{ macro.h3("Image") }}
+<ul class="mb-l">
+    <li>
+    {% set code %}
+<!--décorative-->
+<img src="image.png" alt="" />
+<img src="image.png" aria-hidden="true"/>
+<img src="image.png" role="presentation"/>
+<svg aria-hidden="true"></svg>
+
+<!--porteuses d’information => Nom accessible /!\ Algorithme de calcul -->
+<img src="image.png" alt="foobar" />
+<img src="image.png" title="foobar" />
+<img src="image.png" aria-label="foobar" />
+<img src="image.png" aria-labelledby="desc" /><p id="desc">foobar</p>
+<svg role="img" aria-label="foobar">…</svg>
+<svg role="img" aria-labelledby="desc">…</svg><p id="desc">foobar</p>
+
+<!--Texte en images ou grande description-->
+<img src="img.png" alt="infographie" />
+<a href="description.html">Description détaillée de l'infographie</a>
+
+<img src="img.png" alt="infographie" />
+<button aria-expanded="false">Description détaillée de l'infographie</button>
+
+<!--Légendées sans alt-->
+<figure role="group|figure" aria-label="Légende de l’image">
+    <img src="…" alt="" />
+    <figcaption>
+        Légende de l’image
+    </figcaption>
+</figure>
+
+<!--Légendées avec alt-->
+<figure role="group|figure" aria-label="alt-image Légende de l’image">
+    <img src="…" alt="alt-image" />
+    <figcaption>
+        alt-image Légende de l’image
+    </figcaption>
+</figure>
+    {% endset %}
+    {{ macro.code(code) }}
+    </li>
+    <li>
+        {% set code %}
+            <!--Image map-->
+<img src="" alt="Carte de France" usemap="#LIEUX" />
+<map id="lieux" name="LIEUX">
+    <area href="regi42" alt="Alsace">
+    <area href="regi53" alt="Bretagne">
+</map>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        Captcha : porposer une alternative sonore ou mieu email/sms (captcha de google conforme)
+        {% set code %}
+            <img src="" alt="Code de confirmation à saisir"/>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+</ul>
+
+
+
+
+{{ macro.h3("Vidéo") }}
+<ul class="mb-l">
+    <li>Contrôles obligatoires, Clavier/souris, Nom pertinant, maj des data timing...</li>
+    <li>Alternatives  : Transcription textuelle, sous-titre, Audiodescription</li>
+    <li>
+        Player accessible : <a href="https://ableplayer.github.io/ableplayer/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener" lang="en">Able Player</a>, <a href="https://demovideo.francetvaccess.fr/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">MFP Player</a>, <a href="https://plyr.io/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener" lang="en">Plyr</a>, <a href="https://www.brightcove.com/en/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener" lang="en">BrightCove</a>, YouTube
+    </li>
+</ul>
+
+
+
+{{ macro.h3("Tableaux") }}
+<ul class="mb-l">
+    <li>Titré avec <code>caption</code> ou <code>aria-labelledby="id"</code></li>
+    <li>
+        Tableau complexes : ajoute un résumé de l’organisation du tableau pour tous (afficher/masquer)
+        {% set code %}
+<caption>
+    Figure 2 - Répartition des déchets non dangereux non minéraux hors boues de l’industrie
+    manufacturière par type en 2016
+    <button type="button" aria-expanded="false">Résumé de l’organisation du tableau</button>
+    <span class="hide">
+        Les industries agroalimentaires (IAA) et les industries manufacturières (hors IAA)
+        sont présentées sur 2 colonnes, avec, pour chacune d’elles la quantité en milliers
+        de tonnes le pourcentage. Une troisième colonne présente le total des deux
+        industries, en milliers de tonnes et en pourcentage.
+    </span>
+</caption>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>Proposer une alternative pour tous (afficher/masquer) en mode liste par exemple</li>
+    <li>Cellules d’en-têtes
+        {% set code %}
+<tr>
+    <td aria-hidden="true"></td>
+    <th id="entete1" colspan="2">Industries agroalimentaires (IAA)</th>
+    <th id="entete2" colspan="2">Industries manufacturières (hors IAAA)</th>
+    <th id="entete3" colspan="2">Ensemble</th>
+</tr>
+<tr>
+    <td aria-hidden="true"></td>
+    <th id="entete4">Quantités (en milliers de tonnes)</th>
+    <th id="entete5">en %</th>
+    <th id="entete6">Quantités (en milliers de tonnes)</th>
+    <th id="entete7">en %</th>
+    [...]
+</tr>
+<tr>
+    <td>Déchets banals</td>
+    <td headers="entete1 entete4">1 147</td>
+    <td headers="entete1 entete5">31</td>
+    <td headers="entete2 entete6">9 795</td>
+    <td headers="entete2 entete7">97</td>
+    [..]
+</tr>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+</ul>
+
+
+{{ macro.h2("CSS") }}
+<ul class="mb-l">
+    <li>
+        Une information ne doit pas être donnée uniquement par la couleur ou une forme
+    </li>
+    <li>Pas d’attribut de mise en forme, seul <code>width </code> et <code>height </code> sur <a href="/recueil/note-accessibilite/#utilisation-exclusive-de-css">les médias</a>
+    </li>
+    <li>
+        Pas de contenu dans le CSS, car insible pour les lecteur d'ecran
+    </li>
+    <li>
+        Couleur de texte, de lien et de fond sur le <code>body</code> par défaut
+    </li>
+    <li>
+        Texte lisible avec zoom à 200%
+    </li>
+    <li>
+        Hors tableau, pas de <code>scroll</code> :
+        <ul>
+            <li>verticale : 320px de large minimum</li>
+            <li>horizontale : 256px de hauteur minimum</li>
+        </ul>
+    </li>
+    <li>
+        Le texte reste lisible avec
+        {% set code %}
+* {
+    line-height: 1.5 !important;
+    letter-spacing: 0.12em !important;
+    word-spacing: 0.16em !important;
+}
+
+p {
+    margin-bottom: 2em !important;
+}
+        {% endset %}
+        {{ macro.code(code, "", "language-css") }}
+    </li>
+    <li>
+        focus
+        <ul>
+            <li>touche <kbd>Echap</kbd> masque, survolé sans disparaitre, reste visible tant que le composant est actif</li>
+            <li>sauf amélioration pas touche au <code>outline</code></li>
+        </ul>
+    </li>
+    <li>focus et hover : suffisamment contrastés</li>
+    <li>
+        <a href="https://color.review/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Contrat des textes</a>
+        <ul>
+            <li>+ de 24px ou 18.5 gras : 3 minimum</li>
+            <li>- de 24px ou - 18.5px gras : 4.5 minimum</li>
+        </ul>
+    </li>
+    <li>lien souligné ou contrastés</li>
+</ul>
+
+
+
+{{ macro.h2("Lien") }}
+<ul class="mb-l">
+    <li>Intitulé explicite</li>
+    <li>Ajouter un title sur les </li>
+    <li>
+        {% set code %}
+<a href="#url" aria-label="Retour Accueil du site">Retour</a>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        {% set code %}
+<a href="#url" title="Retour Accueil du site">Retour</a>
+<a href="blog" title="Blog Page active">Blog</a> <!-- page active -->
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        {% set code %}
+<a href="#lien">
+    <img alt="intitule">
+</a>
+
+<a href="#lien" aria-label="intitule">
+    <i class="fa-solid fa-house"></i>
+</a>
+
+<a href="#lien">
+    <span class="sr-only">intitule</span> <!-- méthode conseillée car native -->
+    <i class="fa-solid fa-house"></i>
+</a>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        <code>aria-label</code> n'est pas correctement traduit par <span lang="en">google translate</span><br>
+        Préféré les méthodes : <code>sr-only</code> ou <code>title</code>
+    </li>
+</ul>
+
+
+{{ macro.h2("Formulaire") }}
+
+<ul class="mb-l">
+    <li>label visible et nom accessible (Le placeholder n’est pas suffisant)</li>
+    <li>Les labels et les champs doivent être accolés</li>
+    <li>
+        Regroupement des ensemble de radio, checkbox, période de date (début et fin) ou d'ajout d'une répétition (une personne : nom, prénom et age)
+        {% set code %}
+<fieldset>
+    <legend>Adresse de facturation</legend>
+    [champs ...]
+</fieldset>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        Ajouté le complément directe dans l'étiquette de champ<br>
+        L'utilisation d'une double <code>&lt;label for=""&gt;</code> est déconseiller
+        {% set code %}
+<label for="name">
+    <strong>Prénom</strong><br>
+    40 caractere max
+</label>
+<input id="name"/>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        ou une combinaison de <code>label</code> et de <code>aria-describedby</code>
+        {% set code %}
+<label for="name" aria-describedby="info">Prénom</label>
+<input id="name"/>
+<p id="info">40 caractere max</p>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        ou utilisé un <code>aria-labelledby</code> multiple
+        {% set code %}
+<p id="label">Prénom</p>
+<input type="text" aria-labelledby="label info"/>
+<p id="info">40 caractere max</p>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        {% set code %}
+<select>
+    <optgroup label="Véhicules">
+        <option>Voiture</option>
+        <option>Motos</option>
+        …
+    </optgroup>
+    <optgroup label="Immobilier">
+        <option>Maison</option>
+        <option>Appartements</option>
+        …
+    </optgroup>
+</select>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        {% set code %}
+<input type="submit" value="Envoyer le message" />
+
+<input type="image" src="loupe.png" alt="Rechercher sur le site">
+
+<input type="submit" value="OK" title="Envoyer le message" />
+
+<input type="submit" aria-label="Effacer mes données"/>
+
+<input type="submit" aria-labelledby="desc-btn" />
+<span id="desc-btn">Envoyer le message</span>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        Tout est obligatoire ?: le mettre en début
+    </li>
+    <li>Mixte : Ajouter une astérisque dans les champs obligatoire + mettre une légende en haut du formulaire</li>
+    <li>Majorité de facultatif : Possibililité de mettre les champs optionnels directement après le label</li>
+    <li>
+        Indication visible
+        {% set code %}
+<label for="name" aria-describedby="required">Prénom</label>
+<input id="name"/>
+<p id="required">Champs obligatoire</p>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        Message d'erreur : relié avec un <code>aria-describedby</code>
+    </li>
+    <li>Champ obligatoire : format attendu fourni si possible</li>
+    <li>Champs qui collectent des informations personnelles sur l’utilisateur : <code>autocomplete</code> <a href="https://www.w3.org/Translations/WCAG21-fr/#input-purposes" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Liste des valeurs</a></li>
+</ul>
+
+
+{{ macro.h2("Aria") }}
+
+<ul class="mb-l">
+    <li>Privilégier le natif et testez !</li>
+    <li>Ne pas changer la sémantique (validator w3c siu besoin)</li>
+    <li>Composant interactif utilisable au clavier, <a href="https://www.w3.org/WAI/ARIA/apg/patterns/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Motif de conception (en anglais)</a></li>
+    <li>Tout composant interactif doit avoir un nom accessible</li>
+    <li>
+        Un composant qui déclenche l'ouverture d'une page ou d'un onglet doit être un lien même si ce sont des actions Javascript
+        {% set code %}
+<a role="link" tabindex="0" onclick="myFunction()"></a>
+<!-- ou -->
+<a href="#" onclick="myFunction()"></a>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+    <li>
+        <strong>État et changements d'état </strong> : Ne pas faire de rechargement de page, d'une partie ou de changement de page par défaut, mettre un bouton pour faire l'action
+        <ul>
+            <li>inactif <code>disabled</code></li>
+            <li>Bouton qui affiche masque <code>aria-expanded="true/false"</code></li>
+            <li>Élément actuel <code>aria-current</code></li>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Liste exhaustive des États et propriétés ARIA (en anglais)</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <strong>Statut</strong>
+        <ul>
+            <li>Messages d'erreurs : <code><p role="alert">Ceci est une alerte</code> ou <code>aria-live="assertive"</code></li>
+            <li>Messages d'informations : <p role="status">Ceci est une infromation</code> ou <code>aria-live="polite"</code>
+                    <br>
+                    Pas très fiable coté restitution, préféré le "alert" si ça beug
+            </li>
+            <li>
+                Messages de notifiactions : <code>role="log"</code> ou <code>aria-atomic</code>
+                <ul>
+                    <li><code>aria-atomic="true"</code> restitue tout, à ne pas utiliser dans un tchat par exemple </li>
+                    <li><code>aria-atomic="false"</code> restitue uniquement le dernier ajout </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        Messages d’attente <br>
+        Seulement pour des tâches qui prennent beaucoup de temps. <br>
+        {% set code %}
+<div role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20 %</div>
+<!-- ou -->
+<div role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuetext="Étape 2&nbsp;: Copie des fichiers…" aria-valuemax="100">
+    Étape 2&nbsp;: Copie des fichiers…
+</div>
+        {% endset %}
+        {{ macro.code(code) }}
+    </li>
+</ul>
+
+{{ macro.h2("Attention") }}
+<ul class="mb-l">
+    <li>L’utilisateur doit pouvoir supprimer ou augmenter la limite de temps (20h minium)</li>
+    <li>L'utilisateur peut arrêter et relancer un rafraîchissement automatique, proposer un bouton pour désactiver/activer le live upload par exemple </li>
+    <li>Pas de nouvelles fenêtres sans action de l’utilisateur</li>
+    <li>Une seule fenêtre s'ouvre à la fois</li>
+    <li>Documents en téléchargement : accessible  ou alternative</li>
+    <li>Évité de lancer une vidéo, un son ou un slider automatiquement sinon bouton pause</li>
+    <li>Évité les effet de flash (3 flash par seconde) </li>
+    <li>Le contenu doite être consultable portrait et paysage, ne pas bloquer</li>
+    <li>Toutes fonctionnalités utilisables par des gestes doit avoir des équivalences en boutons</li>
+    <li>Prévoir un mécanisme qui permet d’interrompre l'exécution de l'action avant la fin en cas de mousedown sur desktop et touchstart sur mobile</li>
+</ul>
