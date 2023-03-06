@@ -16,9 +16,14 @@ styleCss: "prism.css"
         <p class="ts-l tg1-4 th-2 tw-4">Les thématiques</p>
         <ul class="ul-sommaire cc2-so">
             {% for blog in collections.noteAccessibilite %}
-                {% if blog.data.brouillon %}
+                {% if blog.data.pageSolo %}
+                    <li class="mb-s">
+                        <a href="./{{ blog.data.titre | slug }}" class="tg1-1 td-0 tw-4">
+                            {{ blog.data.titre | safe }}
+                        </a>
+                    </li>
                 {% else %}
-                    <li class="mb-s" data-order="{{ blog.data.order }}">
+                    <li class="mb-s">
                         <a href="#{{ blog.data.titre | slug }}" class="tg1-1 td-0 tw-4">
                             {{ blog.data.titre | safe }}
                         </a>
@@ -29,7 +34,7 @@ styleCss: "prism.css"
     </div>
     <div class="w-70">
         {% for blog in collections.noteAccessibilite %}
-            {% if blog.data.brouillon %}
+            {% if blog.data.pageSolo %}
             {% else %}
                 <article class="mb-xl">
                     <h1 id="{{ blog.data.titre | slug }}" class="ts-xl tg1-1 tw-4">{{ blog.data.titre | safe }}</h1>
