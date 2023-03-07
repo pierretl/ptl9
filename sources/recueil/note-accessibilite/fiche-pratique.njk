@@ -11,6 +11,7 @@ pageSolo: true
 {% import "macro/contenu.njk" as macro %}
 
 {% set sommaire = [
+    {titre: 'Bonne pratique'},
     {titre: 'Environnement de test'},
     {titre: 'Tabulation'},
     {titre: 'Base HTML'},
@@ -31,6 +32,19 @@ pageSolo: true
     {titre: 'Laisser le contrôle à l\'utilisateur'}
 ] %}
 {{ macro.sommaire2(sommaire) }}
+
+
+{{ macro.h2("Bonne pratique") }}
+<ul class="mb-l">
+    <li>Privilégier les éléments natifs HTML</li>
+    <li>Ne modifier la sémantique des éléments natifs où sinon vérifié qu'il n'y est pas de conséquence</li>
+    <li>S’assurer que les composants sont opérables au clavier et à la souris</li>
+    <li>S’assurer que chaque composant a un nom correctement lié au composant</li>
+    <li>Tester les composants, voir les <a href="#environnement-de-test">environnements de test</a></li>
+</ul>
+
+
+
 
 {{ macro.h2("Environnement de test") }}
 <ul class="mb-l">
@@ -471,7 +485,8 @@ p {
     <li>Si <code>title</code> et <code lang="en">placeholder</code> alors leur contenu sont identiques</li>
     <li>Les labels et les champs doivent être accolés</li>
     <li>
-        Regroupement des ensemble de radio, checkbox, période de date (début et fin) ou d'ajout d'une répétition (une personne : nom, prénom et age)
+        Regroupement des ensemble de radio, checkbox, période de date (début et fin) ou d'ajout d'une répétition (une personne : nom, prénom et age)</li>
+    <li>Les textes liés par les propriétés <code>aria-labelledby</code> ou <code>aria-describedby</code> font partie des propriétés de l’élément, ils sont donc toujours disponibles, y compris lorsqu’ils sont cachés par CSS avec <code>display:none</code> ou <code>visibility:hidden</code></li>
         {% set code %}
 <fieldset>
     <legend>Adresse de facturation</legend>

@@ -44,9 +44,9 @@ styleCss: "prism.css"
 
 <p class="mb-s">Dans le code, le champ doit avoir un <strong>nom accessible</strong></p>
 <ul class="mb-s">
-    <li><code>&lt;label&gt;</code> avec relation <code>for</code> / <code>id</code></li>
-    <li><code>aria-labelledby</code> / <code>id</code></li>
     <li><code>aria-label</code></li>
+    <li><code>aria-labelledby</code> / <code>id</code></li>
+    <li><code>&lt;label&gt;</code> avec relation <code>for</code> / <code>id</code></li>
     <li><code>title</code></li>
 </ul>
 <p class="mb-m">Le <code>placeholder</code> n’est pas un nom accessible robuste</p>
@@ -218,7 +218,7 @@ styleCss: "prism.css"
 {{ macro.h2("Message d'erreur") }}
 <p class="mb-s">
     Le message doit être visible est restitué <br>
-    relié avec un <code>aria-describedby</code>
+    Les textes liés par les propriétés <code>aria-labelledby</code> ou <code>aria-describedby</code> font partie des propriétés de l’élément, ils sont donc toujours disponibles, y compris lorsqu’ils sont cachés par CSS avec <code>display:none</code> ou <code>visibility:hidden</code>
 </p>
 <p class="mb-s">
     <strong>Champ obligatoire</strong> : format attendu à fournir (a faire de facon global si possible)<br>
