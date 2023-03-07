@@ -182,7 +182,8 @@ styleCss: "prism.css"
 
 
 {{ macro.h2("Message de statut") }}
-<p class="mb-s">Informer les technologies d’assistance des messages d’alerte de confirmation ou de statut, sans déplacer le focus de l'utilisateur.</p>
+<p class="mb-s">Informer les technologies d’assistance des messages d’alerte de confirmation ou de statut, sans déplacer le focus de l'utilisateur.<br>
+    Ne pas en abuser, parfois contre-productif</p>
 <p class="mb-s">
     Si le focus est déplacé sur le message ok/Ko général alors pas besoin de mettre le <code>role="alert"</code> ou si la page se recharge et que le bloc est dans le DOM
     Dans tous les cas on fait une <a href="https://access42.net/reprise-de-focus-et-accessibilite" target="_blank"  rel="noreferrer">reprise de focus</a>.
@@ -190,6 +191,24 @@ styleCss: "prism.css"
 <p class="mb-s">
     En cas d'erreur, ont se déplace l'utilisateur sur le premier champ en erreur/ ou message de confirmation + le mieux et de mettre aussi un message dans le titre de la page
 </p>
+<div class="mb-m">
+    <ul class="mb-s">
+        <li>
+            <code>aria-live="assertive"</code> : le contenu est vocalisé immédiatement
+        </li>
+        <li>
+            <code>aria-live="polite"</code> : le contenu est vocalisé dès que l'utilisateur est disponible
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <code>aria-atomic="true"</code> restitue tout, à ne pas utiliser dans un tchat par exemple
+        </li>
+        <li>
+            <code>aria-atomic="false"</code> restitue uniquement le dernier ajout
+        </li>
+    </ul>
+</div>
 
 
 {{ macro.h3("Messages d'erreurs", "Haute priorité") }}
@@ -207,7 +226,9 @@ styleCss: "prism.css"
     <div class="w-50">
         Méthode alternative :
         <br>
-        <code>aria-live="assertive"</code>
+        <code>aria-live="assertive"</code> <br>
+        et <br>
+        <code>aria-atomic="true"</code>
     </div>
 </div>
 
@@ -225,7 +246,9 @@ styleCss: "prism.css"
     <div class="w-50">
         Méthode alternative :
         <br>
-        <code>aria-live="polite"</code>
+        <code>aria-live="polite"</code> <br>
+        et <br>
+        <code>aria-atomic="true"</code>
         {% set code %}
 <p><span id="myLiveRegion1" aria-live="polite">Mais je sais rester polie</span></p>
         {% endset %}
@@ -245,16 +268,9 @@ styleCss: "prism.css"
     </div>
     <div class="w-50">
         Méthode alternative :
-        <br>
-        <code>aria-atomic</code>
-        <ul>
-            <li>
-                <code>aria-atomic="true"</code> restitue tout, à ne pas utiliser dans un tchat par exemple
-            </li>
-            <li>
-                <code>aria-atomic="false"</code> restitue uniquement le dernier ajout
-            </li>
-        </ul>
+        <code>aria-live="polite"</code> <br>
+        et <br>
+        <code>aria-atomic="false"</code>
     </div>
 </div>
 
@@ -323,6 +339,7 @@ ou
 </div>
 {% endset %}
 {{ macro.code(code, "mb-m") }}
+<p class="mb-m">Repositionner le focus sur un élément pertinent, par exemple la zone mise à jour</p>
 
 
 

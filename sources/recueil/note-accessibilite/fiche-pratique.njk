@@ -467,7 +467,8 @@ p {
 {{ macro.h2("Formulaire") }}
 
 <ul class="mb-l">
-    <li>label visible et nom accessible (Le placeholder n’est pas suffisant)</li>
+    <li>label visible et nom accessible (Le <code>placeholder</code> n’est pas suffisant)</li>
+    <li>Si <code>title</code> et <code lang="en">placeholder</code> alors leur contenu sont identiques</li>
     <li>Les labels et les champs doivent être accolés</li>
     <li>
         Regroupement des ensemble de radio, checkbox, période de date (début et fin) ou d'ajout d'une répétition (une personne : nom, prénom et age)
@@ -476,6 +477,11 @@ p {
     <legend>Adresse de facturation</legend>
     [champs ...]
 </fieldset>
+<!--ou-->
+<div role="groupe" aria-labelledby="legendAdresse">
+    <p id="legendAdresse"> Adresse de facturation : </p>
+    [champs ...]
+</div>
         {% endset %}
         {{ macro.code(code) }}
     </li>
@@ -527,6 +533,7 @@ p {
         {{ macro.code(code) }}
     </li>
     <li>
+        Les boutons « ok », « valider », « envoyer », etc. ne sont pas suffisamment pertinents.
         {% set code %}
 <input type="submit" value="Envoyer le message" />
 
@@ -538,28 +545,51 @@ p {
 
 <input type="submit" aria-labelledby="desc-btn" />
 <span id="desc-btn">Envoyer le message</span>
+
+<input type="submit" value="Enregistrer" aria-label="Enregistrer Valider mes modifications"/>
         {% endset %}
         {{ macro.code(code) }}
+        <code>aria-label</code> ou <code>aria-labelledby</code>) sont toujours prioritaires sur les liaisons natives
+            (<code>value</code>, <code>alt</code>, <code>title</code>)
     </li>
     <li>
-        Tout est obligatoire ?: le mettre en début
-    </li>
-    <li>Mixte : Ajouter une astérisque dans les champs obligatoire + mettre une légende en haut du formulaire</li>
-    <li>Majorité de facultatif : Possibililité de mettre les champs optionnels directement après le label</li>
-    <li>
-        Indication visible
-        {% set code %}
+        <strong>Obligatoire et facultative</strong>
+        <ul>
+            <li>Tout est obligatoire : le mettre en début de formulaire</li>
+            <li>Mixte : Ajouter une astérisque dans les champs obligatoire + mettre une légende en haut du formulaire</li>
+            <li>Majorité de facultatif : Possibililité de mettre les champs optionnels directement après le label</li>
+            <li>Attribut <code>required</code> sur chaque champ obligatoire</li>
+            <li>
+                Indication visible
+                {% set code %}
 <label for="name" aria-describedby="required">Prénom</label>
 <input id="name"/>
 <p id="required">Champs obligatoire</p>
+                {% endset %}
+                {{ macro.code(code) }}
+            </li>
+        </ul>
+    </li>
+    <li>
+        <strong>Message d'erreur</strong>
+        <ul>
+            <li>Relié avec un <code>aria-describedby</code></li>
+            <li>Fournis un exemple de saisie réelle</li>
+            <li>En cas de rechargement : Préfixé le titre de la page par « erreur sur le formulaire »</li>
+        </ul>
+    </li>
+    <li>
+        Indication de format de saisie : requise que pour les champs obligatoires, mais conseillé globalement <br>
+        Si possible dans le <code>label</code> sinon <code>aria-label</code>, <code>aria-labelledby</code> ou <code>title</code>
+        {% set code %}
+<label for="date">Votre date de naissance</label>
+<input type="text" aria-describedby="aidedate" id="date" />
+<p id="aidedate">La date est de la forme 12/07/1981</p>
         {% endset %}
         {{ macro.code(code) }}
     </li>
-    <li>
-        Message d'erreur : relié avec un <code>aria-describedby</code>
-    </li>
-    <li>Champ obligatoire : format attendu fourni si possible</li>
     <li>Champs qui collectent des informations personnelles sur l’utilisateur : <code>autocomplete</code> <a href="https://www.w3.org/Translations/WCAG21-fr/#input-purposes" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Liste des valeurs</a></li>
+    <li>Suppression ou modification de données à caractère personnel : pouvoir annuler la suppression ou re-modifier par la suite ou confirmer explicitement par une case a coché supplémentaire</li>
 </ul>
 
 
@@ -592,34 +622,58 @@ p {
     </li>
     <li>
         <strong>Statut</strong>
-        <ul>
-            <li>Messages d'erreurs : <code><p role="alert">Ceci est une alerte</code> ou <code>aria-live="assertive"</code></li>
-            <li>Messages d'informations : <p role="status">Ceci est une infromation</code> ou <code>aria-live="polite"</code>
-                    <br>
-                    Pas très fiable coté restitution, préféré le "alert" si ça beug
+        <ul class="mb-s">
+            <li>
+                <code>aria-live="assertive"</code> : le contenu est vocalisé immédiatement
             </li>
             <li>
-                Messages de notifiactions : <code>role="log"</code> ou <code>aria-atomic</code>
-                <ul>
-                    <li><code>aria-atomic="true"</code> restitue tout, à ne pas utiliser dans un tchat par exemple </li>
-                    <li><code>aria-atomic="false"</code> restitue uniquement le dernier ajout </li>
-                </ul>
+                <code>aria-live="polite"</code> : le contenu est vocalisé dès que l'utilisateur est disponible
             </li>
         </ul>
+        <ul>
+            <li>
+                <code>aria-atomic="true"</code> restitue tout, à ne pas utiliser dans un tchat par exemple
+            </li>
+            <li>
+                <code>aria-atomic="false"</code> restitue uniquement le dernier ajout
+            </li>
+        </ul>
+        <p>Ne pas en abuser, parfois contre-productif, repositionner le focus peut être plus pertinent</p>
     </li>
     <li>
-        Messages d’attente <br>
-        Seulement pour des tâches qui prennent beaucoup de temps. <br>
-        {% set code %}
+        <strong>Message</strong>
+        <ul>
+            <li>Messages d'erreurs : <br><code>&lt;p role="alert">Ceci est une alerte&lt;/p&gt;</code> ou <code>aria-live="assertive"</code>+<code>aria-atomic="true"</code></li>
+            <li>Messages d'informations : <br><code>&lt;p role="status">Ceci est une information&lt;/p&gt;</code> ou <code>aria-live="polite"</code>+<code>aria-atomic="true"</code>
+                    <br>Message d'erreur général en début de formulaire
+                    {% set code %}
+<div tabindex="-1" role="status">
+    <p>Le formulaire contient des erreurs. Veuillez vérifier votre saisie puis envoyer à
+        nouveau votre demande s’il vous plaît.</p>
+</div>
+                {% endset %}
+                {{ macro.code(code) }}
+            </li>
+            <li>
+                Messages de notifications : <br><code>role="log"</code> ou <code>aria-live="polite"</code> et <code>aria-atomic="false"</code>
+            </li>
+            <li>
+                Messages d’attente <br>
+                Seulement pour des tâches qui prennent beaucoup de temps. <br>
+                {% set code %}
 <div role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20 %</div>
 <!-- ou -->
 <div role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuetext="Étape 2&nbsp;: Copie des fichiers…" aria-valuemax="100">
     Étape 2&nbsp;: Copie des fichiers…
 </div>
-        {% endset %}
-        {{ macro.code(code) }}
+                {% endset %}
+                {{ macro.code(code) }}
+                Repositionner le focus sur un élément pertinent, par exemple la zone mise à jour
+            </li>
+        </ul>
     </li>
 </ul>
+
 
 {{ macro.h2("Laisser le contrôle à l\'utilisateur") }}
 <ul class="mb-l">
