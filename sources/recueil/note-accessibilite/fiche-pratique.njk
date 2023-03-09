@@ -41,6 +41,7 @@ pageSolo: true
     <li>S’assurer que les composants sont opérables au clavier et à la souris</li>
     <li>S’assurer que chaque composant a un nom correctement lié au composant</li>
     <li>Tester les composants, voir les <a href="#environnement-de-test">environnements de test</a></li>
+    <li>Passer la page au <a href="https://validator.w3.org/#validate_by_input" title="validateur du w3c Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">validateur du w3c</a></li>
 </ul>
 
 
@@ -181,9 +182,11 @@ pageSolo: true
     </li>
     <li>
         {% set code %}
-<a class="lien-evitement" href="#contenu">
-    Aller au contenu
-</a>
+<nav role="navigation" aria-label="Accès rapide">
+    <a class="lien-evitement" href="#contenu">
+        Aller au contenu
+    </a>
+</nav>
 .lien-evitement {
     position:absolute;
     left:-99999rem;
@@ -204,6 +207,12 @@ pageSolo: true
         Présentation cohérence  et emplacement identique sur chaque page
     </li>
     <li>
+        {% set code %}
+<nav role="navigation" aria-label="Menu de navigation">
+    ...
+</nav>
+        {% endset %}
+        {{ macro.code(code) }}
         <code>nav</code> réservé aux zones de navigation principale et secondaire :
         <ul>
             <li>menu principal</li>
@@ -219,6 +228,17 @@ pageSolo: true
     </li>
     <li>
         Changements de sens de lecture : <code>dir</code>
+    </li>
+    <li>
+        Modal : <a href="/recueil/garder-focus-dans-modal/">Garder le focus à l'intérieur</a> !
+        {% set code %}
+<div aria-labelledby="title" tabindex="-1" role="dialog">
+    <button title="Fermer"><span aria-hidden="true">X</span></button>
+    <h1 id="title">Alan Turing</h1>
+    content...
+</div>
+        {% endset %}
+        {{ macro.code(code) }}
     </li>
 </ul>
 
@@ -349,6 +369,7 @@ pageSolo: true
         {{ macro.code(code) }}
     </li>
     <li>Proposer une alternative pour tous (afficher/masquer) en mode liste par exemple</li>
+    <li>Déclaration des entêtes <code>&lt;th scope="[col|row]"&gt;</code></li>
     <li>Cellules d’en-têtes
         {% set code %}
 <tr>
@@ -573,7 +594,7 @@ p {
             <li>Tout est obligatoire : le mettre en début de formulaire</li>
             <li>Mixte : Ajouter une astérisque dans les champs obligatoire + mettre une légende en haut du formulaire</li>
             <li>Majorité de facultatif : Possibililité de mettre les champs optionnels directement après le label</li>
-            <li>Attribut <code>required</code> sur chaque champ obligatoire</li>
+            <li>Attribut <code>required</code> sur chaque champ obligatoire ou <code>aria-required="true"</code></li>
             <li>
                 Indication visible
                 {% set code %}
