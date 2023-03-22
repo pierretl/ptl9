@@ -1,3 +1,13 @@
+//Gap
+.gap-menu {
+  gap: $espace-s;
+}
+@include breakpoint(large) {
+  .gap-menu {
+    gap: $espace-m;
+  }
+}
+
 // TOp
 .pt-m {
   padding-top: $espace-m;
