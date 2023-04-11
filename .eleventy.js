@@ -92,6 +92,10 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({"sources/images": "images"});
 
 
+    // Copie le dossier "medias" dans "_site/medias"
+    eleventyConfig.addPassthroughCopy({"sources/medias": "medias"});
+
+
     // Copie le dossier "fonts" dans "_site/fonts"
     eleventyConfig.addPassthroughCopy({"sources/fonts": "fonts"});
 

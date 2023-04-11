@@ -1,0 +1,97 @@
+---
+layout: layout/standard.njk
+titre: "Outils d’Accessibilité Web"
+tags: "recueil"
+date: 2023-04-11
+description: "Quelques outils pour mettre en évidence des soucis d'accessibilité"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<p class="mb-l">
+    Seuls les liens des extensions Firefox sont répertoriés parce que ce navigateur fait partie des <a href="https://accessibilite.numerique.gouv.fr/methode/environnement-de-test/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">environnements de test officiels</a> à la différence de Chrome.
+</p>
+
+<ul class="ul-reset mb-m__enfant">
+    <li>
+        {{ macro.h2("HeadingsMap") }}
+        <p class="mb-xs">
+            Génère la structure des titres et affichent les erreurs de niveau
+        </p>
+        <a href="https://addons.mozilla.org/fr/firefox/addon/headingsmap/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Addons Firefox</a>
+    </li>
+    <li>
+        {{ macro.h2("WCAG Contrast checker") }}
+        <p class="mb-xs">
+            Vérifie la conformité des niveaux de contraste de la combinaison des couleurs d'avant-plan et d'arrière-plan sur la base des exigences des WCAG 2.1.
+        </p>
+        <a href="https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Addons Firefox</a>
+    </li>
+    <li>
+        {{ macro.h2("Stylus") }}
+        <p class="mb-xs">
+            Appliquez des styles personnalisés sur un site, gestionnaire de style
+        </p>
+        <ul>
+            <li>
+                <a href="https://addons.mozilla.org/fr/firefox/addon/styl-us/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Addons Firefox</a>
+            </li>
+            <li>
+                <a href="{{ metadata.siteUrl }}/medias/stylus-2022-12-07.json" download>Style d'audit (.json 62ko)</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        {{ macro.h2("color.review") }}
+        <p class="mb-xs">
+            Un outil moderne pour explorer et trouver des couleurs accessibles.
+        </p>
+        <a href="https://color.review/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">https://color.review/</a>
+    </li>
+    <li>
+        {{ macro.h2("Web Developer") }}
+        <p class="mb-xs">
+            Ajoute divers outils de développement web au navigateur.
+        </p>
+        <a href="https://addons.mozilla.org/fr/firefox/addon/web-developer/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">Addons Firefox</a>
+    </li>
+    <li>
+        {{ macro.h2("NVDA") }}
+        <p class="mb-xs">
+            Un lecteur d'écran libre et gratuit pour Microsoft
+        </p>
+        <ul>
+            <li>
+                <a href="https://www.nvda-fr.org/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">https://www.nvda-fr.org/</a>
+            </li>
+            <li>
+                <a href="{{ metadata.siteUrl }}/medias/NVDA-keyboard-helpers.pdf" download>Liste des raccourcis clavier NVDA (.pdf 443ko)</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        {{ macro.h2("A11y audit bookmarklets") }}
+        <p class="mb-xs">
+            Une collection de marque page javascript axés sur l'accessibilité
+        </p>
+        <a href="https://a11y-tools.com/bookmarklets/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">https://a11y-tools.com/bookmarklets/</a>
+    </li>
+    <li>
+        {{ macro.h2("Validateur W3C") }}
+        <p class="mb-xs">
+            Le service de validation de balises HTML
+        </p>
+        <ul>
+            <li>
+                <a href="https://validator.w3.org/" title="Nouvelle fenêtre" target="_blank" rel="noreferrer noopener">https://validator.w3.org/</a>
+            </li>
+            <li>
+                Marque page javascript : <a href="javascript:(function(){function c(a,b){var c=document.createElement(%22textarea%22);c.name=a;c.value=b;d.appendChild(c)}var e=function(a){for(var b=%22%22,a=a.firstChild;a;){switch(a.nodeType){case Node.ELEMENT_NODE:b+=a.outerHTML;break;case Node.TEXT_NODE:b+=a.nodeValue;break;case Node.CDATA_SECTION_NODE:b+=%22<![CDATA[%22+a.nodeValue+%22]]\>%22;break;case Node.COMMENT_NODE:b+=%22<\!--%22+a.nodeValue+%22--\>%22;break;case Node.DOCUMENT_TYPE_NODE:b+=%22<!DOCTYPE %22+a.name+(a.publicId?' PUBLIC %22'+a.publicId+'%22':%22%22)+(!a.publicId&&a.systemId? %22 SYSTEM%22:%22%22)+(a.systemId?' %22'+a.systemId+'%22':%22%22)+%22>\n%22}a=a.nextSibling}return b}(document),d=document.createElement(%22form%22);d.method=%22POST%22;d.action=%22http://validator.w3.org/check%22;d.enctype=%22multipart/form-data%22;d.target=%22_blank%22;c(%22fragment%22,e);c(%22doctype%22,%22Inline%22);c(%22group%22,%220%22);document.body.appendChild(d);d.submit()})();">Validateur</a>
+                <p>
+                    Faites-le glisser dans votre barre d'outils ou cliquez avec le bouton droit de la souris et ajoutez-les à vos favoris. Vous pouvez ensuite les exécuter quand vous en avez envie.
+                </p>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
