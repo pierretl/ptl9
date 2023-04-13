@@ -34,7 +34,11 @@ description: "Information légal du site"
 </div>
 
 {{ macro.h2("Cookies & Statistiques") }}
-<p class="mb-l">Il n'y a ni cookie ni tracking sur ce site</p>
+{#<p class="mb-l">Il n'y a ni cookie ni tracking sur ce site</p>#}
+<div class="mb-l">
+    <p>Données collectées par l’outil de mesure d’audience <a href="https://www.wysistat.net/" target="_blank"  rel="noreferrer">Wysistat</a></p>
+    <iframe style="border: none;" src="https://www.wysistat.com/opt-out/verification.html" width="100%" height="75"></iframe>
+</div>
 
 {{ macro.h2("Plan du site") }}
 <a href="/plan-du-site/">Plan du site</a>
