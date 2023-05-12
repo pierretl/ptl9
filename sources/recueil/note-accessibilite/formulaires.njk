@@ -70,8 +70,8 @@ styleCss: "prism.css"
     <li>
         ou une combinaison de <code>label</code> et de <code>aria-describedby</code>
         {% set code %}
-<label for="name" aria-describedby="info">Prénom</label>
-<input id="name"/>
+<label for="name">Prénom</label>
+<input id="name" aria-describedby="info"/>
 <p id="info">40 caractere max</p>
         {% endset %}
         {{ macro.code(code) }}
@@ -191,8 +191,8 @@ styleCss: "prism.css"
     <li>
         Ou au moyen d'un texte relié avec <code>aria-describedby</code>
         {% set code %}
-<label for="name" aria-describedby="required">Prénom</label>
-<input id="name"/>
+<label for="name">Prénom</label>
+<input id="name" aria-describedby="required"/>
 <p id="required">Champs obligatoire</p>
         {% endset %}
         {{ macro.code(code, "mb-m") }}
