@@ -42,7 +42,7 @@ exclureRss: "true"
                              height="{{ imageMosaiqueHeight }}">
                     {% else %}
                         {% image imageShortcode,
-                                 ["sources/images/mosaique/", work.data.mosaiqueImage, work.data.mosaiqueImageExtension] | join,
+                                 ["sources/images/mosaique/", work.data.mosaiqueImage, "_2x", work.data.mosaiqueImageExtension] | join,
                                  "",
                                  ["(max-width: 599px)",imageMosaiqueWidth2x,"px,",imageMosaiqueWidth,"px"] | join,
                                  "" %}
