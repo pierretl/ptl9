@@ -68,6 +68,14 @@ img {
   max-width: 100%;
 }
 
+img[width] {
+  width: auto; /* Defer to max-width */
+}
+
+img[width][height] {
+  height: auto; /* Preserve aspect ratio */
+}
+
 figure {
   display: inline-block;
 }
