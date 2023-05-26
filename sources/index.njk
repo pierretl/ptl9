@@ -14,16 +14,19 @@ exclureRss: "true"
         {% if work.data.mosaiqueTaille == "2-1" %}
             {% set classTailleMosaique =" s_mosaique__2-1" %}
             {% set imageMosaiqueWidth ="320" %}
+            {% set imageMosaiqueWidth2x ="620" %}
             {% set imageMosaiqueHeight ="150" %}
             {% set imageShortcode ="mosaique2s1" %}
         {% elseif work.data.mosaiqueTaille == "2-2" %}
             {% set classTailleMosaique =" s_mosaique__2-2" %}
             {% set imageMosaiqueWidth ="320" %}
+            {% set imageMosaiqueWidth2x ="620" %}
             {% set imageMosaiqueHeight ="320" %}
             {% set imageShortcode ="mosaique2s1" %}
         {% else %}
             {% set classTailleMosaique ="" %}
             {% set imageMosaiqueWidth ="150" %}
+            {% set imageMosaiqueWidth2x ="300" %}
             {% set imageMosaiqueHeight ="150" %}
             {% set imageShortcode ="mosaique1s1" %}
         {% endif %}
@@ -41,7 +44,7 @@ exclureRss: "true"
                         {% image imageShortcode,
                                  ["sources/images/mosaique/", work.data.mosaiqueImage, work.data.mosaiqueImageExtension] | join,
                                  "",
-                                 [imageMosaiqueWidth,"px"] | join,
+                                 ["(max-width: 599px)",imageMosaiqueWidth2x,"px,",imageMosaiqueWidth,"px"] | join,
                                  "" %}
                     {% endif %}
                 {% else %}
