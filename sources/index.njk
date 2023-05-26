@@ -20,7 +20,7 @@ exclureRss: "true"
         {% elseif work.data.mosaiqueTaille == "2-2" %}
             {% set classTailleMosaique =" s_mosaique__2-2" %}
             {% set imageMosaiqueWidth ="320" %}
-            {% set imageMosaiqueWidth2x ="620" %}
+            {% set imageMosaiqueWidth2x ="640" %}
             {% set imageMosaiqueHeight ="320" %}
             {% set imageShortcode ="mosaique2s1" %}
         {% else %}
@@ -35,20 +35,17 @@ exclureRss: "true"
             <a class="s_mosaique__lien" href="{{ work.url | url }}" title="{{ work.data.titre }}">
                 {% if work.data.mosaiqueImage %}
                     {% if work.data.mosaiqueImageExtension == ".svg" %}
-                        <img class="s_mosaique__image{{ work.data.mosaiqueClassCss }}"
+                        <img class="{{ work.data.mosaiqueClassCss }}"
                              src="{{ metadata.siteUrl }}/images/mosaique/{{ work.data.mosaiqueImage }}.svg"
                              alt=""
                              width="{{ imageMosaiqueWidth }}"
                              height="{{ imageMosaiqueHeight }}">
                     {% else %}
-                        {% if work.data.titre == "Bricolage" %}
-                        <img src="{{ ["/images/mosaique/", work.data.mosaiqueImage, "_2x", work.data.mosaiqueImageExtension] | join }}" alt="">
-                        {% endif %}
                         {% image imageShortcode,
-                                 ["sources/images/mosaique/", work.data.mosaiqueImage, "_2x", work.data.mosaiqueImageExtension] | join,
+                                 ["sources/images/mosaique/", work.data.mosaiqueImage, work.data.mosaiqueImageExtension] | join,
                                  "",
                                  ["(max-width: 599px)",imageMosaiqueWidth2x,"px,",imageMosaiqueWidth,"px"] | join,
-                                 "" %}
+                                 work.data.mosaiqueClassCss %}
                     {% endif %}
                 {% else %}
                     <span class="s_mosaique__texte" title="{{ work.data.titre }}" data-titre="{{ work.data.titre }}">

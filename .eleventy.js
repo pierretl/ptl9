@@ -12,10 +12,10 @@ const fg = require('fast-glob');
 function imageShortcodeSync(type, src, alt, sizes, classe="") {
     switch (type) {
         case 'mosaique1s1':
-            var widthType = [150];
+            var widthType = [300, 150];
             break;
         case 'mosaique2s1':
-            var widthType = [320];
+            var widthType = [640, 320];
             break;
         default:
             var widthType = [150];
