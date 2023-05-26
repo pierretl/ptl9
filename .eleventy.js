@@ -9,22 +9,49 @@ const path = require("path");
 const Image = require("@11ty/eleventy-img");
 const fg = require('fast-glob');
 
-async function generateImages() {
-    const dossierImages = fg.stream("sources/images/**/*.{jpg,jpeg,png}");
-    for await (const entry of dossierImages) {
-
-        let dossier = entry.substr(0,entry.lastIndexOf('/'));
-
-        let stats = await Image(entry, {
-            formats: ['avif', 'webp'],
-            outputDir: dossier+'/auto',
-            filenameFormat: function (id, src, width, format, options) {
-                const extension = path.extname(src);
-                const name = path.basename(src, extension);
-                return `${name}.${format}`;
-            },
-        })
+function imageShortcodeSync(type, src, alt, sizes, classe="") {
+    switch (type) {
+        case 'mosaique1s1':
+            var widthType = [150];
+            break;
+        case 'mosaique2s1':
+            var widthType = [320];
+            break;
+        default:
+            var widthType = [150];
     }
+
+    let extentionSrc = src.split(/[#?]/)[0].split('.').pop().trim();
+    // le avif ne fonctionne pas sur certaine image, why ??
+    switch (extentionSrc) {
+        case 'png':
+            var formatType = ["webp", "png"];
+            break;
+        default:
+            //jpg
+            var formatType = ["webp", "jpg"];
+    }
+
+    let options = {
+        widths: widthType,
+        formats: formatType,
+        urlPath: "/images/generate/",
+        outputDir: "_site/images/generate/",
+    };
+
+    // generate images, while this is async we don’t wait
+    Image(src, options);
+
+    let imageAttributes = {
+        class: classe,
+        alt ,
+        sizes,
+        loading: "lazy",
+        decoding: "async",
+    };
+    // get metadata even the images are not fully generated
+    let metadata = Image.statsSync(src, options);
+    return Image.generateHTML(metadata, imageAttributes);
 }
 
 module.exports = function (eleventyConfig) {
@@ -73,12 +100,8 @@ module.exports = function (eleventyConfig) {
             });
     });
 
-    //génère les images en webp et avif
-    //ca relance le watch pour chaque image et ca crash le localhost
-    //a lancer juste pour générer les images, mais a laisser désactiver
-    //generateImages();
-    //console.log('images généré');
-
+    //Shortcode image
+    eleventyConfig.addNunjucksShortcode("image", imageShortcodeSync); // Nunjucks macros cannot use asynchronous shortcodes
 
     // trigger a rebuild if sass changes
     eleventyConfig.addWatchTarget("_sass/");
