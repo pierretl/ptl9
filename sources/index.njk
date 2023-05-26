@@ -38,7 +38,11 @@ exclureRss: "true"
                              width="{{ imageMosaiqueWidth }}"
                              height="{{ imageMosaiqueHeight }}">
                     {% else %}
-                        {% image imageShortcode, ["sources/images/mosaique/", work.data.mosaiqueImage, work.data.mosaiqueImageExtension] | join, "", "", "" %}
+                        {% image imageShortcode,
+                                 ["sources/images/mosaique/", work.data.mosaiqueImage, work.data.mosaiqueImageExtension] | join,
+                                 "",
+                                 [imageMosaiqueWidth,"px"] | join,
+                                 "" %}
                     {% endif %}
                 {% else %}
                     <span class="s_mosaique__texte" title="{{ work.data.titre }}" data-titre="{{ work.data.titre }}">
