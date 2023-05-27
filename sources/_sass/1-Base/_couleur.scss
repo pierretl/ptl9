@@ -36,6 +36,8 @@ $peach: #F4BB7E;
   --gamme3__bordure: #{$peach};
   --gamme3__texte1: #{$grey-pale};
   --gamme3__texte2: #{$grey-quill};
+
+  color-scheme: dark;
 }
 
 
@@ -57,4 +59,6 @@ $peach: #F4BB7E;
   --gamme3__bordure: #{$corn-harvest};
   --gamme3__texte1: #{$grey-davy};
   --gamme3__texte2: #{$grey-dove};
+
+  color-scheme: only light;
 }
