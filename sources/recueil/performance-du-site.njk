@@ -12,7 +12,11 @@ description: "Résultat du site sous différents outils d'analyse de performance
 
 {{ macro.h2("Website Carbon Calculator") }}
 <figure class="mb-l" role="figure" aria-label="Website Carbon Calculator, Cette page est plus propre que 96% des pages Web testées, Seulement 0,04 g de CO2 est produit chaque fois que quelqu’un visite cette page web, Cette page Web semble fonctionner sur énergie durable">
-    <img src="{{ metadata.siteUrl }}/images/performance/2023-05-27_website-carbon-calculator.png" alt="" loading="lazy" decoding="async" />
+    {% image "w-100",
+        "sources/images/performance/2023-05-27_website-carbon-calculator.png",
+        "",
+        ["(max-width: 321px) 600px, 870px"],
+        work.data.mosaiqueClassCss %}>
     <figcaption>
         <a href="https://www.websitecarbon.com/website/pierre-tl/" rel="external" lang="en">Website Carbon Calculator</a>
         <br>Cette page est plus propre que 96% des pages Web testées
@@ -26,7 +30,11 @@ description: "Résultat du site sous différents outils d'analyse de performance
 
 {{ macro.h2("GTmetrix") }}
 <figure class="mb-l" role="figure" aria-label="GTmetrix Note : A, performance : 100%, Structure : 100%, LCP : 357ms, TBT : 0ms, CLS : 0">
-    <img src="{{ metadata.siteUrl }}/images/performance/2023-05-27_GTmetrix.png" alt="" loading="lazy" decoding="async" />
+    {% image "w-100",
+        "sources/images/performance/2023-05-27_GTmetrix.png",
+        "",
+        ["(max-width: 321px) 600px, 870px"],
+        work.data.mosaiqueClassCss %}
     <figcaption>
         <a href="https://gtmetrix.com/" rel="external" lang="en">GTmetrix</a>
         <br>Note : A, performance : 100%, Structure : 100%, LCP : 357ms, TBT : 0ms, CLS : 0
@@ -39,7 +47,11 @@ description: "Résultat du site sous différents outils d'analyse de performance
 {{ macro.h2("PageSpeed Insights") }}
 
 <figure class="mb-l" role="figure" aria-label="PageSpeed Insights Mobile Performance : 100%, Accessibilité : 100%, Bonnes pratiques : 100%, SEO : 100%">
-    <img src="{{ metadata.siteUrl }}/images/performance/2023-05-27_pagespeed-insights_mobile.png" alt="" loading="lazy" decoding="async" />
+    {% image "w-100",
+        "sources/images/performance/2023-05-27_pagespeed-insights_mobile.png",
+        "",
+        ["(max-width: 321px) 600px, 870px"],
+        work.data.mosaiqueClassCss %}
     <figcaption>
         <a href="https://pagespeed.web.dev/analysis/https-www-pierre-tl/xvnh69ma51?utm_source=psi&utm_medium=redirect&form_factor=mobile" rel="external" lang="en">PageSpeed Insights Mobile</a>
         <br>Performance : 100%, Accessibilité : 100%, Bonnes pratiques : 100%, SEO : 100%
@@ -47,7 +59,11 @@ description: "Résultat du site sous différents outils d'analyse de performance
 </figure>
 
 <figure class="mb-l" role="figure" aria-label="PageSpeed Insights Bureau Performance : 100%, Accessibilité : 100%, Bonnes pratiques : 100%, SEO : 100%">
-    <img src="{{ metadata.siteUrl }}/images/performance/2023-05-27_pagespeed-insights_desktop.png" alt="" loading="lazy" decoding="async" />
+    {% image "w-100",
+        "sources/images/performance/2023-05-27_pagespeed-insights_desktop.png",
+        "",
+        ["(max-width: 321px) 600px, 870px"],
+        work.data.mosaiqueClassCss %}
     <figcaption>
         <a href="https://pagespeed.web.dev/analysis/https-www-pierre-tl/xvnh69ma51?utm_source=psi&utm_medium=redirect&form_factor=desktop" rel="external" lang="en">PageSpeed Insights Bureau</a>
         <br>Performance : 100%, Accessibilité : 100%, Bonnes pratiques : 100%, SEO : 100%

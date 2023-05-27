@@ -17,6 +17,9 @@ function imageShortcodeSync(type, src, alt, sizes, classe="") {
         case 'mosaique2s1':
             var widthType = [640, 320];
             break;
+        case 'w-100':
+            var widthType = [600, 870];
+            break;
         default:
             var widthType = [150];
     }
