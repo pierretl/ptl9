@@ -49,10 +49,8 @@ exclureRss: "true"
                                  work.data.mosaiqueClassCss %}
                     {% endif %}
                 {% else %}
-                    <span class="s_mosaique__texte" title="{{ work.data.titre }}" data-titre="{{ work.data.titre }}">
-                        <span aria-hidden="true">{{ work.data.titre }}</span>
-                        {{ work.data.titre }}
-                        <span aria-hidden="true">{{ work.data.titre }}</span>
+                    <span class="s_mosaique__texte" aria-hidden="true">
+                        {{ work.data.titre.slice(0,1) }}
                     </span>
                 {% endif %}
             </a>

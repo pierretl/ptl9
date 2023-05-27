@@ -53,17 +53,13 @@
 /* Texte                                                              */
 /*--------------------------------------------------------------------*/
 .s_mosaique__texte {
-  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  font-size: $texte-xl;
-  line-height: .9;
-  word-break: break-all;
-  text-align: center;
-  letter-spacing: 1rem;
-  text-transform: lowercase;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-family: serif;
+  font-size-adjust: 5;
 }
 
 
