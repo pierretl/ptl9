@@ -2,56 +2,54 @@
 layout: layout/standard.njk
 titre: "Performances du site"
 tags: "recueil"
-date: 2021-08-17
-description: "Résultat du site sur différentes moulinettes de performance et calcul"
+date: 2023-05-27
+description: "Résultat du site sous différents outils d'analyse de performance et d'émissions de carbone"
 ---
 {% import "macro/contenu.njk" as macro %}
 
-{{ macro.sommaire(["Website Carbon Calculator", "Dareboost", "GTmetrix", "PageSpeed Insights"]) }}
+{{ macro.sommaire(["Website Carbon Calculator", "GTmetrix", "PageSpeed Insights"]) }}
 
 
-{{ macro.h2("Website Carbon Calculator", "Plus propre que 91% des pages web testées") }}
-<figure class="mb-l" role="figure" aria-label="Résultat : plus propre que 91% des pages web testées">
-    <img src="{{ metadata.siteUrl }}/images/performance/website-carbon-calculator-ptl9.png" alt="Capture d'écran du résultat" loading="lazy" />
+{{ macro.h2("Website Carbon Calculator") }}
+<figure class="mb-l" role="figure" aria-label="Website Carbon Calculator, Cette page est plus propre que 96% des pages Web testées, Seulement 0,04 g de CO2 est produit chaque fois que quelqu’un visite cette page web, Cette page Web semble fonctionner sur énergie durable">
+    <img src="{{ metadata.siteUrl }}/images/performance/2023-05-27_website-carbon-calculator.png" alt="" loading="lazy" decoding="async" />
     <figcaption>
-        <a href="https://www.websitecarbon.com/website/pierre-tl/" rel="external">Website Carbon Calculator</a>
+        <a href="https://www.websitecarbon.com/website/pierre-tl/" rel="external" lang="en">Website Carbon Calculator</a>
+        <br>Cette page est plus propre que 96% des pages Web testées
+        <br>Seulement 0,04 g de CO2 est produit chaque fois que quelqu’un visite cette page web.
+        <br>Cette page Web semble fonctionner sur énergie durable
     </figcaption>
 </figure>
 
 
 
 
-{{ macro.h2("Dareboost", "Note : 91%") }}
-<figure class="mb-l" role="figure" aria-label="Résultat : 91%, 4 issues, 2 improvements, 73 successes">
-    <img src="{{ metadata.siteUrl }}/images/performance/dareboost-20-08-17.png" alt="Capture d'écran du résultat" loading="lazy" />
+{{ macro.h2("GTmetrix") }}
+<figure class="mb-l" role="figure" aria-label="GTmetrix Note : A, performance : 100%, Structure : 100%, LCP : 357ms, TBT : 0ms, CLS : 0">
+    <img src="{{ metadata.siteUrl }}/images/performance/2023-05-27_GTmetrix.png" alt="" loading="lazy" decoding="async" />
     <figcaption>
-        <a href="https://www.dareboost.com/en/report/a_1611bccb6d0609d1c74ee4f30?reportIds=a_1611bccb6d0609d1c74ee4f30" rel="external">dareboost</a>
+        <a href="https://gtmetrix.com/" rel="external" lang="en">GTmetrix</a>
+        <br>Note : A, performance : 100%, Structure : 100%, LCP : 357ms, TBT : 0ms, CLS : 0
     </figcaption>
 </figure>
 
 
 
 
-{{ macro.h2("GTmetrix", "Grade A") }}
-<figure class="mb-l" role="figure" aria-label="Note : A, performance : 100%, Structure : 100%">
-    <img src="{{ metadata.siteUrl }}/images/performance/GTmetrix_2021-08-17.png" alt="Capture d'écran du résultat" loading="lazy" />
+{{ macro.h2("PageSpeed Insights") }}
+
+<figure class="mb-l" role="figure" aria-label="PageSpeed Insights Mobile Performance : 100%, Accessibilité : 100%, Bonnes pratiques : 100%, SEO : 100%">
+    <img src="{{ metadata.siteUrl }}/images/performance/2023-05-27_pagespeed-insights_mobile.png" alt="" loading="lazy" decoding="async" />
     <figcaption>
-        <a href="https://gtmetrix.com/reports/www.pierre.tl/hzMkSYmU/" rel="external">GTmetrix</a>
+        <a href="https://pagespeed.web.dev/analysis/https-www-pierre-tl/xvnh69ma51?utm_source=psi&utm_medium=redirect&form_factor=mobile" rel="external" lang="en">PageSpeed Insights Mobile</a>
+        <br>Performance : 100%, Accessibilité : 100%, Bonnes pratiques : 100%, SEO : 100%
     </figcaption>
 </figure>
 
-
-
-
-{{ macro.h2("PageSpeed Insights", "98 en mobile, 100 sur ordinateur") }}
-
-<p class="mb-m">
-    <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.pierre.tl%2F&tab=mobile" rel="external">PageSpeed Insights</a>
-</p>
-
-{{ macro.h3("Mobile") }}
-<img class="mb-m" src="{{ metadata.siteUrl }}/images/performance/pagespeed-insights_mobile_2021-08-17.png" alt="Capture d'écran du résultat mobile : 98" loading="lazy" />
-
-{{ macro.h3("Ordinateur") }}
-<img src="{{ metadata.siteUrl }}/images/performance/pagespeed-insights_desktop_2021-08-17.png" alt="Capture d'écran du résultat ordinateur : 100" loading="lazy" />
-
+<figure class="mb-l" role="figure" aria-label="PageSpeed Insights Bureau Performance : 100%, Accessibilité : 100%, Bonnes pratiques : 100%, SEO : 100%">
+    <img src="{{ metadata.siteUrl }}/images/performance/2023-05-27_pagespeed-insights_desktop.png" alt="" loading="lazy" decoding="async" />
+    <figcaption>
+        <a href="https://pagespeed.web.dev/analysis/https-www-pierre-tl/xvnh69ma51?utm_source=psi&utm_medium=redirect&form_factor=desktop" rel="external" lang="en">PageSpeed Insights Bureau</a>
+        <br>Performance : 100%, Accessibilité : 100%, Bonnes pratiques : 100%, SEO : 100%
+    </figcaption>
+</figure>
