@@ -22,7 +22,7 @@ exclureRss: "true"
         {{ macro.h2("Recueil") }}
         <ul class="mb-s__enfant">
             {% for page in collections.recueil | reverse %}
-                {% if blog.data.brouillon %}
+                {% if page.data.brouillon %}
                 {% else %}
                     <li>
                         <a href="{{ page.url | url }}">
