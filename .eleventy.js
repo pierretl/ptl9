@@ -45,11 +45,17 @@ function imageShortcodeSync(type, src, alt, sizes, classe="") {
     // generate images, while this is async we don’t wait
     Image(src, options);
 
+    //Don't lazy load Largest Contentful Paint image
+    var loadingLazy = "";
+    if (type !== 'w-100') {
+        loadingLazy = "lazy";
+    }
+
     let imageAttributes = {
         class: classe,
         alt ,
         sizes,
-        loading: "lazy",
+        loading: loadingLazy,
         decoding: "async",
     };
     // get metadata even the images are not fully generated
