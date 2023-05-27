@@ -34,7 +34,9 @@ exclureRss: "true"
                              src="{{ metadata.siteUrl }}/images/mosaique/{{ work.data.mosaiqueImage }}.svg"
                              alt=""
                              width="{{ imageMosaiqueWidth }}"
-                             height="{{ imageMosaiqueHeight }}">
+                             height="{{ imageMosaiqueHeight }}"
+                             loading="lazy"
+                             decoding="async">
                     {% else %}
                         {% if work.data.mosaiqueClassCss == "pa" %}
                             <img class="{{ work.data.mosaiqueClassCss }}"
@@ -42,7 +44,9 @@ exclureRss: "true"
                                  srcset=""
                                  alt=""
                                  width="{{ imageMosaiqueWidth }}"
-                                 height="{{ imageMosaiqueHeight }}">
+                                 height="{{ imageMosaiqueHeight }}"
+                                 loading="lazy"
+                                 decoding="async">
                         {% else %}
                             {% image imageShortcode,
                              ["sources/images/mosaique/", work.data.mosaiqueImage, "_2x", work.data.mosaiqueImageExtension] | join,
