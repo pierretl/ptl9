@@ -1,0 +1,319 @@
+---
+layout: layout/standard.njk
+titre: "Modèle BUSES"
+tags: "recueil"
+date: 2023-05-31
+description: "Ensemble de concepts et de bonne pratique pour organiser et maintenir du SCSS"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+
+{% set sommaire = [
+    {titre: 'Introduction'},
+    {titre: 'Un nom mémotechnique'},
+    {
+        titre: 'Principe de conception de l\'architecture',
+        sub: [
+            {titre: 'Arborescence'},
+            {titre: 'Bonne pratique'},
+            {titre: 'Convention de nommage'}
+        ]
+    },
+    {
+        titre: 'Quelques mauvaises expériences',
+        sub: [
+            {titre: 'Mauvaises traductions'},
+            {titre: 'Imbrication sur des composants complexes'}
+        ]
+    }
+] %}
+{{ macro.sommaire2(sommaire) }}
+
+
+
+{{ macro.h2("Introduction") }}
+
+<p class="mb-l">
+    La modèle BUSE est un ensemble de principe de conception, de regle d'usage et d'organisation afin de mettre en place du code SCSS maintenable.<br>
+    L'ensemble de ses règles n'est pas immuable et doit être adapté à vos besoins.<br>
+    <a href="#{{ "Les cas fondateurs du modèle" | slug }}">Les cas fondateurs du modèle</a>
+</p>
+
+
+{{ macro.h2("Un nom mémotechnique") }}
+
+<ul class="mb-l">
+    <li>
+        <strong><span class="tg1-3 tw-7">B</span>ase</strong>&nbsp;:
+        Function, mixin, variable, reset
+    </li>
+    <li>
+        <strong><span class="tg1-3 tw-7">U</span>tilitaire</strong>&nbsp;:
+        Les éléments de base réutilisable et partageable
+    </li>
+    <li>
+        <strong><span class="tg1-3 tw-7">S</span>tructure</strong>&nbsp;:
+        Les squelettes responsive sans le contenu
+    </li>
+    <li>
+        <strong><span class="tg1-3 tw-7">E</span>lement</strong>&nbsp;:
+        Spécificité d'un usage
+    </li>
+    <li>
+        <strong><span class="tg1-3 tw-7">S</span>atellite</strong>&nbsp;:
+        Les bibliothèques externes et leurs surcharges
+    </li>
+</ul>
+
+
+
+{{ macro.h2("Principe de conception de l\'architecture") }}
+
+<ul class="mb-m">
+    <li>Avoir une arborescence simple et compréhensible par tous</li>
+    <li>Appliquer des règles de nomenclature et les respecter</li>
+    <li>Décider de tout cela avec son équipe, les impliquer</li>
+</ul>
+
+
+{{ macro.h3("Arborescence") }}
+
+{% set code %}
+_sass
+    1-Base
+    2-Utilitaire
+    3-Structure
+    4-Element
+    5-Satellite
+    style.scss
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+{{ macro.h4("Les dossiers principaux") }}
+
+<p class="mb-m">
+    L'ensemble des fichiers SCSS doit être regroupé et classé dans des répertoires<br>
+    Préfixé chaque dossier par une numérotation afin de les faire apparaitre dans un ordre logique : du plus abstrait au plus spécifique
+</p>
+
+<p class="mb-m">
+    Chacun de ses répertoires possède un fichier index nommé <code>__index.scss</code><br>
+    Le double <span lang="en">undersore</span> permet que le fichier se retrouve toujours en haut de l'arborescence.
+</p>
+
+{% set code %}
+_sass
+    2-Utilitaire
+        __index.scss
+        _block.scss
+        _bouton.scss
+        _espacement.scss
+        _flex.scss
+        _text.scss
+        _z-index.scss
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+<p class="mb-m">
+    L'index sert de fichier d'intermédiaire pour importer tous les fichiers ou les index des sous-dossiers à la racine de ce répertoire.<br>
+    Les imports sont classés par ordre alphabétique où par besoin quand c'est nécessaire<br>
+    Utiliser des sous-dossiers dès lors que deux fichiers ou plus aborde le même thème
+</p>
+
+<div class="d-flex mb-m">
+    <div class="w-33">
+        <em>index d'un dossier Utilitaire</em>
+        {% set code %}
+@import 'block';
+@import 'bouton';
+@import 'espacement';
+@import 'flex';
+@import 'text';
+@import 'z-index';
+        {% endset %}
+        {{ macro.code(code, "", "language-js") }}
+        Classement par ordre alphabétique
+    </div>
+    <div class="w-33">
+        <em>index d'un dossier Base</em>
+    {% set code %}
+@import 'breakpoint';
+@import 'couleur';
+@import 'taille';
+
+@import 'font';
+@import 'base';
+@import 'z-index';
+    {% endset %}
+        {{ macro.code(code, "", "language-js") }}
+        Classement par besoin<br>
+    </div>
+    <div class="w-33">
+        <em>index du dossier Base plus complexe</em>
+        {% set code %}
+@import 'Variable/_index';
+@import 'Function/_index';
+@import 'Mixin/_index';
+
+@import 'couleur';
+@import 'focus';
+@import 'font';
+@import 'base';
+        {% endset %}
+        {{ macro.code(code, "", "language-js") }}
+        Classement par besoin
+    </div>
+</div>
+
+
+
+{{ macro.h4("La langue") }}
+
+<p class="mb-s">
+    Le français ou la langue maternelle de l'équipe :
+</p>
+
+<ul class="mb-m">
+    <li>On évite tous problèmes de <a href="#{{ "Mauvaises traductions" | slug }}">mauvaises traductions</a></li>
+    <li>Le franglais est conseillé pour les mots francisés (pourriel par exemple) et pour des termes techniques <span lang="en">(responsive, flex etc...)</span></li>
+    <li>Un jargon métier est difficilement traduisible</li>
+    <li>En cas de rachat, ça leur fera les pieds !</li>
+    <li>Si votre équipe est internationale on utilisera l'anglais, imposés quelque court de rafraichissement à vos équipes !</li>
+</ul>
+
+{{ macro.h4("Fichier a la racine") }}
+
+<p class="mb-s">
+    La feuille de style qui comporte tous les imports nécessaires, <em>style.scss</em>
+</p>
+
+{% set code %}
+@import '1-Base/_index';
+@import '2-Utilitaire/_index';
+@import '3-Structure/_index';
+@import '4-Element/_index';
+@import '5-Satellite/_index';
+{% endset %}
+{{ macro.code(code, "mb-s", "language-js") }}
+
+<p class="mb-l">
+    Au même niveau, l'on peux ajouter des feuille spécifique, qui importerait tous les styles de texte et lien/bouton pour les appliques dans un éditeur <abb lang="en" title="What You See Is What You Get ">WYSIWYG</abb> par exemple
+</p>
+
+
+
+{{ macro.h3("Bonne pratique") }}
+
+{{ macro.h4("Établir des règles") }}
+
+<p class="mb-m">
+    Que l'on travaille seul où a plusieurs, il est essentiel d'établir des règles sans exception, pour ne pas à avoir à faire du cas par cas et a complexifié votre projet.<br>
+    Des règles sur la nomenclature de fichier, de dossier, de nom de classe, de type de sélecteur, de norme d'indentation et de tous ce qui vous semble utile, de chose que vous avait pu rencontrer par le passé et que vous ne souhaitez pas revoir !<br>
+    Idéalement il faut mettre tous ça par écrit, sur un page de votre style guide
+</p>
+
+{{ macro.h4("Bannir les imbrications") }}
+
+<p class="mb-m">
+    Même si les imbrications peuvent faciliter la vie et que cette fonctionnalité est en <span lang="en">working draft</span> coté CSS, voir
+    <a lang="en" href="https://www.w3.org/TR/css-nesting-1/" target="_blank" rel="noreferrer noopener">CSS Nesting Module</a><br>
+    Son abus ou son utilisation pour des <a href="#{{ "Imbrication sur des composants complexes" | slug }}">composants complexes</a> est inapproprié. <br> Pour avoir une règle simple, mieux vaut l'interdire !
+</p>
+
+{{ macro.h4("Établir une convention de Nommage") }}
+
+<p class="mb-m">
+    Utilisé une méthodologie existante ou faite en une a votre image&nbsp;: <a href="">convention de nommage de BUSES</a>
+</p>
+
+{{ macro.h4("Découpage en dossier") }}
+
+<p class="mb-m">
+    À partir de deux fichiers traitant du même thème on, crée un sous-dossier avec un <a href="#{{ "Les dossiers principaux" | slug }}">index</a>
+</p>
+
+{{ macro.h4("CSS réinitialisation") }}
+
+<p class="mb-l">
+    On n'utilise pas de <code>CSS reset</code> tout fait, on créé son propre fichier en fonction de son besoin.<br>
+    Beaucoup de réinitialisations ne sont plus à jour ou peuvent ajouter des contraintes
+</p>
+
+
+
+{{ macro.h3("Convention de nommage") }}
+
+<p class="mb-m">
+    Un savant mélange de <abbr title="Blocs Éléments Modificateurs">BEM</abbr> et de <abbr title="CSS Orienté Objet">OOCSS</abbr> afin de gommer les imperfections
+</p>
+
+<ul class="mb-l">
+    <li>On n'utilise pas les imbrications</li>
+    <li>On n'utilise pas les <code>id</code></li>
+    <li>On n'utilise pas de <code>!important</code></li>
+    <li>On n'utilise pas les classes de style pour cibler un élément en JavaScript</li>
+    <li>On préfixe par <code>js__</code> les classe pour le JavaScript</li>
+    <li>On travail en utilitaire</li>
+    <li>
+        On utilise des sélecteurs à un seul niveau, <code>__</code> pour un sous-élément
+        {% set code %}
+.bouton { ... }
+.bouton__forme { ... }
+.bouton__icon { ... }
+<button class="bouton">
+    <span class="bouton__forme">
+        <img src="bouton__icon" alt="">
+    </span>
+</button>
+        {% endset %}
+        {{ macro.code(code, "") }}
+    </li>
+    <li>
+        Les modificateurs d'un élément sont préfixé <code>v--</code> (v pour variation)<br>
+        {% set code %}
+.bouton { ... }
+.bouton.v--actif { ... }
+<button class="bouton v--actif"></button>
+        {% endset %}
+        {{ macro.code(code, "") }}
+    </li>
+    <li>
+        On ne déclare que ce que l'on utilise<br>
+        Pas de fonction pour généré tout l'espacement possible en toutes les tailles, direction, point de rupture
+    </li>
+    <li>
+        On utilise les initiles des propriété et valeur pour faires les utilitaires des espacement, du flexbox et cssgrid<br>
+        <code>.mt-2</code> pour <code>marin-top</code> de taille 2<br>
+        <code>.df</code> pour <code>display:flex</code><br>
+        <code>.ji-c</code> pour <code>justify-items: center;</code>
+    </li>
+</ul>
+
+
+
+
+
+{{ macro.h2("Quelques mauvaises expériences") }}
+
+{{ macro.h3("Mauvaises traductions") }}
+
+<p class="mb-m">
+    Je comptais ajouter un nouveau composant réutilisable pour géré les cadre, lorsque je découvrir qu'il en existait déjà un mais il était nommé <span lang="en">card</span>.
+    Hors cadre en anglais c'est <span lang="en">frame</span> <br>
+    Je pense qu'il y a confusion entre le sous-élément carte qui reprend une partie des propriétés d'un cadre.
+</p>
+
+{{ macro.h3("Imbrication sur des composants complexes") }}
+
+<p class="mb-l">
+    En voulant changer la couleur de soulignement d'un lien actif sur un mega menu responsif, je suis tomber sur un fichier faisant plus de 300 lignes de code imbriqué, écris en BEM.<br>
+    Des <code>&__item</code> il y en avait des dizaines sans compter tous les états <span lang="en">actif, hover, focus...</span><br>
+    Impossible de faire une simple recherche <kbd>Ctrl</kbd> + <kbd>F</kbd>
+</p>
+
+
+
+
+
