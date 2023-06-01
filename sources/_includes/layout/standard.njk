@@ -35,14 +35,26 @@
                     (En cours de rédaction / mise en forme)
                 </p>
             {% endif %}
+
+            {% if date %}
+            {% else %}
+                {% set margeBasTitre %} mb-m{% endset %}
+            {% endif %}
             
             {% if accueil or pasDeTitre %}
             {% else %}
-                {% if date %}
-                    <h1 class="ts-xl tg1-1 tw-4 js--go-top-cible">{{titre | safe }}</h1>
-                    <span class="d-block tg1-2 mb-m">{{ date | frDate | safe }}</span>
+                <h1 class="ts-xl tg1-1 tw-4{{ margeBasTitre}} js--go-top-cible">{{titre | safe }}</h1>
+                {% if createdDate %}
+                    <span class="d-block tg1-2 mb-m">
+                        {{ createdDate | frDate | safe }}
+                        {% if date %}
+                            , <em>dernière mise à jour le {{ date | frDate | safe }}</em>
+                        {% endif %}
+                    </span>
                 {% else %}
-                    <h1 class="ts-xl tg1-1 tw-4 mb-m js--go-top-cible">{{titre | safe }}</h1>
+                    {% if date %}
+                        <span class="d-block tg1-2 mb-m">{{ date | frDate | safe }}</span>
+                    {% endif %}
                 {% endif %}
             {% endif %}
 
