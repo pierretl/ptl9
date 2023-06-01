@@ -63,6 +63,20 @@ function imageShortcodeSync(type, src, alt, sizes, classe="") {
     return Image.generateHTML(metadata, imageAttributes);
 }
 
+function frDateShortcode(date) {
+
+    const dateObject = new Date(date);
+
+    const months = ["janvier", "février", "mars","avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+
+    const formatDate = (dateObject)=>{
+        let formatted_date = dateObject.getDate() + "&nbsp;" + months[dateObject.getMonth()] + "&nbsp;" + dateObject.getFullYear()
+        return formatted_date;
+    }
+
+    return formatDate(dateObject);
+}
+
 module.exports = function (eleventyConfig) {
 
     eleventyConfig.setDataDeepMerge(true);
@@ -74,17 +88,9 @@ module.exports = function (eleventyConfig) {
         );
     });
 
-    // Convertis les dates en format lisible : 11 octobre 2021
+    // Convertis les dates en un format français avec le mois en toutes lettres : 11 octobre 2021
     eleventyConfig.addFilter('frDate', (date) => {
-
-        const months = ["janvier", "février", "mars","avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
-
-        const formatDate = (date)=>{
-            let formatted_date = date.getDate() + "&nbsp;" + months[date.getMonth()] + "&nbsp;" + date.getFullYear()
-            return formatted_date;
-        }
-
-        return formatDate(date);
+        return frDateShortcode(date);
     });
 
     eleventyConfig.on("beforeBuild", () => {
@@ -111,6 +117,9 @@ module.exports = function (eleventyConfig) {
 
     //Shortcode image
     eleventyConfig.addNunjucksShortcode("image", imageShortcodeSync); // Nunjucks macros cannot use asynchronous shortcodes
+
+    //Shortcode frDate
+    eleventyConfig.addNunjucksShortcode("frDate", frDateShortcode);
 
     // trigger a rebuild if sass changes
     eleventyConfig.addWatchTarget("_sass/");
