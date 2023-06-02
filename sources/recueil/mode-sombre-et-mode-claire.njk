@@ -1,0 +1,263 @@
+---
+layout: layout/standard.njk
+titre: "Mode sombre et mode claire"
+tags: "recueil"
+description: "Mettre correctement en place un mode sombre/clair aussi appeler dark/light mode ou mode nuit/jour"
+date: 2023-06-02
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+
+
+{% set sommaire = [
+    {titre: 'CSS'},
+    {titre: 'JavaScript'},
+    {
+        titre: 'Démonstration',
+        sub: [
+            {titre: 'Basculer en mode sombre'},
+            {titre: 'Mode sombre par défaut'}
+        ]
+    }
+] %}
+{{ macro.sommaire2(sommaire) }}
+
+
+
+
+
+{{ macro.h2("CSS") }}
+
+<ol class="mb-l mb-m__enfant">
+    <li>
+        <p class="mb-s">
+            Utiliser les propriétés personnalisées (<em lang="en">custom properties</em> en anglais) pour gérer vos couleurs<br>
+            Donné un nom fonctionnel ou plus simplement numérote vos couleurs !
+        </p>
+        {% set code %}
+body {
+    background:var(--color1);
+    color:var(--color2);
+}
+        {% endset %}
+        {{ macro.code(code, "", "language-css") }}
+    </li>
+    <li>
+        <p class="mb-s">Créer le thème par défaut dans <code>:root</code></p>
+        <div class="d-flex">
+            <div class="w-50">
+                <p><em class="tg1-2">Mode clair par défaut</em></p>
+                {% set code %}
+:root {
+    --color1:white;
+    --color2:black;
+    --color3:#F2F2F2;
+}
+                {% endset %}
+                {{ macro.code(code, "", "language-css") }}
+            </div>
+            <div class="w-50">
+                <p><em class="tg1-2">Mode sombre par défaut</em></p>
+                {% set code %}
+:root {
+    --color1:#222;
+    --color2:#FFF;
+    --color3:#555;
+}
+                {% endset %}
+                {{ macro.code(code, "", "language-css") }}
+            </div>
+        </div>
+    </li>
+    <li>
+        <p>Définissez le jeu de couleurs du navigateur avec la propriété <code>color-scheme</code>&nbsp;;</p>
+        <p class="tg1-2 mb-s">
+            Lorsqu'un utilisateur sélectionne un de ces jeux de couleurs, le système d'exploitation fait des ajustements à l'interface utilisateur. Cela comprend les contrôles de formulaires, les barres de défilement et les valeurs utilisées par le système de couleurs CSS.
+        </p>
+        <div class="d-flex">
+            <div class="w-50">
+                <p><em class="tg1-2">Mode clair par défaut</em></p>
+                {% set code %}
+:root {
+    --color1:white;
+    --color2:black;
+    --color3:#F2F2F2;
+    color-scheme: only light;
+}
+                {% endset %}
+                {{ macro.code(code, "", "language-css") }}
+                <p>
+                    La valeur <code>only</code> sert à désactiver le remplacement de couleur du mode nuit du <a href="https://fr.wikipedia.org/wiki/Blink_(moteur_de_rendu)" target="_blank" rel="noreferrer noopener">moteur de rendu Blink</a>
+                </p>
+            </div>
+            <div class="w-50">
+                <p><em class="tg1-2">Mode sombre par défaut</em></p>
+                {% set code %}
+:root {
+    --color1:#222;
+    --color2:#FFF;
+    --color3:#555;
+    color-scheme: dark;
+
+}
+                {% endset %}
+                {{ macro.code(code, "", "language-css") }}
+            </div>
+        </div>
+    </li>
+    <li>
+        <p class="mb-s">Créé le thème équivalent pour l'autre mode</p>
+        <div class="d-flex">
+            <div class="w-50">
+                <p><em class="tg1-2">Mode clair par défaut</em></p>
+                {% set code %}
+.dark {
+    --color1:#222;
+    --color2:#FFF;
+    --color3:#555;
+    color-scheme: dark;
+}
+                {% endset %}
+                {{ macro.code(code, "", "language-css") }}
+            </div>
+            <div class="w-50">
+                <p><em class="tg1-2">Mode sombre par défaut</em></p>
+                {% set code %}
+.light {
+    --color1:white;
+    --color2:black;
+    --color3:#F2F2F2;
+    color-scheme: only light;
+}
+                {% endset %}
+                {{ macro.code(code, "", "language-css") }}
+            </div>
+        </div>
+    </li>
+</ol>
+
+
+
+
+
+
+
+{{ macro.h2("JavaScript") }}
+
+
+<ol class="mb-l mb-m__enfant">
+    <li>
+        {% set code %}
+let root = document.querySelector(":root");
+        {% endset %}
+        {{ macro.code(code, "", "language-js") }}
+    </li>
+    <li>
+        <p class="mb-s">Détecter la préférence de l'utilisateur</p>
+        <div class="d-flex">
+            <div class="w-50">
+                <p><em class="tg1-2">Mode clair par défaut</em></p>
+        {% set code %}
+if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+) {
+    root.classList.toggle("dark");
+}
+        {% endset %}
+        {{ macro.code(code, "", "language-js") }}
+            </div>
+            <div class="w-50">
+                <p class="mb-s"><em class="tg1-2">Mode sombre par défaut</em></p>
+                <p>Comme dans la grande majorité des cas, le thème clair n'est pas demandé (car par défaut), je conserve le thème sombre du site</p>
+            </div>
+        </div>
+    </li>
+    <li>
+        <p class="mb-s">Détecter le changement de préférence utilisateur</p>
+        <div class="d-flex">
+            <div class="w-50">
+                <p><em class="tg1-2">Mode clair par défaut</em></p>
+                {% set code %}
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if(e.matches) {
+        root.classList.add("dark");
+    } else {
+        root.classList.remove("dark");
+    }
+});
+                {% endset %}
+                {{ macro.code(code, "", "language-js") }}
+            </div>
+            <div class="w-50">
+                <p class="mb-s"><em class="tg1-2">Mode sombre par défaut</em></p>
+                <p>Pas de détection non plus</p>
+            </div>
+        </div>
+
+    </li>
+    <li>
+        <p class="mb-s">Basculer de mode à tout instant en une action</p>
+        <div class="d-flex">
+            <div class="w-50">
+                <em class="tg1-2">Mode clair par défaut</em>
+                {% set code %}
+document.querySelector("button").addEventListener("click", () => {
+    event.preventDefault();
+    root.classList.toggle("dark");
+});
+                {% endset %}
+                {{ macro.code(code, "", "language-js") }}
+            </div>
+            <div class="w-50">
+                <em class="tg1-2">Mode sombre par défaut</em>
+                {% set code %}
+document.querySelector("button").addEventListener("click", () => {
+    event.preventDefault();
+    root.classList.toggle("light");
+});
+                {% endset %}
+                {{ macro.code(code, "", "language-js") }}
+            </div>
+        </div>
+    </li>
+    <li>
+        <p>
+            Je recommande de sauvegarder dans le <code>localStorage</code> tout changement de mode afin de pouvoir le configurer lors de la prochaine visite
+        </p>
+    </li>
+</ol>
+
+
+
+
+
+
+
+{{ macro.h2("Démonstration") }}
+
+
+{{ macro.h3("Basculer en mode sombre") }}
+
+<div class="mb-m">
+    <p class="codepen" data-height="400" data-default-tab="html,result" data-slug-hash="Exdpmbq" data-user="pierre_tl" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/pierre_tl/pen/Exdpmbq">
+  color-scheme</a> by Pierre TL (<a href="https://codepen.io/pierre_tl">@pierre_tl</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
+
+{{ macro.h3("Mode sombre par défaut") }}
+
+<div class="mb-l">
+    <p class="codepen" data-height="400" data-default-tab="html,result" data-slug-hash="rNqPewj" data-user="pierre_tl" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/pierre_tl/pen/rNqPewj">
+  color-scheme : dark mode default</a> by Pierre TL (<a href="https://codepen.io/pierre_tl">@pierre_tl</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+</div>
