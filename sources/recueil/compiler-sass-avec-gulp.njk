@@ -1,0 +1,133 @@
+---
+layout: layout/standard.njk
+titre: "Gulp V4 et Sass"
+tags: "recueil"
+description: "Configuration de Sass et BrowserSync avec Gulp V4"
+date: 2023-06-06
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<ol class="mb-l mb-m__enfant">
+    <li>
+        <p>Vérifier que vous avez <em>Node.js</em></p>
+        {% set code %}
+            node -v
+        {% endset %}
+        {{ macro.code(code, "", "language-sh") }}
+        <p>puis de <code>npm</code> avec</p>
+        {% set code %}
+            npm -v
+        {% endset %}
+        {{ macro.code(code, "", "language-sh") }}
+        <p>Sinon <a href="https://nodejs.org/en" target="_blank" rel="external">télécharger et installer Node.js</a></p>
+    </li>
+    <li>
+        Installer gulp
+        {% set code %}
+            npm install gulp-cli -g
+        {% endset %}
+        {{ macro.code(code, "", "language-sh") }}
+        <p>
+            <code>gulp -v</code> pour connaitre la version installer
+        </p>
+    </li>
+    <li>
+        Initialiser un nouveau projet
+        {% set code %}
+            npm init -y
+        {% endset %}
+        {{ macro.code(code, "", "language-sh") }}
+        <p>Un fichier <em lang="en">package.json</em></p> est créer
+    </li>
+    <li>
+        <p>Installation de ce qui est nécessaire</p>
+        {% set code %}
+            npm install --save-dev gulp gulp-sass browser-sync gulp-autoprefixer gulp-clean-css gulp-sourcemaps gulp-mode gulp-concat gulp-rename gulp-uglify
+        {% endset %}
+        {{ macro.code(code, "", "language-sh") }}
+    </li>
+    <li>
+        <p>Créer le fichier <em lang="en">gulpfile.js</em> à la racine du projet</p>
+        {% set code %}
+const gulp =  require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const prefix = require('gulp-autoprefixer');
+const minify = require('gulp-clean-css');
+const sourcemaps = require('gulp-sourcemaps');
+const mode = require('gulp-mode')();
+const browserSync = require('browser-sync').create();
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
+
+
+// compilation des styles CSS
+function styles(){
+    // Emplacement des fichiers .scss
+    return gulp.src('./_scss/style.scss')
+    // Source map
+        .pipe(mode.development( sourcemaps.init() ))
+    // Passer ces fichiers au compilateur + si erreur affiche les log
+        .pipe(sass().on('error', sass.logError))
+    // Préfixer automatiquement les propriétés nécessaire
+        .pipe(prefix('last 2 versions'))
+    // Minifier
+        .pipe(minify())
+    // Source map
+        .pipe(mode.development( sourcemaps.write() ))
+    // Emplacement du fichier .css généré
+        .pipe(gulp.dest('./style/'))
+    // changements de flux pour tous les navigateurs
+        .pipe(mode.development( browserSync.stream() ));
+}
+
+// compilation des scripts JavaScript
+function scriptJs(){
+    return gulp.src('./js/*.js')
+        .pipe(concat('script.js'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest('./'))
+        .pipe(mode.development( browserSync.stream() ));
+}
+
+// watch
+function watch() {
+    browserSync.init({
+        server: {
+            baseDir: './'
+        }
+    });
+    gulp.watch('./_scss/**/*.scss', styles);
+    gulp.watch('./*.html').on('change', browserSync.reload);
+    gulp.watch('./js/**/*.js', scriptJs);
+}
+
+// Compilation pour la prod
+function build(){
+    // Emplacement des fichiers .scss
+    return gulp.src('./_scss/style.scss')
+    // Passer ces fichiers au compilateur + si erreur affiche les log
+        .pipe(sass().on('error', sass.logError))
+    // Préfixer automatiquement les propriétés nécessaire
+        .pipe(prefix('last 2 versions'))
+    // Minifier
+        .pipe(minify())
+    // Emplacement du fichier .css généré
+        .pipe(gulp.dest('./style/'));
+}
+
+
+exports.watch = watch;
+exports.build  = build;
+        {% endset %}
+        {{ macro.code(code, "", "language-js") }}
+    </li>
+    <li>
+        <code>gulp build</code> pour la production
+        <br>
+        <code>gulp build</code> pour la dev
+    </li>
+</ol>
