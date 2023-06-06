@@ -1,8 +1,8 @@
 ---
 layout: layout/standard.njk
-titre: "Gulp V4 et Sass"
+titre: "Gulp V4 : compiler Sass et les fichiers JS"
 tags: "recueil"
-description: "Configuration de Sass et BrowserSync avec Gulp V4"
+description: "Configuration de Sass, JS et BrowserSync avec Gulp V4"
 date: 2023-06-06
 scriptJs: "prism.js"
 styleCss: "prism.css"
@@ -105,8 +105,8 @@ function watch() {
     gulp.watch('./js/**/*.js', scriptJs);
 }
 
-// Compilation pour la prod
-function build(){
+// Compilation des styles pour la prod
+function buildScss(){
     // Emplacement des fichiers .scss
     return gulp.src('./_scss/style.scss')
     // Passer ces fichiers au compilateur + si erreur affiche les log
@@ -121,13 +121,13 @@ function build(){
 
 
 exports.watch = watch;
-exports.build  = build;
+exports.build = gulp.series(buildScss, scriptJs);
         {% endset %}
         {{ macro.code(code, "", "language-js") }}
     </li>
     <li>
         <code>gulp build</code> pour la production
         <br>
-        <code>gulp build</code> pour la dev
+        <code>gulp watch</code> pour la dev
     </li>
 </ol>
