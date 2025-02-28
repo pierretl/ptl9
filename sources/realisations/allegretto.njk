@@ -2,7 +2,7 @@
 layout: layout/standard.njk
 titre: "Allegretto"
 tags: realisations
-date: 2022-12-01
+date: 2024-01-17
 mosaiqueImage: "allegretto"
 mosaiqueImageExtension: ".svg"
 mosaiqueTaille: "2-1"
@@ -11,17 +11,10 @@ description: "Application de gestion de planning d'occupation"
 {% import "macro/contenu.njk" as macro %}
 
 
+{{ macro.h2("Projet de calendrier décentralisé pour la gestion d'une résidence familiale") }}
+
 <div class="d-flex ai-c mb-xl">
     <div class="w-50">
-        <figure role="figure" aria-label="Sass de connexion">
-            <img src="{{ metadata.siteUrl }}/images/allegretto/connexion.png" alt="" />
-            <figcaption>
-                Sass de connexion
-            </figcaption>
-        </figure>
-    </div>
-    <div class="w-50">
-        <p class="mb-s">Projet de calendrier décentralisé pour la gestion d'une résidence familiale</p>
         <ul class="mb-m">
             <li>Pas d'inscription : seule la personne ajoutée par l'admin on l'accès à l'outil</li>
             <li>Le mot de passe créé par l'utilisateur est sécurisé et indéchiffrable</li>
@@ -30,8 +23,42 @@ description: "Application de gestion de planning d'occupation"
             <li>Un membre donne son accord au nom de sa famille</li>
             <li>Les séjours en attendent de validation sont en gris sur le calendrier et passe en vert quand tout le monde est ok</li>
         </ul>
-        <p class="mb-s">Le logo est une vectorisation du logo dessiné par mon grand-père.</p>
         <p class="mb-s">Sources : <a href="https://github.com/pierretl/allegretto" target="_blank" rel="external">https://github.com/pierretl/allegretto</a></p>
+    </div>
+    <div class="w-50">
+        <figure role="figure" aria-label="Le logo est une vectorisation du logo dessiné par mon grand-père">
+            <img src="{{ metadata.siteUrl }}/images/mosaique//allegretto.svg" alt="">
+            <figcaption class="text-left">
+                Le logo est une vectorisation du logo dessiné par mon grand-père. 
+            </figcaption>
+        </figure>
+    </div>
+</div>
+
+{{ macro.h2("UI Design") }}
+
+{{ macro.h3("Version 2", "17/01/2024") }}
+
+
+<div class="d-flex ai-c mb-xl">
+    <div class="w-50">
+        <figure role="figure" aria-label="Sass de connexion">
+            <img src="{{ metadata.siteUrl }}/images/allegretto/v2-connexion.png" alt="" />
+            <figcaption>
+                Sass de connexion
+            </figcaption>
+        </figure>
+    </div>
+    <div class="w-50">
+        <ul class="mb-m">
+            <li>Ajout du parcours mot de passe oublié</li>
+            <li>Redesign du site</li>
+            <li>Refonte UX de l'interface</li>
+            <li>Amélioration de l'affichage sur mobbile</li>
+            <li>Affiche la liste uniquement si le séjour concerne la famille de l'utilisateur</li>
+            <li>Personnalise la couleur de la date du jour</li>
+            <li>Les séjours dons la date de départ est passé s'affiche sur un fond gris</li>
+        </ul>
     </div>
 </div>
 
@@ -39,7 +66,7 @@ description: "Application de gestion de planning d'occupation"
 <div class="d-flex mb-xl">
     <div class="w-50">
         <figure role="figure" aria-label="Tableau de bord des séjours">
-            <img src="{{ metadata.siteUrl }}/images/allegretto/sejour.png" alt="" loading="lazy" />
+            <img src="{{ metadata.siteUrl }}/images/allegretto/v2-sejour.png" alt="" loading="lazy" />
             <figcaption>
                 Tableau de bord des séjours
             </figcaption>
@@ -47,7 +74,71 @@ description: "Application de gestion de planning d'occupation"
     </div>
     <div class="w-50">
         <figure role="figure" aria-label="Administration des utilisateurs">
-            <img src="{{ metadata.siteUrl }}/images/allegretto/admin.png" alt="" loading="lazy" />
+            <img src="{{ metadata.siteUrl }}/images/allegretto/v2-admin.png" alt="" loading="lazy" />
+            <figcaption>
+                Administration des utilisateurs
+            </figcaption>
+        </figure>
+    </div>
+</div>
+
+
+<div class="d-flex mb-xl">
+    <div class="w-50">
+        <figure role="figure" aria-label="Tableau de bord des séjours sur smartphone">
+            <img src="{{ metadata.siteUrl }}/images/allegretto/v2-connexion-mobile.png" alt="" loading="lazy" />
+            <figcaption>
+                Tableau de bord des séjours sur smartphone
+            </figcaption>
+        </figure>
+    </div>
+    <div class="w-50">
+        <figure role="figure" aria-label="Administration des utilisateurs sur smartphone">
+            <img src="{{ metadata.siteUrl }}/images/allegretto/v2-sejour-mobile.png" alt="" loading="lazy" />
+            <figcaption>
+                Administration des utilisateurs sur smartphone
+            </figcaption>
+        </figure>
+    </div>
+</div>
+
+{{ macro.h3("Version 1", "22/009/2022") }}
+
+
+<div class="d-flex ai-c mb-xl">
+    <div class="w-50">
+        <figure role="figure" aria-label="Sass de connexion">
+            <img src="{{ metadata.siteUrl }}/images/allegretto/v1-connexion.png" alt="" />
+            <figcaption>
+                Sass de connexion
+            </figcaption>
+        </figure>
+    </div>
+    <div class="w-50">
+        <ul class="mb-m">
+            <li>Pas d'inscription : seule la personne ajoutée par l'admin on l'accès à l'outil</li>
+            <li>Le mot de passe créé par l'utilisateur est sécurisé et indéchiffrable</li>
+            <li>Les utilisateurs sont regroupés par famille</li>
+            <li>L'ajout d'une demande de séjour se fait par famille, un mail de notification est envoyé</li>
+            <li>Un membre donne son accord au nom de sa famille</li>
+            <li>Les séjours en attendent de validation sont en gris sur le calendrier et passe en vert quand tout le monde est ok</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="d-flex mb-xl">
+    <div class="w-50">
+        <figure role="figure" aria-label="Tableau de bord des séjours">
+            <img src="{{ metadata.siteUrl }}/images/allegretto/v1-sejour.png" alt="" loading="lazy" />
+            <figcaption>
+                Tableau de bord des séjours
+            </figcaption>
+        </figure>
+    </div>
+    <div class="w-50">
+        <figure role="figure" aria-label="Administration des utilisateurs">
+            <img src="{{ metadata.siteUrl }}/images/allegretto/v1-admin.png" alt="" loading="lazy" />
             <figcaption>
                 Administration des utilisateurs
             </figcaption>
