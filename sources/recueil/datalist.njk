@@ -1,0 +1,99 @@
+---
+layout: layout/standard.njk
+titre: "Liste de suggestions accessible"
+tags: "recueil"
+date: 2025-03-18
+description: "Illustration de l'utilisation de la balise HTML5 &lt;datalist&gt;"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+{{ macro.h2("Introduction") }}
+
+<p class="mb-l">
+    L'élément HTML &lt;datalist&gt; contient un ensemble d'éléments &lt;option&gt; qui représentent les valeurs possibles pour d'autres contrôles.<br>
+    Nativement accessible, plus besoin de librairie JavaScript pour faire une liste de suggestions si vous êtes prêt à faire une croix sur la personnalisation graphique.<br>J'ajoute un petit script pour les lecteurs d'écran afin de faciliter son usage.
+</p>
+
+
+{{ macro.h2("Code") }}
+
+{% set code %}
+<label for="ice-cream-choice">Choose a flavor:</label>
+<input 
+       list="ice-cream-flavors" 
+       id="ice-cream-choice" 
+       name="ice-cream-choice" 
+       autocomplete="off"
+       />
+<p id="suggestions-help" role="status" aria-live="polite" class="visually-hidden"></p>
+
+<datalist id="ice-cream-flavors">
+  <option value="Chocolate"></option>
+  <option value="Chocolate White"></option>
+  <option value="Dark Chocolate"></option>
+  <option value="Coconut"></option>
+  <option value="Mint"></option>
+  <option value="Strawberry"></option>
+  <option value="Vanilla"></option>
+</datalist>
+{% endset %}
+{{ macro.code(code, "mb-m") }}
+
+{% set code %}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+{% endset %}
+{{ macro.code(code, "mb-m", "language-css") }}
+
+{% set code %}
+const inputField = document.getElementById("ice-cream-choice");
+const datalist = document.getElementById("ice-cream-flavors");
+const help = document.getElementById("suggestions-help");
+
+function hasCommonSubstring(str1, str2) {
+  return str1.includes(str2) || str2.includes(str1);
+}
+
+inputField.addEventListener("input", () => {
+  let value = inputField.value;
+  let options = datalist.options;
+  let suggestionsCount  = 0;
+
+  for (let i = 0; i < options.length; i++) {
+    if (
+      hasCommonSubstring(value.toLowerCase(), options[i].value.toLowerCase())
+    ) {
+      suggestionsCount++;
+    }
+  }
+  if (suggestionsCount > 0 && suggestionsCount < options.length ) {
+    help.textContent=`There are ${suggestionsCount} suggestions. Use the up and down arrows to browse.`;
+  }
+});
+
+{% endset %}
+{{ macro.code(code, "mb-m", "language-js") }}
+
+
+
+{{ macro.h2("Rendu") }}
+<div class="mb-l">
+    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="yyLoERb" data-user="pierre_tl" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/pierre_tl/pen/yyLoERb">
+  Dialog</a> by Pierre TL (<a href="https://codepen.io/pierre_tl">@pierre_tl</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
