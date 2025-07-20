@@ -1,0 +1,292 @@
+---
+layout: layout/standard.njk
+titre: "Gérer plusieurs comptes GitHub avec des clés SSH sur Windows"
+tags: "recueil"
+date: 2025-07-20
+description: "Configurer plusieurs clés SSH pour gérer plusieurs comptes GitHub sans conflit et sécuriser l'accès au code"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+{% set sommaire = [
+    {titre: 'Introduction'},
+    {titre: 'Avant de commencer : nettoyage recommandé'},
+    {titre: 'Dans PowerShell'},
+    {titre: 'Créer un fichier de configuration SSH'},
+    {titre: 'Coté VS Code'}
+] %}
+{{ macro.sommaire2(sommaire) }}
+
+{{ macro.h2("Introduction") }}
+
+<p class="mb-l">Git ne permet pas de gérer plusieurs comptes GitHub nativement, car il utilise une seule configuration par défaut.</p>
+
+
+{{ macro.h2("Avant de commencer : nettoyage recommandé") }}
+
+<p class="mb-m">Supprimer les identifiants GitHub enregistrés évite les conflits et garantit une configuration multi-comptes propre et efficace.</p>
+
+{{ macro.h3("Effacer les identifiants GitHub (sans terminal) ") }}
+
+<ol class="mb-l">
+    <li>Menu Démarrer</li>
+    <li>Panneau de configuration</li>
+    <li>Comptes d’utilisateurs</li>
+    <li>Gestionnaire d’identifiants</li>
+    <li>onglet Information d'identification windows</li>
+    <li>Trouve les entrées liées à GitHub (ex : git:https://github.com) et clique sur Supprimer</li>
+</ol>
+
+
+
+
+
+
+{{ macro.h2("Dans PowerShell") }}
+
+{{ macro.h3("Utiliser PowerShell en mode administrateur") }}
+
+<ol class="mb-m">
+    <li>Ferme PowerShell s’il est déjà ouvert</li>
+    <li>Clique sur le bouton Démarrer et tape <code>PowerShell</code></li>
+    <li>Clique droit sur Windows PowerShell puis sélectionne "Exécuter en tant qu’administrateur"</li>
+</ol>
+
+
+
+{{ macro.h3("Générer une clé SSH") }}
+
+{% set code %}
+ssh-keygen -t ed25519
+{% endset %}
+{{ macro.code(code, "mb-s", "bash") }}
+
+<p class="mb-s">La réponse suivante s’affiche</p>
+
+{% set code %}
+Enter file in which to save the key (C:\Users\pierr\.ssh\id_ed25519):
+{% endset %}
+{{ macro.code(code, "mb-s", "bash") }}
+
+<p class="mb-s">Copier le contenu entre parenthèses en personnalisant la chaîne de caractères après <code>id_</code>
+<br>Exemple : <code>C:\Users\pierr\.ssh\id_pro</code></p>
+
+<p class="mb-s">La réponse suivante s’affiche</p>
+
+{% set code %}
+Enter passphrase (empty for no passphrase):
+{% endset %}
+{{ macro.code(code, "mb-s", "bash") }}
+
+<p class="mb-s">laisse vide</p>
+
+{% set code %}
+Enter same passphrase again:
+{% endset %}
+{{ macro.code(code, "mb-s", "bash") }}
+
+<p class="mb-s">deux fois</p>
+
+<p class="mb-s">La réponse suivante s’affiche</p>
+
+{% set code %}
+Your identification has been saved in C:\Users\pierr\.ssh\id_pro
+{% endset %}
+{{ macro.code(code, "mb-l", "bash") }}
+
+
+
+
+{{ macro.h3("Service SSH Agent") }}
+
+{{ macro.h4("Activer le service") }}
+
+<ol class="mb-m">
+    <li>Appuie sur Windows + R, tape <code>services.msc</code> et valide</li>
+    <li>Cherche OpenSSH Authentication Agent.</li>
+    <li>Clique droit puis "Propriétés"</li>
+    <li>Change le Type de démarrage en Manuel ou Automatique</li>
+    <li>Clique sur Appliquer</li>
+    <li>Clique Démarrer</li>
+    <li>Clique OK</li>
+</ol>
+
+
+
+{{ macro.h4("Démarrer le service") }}
+
+<p class="mb-s">Démarre le service et le configure pour qu’il puisse être lancé à la demande:</p>
+{% set code %}
+Get-Service ssh-agent | Set-Service -StartupType Manual
+Start-Service ssh-agent
+{% endset %}
+{{ macro.code(code, "mb-m", "bash") }}
+
+<p class="mb-s">vérifier que le service est bien lancé</p>
+{% set code %}
+Get-Service ssh-agent
+{% endset %}
+{{ macro.code(code, "mb-m", "bash") }}
+
+
+
+
+
+{{ macro.h3("Ajouter la clé SSH") }}
+
+<p class="mb-s">Toujours dans PowerShell :</p>
+
+{% set code %}
+ssh-add C:\Users\pierr\.ssh\id_pro
+{% endset %}
+{{ macro.code(code, "mb-m", "bash") }}
+
+<p class="mb-s">Pour vérifier que la clé est bien chargée :</p>
+
+{% set code %}
+ssh-add -l
+{% endset %}
+{{ macro.code(code, "mb-m", "bash") }}
+
+<p class="mb-s">Tester la configuration</p>
+
+{% set code %}
+ssh -T github-pro
+{% endset %}
+{{ macro.code(code, "mb-l", "bash") }}
+
+
+
+
+
+
+
+
+
+
+
+
+{{ macro.h2("Créer un fichier de configuration SSH") }}
+
+<p class="mb-s">Dans <code>C:\Users\pierr\.ssh\</code>, ajoute un fichier <code>config</code> sans extension</p>
+
+{% set code %}
+# pro github account
+Host github-pro
+HostName github.com
+User git
+PreferredAuthentications publickey
+IdentityFile C:\Users\pierr\.ssh\id_pro
+
+# perso github account
+Host github-perso
+HostName github.com
+User git
+PreferredAuthentications publickey
+IdentityFile C:\Users\pierr\.ssh\id_perso
+{% endset %}
+{{ macro.code(code, "mb-s") }}
+
+<ul class="mb-l">
+    <li><code>Host</code>: alias que tu utiliseras dans tes commandes Git ou SSH</li>
+    <li><code>IdentityFile</code>chemin vers ta clé privée</li>
+    <li><code>User</code>généralement <code>git</code> pour GitHub</li>
+</ul>
+
+
+
+
+
+
+
+
+{{ macro.h2("Coté VS Code") }}
+
+{{ macro.h3("Configurer le compte Git pour chaque projet") }}
+
+<p class="mb-s">Dans le terminal intégré de VS Code (dans le dossier de chaque projet), tu peux définir l’utilisateur Git spécifique :</p>
+
+{% set code %}
+git config user.name "NomUtilisateurGitHub"
+git config user.email "email@github.com"
+{% endset %}
+{{ macro.code(code, "mb-s", "bash") }}
+
+<p class="mb-m">Ces réglages ne s’appliquent qu’au dépôt actuel grâce à l’option locale (--local est implicite si tu ne mets rien).</p>
+
+
+
+
+{{ macro.h3("Ajouter la clé publique à GitHub") }}
+
+<ol>
+    <li>
+        <p>Copie le contenu de la clé publique, dans PowerShell :</p>
+{% set code %}
+cat ~/.ssh/id_pro.pub
+{% endset %}
+{{ macro.code(code, "mb-m", "bash") }}
+    </li>
+    <li>
+        <p class="mb-s">puis sur GitHub</p>
+        <ol class="mb-l">
+            <li>GitHub</li>
+            <li>Settings</li>
+            <li>SSH and GPG keys</li>
+            <li>New SSH key</li>
+            <li>Donne un nom</li>
+            <li>Colle la clé</li>
+            <li>clique sur Add SSH key</li>
+        </ol>
+    </li>
+</ol>
+
+
+
+
+{{ macro.h3("Modifier l’URL du remote") }}
+
+<p class="mb-s">Si tu veux que le projet utilise une clé SSH spécifique (via ton fichier ~/.ssh/config), il faut modifier l’URL du dépôt distant :</p>
+
+{% set code %}
+git remote set-url origin git@github-pro:utilisateur/repo.git
+{% endset %}
+{{ macro.code(code, "mb-m", "bash") }}
+
+<p class="mb-s">Tu peux vérifier l’URL actuelle avec :</p>
+
+{% set code %}
+git remote -v
+{% endset %}
+{{ macro.code(code, "mb-m", "bash") }}
+
+
+
+
+{{ macro.h3("Configurer l’identité Git locale") }}
+
+<p class="mb-s">Dans le dossier du projet, configure le nom et l’email associés au bon compte :</p>
+
+{% set code %}
+git config user.name "TonNomGitHub"
+git config user.email "ton_email@exemple.com"
+{% endset %}
+{{ macro.code(code, "mb-s", "bash") }}
+
+<p class="mb-m">Ces réglages sont locaux au projet, donc ils n’affecteront pas tes autres dépôts.</p>
+
+<p class="mb-s">Vérifie que ça fonctionne avec</p>
+
+{% set code %}
+git config user.name
+git config user.email
+{% endset %}
+{{ macro.code(code, "mb-m", "bash") }}
+
+
+
+
+{{ macro.h3("Pusher sur GitHub via le terminal") }}
+
+<p class="mb-l">Une fois les comptes et clés SSH configurés, le code doit être envoyé via le terminal avec <code>git push</code></p>
