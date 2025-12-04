@@ -1,0 +1,36 @@
+---
+layout: layout/standard.njk
+titre: "Pensine"
+tags: "recueil"
+date: 2025-10-29
+description: "Enregistrement de Marque-pages sur GitHub"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+<img src="{{ metadata.siteUrl }}/images/pensine/logo-pensine.png" alt="" class="mb-s">
+
+<p class="mb-s">
+    Il y a deux ans, j’ai entrepris la création d’un outil de gestion de marque-pages en ligne, nommé <a href="https://github.com/pierretl/pensine" target="_blank" rel="noopener noreferrer" title="Pensine — s'ouvre dans un nouvel onglet" aria-label="Pensine (s'ouvre dans un nouvel onglet)">Pensine</a>, inspiré par l’univers de Harry Potter.
+</p>
+
+<p class="mb-s">
+    Le but était de créer un gestionnaire de marque-pages dont les données sont stockées dans un fichier JSON, et une API en PHP permettait de les manipuler.
+</p>
+
+<p class="mb-s">
+    Pour une raison que j’ai oubliée, j’ai mis le projet en pause. Je l’ai repris en mai 2025, en repartant de zéro avec une nouvelle version, cette fois en vanilla JS sous forme d’extension Chrome. <a href="https://github.com/pierretl/pensine2" target="_blank" rel="noopener noreferrer" title="Pensine2 — s'ouvre dans un nouvel onglet" aria-label="Pensine2 (s'ouvre dans un nouvel onglet)">Plus d’infos sur Pensine V2</a>
+</p>
+
+<p class="mb-s">
+    J’ai de nouveau mis le projet en pause à cause d’une fonctionnalité qui m’était essentielle : permettre de faire des captures d’écran des pages web afin d’avoir un aperçu visuel des marque-pages.<br>
+    Malheureusement, il s’avère que l’API permettant cela n’existe pas sur les navigateurs mobiles.
+</p>
+
+<p class="mb-s">
+    Mon projet, visant à utiliser uniquement des services gratuits, m’a conduit à de nombreuses recherches, mais rien de concluant pour le moment.<br>
+    Ma seule piste consiste à ajouter une fonctionnalité sur desktop, permettant de générer les captures d’écran manquantes pour tous les marque-pages enregistrés dans Pensine.
+</p>
+
+<p>À suivre !</p>
