@@ -84,3 +84,21 @@ date: 2021-03-01
 </div>
 {% endset %}
 {{ styleguide.demo_code(demo, code) }}
+
+
+
+
+
+{% set demo %}
+    <div class="d-flex">
+        <div class="w-33" style="box-shadow:0 0 0 1px var(--gamme1__texte3)">Colonne 1</div>
+        <div class="w-66" style="box-shadow:0 0 0 1px var(--gamme1__texte3)">Colonne 2</div>
+    </div>
+{% endset %}
+{% set code %}
+<div class="d-flex">
+    <div class="w-33">Colonne 1</div>
+    <div class="w-66">Colonne 2</div>
+</div>
+{% endset %}
+{{ styleguide.demo_code(demo, code) }}
