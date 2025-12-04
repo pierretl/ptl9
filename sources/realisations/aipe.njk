@@ -1,0 +1,131 @@
+---
+layout: layout/standard.njk
+titre: "AIPE - Association Intercommunale Petite Enfance"
+tags: realisations
+date: 2025-12-04
+mosaiqueImage: "aipe"
+mosaiqueImageExtension: ".svg"
+mosaiqueTaille: "2-1"
+description: "Site vitrine pour l'Association Intercommunale Petite Enfance de Moirans"
+---
+{% import "macro/contenu.njk" as macro %}
+
+{{ macro.h2("Introduction") }}
+
+<div class="mb-xl">
+    <p class="mb-s">Il y a déjà cinq mois, j'ai commencé la réalisation du site vitrine de l'AIPE (Association Intercommunale Petite Enfance) de Moirans.</p>
+    <p>C’est un projet purement bénévole, dans l’optique de créer un site simple, épuré et facile à mettre à jour, mais aussi adapté à leurs besoins : joli, moderne et accessible. Un travail destiné à prolonger leur rebranding.</p>
+</div>
+
+
+
+{{ macro.h2("Rebranding et cohérence visuelle") }}
+
+<div class="mb-xl">
+    <p class="mb-s">Ils sont passés par <a href="https://www.passerellesetcompetences.org/" target="_blank"rel="noopener noreferrer"title="Passerelles & Compétences — s'ouvre dans un nouvel onglet"aria-label="Passerelles & Compétences (s'ouvre dans un nouvel onglet)">Passerelles & Compétences</a> pour la création de leur logo et de leur charte graphique.</p>
+    <p class="mb-s">Le site doit donc reprendre ces éléments afin de conserver une cohérence visuelle.</p>
+    <p>Je me permets toutefois quelques déclinaisons pour répondre à certaines contraintes, notamment en matière de contrastes pour garantir une bonne accessibilité.</p>
+</div>
+
+
+
+{{ macro.h2("Déroulé de la réalisation") }}
+
+<ol class="mb-xl">
+    <li>Rendez-vous en présentiel pour discuter de leurs besoins, établir le plan du site, déterminer les pages nécessaires et définir les grandes lignes du contenu.</li>
+    <li>Création de la maquette sur Figma, intégrant les premiers éléments de la charte web.</li>
+    <li>Présentation et validation de la maquette.</li>
+    <li>Création d’un document textuel partagé pour récupérer le contenu de chaque page, ainsi qu’un dossier partagé pour les médias.</li>
+    <li>
+        Configuration du projet sous Eleventy, du dépôt GitHub, du déploiement automatique sur Netlify et mise en place sur le domaine qu’ils ont acheté.
+        <div class="bordure p-xs">
+            Note : Il me semble avoir correctement créé le dépôt GitHub sous leur nom, mais je ne comprends pas pourquoi mes commits ne remontent pas dans mon historique personnel, alors qu’ils apparaissent bien dans le dépôt AIPE. Mystère…
+        </div>
+    </li>
+    <li>Livraison des pages en production de manière cachée (accessibles uniquement via leurs URL, avec les robots configurés en no-index et no-follow) au fur et à mesure de leur réalisation, avec retours et ajustements.</li>
+</ol>
+
+
+
+{{ macro.h2("Avancement du projet") }}
+
+<p class="mb-m">Le site avançait bien, mais l’approche des vacances de Noël a ralenti la cadence.</p>
+
+
+{{ macro.h3("Logo") }}
+
+<p class="mb-s">
+    <del>Fun fact</del> <ins>Morbid fact</ins> : Le graphiste ayant réalisé le logo est décédé, emportant avec lui les sources du fichier.<br>J’ai donc dû vectoriser le logo à partir d’une image fournie par l’AIPE.
+</p>
+
+<div class="d-flex mb-m">
+    <div class="w-33">
+        <figure role="figure" aria-label="Logo fournis par l'AIPE en .png non transparent">
+            <img src="{{ metadata.siteUrl }}/images/aipe/aipe-logo-source.png" alt="">
+            <figcaption class="text-left">
+                Logo fournis par l'AIPE en .png non transparent
+            </figcaption>
+        </figure>
+    </div>
+    <div class="w-33">
+        <figure role="figure" aria-label="Vectorisation du logo et déclinaisons en format horizontal">
+            <img src="{{ metadata.siteUrl }}/images/aipe/aipe-logo-horizontal.svg" alt="">
+            <figcaption class="text-left">
+                Vectorisation du logo et déclinaisons en format horizontal
+            </figcaption>
+        </figure>
+    </div>
+    <div class="w-33">
+        <figure role="figure" aria-label="Séparation des éléments du logo pour diverses utilisations">
+            <div class="d-flex">
+                <div class="w-50">
+                    <img src="{{ metadata.siteUrl }}/images/aipe/aipe-logo-sigle.svg" alt="">
+                </div>
+                <div class="w-50">
+                    <img src="{{ metadata.siteUrl }}/images/aipe/aipe-soleil.svg" alt="">
+                </div>
+            </div>
+            <figcaption class="text-left">
+                Séparation des éléments du logo pour diverses utilisations 
+            </figcaption>
+        </figure>
+    </div>
+</div>
+
+
+
+{{ macro.h3("Pages") }}
+
+<p class="mb-s">Quelques captures d’écran du site en cours de réalisation :</p>
+
+<figure role="figure" aria-label="Page d'accueil, rpe et actibébé sur ordinateur" class="mb-m">
+    <div class="d-flex">
+        <div class="w-33">
+            <img src="{{ metadata.siteUrl }}/images/aipe/page-accueil.png" alt="">
+        </div>
+        <div class="w-33">
+            <img src="{{ metadata.siteUrl }}/images/aipe/page-rpe.png" alt="">
+        </div>
+        <div class="w-33">
+            <img src="{{ metadata.siteUrl }}/images/aipe/page-actibebe.png" alt="">
+        </div>
+    </div>
+    <figcaption class="text-left">
+        Page d'accueil, rpe et actibébé sur ordinateur
+    </figcaption>
+</figure>
+
+<figure role="figure" aria-label="Page d'accueil, rpe version mobile">
+    <div class="d-flex">
+        <div class="w-50">
+            <img src="{{ metadata.siteUrl }}/images/aipe/page-accueil-mobile.png" alt="">
+        </div>
+        <div class="w-50">
+            <img src="{{ metadata.siteUrl }}/images/aipe/page-rpe-mobile.png" alt="">
+        </div>
+    </div>
+    <figcaption class="text-left">
+        Page d'accueil, rpe version mobile
+    </figcaption>
+</figure>
+
