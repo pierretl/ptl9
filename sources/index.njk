@@ -6,9 +6,17 @@ titreMenu: "Réalisation"
 exclureRss: "true"
 ---
 
-
-
 <ul class="ul-reset s_mosaique js--go-top-cible">
+    <li class="s_mosaique__item s_mosaique__2-2 df ai-c p-s">
+        <h2 class="sr-only">À propos de moi</h2>
+        <p>Il y a plus de 10 ans, j’ai choisi de faire du web mon métier.</p>
+        <p>Au fil du temps, je me suis spécialisé en Accessibilité et Design System pour créer des expériences utiles, inclusives et durables.</p>
+        <p>Ce site m’accompagne depuis 2007 : c’est mon carnet d’idées, ma mémoire et surtout mon laboratoire créatif.</p>
+        <p>J’y teste, j’expérimente, j’apprends… et j’espère partager un peu de cette curiosité avec vous.</p>
+    </li>
+    <li class="sr-only">
+        <h2>Réalisations</h2>
+    </li>
     {% for work in collections.realisations | reverse %}
 
         {% if work.data.mosaiqueTaille == "2-1" %}
@@ -27,7 +35,7 @@ exclureRss: "true"
 
         <li class="s_mosaique__item{{ classTailleMosaique }}">
             {#  {{ work.data.mosaiqueImage.slice(-3) }}#}
-            <a class="s_mosaique__lien" href="{{ work.url | url }}" title="{{ work.data.titre }}">
+            <a class="s_mosaique__lien" href="{{ work.url | url }}" title="{{ work.data.titre }}" aria-label="{{ work.data.titre }}">
                 {% if work.data.mosaiqueImage %}
                     {% if work.data.mosaiqueImageExtension == ".svg" %}
                         <img class="{{ work.data.mosaiqueClassCss }}"
