@@ -1,0 +1,9 @@
+# .mise/config.toml
+# Configuration des outils pour le build Netlify
+
+tools = [
+  "python@3.10.12",  # Python < 3.11 pour éviter l'erreur 'rU' avec node-gyp
+  "node@20.x",       # Même version que le Node local
+  "ruby@3.4.8",
+  "go@1.25.5"
+]
