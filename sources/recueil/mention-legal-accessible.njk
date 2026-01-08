@@ -1,0 +1,225 @@
+---
+layout: layout/standard.njk
+titre: "Mentions légales en exposant - Accessibilité"
+tags: "recueil"
+date: 2026-01-08
+description: "Mentions légales en exposant : un pattern propre, épuré et accessible (WCAG)"
+scriptJs: "prism.js"
+styleCss: "prism.css"
+---
+{% import "macro/contenu.njk" as macro %}
+
+
+{{ macro.h2("Introduction") }}
+
+<p class="mb-s">Dans beaucoup d’interfaces, on affiche une <strong>petite référence en exposant</strong> (ex. (1)) à côté d’un texte pour pointer vers une mention légale détaillée en bas de page. Ce pattern paraît trivial… mais il peut facilement devenir <strong>peu accessible</strong> si l’on ne respecte pas quelques règles : contrôle accessible, clavier, focus, masquage, structure sémantique. </p>
+<p class="mb-m">Voici un pattern robuste, documenté, et auditable</p>
+
+
+
+{{ macro.h2("Objectifs") }}
+
+{{ macro.h3("Juridique") }}
+
+<ul class="mb-s">
+    <li>Les renvois (1) sont autorisés</li>
+    <li>Ils servent à préciser, pas à cacher une info obligatoire</li>
+    <li>L’info principale doit être claire sans lire la note</li>
+    <li>La note (1) est un complément juridique uniquement</li>
+    <li>Règle clé : compréhension immédiate, sans effort ni interprétation</li>
+</ul>
+
+{{ macro.h3("UX") }}
+
+<ul class="mb-s">
+    <li>Texte principal suivi d’un exposant (1) cliquable.</li>
+    <li>En bas de page, une liste des mentions légales avec leur texte complet.</li>
+    <li>Quand on clique (1), on descend à la mention correspondante et le focus est mis sur cette zone.</li>
+    <li>Un bouton “Retour au texte” permet de revenir au point d’origine et rend le focus au petit (1).</li>
+    <li>Note typographique (français) : on peut insérer une espace insécable entre le texte et l’exposant</li> 
+</ul>
+
+{{ macro.h3("A11y") }}
+
+
+<ul class="mb-m">
+    <li><strong>Indicateur visuel & contrôle accessible</strong>&nbsp;: bouton avec nom accessible clair (WCAG 4.1.2).</li>
+    <li><strong>Pilotable au clavier</strong>&nbsp;:activation via Enter/Espace, focus correct (WCAG 2.1.1)</li>
+    <li><strong>Gestion du focus explicite</strong>&nbsp;:ordre et visibilité du focus (WCAG 2.4.3, 2.4.7)</li>
+    <li><strong>Masquage correct</strong>&nbsp;:les éléments inactifs ne doivent pas être dans l’API a11y (WCAG 1.3.1, 4.1.2)</li>
+    <li><strong>Structure sémantique</strong>&nbsp;:régions nommées, séquence lisible (WCAG 1.3.1, 1.3.2)</li>
+</ul>
+
+
+
+{{ macro.h2("Exemple complet") }}
+
+{{ macro.h3("Rendu") }}
+<div class="mb-l">
+    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="gbMMPQB" data-pen-title="Mention legal a11y" data-user="pierre_tl" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+      <span>See the Pen <a href="https://codepen.io/pierre_tl/pen/gbMMPQB">
+  Mention legal a11y</a> by Pierre TL (<a href="https://codepen.io/pierre_tl">@pierre_tl</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://public.codepenassets.com/embed/index.js"></script>
+</div>
+
+
+{{ macro.h3("Explication « morceau par morceau »") }}
+
+{{ macro.h4("Le (1) cliquable (contrôle accessible)") }}
+
+<div class="d-flex mb-m">
+    <div class="w-50 ">
+        {% set code %}
+<sup>
+    <button type="button" class="js--btn-mention" title="Voir la mention légale 1" aria-label="Voir la mention légale 1" data-mention="1">(1)</button>
+</sup>
+        {% endset %}
+        {{ macro.code(code, "mb-s", "language-html") }}
+    </div>      
+    <div class="w-50 ">
+        <ul>
+            <li>
+                <code>&lt;button&gt;</code> : c’est une action (amener vers une zone), pas un simple lien. Pilote clavier nativement.
+            </li>
+            <li><code>aria-label</code> : nom accessible explicite (le lecteur d’écran n’entend pas juste “parenthèse un”).</li>
+            <li><code>data-mention="1"</code> : identifiant logique pour la cible (côté JS).</li>
+            <li><code>title</code> : utile pour info-bulle visuelle (ne pas en dépendre pour l’a11y).</li>
+            <li><code>&lt;sup&gt;</code> + <code>&#8239;</code> : l’exposant et une espace insécable étroite avant (discret, propre en FR).</li>
+        </ul>
+    </div>   
+</div>
+
+
+
+
+
+{{ macro.h4("La région de mention (structure sémantique)") }}
+
+<div class="d-flex mb-m">
+    <div class="w-50 ">
+        {% set code %}
+<div role="region" aria-label="Mention légale 1" tabindex="0">
+    <p>(1) Lorem ipsum</p>
+</div>
+        {% endset %}
+        {{ macro.code(code, "mb-s", "language-html") }}
+    </div>      
+    <div class="w-50 ">
+        <ul>
+            <li><code>role="region"</code> : signale une zone importante navigable par lecteurs d’écran.</li>
+            <li><code>aria-label</code> : titre de la région (nom accessible). <br>Variante : <code>aria-labelledby="id-du-titre"</code> si vous avez un titre visible.</li>
+            <li><code>tabindex="0"</code> : zone focusable pour y amener la lecture au clavier.</li>
+            <li><code>&lt;div&gt;</code> + <code>&lt;p&gt;</code> : structure sémantique pour le contenu juridique.</li>
+        </ul>
+    </div>   
+</div>
+
+
+
+
+
+{{ macro.h4("Le bouton “Retour au texte” (focus & cohérence))") }}
+
+<div class="d-flex mb-m">
+    <div class="w-50 ">
+        {% set code %}
+ <button class="hide js--btn-mention-retour" type="button" id="mention1">Retour au texte</button>
+        {% endset %}
+        {{ macro.code(code, "mb-s", "language-html") }}
+    </div>      
+    <div class="w-50 ">
+        <ul>
+            <li><code>class="hide"</code> : masqué par défaut (.hide) pour ne pas etre visible tant que non pertinent.</li>
+            <li><code>id="mention1"</code> : correspond à la cible du bouton (1).</li>
+            <li><code>type="button"</code> : évite le comportement de soumission de formulaire.</li>
+            <li>Dans le DOM le bouton est avant le texte pour avoir un ordre de focus cohérent. L'ordre est inverser en CSS</li>
+        </ul>
+    </div>   
+</div>
+
+
+
+
+
+{{ macro.h4("Le bouton “Retour au texte” (focus & cohérence))") }}
+
+<div class="d-flex mb-m">
+    <div class="w-50 ">
+        {% set code %}
+ <button class="hide js--btn-mention-retour" type="button" id="mention1">Retour au texte</button>
+        {% endset %}
+        {{ macro.code(code, "mb-s", "language-html") }}
+    </div>      
+    <div class="w-50 ">
+        <ul>
+            <li><code>class="hide"</code> : masqué par défaut (.hide) pour ne pas etre visible tant que non pertinent.</li>
+            <li><code>id="mention1"</code> : correspond à la cible du bouton (1).</li>
+            <li><code>type="button"</code> : évite le comportement de soumission de formulaire.</li>
+        </ul>
+    </div>   
+</div>
+
+
+
+
+
+{{ macro.h4("Disposition et masquage") }}
+
+<div class="d-flex mb-m">
+    <div class="w-50 ">
+        {% set code %}
+.hide {
+  display:none;
+}
+.reverse {
+  display:inline-flex;
+  flex-direction:row-reverse;
+}
+        {% endset %}
+        {{ macro.code(code, "mb-s", "language-css") }}
+    </div>      
+    <div class="w-50 ">
+        <ul>
+            <li><code>display: none</code>  pour retirer un élément de l’accessibilité quand inactif.</li>
+            <li>Dans le DOM le bouton est avant le texte pour avoir un ordre de focus cohérent. L'ordre est inverser en CSS</li>
+        </ul>
+    </div>   
+</div>
+
+
+
+
+
+{{ macro.h4("Logique clavier (JS)") }}
+
+<ul class="mb-l">
+    <li>À l'aller : mémoriser l'origine, montrer "Retour", focus sur la région</li>
+    <li>Au retour : rendre le focus au (1), re-masquer "Retour"</li>
+</ul>
+
+
+
+
+
+{{ macro.h2("Check‑list de tests (NVDA + Firefox)") }}
+<ol class="mb-l">
+    <li>Tab → le focus passe sur (1) ; Entrée/Espace amènent le focus sur la région correspondante.</li>
+    <li>NVDA annonce : « Bouton, Voir la mention légale 1 », puis « Région, Mention légale 1 » et lit le texte.</li>
+    <li>Tab au sein de la région → le bouton Retour devient visible et atteignable au clavier.</li>
+    <li>Entrée sur Retour → le focus revient sur le (1) d’origine.</li>
+    <li>Les autres boutons Retour sont masqués (non atteignables) hors contexte.</li>
+</ol>
+
+
+
+
+
+{{ macro.h2("Points d’attention") }}
+<ul class="mb-l">
+    <li>Évitez les contrôles interactifs dans un <h1> si possible (cognitif) ; préférez le placer dans le flux (paragraphe). Si contrainte UI, ça reste acceptable si focus visible.</li>
+    <li>Ne pas compter sur title pour l’a11y ; c’est un bonus visuel, pas une base.</li>
+    <li>Cohérence des libellés : mention légale, numéro, accents, orthographe.</li>
+    <li>Espace insécable : &#8239; (étroite) ou &nbsp; selon rendu voulu. </li>
+</ol>
